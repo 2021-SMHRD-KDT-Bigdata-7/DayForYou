@@ -26,6 +26,25 @@
   font-weight: normal;
   font-style: normal; }
 /* :: Import All CSS */
+/* :: Base CSS */
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "helveticaneuemedium";
+  background-color: #ffffff; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000000;
+  font-weight: 500;
+  line-height: 1.3;
+  font-family: "helveticaneuemedium"; }
 /* 유태현 추가한 부분*/
  input[type="radio"] {
   display:none;
@@ -96,26 +115,6 @@ background-color: red;
   visibility: hidden;
 }
 /* 유태현 추가한 부분*/
-/* :: Base CSS */
-* {
-  margin: 0;
-  padding: 0; }
-
-body {
-  font-family: "helveticaneuemedium";
-  background-color: #ffffff; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #000000;
-  font-weight: 500;
-  line-height: 1.3;
-  font-family: "helveticaneuemedium"; }
-
 p {
   color: #878787;
   font-size: 14px;
@@ -137,6 +136,118 @@ a {
     text-decoration: none;
     outline: none;
     font-size: 14px; }
+    
+     .button7{
+   
+   	 color: #000000;
+	  padding: 4px 10px;
+	  text-align: center;
+	  text-decoration: none;
+	  /* display: inline-block; */
+	  font-size: 13px;
+	  margin: 6px 4px;
+	  cursor: pointer;
+	  border: 2px solid #c0c0c0;
+	  background-color : #acdaa7;
+	  position : relative;
+	  left: 350px;
+	  border-radius: 8px;
+  
+  
+  }
+  
+  
+  
+  label{
+  	text-color: black;
+  
+  }
+    
+    .button6{
+  
+	  color: #000000;
+	  padding: 4px 10px;
+	  text-align: center;
+	  text-decoration: none;
+	  /* display: inline-block; */
+	  font-size: 13px;
+	  margin: 6px 4px;
+	  cursor: pointer;
+	  border: 2px solid #ade49a;
+	  background-color: #acdaa7;
+	  position: relative;
+	  left: 350px;
+	  border-radius: 8px;
+	  
+  
+  }
+    
+    
+    
+  
+    
+  .button5{
+  
+   	border: none;
+	  color: white;
+	  padding: 4px 10px;
+	  text-align: center;
+	  text-decoration: none;
+	  /* display: inline-block; */
+	  font-size: 10px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	  background-color: rgb(255, 128, 192);
+	  color: black;
+	  border: 2px solid #ffffff;
+	  background-color: #acdaa7;
+	  position : relative;
+	  left: 400px;
+  
+  }
+    
+  .button4{
+	  /* background-color: #4CAF50;  *//* Green */
+	  border: none;
+	  color: white;
+	  padding: 4px 10px;
+	  text-align: center;
+	  text-decoration: none;
+	  /* display: inline-block; */
+	  font-size: 10px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	  background-color: rgb(255, 128, 192);
+	  color: black;
+	  border: 2px solid #e7e7e7;
+	  background-color: #c0c0c0;
+	  position : relative;
+	  left: 220px;
+	  
+	  
+	}
+
+
+
+
+	.contact-area section-padding-100{
+		background-color: #ffffff;
+	
+	}
+	
+	#more{
+		position : absolute;
+		left: 0px;
+	
+	}
+	
+	
+/* 	#table11{
+		border-bottom : 1px solid #c0c0c0;
+		
+	}  */
+
+
 
 #preloader {
   display: -webkit-box;
@@ -194,6 +305,7 @@ a {
     border-top-color: #f1f1f1;
     -webkit-animation: original 1800ms linear infinite;
     animation: original 1800ms linear infinite; }
+    
 
 @-webkit-keyframes original {
   0% {
@@ -341,7 +453,7 @@ img {
       right: 30px; } }
 
 .bg-gray {
-  background-color: #f1f1f1; }
+  background-color: #ffffff; }
 
 .background-overlay {
   position: relative;
@@ -354,7 +466,8 @@ img {
     width: 100%;
     height: 100%;
     content: '';
-    background-color: rgba(0, 0, 0, 0.6); }
+    
+    }
 
 .original-btn {
   position: relative;
@@ -879,6 +992,8 @@ img {
     .instagram-feed-area .single-insta-feed:hover .hover-effects a, .instagram-feed-area .single-insta-feed:focus .hover-effects a {
       opacity: 1;
       visibility: visible; }
+
+
 
 .breadcumb-area {
   position: relative;
@@ -1436,16 +1551,16 @@ textarea:focus ~ .highlight {
           .coming-soon-area .coming-soon-timer #clock span {
             font-size: 14px; } }
   .coming-soon-area .contact-form h5 {
-    color: #ffffff; }
+    color: #000000; }
   .coming-soon-area .contact-form .group input,
   .coming-soon-area .contact-form .group textarea {
     border-color: #999da4;
-    background-color: transparent;
-    color: #ffffff; }
+    
+    color: #000000; }
   .coming-soon-area .contact-form .group label {
-    color: #ffffff; }
+    color: #000000; }
   .coming-soon-area .sidebar-widget-area .title {
-    color: #ffffff; }
+    color: #000000; }
 
 .sonar-wrapper {
   position: relative;
@@ -1483,3 +1598,6 @@ textarea:focus ~ .highlight {
 /* The End */
 
 /*# sourceMappingURL=style.css.map */
+
+
+
