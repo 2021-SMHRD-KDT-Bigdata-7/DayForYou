@@ -21,31 +21,6 @@
 <body>
 
 	<!-- java code -->
-	<%
-   Date now = new Date();
-   
-   Calendar cal = Calendar.getInstance(); 
-   cal.setTime(now);
-   
-   int year = cal.get(Calendar.YEAR);
-   int month = cal.get(Calendar.MONTH) + 1; //0부터 시작하기 때문에 1더해준다
-   int day = cal.get(Calendar.DAY_OF_MONTH);
-   int hour = cal.get(Calendar.HOUR_OF_DAY);
-   int min = cal.get(Calendar.MINUTE);
-   int sec = cal.get(Calendar.SECOND);
-   System.out.println(year + "년도 " + month + "월 " + day + "일 " + hour + "시 " + min + "분 " + sec + "초");
-   
-   //cal.add(Calendar.YEAR, 1); //1년 더하기 
-   //cal.add(Calendar.MONTH, -3); //3개월 빼기
-   //cal.add(Calendar.DATE, 2); //2일 더하기
-   //cal.add(Calendar.HOUR_OF_DAY, -2); //2시간빼기
-   //cal.add(Calendar.MINUTE, 20); //20분 더하기
-   //cal.add(Calendar.SECOND, -10); //10초 빼기
-
-   
-   %>
-
-
 
 	<!-- Logo Area -->
 	<div class="logo-area text-center">
@@ -132,36 +107,43 @@
 			<h5 align="center">챌린지 시작일</h5>
 			<br>
 			<ul>
-				<li><span class="radio" id="all_list"> <input
-						type="radio" id="view_all2" name="chall_start" value="all"
-						checked=""> <label for="view_all2"><span
-							class="round"></span>
-							<%=year + "년도 " + month + "월 " + day + "일 " + hour + "시 " + min + "분 "%>
+				<li>
+				<span class="radio" id="all_list"> <input
+						type="radio" id="view_all2" name="chall_start" value="1">
+						<label for="view_all2"><span class="round"></span>
+						<span class="selectDate">오늘??</span>
 							</label>
-				</span></li>
-				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_liv1" name="chall_start" value=""> <label
-						for="view_liv1"> <span class="round"></span>
-							<% cal.add(Calendar.DATE, 7);%>
-							<%=cal.get(Calendar.YEAR)+"년도 "+(cal.get(Calendar.MONTH)+1)+ "월 " +cal.get(Calendar.DATE)+ "일 " + cal.get(Calendar.HOUR) + "시 " + cal.get(Calendar.MINUTE) + "분 "%>
-					</label>
-				</span></li>
-				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_liv2" name="chall_start" value="2">
-						<label for="view_liv2"> <span class="round"></span>
-							<% cal.add(Calendar.DATE, 7);%>
-							<%=cal.get(Calendar.YEAR)+"년도 "+(cal.get(Calendar.MONTH)+1)+ "월 " +cal.get(Calendar.DATE)+ "일 " + cal.get(Calendar.HOUR) + "시 " + cal.get(Calendar.MINUTE) + "분 "%>
+									<p class="start1" style="display: none;"> </p>
 
+				</span>
+				</li>
+				<li>
+				<span class="radio" id="lend_list"> <input
+						type="radio" id="view_liv1" name="chall_start" value="2"> 
+						<label for="view_liv1"> <span class="round"></span>
+						<span class="selectDate">아냐.. 담주?</span>
 					</label>
-				</span></li>
-				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_liv3" name="chall_start" value="2">
-						<label for="view_liv3"> <span class="round"></span>
-							<% cal.add(Calendar.DATE, 7);%>
-							<%=cal.get(Calendar.YEAR)+"년도 "+(cal.get(Calendar.MONTH)+1)+ "월 " +cal.get(Calendar.DATE)+ "일 " + cal.get(Calendar.HOUR) + "시 " + cal.get(Calendar.MINUTE) + "분 "%>
-							<% cal.add(Calendar.DATE,-21);%>
+									<p class="start2" style="display: none;"> </p>
+				</span>
+				</li>
+				<li>
+				<span class="radio" id="lend_list"> <input
+						type="radio" id="view_liv2" name="chall_start" value="3">
+						<label for="view_liv2"> <span class="round"></span>
+						<span class="selectDate">역시 2주 정도?</span>
 					</label>
-				</span></li>
+									<p class="start3" style="display: none;"> </p>
+				</span>
+				</li>
+				<li>
+				<span class="radio" id="lend_list"> <input
+						type="radio" id="view_liv3" name="chall_start" value="4">
+						<label for="view_liv3"> <span class="round"></span>  
+					<span class="selectDate">담달에 할까?</span>
+					</label>
+									<p class="start4" style="display: none;"> </p>
+				</span>
+				</li>
 			</ul>
 			<br> <br>
 			<hr style="border: solid 1px red;">
@@ -169,8 +151,8 @@
 			<h5 align="center">챌린지 기간</h5>
 			<br>
 			<ul>
-				<li><span class="radio" id="all_list"> <input
-						type="radio" id="view_all3" name="chall_period" value="1d"
+				<li><span class="radio" id="all_list"> 
+				<input type="radio" id="view_all3" name="chall_period" value="1d"
 						checked=""> <label for="view_all3"><span
 							class="round"></span>1 Day</label>
 				</span></li>
@@ -198,6 +180,10 @@
 			<br> 
 			<br>
 			<!-- 기한 나타내주는 jquary  -->
+			<p class="start1" style="display: none;"></p> 
+			<p class="start2" style="display: none;"></p> 
+			<p class="start3" style="display: none;"></p> 
+			<p class="start4" style="display: none;"></p> 
 			<p id="period" style="display:none;"> </p>
 			
 			<!-- 챌린지 예상 종료일 보여주는 부분 있으면 좋을듯-->
@@ -313,10 +299,9 @@
 	<script src="js/chall.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 			<script type="text/javascript">
+				var StartDate= new Date();
 				$('input[name="chall_period"]').on('change', function(){
-					var now = new Date();
-					
-					/* now = now + $('input[name="chall_start"]').val(); */
+					var now = new Date(StartDate);
 					
 					let changed = $(this).val();
 					console.log(changed)
@@ -338,8 +323,60 @@
 					
 					var today = new Date();
 					
-					$('#period').html(year + "년도" + month + "월 " + day + "일 " + hours + "시" + minutes + "분 까지")
+					$('#period').html(" ~ "+year + "년도" + month + "월 " + day + "일 " + hours + "시" + minutes + "분 까지")
 					$('#period').css('display', 'block');
+				});
+				
+				$('input[name="chall_start"]').on('change', function(){
+					var now = new Date();
+					
+					let changed = $(this).val();
+					
+					
+					var today = new Date();
+					if(changed == '1'){
+						now.setDate(now.getDate());
+					}else if(changed == '4'){
+						now.setMonth(now.getMonth() + 1);
+					}else if(changed == '2'){
+						now.setDate(now.getDate()+7);
+					}else{
+						now.setDate(now.getDate() + 14);
+					}
+					
+					var eyear = now.getFullYear();
+					var emonth = now.getMonth() + 1;
+					var eday = now.getDate();
+					var ehours = now.getHours();
+					var eminutes = now.getMinutes();
+				
+					if(changed == '1'){
+						$('.start1').css('display', 'inline').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+						$('.start2').css('display', 'none');
+						$('.start3').css('display', 'none');
+						$('.start4').css('display', 'none');
+					}else if(changed == '4'){
+						$('.start4').css('display', 'inline');
+						$('.start4').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+						$('.start1').css('display', 'none');
+						$('.start2').css('display', 'none');
+						$('.start3').css('display', 'none');
+					}else if(changed == '2'){
+						$('.start2').css('display', 'inline');
+						$('.start2').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+						$('.start1').css('display', 'none');
+						$('.start3').css('display', 'none');
+						$('.start4').css('display', 'none');
+					}else{
+						$('.start3').css('display', 'inline');
+						$('.start3').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+						$('.start1').css('display', 'none');
+						$('.start2').css('display', 'none');
+						$('.start4').css('display', 'none');
+					}
+					
+					
+					StartDate = now;
 				});
 				
 			</script>
