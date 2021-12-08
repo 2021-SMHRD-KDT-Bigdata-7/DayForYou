@@ -23,24 +23,54 @@
         let cale = `
         <h1>캘린더 작성</h1>
 		<table> 
-		<tr>
-			<td>하루종일</td>
-			<td><input type="checkbox"><br></td>
-		</tr>
-        하루종일  <input type="checkbox"><br>
-        일정명  <input type="text"><br>
-        시작  <input type="datetime-local"><br>
-        끝  <input type="datetime-local"><br>
-        구분  <select>
-		        <option value="study">공부</option>
-		        <option value="sport">운동</option>
-		        <option value="hobby">취미</option>
-		        <option value="etc">기타</option>
- 		      </select><br>
-        색상  <input type="color"><br>
-        내용  <textarea cols = "50" rows = "5"></textarea>
-		
-        <button id="CalSubmit" onClick="makeCal()">저장하기</button>
+			<tr>
+				<td>하루종일</td>
+				<td><input type="checkbox"></td>
+			</tr>
+			 
+	        <tr>
+	        	<td>일정명</td>
+	        	<td><input type="text"></td>
+	        </tr>
+	        
+		    <tr>
+		    	<td>시작</td>
+		    	<td><input type="datetime-local"></td>
+		    </tr>
+		      
+			<tr>
+				<td>끝</td>
+				<td><input type="datetime-local"></td>
+			</tr>
+			
+			<tr>
+				<td>구분</td>
+				<td>
+				<select>
+			    	<option value="study">공부</option>
+			    	<option value="sport">운동</option>
+			   		<option value="hobby">취미</option>
+			    	<option value="etc">기타</option>
+	 		 	</select>
+	 		 	</td>
+			</tr>
+			
+			<tr>
+				<td>색상</td>
+				<td><input type="color"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea cols = "30" rows = "10"></textarea></td>
+			</tr>
+			
+			<tr>
+				<td align = "Right" colspan = "2">
+					<button id="CalCancle" onClick="#">취소</button>
+		       		<button id="CalSubmit" onClick="makeCal()">저장</button>
+				</td>			
+			</tr>
+		</table> 
         `
         $('#diary').on('click', function(){
             $('body').html(diary);
