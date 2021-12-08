@@ -32,3 +32,15 @@ document.getElementById("chooseFile3").onchange = function () {
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
 };
+
+
+function chall_period1(){
+var chall_period = document.getElementsByName('chall_period');
+var chall_periodChoice; // 여기에 선택된 radio 버튼의 값이 담기게 된다.
+for(var i=0; i<chall_period.length; i++) {
+    if(chall_period[i].checked) {
+        chall_periodChoice = chall_period[i].value;
+    }
+}
+	
+}
