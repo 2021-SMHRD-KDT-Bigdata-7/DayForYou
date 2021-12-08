@@ -125,7 +125,7 @@
         $.scrollUp({
             scrollSpeed: 1000,
             easingType: 'easeInOutQuart',
-            scrollText: '글쓰기'
+            scrollText: 'top'
         });
     }
 
