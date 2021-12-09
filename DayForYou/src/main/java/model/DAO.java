@@ -228,7 +228,8 @@ public class DAO {
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 
 			// 3.sql문 준비
-			String sql = "insert into tbl_challenge(chal_seq,chal_cat1,chal_cat2,chal_subject,chal_content,chal_start,chal_period,chal_pic1,chal_pic2,chal_pic3,reg_date) values(TBL_CHALLENGE_SEQ.nextval,?,?,?,?,?,?,?,?,sysdate)";
+			String sql = "insert into tbl_challenge(chal_cat1,chal_cat2,chal_subject,chal_content,chal_start,chal_period,chal_pic1,chal_pic2,chal_pic3,reg_date,m_id,chal_cnt) values(?,?,?,?,?,?,?,?,?,sysdate,'m_id 1',0)";
+			
 			psmt = conn.prepareStatement(sql);
 			
 //			chal_seq
@@ -251,11 +252,12 @@ public class DAO {
 			psmt.setString(1, chall_cat1);
 			psmt.setString(2, chall_cat2);
 			psmt.setString(3, chall_subject);
-			psmt.setString(4, chall_start);
-			psmt.setString(5, chall_period);
-			psmt.setString(6, chall_pic1);
-			psmt.setString(7, chall_pic2);
-			psmt.setString(8, chall_pic3);
+			psmt.setString(4, chall_Introduce);
+			psmt.setString(5, chall_start);
+			psmt.setString(6, chall_period);
+			psmt.setString(7, chall_pic1);
+			psmt.setString(8, chall_pic2);
+			psmt.setString(9, chall_pic3);
 
 			// 5.실행
 			// select-> excuteQuery()--> return ResultSet
