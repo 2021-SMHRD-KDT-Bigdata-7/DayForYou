@@ -93,14 +93,11 @@
 				<div class="wrap-input100 validate-input m-b-25" align="center">
 					<table>
 						<tr>
-							<td><input class="input101" type="radio" name="gender"></td>
-							<td style="padding: 20px;"></td>
-							<td><input class="input101" type="radio" name="gender"></td>
-						</tr>
-						<tr>
-							<td>man</td>
-							<td style="padding: 20px;"></td>
-							<td>woman</td>
+							<th><input type="radio" id="man" name="gender"></td>
+							<label for="man">man</label></th>
+							<td style="padding: 29px;"></td>
+							<th><input type="radio" id="woman" name="gender">
+							<label for="woman">woman</label></th>
 						</tr>
 
 					</table>
@@ -110,14 +107,11 @@
 					<table>
 						<tr>
 							
-							<td><input class="input101" type="radio" name="job" value="student"></td>
+							<th><input type="radio" id="student" name="job" value="student">
+							<label for="student">student</label></th>
 							<td style="padding: 20px;"></td>
-							<td><input class="input101" type="radio" name="job" value="worker"></td>
-						</tr>
-						<tr>
-							<td>student</td>
-							<td style="padding: 20px;"></td>
-							<td>worker</td>
+							<th><input type="radio" id="worker" name="job" value="worker">
+							<label for="worker">worker</label></th>
 						</tr>
 
 					</table>

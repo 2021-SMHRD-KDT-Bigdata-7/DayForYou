@@ -242,6 +242,10 @@ public class DAO {
 //			chal_pic2
 //			chal_pic3
 //			reg_date
+//			m_id
+//			chal_cnt 참여인원
+//			공식 비공식
+			
 			
 			// 4.바인드 변수 채우기
 			psmt.setString(1, chall_cat1);

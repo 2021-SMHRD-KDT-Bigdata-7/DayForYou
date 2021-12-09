@@ -1,5 +1,26 @@
+/* 강설 css  */
 
+.input101{
+	width: 70%;
+  height: 62px;
+	 background: url("img/join-img/radio_on.png") no-repeat;
+  background: url("img/join-img/radio_on.png") no-repeat;
+}
 
+input[type="radio"]{
+  display:inline-block;
+  width: 22px;height: 22px;
+  margin: -2px 9px 0 4px;
+  font-size: 0;
+  vertical-align: middle;
+  background: url("img/join-img/radio-off.png") no-repeat;cursor:pointer;
+}
+
+input[type="radio"]:checked{
+  background: url("img/join-img/radio-on.png") no-repeat;
+}
+
+/* 강설 css  */
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -233,17 +254,10 @@ iframe {
   height: 62px;
   background: transparent;
   padding: 0 20px 0 23px;
-}
-.input101{
-	width: 70%;
-  height: 62px;
-	 background: url("img/join-img/radio_on.png") no-repeat;
-  background: url("img/join-img/radio_on.png") no-repeat;
-}
 
 /*------------------------------------------------------------------
 [ Focus Input ]*/
-
+}
 .focus-input100 {
   display: block;
   position: absolute;
