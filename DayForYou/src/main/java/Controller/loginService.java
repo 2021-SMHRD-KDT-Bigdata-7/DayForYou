@@ -17,11 +17,11 @@ import model.MemberVo;
 public class loginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
+		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
 		DAO dao = new DAO();
-		MemberVo vo=dao.login(email, pw);
+		MemberVo vo=dao.login(id, pw);
 		
 		
 		if (vo !=null) {

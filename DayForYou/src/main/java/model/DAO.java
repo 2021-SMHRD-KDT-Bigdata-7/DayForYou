@@ -96,7 +96,7 @@ public class DAO {
 		try {
 		
 			// 3.sqlπÆ ¡ÿ∫Ò
-			String sql = "insert into tbl_member values(?,?,?,?,?,?,?,?,?,?,sysdate,0,N)";
+			String sql = "insert into tbl_member values(?,?,?,?,?,?,?,?,?,?,sysdate,0,'N')";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -125,7 +125,7 @@ public class DAO {
 			close();
 		}
 
-		return 0;
+		return cnt;
 	}
 	
 	//----------
