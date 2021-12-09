@@ -127,3 +127,4 @@ INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m
 INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m_id, article_file1, article_file2, article_file3, article_file4, article_file5, article_count) VALUES ('article_kind 099', 'article_subject 099', 'article_content 099', sysdate, 'm_id 09', 'article_file1 099', 'article_file2 099', 'article_file3 099', 'article_file4 099', 'article_file5 099', 099);
 INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m_id, article_file1, article_file2, article_file3, article_file4, article_file5, article_count) VALUES ('article_kind 100', 'article_subject 100', 'article_content 100', sysdate, 'm_id 10', 'article_file1 100', 'article_file2 100', 'article_file3 100', 'article_file4 100', 'article_file5 100', 100);
 
+select * from tbl_member;
