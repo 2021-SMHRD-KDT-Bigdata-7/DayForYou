@@ -14,7 +14,7 @@ import model.MemberVo;
 
 
 
-@WebServlet("/JoinSerice")
+@WebServlet("/JoinService")
 public class JoinSerice extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
