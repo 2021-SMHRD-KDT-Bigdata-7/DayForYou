@@ -295,8 +295,9 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
  /*캘린더 년,월 폰트 크기*/
 .fc .fc-toolbar-title {
-    font-size: 1.50em;
-    margin: 0;
+    font-size: 1.00em;
+    margin-right: 30em;
+  
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */

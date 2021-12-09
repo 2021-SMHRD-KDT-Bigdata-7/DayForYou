@@ -240,8 +240,9 @@ a.fc-event:hover {
     margin-top: 1.5em
 }
 .fc .fc-toolbar-title {
-    font-size: 1.50em;
-    margin: 0
+    font-size: 1.00em;
+    margin-right: 0.75em
+    
 }
 .fc-direction-ltr .fc-toolbar>*>:not(:first-child) {
     margin-left: 0.75em
