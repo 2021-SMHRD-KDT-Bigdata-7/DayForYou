@@ -40,7 +40,7 @@ public class challengeBoardVO {
 	private String m_id;
 
 	// 챌린지 참여인원
-	private Double chal_cnt;
+	private int chal_cnt;
 
 	// 챌린지 비밀번호
 	private String chal_pw;
@@ -50,7 +50,7 @@ public class challengeBoardVO {
 
 	public challengeBoardVO(int chal_seq, String chal_cat, String chal_subject, String chal_content, String chal_period,
 			int chal_time, int chal_point, String chal_pic1, String chal_pic2, String chal_pic3, String reg_date,
-			String m_id, Double chal_cnt, String chal_pw, String chal_public) {
+			String m_id, int chal_cnt, String chal_pw, String chal_public) {
 		super();
 		this.chal_seq = chal_seq;
 		this.chal_cat = chal_cat;
@@ -165,11 +165,11 @@ public class challengeBoardVO {
 		this.m_id = m_id;
 	}
 
-	public Double getChal_cnt() {
+	public int getChal_cnt() {
 		return chal_cnt;
 	}
 
-	public void setChal_cnt(Double chal_cnt) {
+	public void setChal_cnt(int chal_cnt) {
 		this.chal_cnt = chal_cnt;
 	}
 

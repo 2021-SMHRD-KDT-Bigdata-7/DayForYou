@@ -1,4 +1,5 @@
-select * from tbl_nea
+select * from tbl_challenge
+
 
 
 

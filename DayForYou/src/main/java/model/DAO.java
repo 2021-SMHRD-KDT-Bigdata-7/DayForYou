@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DAO {
 
@@ -15,12 +16,15 @@ public class DAO {
 	MemberVo vo = null;
 	ResultSet rs = null;
 	
+	ArrayList<challengeBoardVO> ch_boards = null;
+	challengeBoardVO cbv = null;
+	
 	public void connection() {
 		try {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
 			String dbid = "hr";
 			String dbpw = "hr";
 			conn = DriverManager.getConnection(url, dbid, dbpw);
@@ -122,6 +126,45 @@ public class DAO {
 		}
 
 		return 0;
+	}
+	
+	//----------
+	/*
+	 * 챌린지 게시판을 출력하는 메소드
+	 */
+	ArrayList<challengeBoardVO> SelectChallengeBoard(){
+		
+		ch_boards = new ArrayList<>(); 
+		
+		connection();
+		
+		try {
+			sql = "select * from tbl_challenge";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {				
+				
+				cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2),
+						rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getInt(6), rs.getInt(7), rs.getString(8),
+						rs.getString(9), rs.getString(10), rs.getString(11),
+						rs.getString(12), rs.getInt(13), rs.getString(14),
+						rs.getString(15));
+				
+				ch_boards.add(cbv);				
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		
+		return ch_boards;
 	}
 
 }
