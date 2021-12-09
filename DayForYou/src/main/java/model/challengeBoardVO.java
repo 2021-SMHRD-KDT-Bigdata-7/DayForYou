@@ -2,205 +2,221 @@ package model;
 
 public class challengeBoardVO {
 	// 챌린지 목록 챌린지 목록
-
-	// 챌린지 순번 챌린지 순번
-	private int chal_seq;
-
-	// 챌린지 카테고리 챌린지 카테고리1
-	private String chal_cat1;
 	
-	// 챌린지 카테고리 챌린지 카테고리2
-	private String chal_cat2;
 
-	// 챌린지 제목 챌린지 제목
-	private String chal_subject;
+	    // 챌린지 순번 챌린지 순번
+	    private int chalSeq;
 
-	// 챌린지 내용 챌린지 내용
-	private String chal_content;
+	    // 챌린지 카테고리1 챌린지 카테고리
+	    private String chalCat1;
 
-	// 챌린지 기간 챌린지 기간
-	private String chal_period;
+	    // 챌린지 카테고리2 
+	    private String chalCat2;
 
-	// 챌린지 시간 챌린지 시간
-	private int chal_time;
+	    // 챌린지 제목 챌린지 제목
+	    private String chalSubject;
 
-	// 챌린지 포인트 챌린지 포인트
-	private int chal_point;
+	    // 챌린지 내용 챌린지 내용
+	    private String chalContent;
 
-	// 챌린지 메인사진 챌린지 사진1
-	private String chal_pic1;
+	    // 챌린지 시작날짜 챌린지 시작날짜
+	    private String chalStart;
 
-	// 챌린지 예시사진 챌린지 사진2
-	private String chal_pic2;
+	    // 챌린지 기간 챌린지 기간
+	    private String chalPeriod;
 
-	// 챌린지 인증사진 챌린지 사진3
-	private String chal_pic3;
+	    // 챌린지 시간 챌린지 시간
+	    private int chalTime;
 
-	// 등록 일자 등록 일자
-	private String reg_date;
+	    // 챌린지 포인트 챌린지 포인트
+	    private int chalPoint;
 
-	// 등록자 아이디 등록자 아이디
-	private String m_id;
+	    // 챌린지 메인사진 챌린지 사진1
+	    private String chalPic1;
 
-	// 챌린지 참여인원
-	private int chal_cnt;
+	    // 챌린지 예시사진 챌린지 사진2
+	    private String chalPic2;
 
-	// 챌린지 비밀번호
-	private String chal_pw;
+	    // 챌린지 인증사진 챌린지 사진3
+	    private String chalPic3;
 
-	// 챌린지 공식
-	private String chal_public;
+	    // 등록 일자 등록 일자
+	    private String regDate;
 
-	public challengeBoardVO(int chal_seq, String chal_cat1, String chal_cat2, String chal_subject, String chal_content,
-			String chal_period, int chal_time, int chal_point, String chal_pic1, String chal_pic2, String chal_pic3,
-			String reg_date, String m_id, int chal_cnt, String chal_pw, String chal_public) {
-		super();
-		this.chal_seq = chal_seq;
-		this.chal_cat1 = chal_cat1;
-		this.chal_cat2 = chal_cat2;
-		this.chal_subject = chal_subject;
-		this.chal_content = chal_content;
-		this.chal_period = chal_period;
-		this.chal_time = chal_time;
-		this.chal_point = chal_point;
-		this.chal_pic1 = chal_pic1;
-		this.chal_pic2 = chal_pic2;
-		this.chal_pic3 = chal_pic3;
-		this.reg_date = reg_date;
-		this.m_id = m_id;
-		this.chal_cnt = chal_cnt;
-		this.chal_pw = chal_pw;
-		this.chal_public = chal_public;
-	}
+	    // 등록자 아이디 등록자 아이디
+	    private String mId;
 
-	public int getChal_seq() {
-		return chal_seq;
-	}
+	    // 챌린지 참여인원 
+	    private int chalCnt;
 
-	public void setChal_seq(int chal_seq) {
-		this.chal_seq = chal_seq;
-	}
+	    // 챌린지 비밀번호 
+	    private String chalPw;
 
-	public String getChal_cat1() {
-		return chal_cat1;
-	}
+	    // 챌린지 공식 
+	    private String chalPublic;
 
-	public void setChal_cat1(String chal_cat1) {
-		this.chal_cat1 = chal_cat1;
-	}
+	
 
-	public String getChal_cat2() {
-		return chal_cat2;
-	}
+		public challengeBoardVO(int chalSeq, String chalCat1, String chalCat2, String chalSubject, String chalContent,
+				String chalStart, String chalPeriod, int chalTime, int chalPoint, String chalPic1, String chalPic2,
+				String chalPic3, String regDate, String mId, int chalCnt, String chalPw, String chalPublic) {
+			super();
+			this.chalSeq = chalSeq;
+			this.chalCat1 = chalCat1;
+			this.chalCat2 = chalCat2;
+			this.chalSubject = chalSubject;
+			this.chalContent = chalContent;
+			this.chalStart = chalStart;
+			this.chalPeriod = chalPeriod;
+			this.chalTime = chalTime;
+			this.chalPoint = chalPoint;
+			this.chalPic1 = chalPic1;
+			this.chalPic2 = chalPic2;
+			this.chalPic3 = chalPic3;
+			this.regDate = regDate;
+			this.mId = mId;
+			this.chalCnt = chalCnt;
+			this.chalPw = chalPw;
+			this.chalPublic = chalPublic;
+		}
 
-	public void setChal_cat2(String chal_cat2) {
-		this.chal_cat2 = chal_cat2;
-	}
+		public int getChalSeq() {
+			return chalSeq;
+		}
 
-	public String getChal_subject() {
-		return chal_subject;
-	}
+		public void setChalSeq(int chalSeq) {
+			this.chalSeq = chalSeq;
+		}
 
-	public void setChal_subject(String chal_subject) {
-		this.chal_subject = chal_subject;
-	}
+		public String getChalCat1() {
+			return chalCat1;
+		}
 
-	public String getChal_content() {
-		return chal_content;
-	}
+		public void setChalCat1(String chalCat1) {
+			this.chalCat1 = chalCat1;
+		}
 
-	public void setChal_content(String chal_content) {
-		this.chal_content = chal_content;
-	}
+		public String getChalCat2() {
+			return chalCat2;
+		}
 
-	public String getChal_period() {
-		return chal_period;
-	}
+		public void setChalCat2(String chalCat2) {
+			this.chalCat2 = chalCat2;
+		}
 
-	public void setChal_period(String chal_period) {
-		this.chal_period = chal_period;
-	}
+		public String getChalSubject() {
+			return chalSubject;
+		}
 
-	public int getChal_time() {
-		return chal_time;
-	}
+		public void setChalSubject(String chalSubject) {
+			this.chalSubject = chalSubject;
+		}
 
-	public void setChal_time(int chal_time) {
-		this.chal_time = chal_time;
-	}
+		public String getChalContent() {
+			return chalContent;
+		}
 
-	public int getChal_point() {
-		return chal_point;
-	}
+		public void setChalContent(String chalContent) {
+			this.chalContent = chalContent;
+		}
 
-	public void setChal_point(int chal_point) {
-		this.chal_point = chal_point;
-	}
+		public String getChalStart() {
+			return chalStart;
+		}
 
-	public String getChal_pic1() {
-		return chal_pic1;
-	}
+		public void setChalStart(String chalStart) {
+			this.chalStart = chalStart;
+		}
 
-	public void setChal_pic1(String chal_pic1) {
-		this.chal_pic1 = chal_pic1;
-	}
+		public String getChalPeriod() {
+			return chalPeriod;
+		}
 
-	public String getChal_pic2() {
-		return chal_pic2;
-	}
+		public void setChalPeriod(String chalPeriod) {
+			this.chalPeriod = chalPeriod;
+		}
 
-	public void setChal_pic2(String chal_pic2) {
-		this.chal_pic2 = chal_pic2;
-	}
+		public int getChalTime() {
+			return chalTime;
+		}
 
-	public String getChal_pic3() {
-		return chal_pic3;
-	}
+		public void setChalTime(int chalTime) {
+			this.chalTime = chalTime;
+		}
 
-	public void setChal_pic3(String chal_pic3) {
-		this.chal_pic3 = chal_pic3;
-	}
+		public int getChalPoint() {
+			return chalPoint;
+		}
 
-	public String getReg_date() {
-		return reg_date;
-	}
+		public void setChalPoint(int chalPoint) {
+			this.chalPoint = chalPoint;
+		}
 
-	public void setReg_date(String reg_date) {
-		this.reg_date = reg_date;
-	}
+		public String getChalPic1() {
+			return chalPic1;
+		}
 
-	public String getM_id() {
-		return m_id;
-	}
+		public void setChalPic1(String chalPic1) {
+			this.chalPic1 = chalPic1;
+		}
 
-	public void setM_id(String m_id) {
-		this.m_id = m_id;
-	}
+		public String getChalPic2() {
+			return chalPic2;
+		}
 
-	public int getChal_cnt() {
-		return chal_cnt;
-	}
+		public void setChalPic2(String chalPic2) {
+			this.chalPic2 = chalPic2;
+		}
 
-	public void setChal_cnt(int chal_cnt) {
-		this.chal_cnt = chal_cnt;
-	}
+		public String getChalPic3() {
+			return chalPic3;
+		}
 
-	public String getChal_pw() {
-		return chal_pw;
-	}
+		public void setChalPic3(String chalPic3) {
+			this.chalPic3 = chalPic3;
+		}
 
-	public void setChal_pw(String chal_pw) {
-		this.chal_pw = chal_pw;
-	}
+		public String getRegDate() {
+			return regDate;
+		}
 
-	public String getChal_public() {
-		return chal_public;
-	}
+		public void setRegDate(String regDate) {
+			this.regDate = regDate;
+		}
 
-	public void setChal_public(String chal_public) {
-		this.chal_public = chal_public;
-	}
+		public String getmId() {
+			return mId;
+		}
 
+		public void setmId(String mId) {
+			this.mId = mId;
+		}
+
+		public int getChalCnt() {
+			return chalCnt;
+		}
+
+		public void setChalCnt(int chalCnt) {
+			this.chalCnt = chalCnt;
+		}
+
+		public String getChalPw() {
+			return chalPw;
+		}
+
+		public void setChalPw(String chalPw) {
+			this.chalPw = chalPw;
+		}
+
+		public String getChalPublic() {
+			return chalPublic;
+		}
+
+		public void setChalPublic(String chalPublic) {
+			this.chalPublic = chalPublic;
+		}
+
+	    
 	
 
 	

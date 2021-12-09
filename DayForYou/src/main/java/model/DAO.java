@@ -149,10 +149,11 @@ public class DAO {
 				
 				cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2),
 						rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9),
-						rs.getString(10), rs.getString(11), rs.getString(12),
-						rs.getString(13), rs.getInt(14), rs.getString(15),
-						rs.getString(16));
+						rs.getString(6), rs.getString(7), rs.getInt(8),
+						rs.getInt(9), rs.getString(10),
+						rs.getString(11), rs.getString(12), rs.getString(13),
+						rs.getString(14), rs.getInt(15), rs.getString(16),
+						rs.getString(17));
 				
 				ch_boards.add(cbv);				
 			}
@@ -193,10 +194,11 @@ public class DAO {
 				
 				cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2),
 						rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9),
-						rs.getString(10), rs.getString(11), rs.getString(12),
-						rs.getString(13), rs.getInt(14), rs.getString(15),
-						rs.getString(16));
+						rs.getString(6), rs.getString(7), rs.getInt(8),
+						rs.getInt(9), rs.getString(10),
+						rs.getString(11), rs.getString(12), rs.getString(13),
+						rs.getString(14), rs.getInt(15), rs.getString(16),
+						rs.getString(17));
 								
 				ch_boards.add(cbv);				
 			}
@@ -210,6 +212,8 @@ public class DAO {
 		
 		return ch_boards;
 	}
+
+
 
 	public int ChallInsert(String chall_cat1, String chall_subject, String chall_cat2, String chall_Introduce,
 			String chall_pic1, String chall_start, String chall_period, String chall_Private, String chall_pic12,
