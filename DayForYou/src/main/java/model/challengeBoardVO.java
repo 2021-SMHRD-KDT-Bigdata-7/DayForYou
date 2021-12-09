@@ -6,8 +6,11 @@ public class challengeBoardVO {
 	// 챌린지 순번 챌린지 순번
 	private int chal_seq;
 
-	// 챌린지 카테고리 챌린지 카테고리
-	private String chal_cat;
+	// 챌린지 카테고리 챌린지 카테고리1
+	private String chal_cat1;
+	
+	// 챌린지 카테고리 챌린지 카테고리2
+	private String chal_cat2;
 
 	// 챌린지 제목 챌린지 제목
 	private String chal_subject;
@@ -48,12 +51,13 @@ public class challengeBoardVO {
 	// 챌린지 공식
 	private String chal_public;
 
-	public challengeBoardVO(int chal_seq, String chal_cat, String chal_subject, String chal_content, String chal_period,
-			int chal_time, int chal_point, String chal_pic1, String chal_pic2, String chal_pic3, String reg_date,
-			String m_id, int chal_cnt, String chal_pw, String chal_public) {
+	public challengeBoardVO(int chal_seq, String chal_cat1, String chal_cat2, String chal_subject, String chal_content,
+			String chal_period, int chal_time, int chal_point, String chal_pic1, String chal_pic2, String chal_pic3,
+			String reg_date, String m_id, int chal_cnt, String chal_pw, String chal_public) {
 		super();
 		this.chal_seq = chal_seq;
-		this.chal_cat = chal_cat;
+		this.chal_cat1 = chal_cat1;
+		this.chal_cat2 = chal_cat2;
 		this.chal_subject = chal_subject;
 		this.chal_content = chal_content;
 		this.chal_period = chal_period;
@@ -77,12 +81,20 @@ public class challengeBoardVO {
 		this.chal_seq = chal_seq;
 	}
 
-	public String getChal_cat() {
-		return chal_cat;
+	public String getChal_cat1() {
+		return chal_cat1;
 	}
 
-	public void setChal_cat(String chal_cat) {
-		this.chal_cat = chal_cat;
+	public void setChal_cat1(String chal_cat1) {
+		this.chal_cat1 = chal_cat1;
+	}
+
+	public String getChal_cat2() {
+		return chal_cat2;
+	}
+
+	public void setChal_cat2(String chal_cat2) {
+		this.chal_cat2 = chal_cat2;
 	}
 
 	public String getChal_subject() {

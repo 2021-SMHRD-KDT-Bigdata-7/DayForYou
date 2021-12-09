@@ -132,7 +132,7 @@ public class DAO {
 	/*
 	 * 챌린지 게시판을 출력하는 메소드
 	 */
-	ArrayList<challengeBoardVO> SelectChallengeBoard(){
+	public ArrayList<challengeBoardVO> SelectChallengeBoard(){
 		
 		ch_boards = new ArrayList<>(); 
 		
@@ -149,10 +149,10 @@ public class DAO {
 				
 				cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2),
 						rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getInt(6), rs.getInt(7), rs.getString(8),
-						rs.getString(9), rs.getString(10), rs.getString(11),
-						rs.getString(12), rs.getInt(13), rs.getString(14),
-						rs.getString(15));
+						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9),
+						rs.getString(10), rs.getString(11), rs.getString(12),
+						rs.getString(13), rs.getInt(14), rs.getString(15),
+						rs.getString(16));
 				
 				ch_boards.add(cbv);				
 			}
@@ -171,17 +171,18 @@ public class DAO {
 	 * 챌린지 게시판을 카테고리 별로 출력하는 메소드
 	 * 
 	 * @param cat
-	 * 		  사용자가 입력한 카테고리들을 나열  
+	 * 		  챌린지 큰 그룹을 분류하기 위한 카테고리
+	 * 		  ex) 전체, 그룹, 개인, 추천, 인기... 등  
 	 */
 	
-	ArrayList<challengeBoardVO> SelectChallengeBoard_cat(String cat){
+	public ArrayList<challengeBoardVO> SelectChallengeBoard_cat(String cat){
 		
 		ch_boards = new ArrayList<>(); 
 		
 		connection();
 		
 		try {
-			sql = "select * from tbl_challenge where chal_cat = ?";
+			sql = "select * from tbl_challenge where chal_cat1 = ?";
 			
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, cat);
@@ -192,11 +193,11 @@ public class DAO {
 				
 				cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2),
 						rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getInt(6), rs.getInt(7), rs.getString(8),
-						rs.getString(9), rs.getString(10), rs.getString(11),
-						rs.getString(12), rs.getInt(13), rs.getString(14),
-						rs.getString(15));
-				
+						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9),
+						rs.getString(10), rs.getString(11), rs.getString(12),
+						rs.getString(13), rs.getInt(14), rs.getString(15),
+						rs.getString(16));
+								
 				ch_boards.add(cbv);				
 			}
 		}
