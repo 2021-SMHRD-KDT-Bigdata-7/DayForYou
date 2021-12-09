@@ -211,4 +211,69 @@ public class DAO {
 		return ch_boards;
 	}
 
+	public int ChallInsert(String chall_cat1, String chall_subject, String chall_cat2, String chall_Introduce,
+			String chall_pic1, String chall_start, String chall_period, String chall_Private, String chall_pic12,
+			String chall_pic2, String chall_pic3) {
+		try {
+
+			// JDBD
+			// 1.동적로딩 (클래스를 사용하겠따!!)
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			// 2.연결 객체 생성
+			String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
+			String dbid = "hr";
+			String dbpw = "hr";
+
+			conn = DriverManager.getConnection(url, dbid, dbpw);
+
+			// 3.sql문 준비
+			String sql = "insert into tbl_challenge(chal_seq,chal_cat1,chal_cat2,chal_subject,chal_content,chal_start,chal_period,chal_pic1,chal_pic2,chal_pic3,reg_date) values(TBL_CHALLENGE_SEQ.nextval,?,?,?,?,?,?,?,?,sysdate)";
+			psmt = conn.prepareStatement(sql);
+			
+//			chal_seq
+//			chal_cat1 1
+//			chal_cat2 2 
+//			chal_subject 3 
+//			chal_content 4
+//			chal_Start
+//			chal_period
+//			chal_pic1
+//			chal_pic2
+//			chal_pic3
+//			reg_date
+			
+			// 4.바인드 변수 채우기
+			psmt.setString(1, chall_cat1);
+			psmt.setString(2, chall_cat2);
+			psmt.setString(3, chall_subject);
+			psmt.setString(4, chall_start);
+			psmt.setString(5, chall_period);
+			psmt.setString(6, chall_pic1);
+			psmt.setString(7, chall_pic2);
+			psmt.setString(8, chall_pic3);
+
+			// 5.실행
+			// select-> excuteQuery()--> return ResultSet
+			// insert,delete,update --> executeUpdate()--->return int(몇 행이 성공했는지)
+
+			cnt = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+			}
+		}
+		return cnt;
+	}
+
 }
