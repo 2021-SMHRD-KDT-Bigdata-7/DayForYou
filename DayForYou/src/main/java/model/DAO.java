@@ -49,7 +49,7 @@ public class DAO {
 			e.printStackTrace();
 		}
 	}
-
+//=============================로그인==============================
 	public MemberVo login(String id, String pw) {
 		connection();
 		try {
@@ -87,8 +87,8 @@ public class DAO {
 
 		return vo;
 	}
-
-	public int Join(String id, String pw, String name, String nick, String phone, String email, String birthdate,
+//==================================회원가입=============================
+	public int Join(String id, String pw, String name, String nick, String phone, String email, String birthday,
 			String gender, String job, String address) {
 
 		connection();
@@ -106,7 +106,7 @@ public class DAO {
 			psmt.setString(4, nick);
 			psmt.setString(5, phone);
 			psmt.setString(6, email);
-			psmt.setString(7, birthdate);
+			psmt.setString(7, birthday);
 			psmt.setString(8, gender);
 			psmt.setString(9, job);
 			psmt.setString(10, address);

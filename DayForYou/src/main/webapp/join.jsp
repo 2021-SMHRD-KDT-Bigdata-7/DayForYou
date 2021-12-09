@@ -57,32 +57,32 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-25">
+				<div class="wrap-input100 validate-input m-b-20">
 
-					<input class="input100" type="password" name="name"
-						placeholder="name"> <span class="focus-input100"></span>
+					<input class="input100" type="text" name="name" placeholder="name"> 
+						<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-25">
-					<input class="input100" type="password" name="nick"
-						placeholder="nick"> <span class="focus-input100"></span>
+				<div class="wrap-input100 validate-input m-b-20">
+					<input class="input100" type="text" name="nick" placeholder="nick"> 
+						<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-25">
-					<input class="input100" type="password" name="phone"
-						placeholder="phone"> <span class="focus-input100"></span>
+				<div class="wrap-input100 validate-input m-b-20">
+					<input class="input100" type="text" name="phone"placeholder="phone"> 
+					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-25">
-					<input class="input100" type="password" name="email"
-						placeholder="email"> <span class="focus-input100"></span>
+				<div class="wrap-input100 validate-input m-b-20">
+					<input class="input100" type="text" name="email" placeholder="email"> 
+					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-25">
-					<input class="input100" type="password" name="birthday"
-						placeholder="birthday"> <span class="focus-input100"></span>
+				<div class="wrap-input100 validate-input m-b-20">
+					<input class="input100" type="text" name="birthday"placeholder="birthday">
+					 <span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input m-b-25" align="center">
+				<div class="wrap-input100 " align="center">
 
 
 
@@ -98,6 +98,7 @@
 							<td style="padding: 29px;"></td>
 							<th><input type="radio" id="woman" name="gender">
 							<label for="woman">woman</label></th>
+							<span class="focus-input100"></span>
 						</tr>
 
 					</table>

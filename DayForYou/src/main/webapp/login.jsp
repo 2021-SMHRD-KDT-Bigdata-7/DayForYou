@@ -69,13 +69,13 @@
 				
 
 				
-				<form action="join.jsp">
+				
 				<div class="text-center">
-					<a href="#" class="txt2 hov1">
+					<a href="join.jsp" class="txt2 hov1">
 						Sign Up
 					</a>
 				</div>
-			</form>
+			
 
 			
 		</div>

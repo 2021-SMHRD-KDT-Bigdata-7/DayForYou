@@ -34,7 +34,7 @@ public class loginService extends HttpServlet {
 		}else {
 			System.out.print("로그인 실패");
 		}
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("index.html");
 		 
 		
 	}

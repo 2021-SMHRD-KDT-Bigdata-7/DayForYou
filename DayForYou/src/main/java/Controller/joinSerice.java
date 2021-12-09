@@ -14,8 +14,8 @@ import model.MemberVo;
 
 
 
-@WebServlet("/JoinService")
-public class JoinSerice extends HttpServlet {
+@WebServlet("/joinService")
+public class joinSerice extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,9 +42,9 @@ public class JoinSerice extends HttpServlet {
 	      
 	      if(cnt > 0) {            
 	         request.setAttribute("vo",new MemberVo(id, pw,name,nick, phone, email, birthdate, gender, job, address));
-	         RequestDispatcher rd = request.getRequestDispatcher("join_success.jsp");
+	         RequestDispatcher rd = request.getRequestDispatcher("index.html");
 	         rd.forward(request, response);
-	         response.sendRedirect("main.jsp");
+	         response.sendRedirect("index.html");
 	      }
 	      
 	      if(cnt > 0) {
