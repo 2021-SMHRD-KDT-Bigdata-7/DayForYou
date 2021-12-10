@@ -33,12 +33,12 @@
 	</div>
 	<br>
 	<div style="padding: 30px;">
-		<form action="ChallService" method="post"
-			enctype="multipart/form-data">
-			<hr style="border: solid 1px gray;">
+		<form action="ChallService" method="post" enctype="multipart/form-data">
+			<hr style="border: solid 1px red;">
 			<tr height="35px" bgcolor="whitesmoke">
-				<td align="right">챌린지 분류</td>
-				<td align="left"><select name="chall_cat1">
+				<td align="right" >챌린지 분류</td>
+				<td align="left">
+				<select name="chall_cat1">
 						<option value="개인">개인</option>
 						<option value="그룹">그룹</option>
 						<option value="전체">전체</option>
@@ -46,48 +46,49 @@
 						<option value="추천">추천</option>
 				</select></td>
 			</tr>
-			<hr style="border: solid 1px gray;">
+			<hr style="border: solid 1px red;">
 			<h5 align="center">어떤 주제와 관련이 있나요?</h5>
 			<br>
 
 			<ul>
 				<li><span class="radio" id="all_list"> <input
-						type="radio" id="view_all1" name="chall_cat2" value="health">
-						<label for="view_all1"><span class="round"></span>건강</label>
+						type="radio" id="view_all1" name="chall_cat2" value="health"
+						> <label for="view_all1"><span
+							class="round"></span>건강</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_live1" name="chall_cat2" value="emotion">
-						<label for="view_live1"> <span class="round"></span>정서
+						type="radio" id="view_live1" name="chall_cat2" value="emotion"> <label
+						for="view_live1"> <span class="round"></span>정서
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_live2" name="chall_cat2" value="life">
-						<label for="view_live2"> <span class="round"></span>생활
+						type="radio" id="view_live2" name="chall_cat2" value="life"> <label
+						for="view_live2"> <span class="round"></span>생활
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_live3" name="chall_cat2" value="ability">
-						<label for="view_live3"> <span class="round"></span>역량
+						type="radio" id="view_live3" name="chall_cat2" value="ability"> <label
+						for="view_live3"> <span class="round"></span>역량
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_live4" name="chall_cat2" value="asset">
-						<label for="view_live4"> <span class="round"></span>자산
+						type="radio" id="view_live4" name="chall_cat2" value="asset"> <label
+						for="view_live4"> <span class="round"></span>자산
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_live5" name="chall_cat2" value="hobby">
-						<label for="view_live5"> <span class="round"></span>취미
+						type="radio" id="view_live5" name="chall_cat2" value="hobby"> <label
+						for="view_live5"> <span class="round"></span>취미
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_live6" name="chall_cat2" value="etc">
-						<label for="view_live6"> <span class="round"></span>그외
+						type="radio" id="view_live6" name="chall_cat2" value="etc"> <label
+						for="view_live6"> <span class="round"></span>그외
 					</label>
 				</span></li>
 			</ul>
 			<br> <br> <br>
-			<hr style="border: solid 1px gray;">
+			<hr style="border: solid 1px red;">
 			<br>
 			<h5 align="center">챌린지 제목을 입력해주세요.</h5>
 			<br>
@@ -97,7 +98,7 @@
 				<input type="text" name="chall_subject" style="width: 300px"><br>
 			</div>
 			<br>
-			<hr style="border: solid 1px gray;">
+			<hr style="border: solid 1px red;">
 			<br>
 
 			<!--===========================================================  -->
@@ -107,34 +108,31 @@
 			<!-- 밑 사이즈 작게 -->
 			<div align="center">
 
-				<textarea name="chall_Introduce" id="" cols="34" rows="5"
-					placeholder="추가 글로 챌린지를 자세히 소개해보세요."></textarea>
+				<textarea name="chall_Introduce" id="" cols="32" rows="5" placeholder="추가 글로 챌린지를 자세히 소개해보세요."></textarea>
 			</div>
 			<!-- 글자수 체크해주는 것 넣어야함 -->
 			<br> <br>
-			<hr style="border: solid 1px gray;">
-			<input type="file" id="chooseFile1" name="chall_pic1"
-				accept="image/*" onchange="loadFile(this)">
+			<hr style="border: solid 1px red;">
 			<h5 align="center">챌린지 대표 이미지를 등록하세요.</h5>
 			<br>
 			<!-- ================================================================== -->
 			<div align="center">
 
 				<div class="single-image-1">
-					<label for="chooseFile1">
-						<div class="labelbox">
-							<p id="labeltext">클릭</p>
-						</div>
-					</label>
+					<div class="single-image-2">
+
+						<label class="single-label" for="chooseFile1">
+							<div class="labelbox"></div>
+						</label> <input type="file" id="chooseFile1" name="chall_pic1"
+							accept="image/*" onchange="loadFile(this)"> <img
+							id="image1" />
+					</div>
 				</div>
-			</div>
-			<div align="center">
-				<img id="image1" />
 			</div>
 			<!-- ================================================================== -->
 			<br> <br>
 
-			<hr style="border: solid 1px gray;">
+			<hr style="border: solid 1px red;">
 
 			<!--===========================================================  -->
 			<h5 align="center">챌린지 시작일</h5>
@@ -170,14 +168,15 @@
 				</span></li>
 			</ul>
 			<br> <br>
-			<hr style="border: solid 1px gray;">
+			<hr style="border: solid 1px red;">
 			<br>
 			<h5 align="center">챌린지 기간</h5>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
-						type="radio" id="view_all3" name="chall_period" value="1_day">
-						<label for="view_all3"><span class="round"></span>1 Day</label>
+						type="radio" id="view_all3" name="chall_period" value="1_day"
+						> <label for="view_all3"><span
+							class="round"></span>1 Day</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_li1" name="chall_period" value="1_week">
@@ -209,93 +208,75 @@
 			<p id="period" style="display: none;"></p>
 
 			<!-- 챌린지 예상 종료일 보여주는 부분 있으면 좋을듯-->
-			<hr style="border: solid 1px gray;">
+			<hr style="border: solid 1px red;">
 			<br>
 			<h5 align="center">모집 방식을 선택해주세요.</h5>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
-						type="radio" id="view_all4" name="chall_Private" value="official"
-						onClick="this.form.chall_pw.disabled=true"> <label
-						for="view_all4"><span class="round"></span>공개모집</label> <!-- 기본은 공개모집 으로써 공개모집 선택시 태그설정탭-->
+						type="radio" id="view_all4" name="chall_Private" value="official" onClick="this.form.chall_pw.disabled=true"
+						> <label for="view_all4"><span
+							class="round"></span>공개모집</label> <!-- 기본은 공개모집 으로써 공개모집 선택시 태그설정탭-->
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_l1" name="chall_Private" value="informal"
-						onClick="this.form.chall_pw.disabled=false"> <label
-						for="view_l1"> <span class="round"></span>비공개모집
+						type="radio" id="view_l1" name="chall_Private" value="informal" onClick="this.form.chall_pw.disabled=false">
+						<label for="view_l1"> <span class="round"></span>비공개모집
 					</label> <!-- 비밀번호 설정 창이 나와야함 (참가코드설정)-->
 				</span></li>
 				<br>
 			</ul>
-			<div align="center">
-				<input type="text" name="chall_pw" size="30" disabled
-					placeholder="비밀번호를 입력해 주세요">
-			</div>
+				<div align="center">
+					<input type="text" name="chall_pw" size="30" disabled placeholder="비밀번호를 입력해 주세요">
+				</div>
 
-			<br> <br>
-			<hr style="border: solid 1px gray;">
+				<br>
+				<br>
+			<hr style="border: solid 1px red;">
 
 			<br>
 			<h5 align="center">인증샷 예시를 등록하세요.</h5>
 			<br>
 			<p class="mb-3">다른 사람들과 함께하게 된다면, 정확한 기준일수록 향후 분쟁 소지가 적습니다.</p>
 			<br>
-				<table align="center" border="1px" style="width: 400px; height: 500px; table-layout :fixed;">
-					
-					
-					<tr align="center" >
-						<th>좋은 인증샷 예시</th>
-						<th>나쁜 인증샷 예시</th>
-					</tr>
-					<tr align="center">
-					<td >
+			<div>
+				<div class="flex-container">
+					<div class="flex-item">
+
+						좋은 인증샷 예시
+						<div class="single-image-1">
+							<div class="single-image-2">
+								<label class="single-label" for="chooseFile2">
+									<div class="labelbox"></div>
+								</label> <input type="file" id="chooseFile2" name="chall_pic2"
+									accept="image/*" onchange="loadFile(this)"> <img
+									id="image2" />
+							</div>
+						</div>
+					</div>
+
+					<div class="flex-item">
+						나쁜 인증샷 예시
 
 						<div class="single-image-1">
-							<label class="single-label" for="chooseFile2">
-							<input type="file" id="chooseFile2" name="chall_pic2"
-							accept="image/*" onchange="loadFile(this)">
-								<div class="labelbox">
-									<p id="labeltext">클릭</p>
-								</div>
-							</label>
-						</div>
-					</td>
-					<td>
-						<div class="single-image-1">
-							<label class="single-label" for="chooseFile3">
-							<input type="file" id="chooseFile3" name="chall_pic3"
-							accept="image/*" onchange="loadFile(this)">
+							<div class="single-image-2">
+								<label class="single-label" for="chooseFile3">
 
-								<div class="labelbox">
-									<p id="labeltext">클릭</p>
-								</div>
-							</label>
+									<div class="labelbox"></div>
+								</label> <input type="file" id="chooseFile3" name="chall_pic3"
+									accept="image/*" onchange="loadFile(this)"> <img
+									id="image3" />
+							</div>
 						</div>
-					</td>
-					</tr>
-					<tr style="height: 200px">
-					<td height="0">
-						<div style="height: 100%"><img id="image2" height=100%/></div>
-						
-					</td>
-					<td height="0">
-						<div style="height: 100%"><img id="image3" height=100%/></div>
-					</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-
-					</tr>
-				</table>
+					</div>
 				</div>
+			</div>
 			<br> <br> <br> <br>
 	</div>
-	<hr style="border: solid 1px gray;">
+	<hr style="border: solid 1px red;">
 	<br>
 	<!-- 마지막 제출을 누를시 모든것을 보여주는 창이있으면 좋겠음 -->
 	<input type="submit"
-		style="width: 300px; background-color: #caffbf; margin-bottom: 30px; margin-left: 50px;"
+		style="width: 300px; background-color: greenyellow; margin-bottom: 30px; margin-left: 50px;"
 		value="챌린지 개설하기">
 	</form>
 

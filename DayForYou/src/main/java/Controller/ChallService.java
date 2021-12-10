@@ -32,7 +32,7 @@ public class ChallService extends HttpServlet {
 		int maxSize = 5*1024*1024;
 		//인코딩 타입
 		String encoding = "euc-kr";
-		MultipartRequest multi = new MultipartRequest(request, savePath,maxSize,encoding,new DefaultFileRenamePolicy());
+		MultipartRequest multi = new MultipartRequest(request, savePath,maxSize,encoding);
 		//파라미터 수집
 		
 		

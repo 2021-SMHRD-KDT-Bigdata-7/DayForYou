@@ -49,6 +49,15 @@ h6 {
   line-height: 1.3;
   font-family: "helveticaneuemedium"; }
 /* 유태현 추가한 부분*/
+/* table {
+	width: "600";
+	width: "400";
+	border:"1";
+	cellpadding:"3";
+	cellspacing:"0";
+	table-layout: fixed;
+}
+ */
 
 input[type="radio"] {
     display: none;
@@ -68,36 +77,23 @@ input[type="radio"]:checked + label span.round {
 }
 
 .single-image-1 {
-  display: flex;
-  justify-content: left;
-  
-  width: 150px;
-  height: 150px;
-  background-color: green;
+  background-color: #fdffb6;
+  width: 50px;
+  height: 40px;
 }
-.single-image-2 {
-  position: relative;
-  top: 25px;
-  left: 25px;
-  right: 25px;
-  bottom: 25px;
-  display: flex;
-  justify-content: left;
-  width: 100px;
-  height: 100px;
-  background-color: yellow;
+#labeltext{
+	position: relative;
+	top:5px;
+	font-size : 15px;
+	color : ffd6a5;
 }
-.single-label{
-position: relative;
-top: 25px;
-left: 25px;
-right: 25px;
-bottom: 25px;
-}
+
 .labelbox{
-width: 50px;
-height: 50px;
-background-color: red;
+	position: relative;
+	top: 5px;
+	width: 40px;
+	height: 30px;
+	background-color: #caffbf;
 }
 .flex-container{
   display: flex;
@@ -110,13 +106,13 @@ background-color: red;
 }
 
 #chooseFile1 {
-  visibility: hidden;
+	display: none;
 }
 #chooseFile2 {
-  visibility: hidden;
+	display: none;
 }
 #chooseFile3 {
-  visibility: hidden;
+	display: none;
 }
 /* 김태현 추가한 부분*/
 
