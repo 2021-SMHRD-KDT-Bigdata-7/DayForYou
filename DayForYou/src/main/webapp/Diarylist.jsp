@@ -78,11 +78,11 @@
 						<div class="breaking-news-area">
 							<div id="breakingNewsTicker" class="ticker">
 								<ul>
-									<li><a href="#">12�� 二쇱�� 怨듭��ы�� ���명��湲�</a></li>
-									<li><a href="#">吏�湲� 媛��� �멸린���� 梨�由곗� ���щ낫湲�</a></li>
-									<li><a href="#">�� ��硫댁���� �� �ъ�� �대깽�몃�� ���명���몄��!</a></li>
-									<li><a href="#">�곗�댄�ъ��濡� 媛��⑦��寃� �쇱��愿�由щ�� �대낫�몄��</a></li>
-									<li><a href="#">異�泥� ������ ����寃� 留��� 梨�由곗� ����蹂닿린!</a></li>
+									<li><a href="#">record your day with Dayforyou</a></li>
+									<li><a href="#">It's winter</a></li>
+									<li><a href="#">Merry Christmas!</a></li>
+									<li><a href="#">Good day:)</a></li>
+									<li><a href="#">Do challenge with Dayforyou!</a></li>
 								</ul>
 							</div>
 						</div>
@@ -221,7 +221,7 @@
 
 
 
-	<!--diary遺�遺�============================================================================= -->
+	<!--diary============================================================================= -->
 	<div class="blog-wrapper section-padding-100-0 clearfix">
 		<div class="container">
 			<div class="row align-items-end">
@@ -242,9 +242,9 @@
 							<div>
 								<table id="table11" align="center" width="400px" height="400px">
 									<tr align="center">
-										<td>踰���</td>
-										<td>�쇨린��紐�</td>
-										<td>���깅��吏�</td>
+										<td>Number</td>
+										<td>Title</td>
+										<td>Date</td>
 									</tr>
 									<%for(diaryVO dvo : diarys) {%>
 									<tr align="center">
@@ -253,7 +253,7 @@
 											href="DiarySingleService?diary_seq=<%=dvo.getDiary_seq()%>"><%=dvo.getDiary_subject()%></a></td>
 										<td><%=dvo.getReg_date() %></td>
 									</tr>
-									<!--���� 異�媛� -->
+									
 									<script>
  
 										function test(ths){
@@ -270,7 +270,7 @@
 
 							<div>
 								<hr>
-								<button class="button4" id="more">��蹂닿린</button>
+								<button class="button4" id="more">������</button>
 							</div>
 							<h4>
 								<a href="#" class="post-headline"></a>
@@ -373,7 +373,7 @@
 
 		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 		<script>document.write(new Date().getFullYear());</script>
-		�댁�⑹�쎄� | 媛��몄��蹂댁�由щ갑移� <a href="https://colorlib.com" target="_blank">000-0000-0000</a>
+		
 		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 	</footer>
