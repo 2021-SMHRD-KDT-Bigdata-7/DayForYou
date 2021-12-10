@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <!-- Style CSS -->
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chall_style.css">
 
 </head>
 
@@ -32,21 +32,27 @@
 		</div>
 	</div>
 	<br>
+
+
 	<div style="padding: 30px;">
 		<form action="ChallService" method="post"
 			enctype="multipart/form-data">
+
 			<hr style="border: solid 1px gray;">
-			<tr height="35px" bgcolor="whitesmoke">
-				<td align="right">챌린지 분류</td>
-				<td align="left"><select name="chall_cat1">
-						<option value="개인">개인</option>
-						<option value="그룹">그룹</option>
-						<option value="전체">전체</option>
-						<option value="인기">인기</option>
-						<option value="추천">추천</option>
-				</select></td>
-			</tr>
+			<table>
+				<tr height="35px" bgcolor="whitesmoke">
+					<td align="right">챌린지 분류</td>
+					<td align="left"><select name="chall_cat1">
+							<option value="개인">개인</option>
+							<option value="그룹">그룹</option>
+							<option value="전체">전체</option>
+							<option value="인기">인기</option>
+							<option value="추천">추천</option>
+					</select></td>
+				</tr>
+			</table>
 			<hr style="border: solid 1px gray;">
+
 			<h5 align="center">어떤 주제와 관련이 있나요?</h5>
 			<br>
 
@@ -116,10 +122,8 @@
 			<input type="file" id="chooseFile1" name="chall_pic1"
 				accept="image/*" onchange="loadFile(this)">
 			<h5 align="center">챌린지 대표 이미지를 등록하세요.</h5>
-			<br>
 			<!-- ================================================================== -->
 			<div align="center">
-
 				<div class="single-image-1">
 					<label for="chooseFile1">
 						<div class="labelbox">
@@ -127,10 +131,12 @@
 						</div>
 					</label>
 				</div>
+				<br>
+			<div class="image-box" align="center">
+				<img class="image-thumbnail" id="image1" />
 			</div>
-			<div align="center">
-				<img id="image1" />
 			</div>
+
 			<!-- ================================================================== -->
 			<br> <br>
 
@@ -225,8 +231,8 @@
 						for="view_l1"> <span class="round"></span>비공개모집
 					</label> <!-- 비밀번호 설정 창이 나와야함 (참가코드설정)-->
 				</span></li>
-				<br>
 			</ul>
+			<br>
 			<div align="center">
 				<input type="text" name="chall_pw" size="30" disabled
 					placeholder="비밀번호를 입력해 주세요">
@@ -235,69 +241,64 @@
 			<br> <br>
 			<hr style="border: solid 1px gray;">
 
+
+
+
 			<br>
 			<h5 align="center">인증샷 예시를 등록하세요.</h5>
 			<br>
 			<p class="mb-3">다른 사람들과 함께하게 된다면, 정확한 기준일수록 향후 분쟁 소지가 적습니다.</p>
 			<br>
-				<table align="center" border="1px" style="width: 400px; height: 500px; table-layout :fixed;">
-					
-					
-					<tr align="center" >
-						<th>좋은 인증샷 예시</th>
-						<th>나쁜 인증샷 예시</th>
-					</tr>
-					<tr align="center">
-					<td >
-
-						<div class="single-image-1">
-							<label class="single-label" for="chooseFile2">
-							<input type="file" id="chooseFile2" name="chall_pic2"
-							accept="image/*" onchange="loadFile(this)">
-								<div class="labelbox">
-									<p id="labeltext">클릭</p>
-								</div>
-							</label>
+			<!--=========================================================================  -->
+			<!--=========================================================================  -->
+			<!--=========================================================================  -->
+			<!--=========================================================================  -->
+			<input type="file" id="chooseFile2" name="chall_pic2" accept="image/*"
+						onchange="loadFile(this)">
+			<div class="image-box">
+				<h5>좋은 인증샷 예시</h5>
+				<div class="single-image-1">
+					<label class="single-label" for="chooseFile2"> 
+						<div class="labelbox">
+							<p id="labeltext">클릭</p>
 						</div>
-					</td>
-					<td>
-						<div class="single-image-1">
-							<label class="single-label" for="chooseFile3">
-							<input type="file" id="chooseFile3" name="chall_pic3"
-							accept="image/*" onchange="loadFile(this)">
-
-								<div class="labelbox">
-									<p id="labeltext">클릭</p>
-								</div>
-							</label>
-						</div>
-					</td>
-					</tr>
-					<tr style="height: 200px">
-					<td height="0">
-						<div style="height: 100%"><img id="image2" height=100%/></div>
-						
-					</td>
-					<td height="0">
-						<div style="height: 100%"><img id="image3" height=100%/></div>
-					</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-
-					</tr>
-				</table>
+					</label>
 				</div>
-			<br> <br> <br> <br>
+			</div>
+			<div class="image-box">
+				<img class="image-thumbnail" id="image2" /> <br>
+			</div>
+			<div class="image-box">
+				<h5>나쁜 인증샷 예시</h5>
+				<div class="single-image-1">
+					<label class="single-label" for="chooseFile3"> <input
+						type="file" id="chooseFile3" name="chall_pic3" accept="image/*"
+						onchange="loadFile(this)">
+						<div class="labelbox">
+							<p id="labeltext">클릭</p>
+						</div>
+					</label>
+
+
+				</div>
+			</div>
+			<div class="image-box">
+				<img class="image-thumbnail" id="image3" /> <br>
+			</div>
+			<!--=========================================================================  -->
+			<!--=========================================================================  -->
+			<!--=========================================================================  -->
+			<!--=========================================================================  -->
+			<hr style="border: solid 1px gray;">
+			<br>
+			<!-- 마지막 제출을 누를시 모든것을 보여주는 창이있으면 좋겠음 -->
+			<div align="center">
+			<input type="submit"
+				style="width: 300px; background-color: ##caffbf; "
+				value="챌린지 개설하기">
+			</div>
+		</form>
 	</div>
-	<hr style="border: solid 1px gray;">
-	<br>
-	<!-- 마지막 제출을 누를시 모든것을 보여주는 창이있으면 좋겠음 -->
-	<input type="submit"
-		style="width: 300px; background-color: #caffbf; margin-bottom: 30px; margin-left: 50px;"
-		value="챌린지 개설하기">
-	</form>
 
 
 
@@ -313,91 +314,101 @@
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
-				var StartDate= new Date();
-				$('input[name="chall_period"]').on('change', function(){
+		var StartDate = new Date();
+		$('input[name="chall_period"]').on(
+				'change',
+				function() {
 					var now = new Date(StartDate);
-					
+
 					let changed = $(this).val();
 					console.log(changed)
-					
-					if(changed == '1_day'){
-						now.setDate(now.getDate()+1);
-					}else if(changed == '1_month'){
-						now.setMonth(now.getMonth()+1);
-					}else if(changed == '1_week'){
-						now.setDate(now.getDate()+7);
-					}else if(changed == '2_weeks'){
+
+					if (changed == '1_day') {
+						now.setDate(now.getDate() + 1);
+					} else if (changed == '1_month') {
+						now.setMonth(now.getMonth() + 1);
+					} else if (changed == '1_week') {
+						now.setDate(now.getDate() + 7);
+					} else if (changed == '2_weeks') {
 						now.setDate(now.getDate() + 14);
-					}else{
+					} else {
 						now.setDate(now.getDate() + 21);
 					}
-					
+
 					var year = now.getFullYear();
 					var month = now.getMonth() + 1;
 					var day = now.getDate();
 					var hours = now.getHours();
 					var minutes = now.getMinutes();
-					
+
 					var today = new Date();
-					
-					$('#period').html(" ~ "+year + "년도" + month + "월 " + day + "일 " + hours + "시" + minutes + "분 까지")
+
+					$('#period').html(
+							" ~ " + year + "년도" + month + "월 " + day + "일 "
+									+ hours + "시" + minutes + "분 까지")
 					$('#period').css('display', 'block');
 				});
-				
-				$('input[name="chall_start"]').on('change', function(){
+
+		$('input[name="chall_start"]').on(
+				'change',
+				function() {
 					var now = new Date();
-					
+
 					let changed = $(this).val();
-					
-					
+
 					var today = new Date();
-					if(changed == 'today'){
+					if (changed == 'today') {
 						now.setDate(now.getDate());
-					}else if(changed == '1_month'){
+					} else if (changed == '1_month') {
 						now.setMonth(now.getMonth() + 1);
-					}else if(changed == '1_week'){
-						now.setDate(now.getDate()+7);
-					}else{
+					} else if (changed == '1_week') {
+						now.setDate(now.getDate() + 7);
+					} else {
 						now.setDate(now.getDate() + 14);
 					}
-					
+
 					var eyear = now.getFullYear();
 					var emonth = now.getMonth() + 1;
 					var eday = now.getDate();
 					var ehours = now.getHours();
 					var eminutes = now.getMinutes();
-				
-					if(changed == 'today'){
-						$('.start1').css('display', 'inline').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+
+					if (changed == 'today') {
+						$('.start1').css('display', 'inline').html(
+								eyear + "년도" + emonth + "월 " + eday + "일 "
+										+ ehours + "시" + eminutes + "분")
 						$('.start2').css('display', 'none');
 						$('.start3').css('display', 'none');
 						$('.start4').css('display', 'none');
-					}else if(changed == '1_month'){
+					} else if (changed == '1_month') {
 						$('.start4').css('display', 'inline');
-						$('.start4').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+						$('.start4').html(
+								eyear + "년도" + emonth + "월 " + eday + "일 "
+										+ ehours + "시" + eminutes + "분")
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');
 						$('.start3').css('display', 'none');
-					}else if(changed == '1_week'){
+					} else if (changed == '1_week') {
 						$('.start2').css('display', 'inline');
-						$('.start2').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+						$('.start2').html(
+								eyear + "년도" + emonth + "월 " + eday + "일 "
+										+ ehours + "시" + eminutes + "분")
 						$('.start1').css('display', 'none');
 						$('.start3').css('display', 'none');
 						$('.start4').css('display', 'none');
-					}else{
+					} else {
 						$('.start3').css('display', 'inline');
-						$('.start3').html(eyear + "년도" + emonth + "월 " + eday + "일 " + ehours + "시" + eminutes + "분" )
+						$('.start3').html(
+								eyear + "년도" + emonth + "월 " + eday + "일 "
+										+ ehours + "시" + eminutes + "분")
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');
 						$('.start4').css('display', 'none');
 					}
-					
-					
+
 					StartDate = now;
 				});
-				
-				
-			</script>
+	</script>
 </body>
 
 </html>
