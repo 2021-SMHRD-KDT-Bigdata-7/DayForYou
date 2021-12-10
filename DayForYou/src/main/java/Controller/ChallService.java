@@ -37,28 +37,27 @@ public class ChallService extends HttpServlet {
 		
 		
 //      chall_cat1//챌린지 분류
-		String chall_cat1 = request.getParameter("chall_cat1");
+		String chall_cat1 = multi.getParameter("chall_cat1");
 //      chall_title//챌린지 제목
-		String chall_subject = request.getParameter("chall_subject");
+		String chall_subject = multi.getParameter("chall_subject");
 //      chall_cat2//챌린지 분류2
-		String chall_cat2 = request.getParameter("chall_cat2");
+		String chall_cat2 = multi.getParameter("chall_cat2");
 //      chall_Introduce//챌린지 소개내용
-		String chall_Introduce = request.getParameter("chall_Introduce");
+		String chall_Introduce = multi.getParameter("chall_Introduce");
 //      chooseFile_1//챌린지 소개 사진
-		String chall_pic1 = multi.getFilesystemName("chall_pic1");
+		String chall_pic1 = "img/challenge_sample/"+ multi.getFilesystemName("chall_pic1");
 //      chall_start//챌린지 시작날짜( 등록 일자 )
-		String chall_start = request.getParameter("chall_start");
+		String chall_start = multi.getParameter("chall_start");
 //      chall_period//챌린지 기한
-		String chall_period = request.getParameter("chall_period");
+		String chall_period = multi.getParameter("chall_period");
 //      chall_Private//챌린지 공개 비공개
-		String chall_Private = request.getParameter("chall_Private");
+		String chall_Private = multi.getParameter("chall_Private");
 //      chooseFile_2//첼린지 인증 좋은예
-		String chall_pic2 = multi.getFilesystemName("chall_pic2");
+		String chall_pic2 ="img/challenge_sample/"+  multi.getFilesystemName("chall_pic2");
 //      chooseFile_3//챌린지 인증 나쁜예
-		String chall_pic3 = multi.getFilesystemName("chall_pic3");
+		String chall_pic3 ="img/challenge_sample/"+  multi.getFilesystemName("chall_pic3");
 //      chall_pw//챌린지 모집 비밀번호
-		String chall_pw = request.getParameter("chall_pw");
-		
+		String chall_pw = multi.getParameter("chall_pw");
 		Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         DateFormat df = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분");

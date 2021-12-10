@@ -269,7 +269,7 @@ public class DAO {
 			psmt.setString(7, chall_pic1);
 			psmt.setString(8, chall_pic2);
 			psmt.setString(9, chall_pic3);
-			psmt.setString(10, vo.getId());
+			psmt.setString(10, "a");
 			psmt.setString(11, chall_Private);
 			psmt.setString(12, chall_pw);
 

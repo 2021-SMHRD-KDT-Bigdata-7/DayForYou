@@ -33,7 +33,7 @@
 	</div>
 	<br>
 	<div style="padding: 30px;">
-		<form action="ChallService">
+		<form action="ChallService" method="post" enctype="multipart/form-data">
 			<hr style="border: solid 1px red;">
 			<tr height="35px" bgcolor="whitesmoke">
 				<td align="right" >챌린지 분류</td>
@@ -182,7 +182,7 @@
 						type="radio" id="view_li1" name="chall_period" value="1_week">
 						<label for="view_li1"> <span class="round"></span>1 Week
 					</label>
-				</span></li>\
+				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_li2" name="chall_period" value="2_weeks">
 						<label for="view_li2"> <span class="round"></span>2 Weeks
