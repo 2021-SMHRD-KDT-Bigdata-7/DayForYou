@@ -44,9 +44,6 @@
 			<form class="login100-form validate-form" action="joinService">
 				<span class="login100-form-title p-b-37"> sing up </span>
 
-
-
-
 				<div class="wrap-input100 validate-input m-b-20">
 					<input class="input100" type="text" name="id" placeholder="id">
 					<span class="focus-input100"></span>
@@ -59,28 +56,28 @@
 
 				<div class="wrap-input100 validate-input m-b-20">
 
-					<input class="input100" type="text" name="name" placeholder="name"> 
-						<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input m-b-20">
-					<input class="input100" type="text" name="nick" placeholder="nick"> 
-						<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input m-b-20">
-					<input class="input100" type="text" name="phone"placeholder="phone"> 
+					<input class="input100" type="text" name="name" placeholder="name">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20">
-					<input class="input100" type="text" name="email" placeholder="email"> 
+					<input class="input100" type="text" name="nick" placeholder="nick">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20">
-					<input class="input100" type="text" name="birthday"placeholder="birthday">
-					 <span class="focus-input100"></span>
+					<input class="input100" type="text" name="phone"
+						placeholder="phone"> <span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-20">
+					<input class="input100" type="text" name="email"
+						placeholder="email"> <span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-20">
+					<input class="input100" type="text" name="birthday"
+						placeholder="birthday"> <span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 " align="center">
 
@@ -93,11 +90,13 @@
 				<div class="wrap-input100 validate-input m-b-25" align="center">
 					<table>
 						<tr>
-							<th><input type="radio" id="man" name="gender"></td>
-							<label for="man">man</label></th>
+							<th><input type="radio" id="man" value="M" name="gender">
+							
+							<label for="man">MAN</label>
+							</th>
 							<td style="padding: 29px;"></td>
-							<th><input type="radio" id="woman" name="gender">
-							<label for="woman">woman</label></th>
+							<th><input type="radio" id="woman" value="W" name="gender"> <label
+								for="woman">WOMAN</label></th>
 							<span class="focus-input100"></span>
 						</tr>
 
@@ -107,12 +106,12 @@
 
 					<table>
 						<tr>
-							
-							<th><input type="radio" id="student" name="job" value="student">
-							<label for="student">student</label></th>
+
+							<th><input type="radio" id="student" name="job"
+								value="student"> <label for="student">student</label></th>
 							<td style="padding: 20px;"></td>
-							<th><input type="radio" id="worker" name="job" value="worker">
-							<label for="worker">worker</label></th>
+							<th><input type="radio" id="worker" name="job"
+								value="worker"> <label for="worker">worker</label></th>
 						</tr>
 
 					</table>

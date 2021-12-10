@@ -13,8 +13,6 @@
 <title>Document</title>
 <!-- Style CSS -->
 <link rel="stylesheet" href="style.css">
-<style>
-</style>
 
 </head>
 
@@ -217,18 +215,23 @@
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
-						type="radio" id="view_all4" name="chall_Private" value="official"
+						type="radio" id="view_all4" name="chall_Private" value="official" onClick="this.form.chall_pw.disabled=true"
 						> <label for="view_all4"><span
 							class="round"></span>공개모집</label> <!-- 기본은 공개모집 으로써 공개모집 선택시 태그설정탭-->
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
-						type="radio" id="view_l1" name="chall_Private" value="informal">
+						type="radio" id="view_l1" name="chall_Private" value="informal" onClick="this.form.chall_pw.disabled=false">
 						<label for="view_l1"> <span class="round"></span>비공개모집
 					</label> <!-- 비밀번호 설정 창이 나와야함 (참가코드설정)-->
 				</span></li>
 				<br>
-				<br>
 			</ul>
+				<div align="center">
+					<input type="text" name="chall_pw" size="30" disabled>
+				</div>
+
+				<br>
+				<br>
 			<hr style="border: solid 1px red;">
 
 			<br>
@@ -374,6 +377,7 @@
 					
 					StartDate = now;
 				});
+				
 				
 			</script>
 </body>

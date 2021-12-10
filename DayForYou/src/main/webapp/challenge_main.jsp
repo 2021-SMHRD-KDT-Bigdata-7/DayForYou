@@ -31,10 +31,19 @@
 	DAO dao = new DAO();
 
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
+	
 	ArrayList<challengeBoardVO> chall_group = dao.SelectChallengeBoard_cat("그룹");
-	ArrayList<challengeBoardVO> chall_all = dao.SelectChallengeBoard_cat("전체");
+	
+	ArrayList<challengeBoardVO> chall_all= dao.SelectChallengeBoard_cat("전체");
+	
 	ArrayList<challengeBoardVO> chall_popularity = dao.SelectChallengeBoard_cat("인기");
-	ArrayList<challengeBoardVO> chall_suggestion = dao.SelectChallengeBoard_cat("추천");
+	
+	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("추천");
+	
+	if (chall_personal == null){
+		System.out.println("불러올 수 없습니다.");
+	}
+
 	%>
 
 	<!-- Preloader -->
@@ -47,6 +56,8 @@
 	<!-- Subscribe Modal -->
 	<div class="subscribe-newsletter-area">
 		<div class="modal fade" id="subsModal" tabindex="-1" role="dialog"
+		
+
 			aria-labelledby="subsModal" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
@@ -316,158 +327,143 @@
 	<div class="blog-wrapper section-padding-100-0 clearfix">
 		<div class="container">
 			<div class="row">
+
 				<!-- My 챌린지 영역  -->
+
 				<div class="col-12 col-md-6 col-lg-4">
-					<div class="single-blog-area blog-style-2 mb-100">
+					<div>
+						<h2>My 챌린지</h2>
+					</div>
+					<% for(challengeBoardVO arr :chall_personal){%>
+					<div class="single-blog-area blog-style-2 mb-100"
+						style="margin: 10 0 0 0">
+
 						<div class="single-blog-thumbnail">
-						<% for(int i = 0; i < chall_personal.size(); i++){%>					
-							<a href="temp.html"><img src="<%=chall_personal.get(i).getChal_pic1() %>" alt="">
+
+							<a href="temp.html"><img src="<%= arr.getChalPic1()%>" alt="img/logo.png">
 							</a>
 							<div class="post-date">
-								<a href="#">개인 <span>march</span></a>
+								<a href="#"><%= arr.getChalCnt() %> <span>0명</span></a>
 							</div>
-						<%} %>
+
 						</div>
 						<!-- Blog Content -->
-						<div class="single-blog-content mt-50">
+						<div class="single-blog-content mt-50" style="margin: 10 0 0 0">
 							<div class="line"></div>
-							<a href="#" class="post-tag">Lifestyle</a>
+							<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
 							<h4>
-								<a href="#" class="post-headline">We love colors in 2018</a>
+								<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
 							</h4>
-							<p>Curabitur venenatis efficitur lorem sed tempor. Integer
-								aliquet tempor cursus. Nullam vestibulum convallis risus vel
-								condimentum. Nullam auctor lorem in libero luctus, vel volutpat
-								quam tincidunt.</p>
-							<div class="post-meta">
-								<p>
-									By <a href="#">james smith</a>
-								</p>
-								<p>3 comments</p>
-							</div>
 						</div>
+
 					</div>
+					<%} %>
 				</div>
+
 				<!-- 추천 챌린지 영역  -->
 				<div class="col-12 col-md-6 col-lg-4">
+					<div>
+						<h2>추천 챌린지</h2>
+					</div>
 					<div class="single-blog-area blog-style-2 mb-100">
+						<% for(challengeBoardVO arr :chall_suggestion){%>
 						<div class="single-blog-thumbnail">
-							<a href="temp.html"><img src="img/blog-img/4.jpg" alt="">
+							<a href="temp.html"><img src="<%=arr.getChalPic1() %>" alt="img/logo.png">
 							</a>
 							<div class="post-date">
-								<a href="#">10 <span>march</span></a>
+								<a href="#"><%= arr.getChalCnt() %><span>1명</span></a>
 							</div>
 						</div>
 						<!-- Blog Content -->
 						<div class="single-blog-content mt-50">
 							<div class="line"></div>
-							<a href="#" class="post-tag">Lifestyle</a>
+							<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
 							<h4>
-								<a href="#" class="post-headline">We love colors in 2018</a>
+								<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
 							</h4>
-							<p>Curabitur venenatis efficitur lorem sed tempor. Integer
-								aliquet tempor cursus. Nullam vestibulum convallis risus vel
-								condimentum. Nullam auctor lorem in libero luctus, vel volutpat
-								quam tincidunt.</p>
-							<div class="post-meta">
-								<p>
-									By <a href="#">james smith</a>
-								</p>
-								<p>3 comments</p>
-							</div>
 						</div>
+						<%} %>
 					</div>
 				</div>
 				<!-- 인기 챌린지 영역  -->
 				<div class="col-12 col-md-6 col-lg-4">
+					<div>
+						<h2>인기 챌린지</h2>
+					</div>
 					<div class="single-blog-area blog-style-2 mb-100">
+						<% for(challengeBoardVO arr :chall_popularity){%>
 						<div class="single-blog-thumbnail">
-							<a href="temp.html"><img src="img/blog-img/4.jpg" alt="">
+							<a href="temp.html"><img src="<%=arr.getChalPic1() %>" alt="img/logo.png">
 							</a>
 							<div class="post-date">
-								<a href="#">10 <span>march</span></a>
+								<a href="#"><%= arr.getChalCnt() %> <span>0명</span></a>
 							</div>
 						</div>
 						<!-- Blog Content -->
 						<div class="single-blog-content mt-50">
 							<div class="line"></div>
-							<a href="#" class="post-tag">Lifestyle</a>
+							<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
 							<h4>
-								<a href="#" class="post-headline">We love colors in 2018</a>
+								<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
 							</h4>
-							<p>Curabitur venenatis efficitur lorem sed tempor. Integer
-								aliquet tempor cursus. Nullam vestibulum convallis risus vel
-								condimentum. Nullam auctor lorem in libero luctus, vel volutpat
-								quam tincidunt.</p>
-							<div class="post-meta">
-								<p>
-									By <a href="#">james smith</a>
-								</p>
-								<p>3 comments</p>
-							</div>
+
 						</div>
 					</div>
+					<%} %>
 				</div>
-				<!-- 그룹 챌린지 영역  -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="single-blog-area blog-style-2 mb-100">
-						<div class="single-blog-thumbnail">
-							<img src="img/blog-img/5.jpg" alt="">
-							<div class="post-date">
-								<a href="#">10 <span>march</span></a>
-							</div>
-						</div>
-						<!-- Blog Content -->
-						<div class="single-blog-content mt-50">
-							<div class="line"></div>
-							<a href="#" class="post-tag">Lifestyle</a>
-							<h4>
-								<a href="#" class="post-headline">Party people in the house</a>
-							</h4>
-							<p>Curabitur venenatis efficitur lorem sed tempor. Integer
-								aliquet tempor cursus. Nullam vestibulum convallis risus vel
-								condimentum. Nullam auctor lorem in libero luctus, vel volutpat
-								quam tincidunt.</p>
-							<div class="post-meta">
-								<p>
-									By <a href="#">james smith</a>
-								</p>
-								<p>3 comments</p>
-							</div>
-						</div>
-					</div>
+			</div>
+			<!-- 그룹 챌린지 영역  -->
+			<div class="col-12 col-md-6 col-lg-4">
+				<div>
+					<h2>그룹 챌린지</h2>
 				</div>
-				<!-- 전체 챌린지 영역  -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="single-blog-area blog-style-2 mb-100">
-						<div class="single-blog-thumbnail">
-							<img src="img/blog-img/6.jpg" alt="">
-							<div class="post-date">
-								<a href="#">10 <span>march</span></a>
-							</div>
-						</div>
-						<!-- Blog Content -->
-						<div class="single-blog-content mt-50">
-							<div class="line"></div>
-							<a href="#" class="post-tag">Lifestyle</a>
-							<h4>
-								<a href="#" class="post-headline">We love colors in 2018</a>
-							</h4>
-							<p>Curabitur venenatis efficitur lorem sed tempor. Integer
-								aliquet tempor cursus. Nullam vestibulum convallis risus vel
-								condimentum. Nullam auctor lorem in libero luctus, vel volutpat
-								quam tincidunt.</p>
-							<div class="post-meta">
-								<p>
-									By <a href="#">james smith</a>
-								</p>
-								<p>3 comments</p>
-							</div>
+				<div class="single-blog-area blog-style-2 mb-100">
+					<% for(challengeBoardVO arr :chall_group){%>
+					<div class="single-blog-thumbnail">
+						<img src="<%=arr.getChalPic1() %>" alt="img/logo.png">
+						<div class="post-date">
+							<a href="#"><%= arr.getChalCnt() %> <span>0명</span></a>
 						</div>
 					</div>
+					<!-- Blog Content -->
+					<div class="single-blog-content mt-50">
+						<div class="line"></div>
+						<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
+						<h4>
+							<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
+						</h4>
+					</div>
+					<%} %>
+				</div>
+			</div>
+			<!-- 전체 챌린지 영역  -->
+			<div class="col-12 col-md-6 col-lg-4">
+				<div>
+					<h2>전체 챌린지</h2>
+				</div>
+				<div class="single-blog-area blog-style-2 mb-100">
+					<% for(challengeBoardVO arr :chall_group){%>
+					<div class="single-blog-thumbnail">
+						<img src="<%=arr.getChalPic1() %>" alt="img/logo.png">
+						<div class="post-date">
+							<a href="#"><%= arr.getChalCnt() %> <span>0명</span></a>
+						</div>
+					</div>
+					<!-- Blog Content -->
+					<div class="single-blog-content mt-50">
+						<div class="line"></div>
+						<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
+						<h4>
+							<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
+						</h4>
+
+
+					</div>
+					<%} %>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<!-- ##### Blog Wrapper End ##### -->
 
