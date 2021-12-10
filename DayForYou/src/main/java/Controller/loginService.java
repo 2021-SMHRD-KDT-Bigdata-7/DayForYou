@@ -30,8 +30,9 @@ public class loginService extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("vo", vo);
 
-			response.sendRedirect("index.html");
+			response.sendRedirect("main.html");
 		} else {
+			
 			System.out.print("로그인 실패");
 		}
 

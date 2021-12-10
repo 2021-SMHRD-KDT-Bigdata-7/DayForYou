@@ -1,3 +1,6 @@
+<%@page import="Controller.loginService"%>
+<%@page import="model.DAO"%>
+<%@page import="model.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -39,7 +42,7 @@
 <body>
 
 
-	<div class="container-login100"">
+	<div class="container-login100">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 			<form class="login100-form validate-form" action="loginService">
 				<span class="login100-form-title p-b-37"> day for you </span>
@@ -58,6 +61,7 @@
 
 				<br>
 				<br>
+				
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn" type="submit">login</button>
 				</div>
@@ -66,7 +70,7 @@
 			<br>
 
 			<div class="container-login100-form-btn">
-				<a href="index.html">
+				<a href="main.html">
 					<button class="login100-form-btn">B_login</button>
 				</a>
 			</div>
