@@ -46,8 +46,9 @@ h6 {
   line-height: 1.3;
   font-family: "helveticaneuemedium"; }
 /* 유태현 추가한 부분*/
- input[type="radio"] {
-  display:none;
+
+input[type="radio"] {
+    display: none;
 }
 
 input[type="radio"] + label span.round{

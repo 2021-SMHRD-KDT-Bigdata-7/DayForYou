@@ -22,6 +22,7 @@ public class ChallService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
+		
 //      chall_cat1//챌린지 분류
 		String chall_cat1 = request.getParameter("chall_cat1");
 //      chall_title//챌린지 제목
@@ -42,6 +43,8 @@ public class ChallService extends HttpServlet {
 		String chall_pic2 = request.getParameter("chall_pic2");
 //      chooseFile_3//챌린지 인증 나쁜예
 		String chall_pic3 = request.getParameter("chall_pic3");
+//      chall_pw//챌린지 모집 비밀번호
+		String chall_pw = request.getParameter("chall_pw");
 		
 		Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
@@ -88,6 +91,7 @@ public class ChallService extends HttpServlet {
 		System.out.println(chall_Private); //비밀번호 설정
 		System.out.println(chall_pic2); 
 		System.out.println(chall_pic3);
+		System.out.println(chall_pw);
 
 		
 		DAO dao = new DAO();
@@ -98,7 +102,7 @@ public class ChallService extends HttpServlet {
 		
 		
 		int cnt = dao.ChallInsert(chall_cat1,chall_subject,chall_cat2,chall_Introduce,chall_pic1,chall_start,chall_period, chall_Private,
-				chall_pic1,chall_pic2, chall_pic3);
+				chall_pic1,chall_pic2, chall_pic3,chall_pw);
 
 		if (cnt > 0) {
 			System.out.println("챌린지 생성 성공");
