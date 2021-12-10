@@ -162,12 +162,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-12">
-                                     	<button class = "button7" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">목록</button>
-                                        
-                                    </div>
+                                  
                                 </div>
                             </form>
+                              <div class="col-12">
+                                     	<a href = "Diarylist.jsp"><button class = "button7" class="btn original-btn" >목록</button></a>
+                                        
+                                    </div>
                         </div>
                     </div>
 
