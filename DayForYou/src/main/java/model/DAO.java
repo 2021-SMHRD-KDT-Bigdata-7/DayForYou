@@ -79,7 +79,6 @@ public class DAO {
 					int upoint = rs.getInt(12);
 					String uadminYn = rs.getString(13);
 					
-				
 					vo = new MemberVo(uid, upw, uname, unick, uphon, uemail,ubirthday,ugender, ujob, uaddress,ujoinday,upoint,uadminYn);
 
 				}
@@ -240,7 +239,7 @@ public class DAO {
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 
 			// 3.sql문 준비
-			String sql = "insert into tbl_challenge(chal_cat1,chal_cat2,chal_subject,chal_content,chal_start,chal_period,chal_pic1,chal_pic2,chal_pic3,reg_date,m_id,chal_cnt,chal_public,chal_pw) values(?,?,?,?,?,?,?,?,?,sysdate,'m_id 1',0,?,?)";
+			String sql = "insert into tbl_challenge(chal_cat1,chal_cat2,chal_subject,chal_content,chal_start,chal_period,chal_pic1,chal_pic2,chal_pic3,reg_date,m_id,chal_cnt,chal_public,chal_pw) values(?,?,?,?,?,?,?,?,?,sysdate,?,0,?,?)";
 			
 			psmt = conn.prepareStatement(sql);
 			
@@ -270,8 +269,9 @@ public class DAO {
 			psmt.setString(7, chall_pic1);
 			psmt.setString(8, chall_pic2);
 			psmt.setString(9, chall_pic3);
-			psmt.setString(10, chall_Private);
-			psmt.setString(11, chall_pw);
+			psmt.setString(10, vo.getId());
+			psmt.setString(11, chall_Private);
+			psmt.setString(12, chall_pw);
 
 			// 5.실행
 			// select-> excuteQuery()--> return ResultSet

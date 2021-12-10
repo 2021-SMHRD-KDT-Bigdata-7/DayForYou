@@ -39,11 +39,11 @@
 				<td align="right" >챌린지 분류</td>
 				<td align="left">
 				<select name="chall_cat1">
-						<option value="chall_personal">개인</option>
-						<option value="chall_group">그룹</option>
-						<option value="chall_all">전체</option>
-						<option value="chall_popularity">인기</option>
-						<option value="chall_suggestion">추천</option>
+						<option value="개인">개인</option>
+						<option value="그룹">그룹</option>
+						<option value="전체">전체</option>
+						<option value="인기">인기</option>
+						<option value="추천">추천</option>
 				</select></td>
 			</tr>
 			<hr style="border: solid 1px red;">
@@ -106,10 +106,9 @@
 			<h5 align="center">챌린지를 소개하세요.</h5>
 			<br>
 			<!-- 밑 사이즈 작게 -->
-			<p class="mb-15">추가 글로 챌린지를 자세히 소개해보세요.</p>
 			<div align="center">
 
-				<textarea name="chall_Introduce" id="" cols="30" rows="5"></textarea>
+				<textarea name="chall_Introduce" id="" cols="32" rows="5" placeholder="추가 글로 챌린지를 자세히 소개해보세요."></textarea>
 			</div>
 			<!-- 글자수 체크해주는 것 넣어야함 -->
 			<br> <br>
@@ -183,7 +182,7 @@
 						type="radio" id="view_li1" name="chall_period" value="1_week">
 						<label for="view_li1"> <span class="round"></span>1 Week
 					</label>
-				</span></li>
+				</span></li>\
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_li2" name="chall_period" value="2_weeks">
 						<label for="view_li2"> <span class="round"></span>2 Weeks
@@ -227,7 +226,7 @@
 				<br>
 			</ul>
 				<div align="center">
-					<input type="text" name="chall_pw" size="30" disabled>
+					<input type="text" name="chall_pw" size="30" disabled placeholder="비밀번호를 입력해 주세요">
 				</div>
 
 				<br>

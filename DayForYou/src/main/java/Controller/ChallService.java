@@ -7,6 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,14 +18,23 @@ import java.util.Date;
 
 
 import model.DAO;
+import model.MemberVo;
 
 @WebServlet("/ChallService")
 public class ChallService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
+		
+		String savePath= request.getServletContext().getRealPath("img");
+		//최대 파일크기(단위 : byte) : 5MB
+		int maxSize = 5*1024*1024;
+		//인코딩 타입
+		String encoding = "euc-kr";
+		MultipartRequest multi = new MultipartRequest(request, savePath,maxSize,encoding,new DefaultFileRenamePolicy());
+		//파라미터 수집
+		
 		
 //      chall_cat1//챌린지 분류
 		String chall_cat1 = request.getParameter("chall_cat1");
@@ -32,7 +45,7 @@ public class ChallService extends HttpServlet {
 //      chall_Introduce//챌린지 소개내용
 		String chall_Introduce = request.getParameter("chall_Introduce");
 //      chooseFile_1//챌린지 소개 사진
-		String chall_pic1 = request.getParameter("chall_pic1");
+		String chall_pic1 = multi.getFilesystemName("chall_pic1");
 //      chall_start//챌린지 시작날짜( 등록 일자 )
 		String chall_start = request.getParameter("chall_start");
 //      chall_period//챌린지 기한
@@ -40,9 +53,9 @@ public class ChallService extends HttpServlet {
 //      chall_Private//챌린지 공개 비공개
 		String chall_Private = request.getParameter("chall_Private");
 //      chooseFile_2//첼린지 인증 좋은예
-		String chall_pic2 = request.getParameter("chall_pic2");
+		String chall_pic2 = multi.getFilesystemName("chall_pic2");
 //      chooseFile_3//챌린지 인증 나쁜예
-		String chall_pic3 = request.getParameter("chall_pic3");
+		String chall_pic3 = multi.getFilesystemName("chall_pic3");
 //      chall_pw//챌린지 모집 비밀번호
 		String chall_pw = request.getParameter("chall_pw");
 		
@@ -107,10 +120,10 @@ public class ChallService extends HttpServlet {
 		if (cnt > 0) {
 			System.out.println("챌린지 생성 성공");
 			// 같은 이름으로 다른 데이터를 집어넣으면 덮어쓰기 된다.
-			response.sendRedirect("main.html");
+			response.sendRedirect("challenge_main.jsp");
 		} else {
 			System.out.println("챌린지 생성 실패");
-			response.sendRedirect("main.html");
+			response.sendRedirect("challenge_main.jsp");
 		}
 	}
 
