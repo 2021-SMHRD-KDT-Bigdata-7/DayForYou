@@ -13,7 +13,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="shop/css/styles.css" rel="stylesheet" />
     </head>
    
     <body>
@@ -44,14 +44,14 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/shop/c1.png" alt="..." />
+                            <img class="card-img-top" src="./img/shop/c1.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <h5 class="fw-bolder">»Ñ¸µÅ¬</h5>
                                     <!-- Product price-->
-                                   $
+                                  p)18.000 
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -64,18 +64,14 @@
                         <div class="card h-100">
                             
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/shop/c1.png" alt="..." />
+                            <img class="card-img-top" src="./img/shop/c2.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        
-                                    </div>
+                                    <h5 class="fw-bolder">±³ÃÌ Çã´Ï ÄÞº¸</h5>                                    
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$</span>
+                                    p)18.000
                                     
                                 </div>
                             </div>
@@ -89,15 +85,15 @@
                         <div class="card h-100">
                             
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="./img/shop/c3.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
+                                    <h5 class="fw-bolder">½ºÅ¸¹÷±× ¾Æ¸Þ¸®Ä«³ë</h5>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$</span>
-                                    $
+                                    p)4.100
+                                    
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -109,16 +105,14 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="./img/shop/c4.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    
-                                    
+                                    <h5 class="fw-bolder">CGV¿µÈ­Ç¥</h5>                          
                                     <!-- Product price-->
-                                    $
+                                    p)13.000
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -132,15 +126,14 @@
                            
                            
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="./img/shop/c5.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
+                                    <h5 class="fw-bolder">½Å¼¼°è »óÇ°±Ç</h5>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$</span>
-                                    $
+                                    p)50.000
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -152,14 +145,14 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="./img/shop/c6.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <h5 class="fw-bolder">»þ³Ú ¸³½ºÆ½</h5>
                                     <!-- Product price-->
-                                    $
+                                    p)48.000
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -177,14 +170,13 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
+                                    <h5 class="fw-bolder">½ºÅ¸¹÷½º Ä«Æä¶ó¶¼</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         
                                     </div>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$</span>
-                                    $
+                                    p)4.600
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -201,13 +193,13 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
+                                    <h5 class="fw-bolder">ÀÌµð¾ß ÅäÇÇ³Ó¶ó¶¼</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         
                                     </div>
                                     <!-- Product price-->
-                                    $
+                                    p)4.000
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -229,3 +221,4 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+    
