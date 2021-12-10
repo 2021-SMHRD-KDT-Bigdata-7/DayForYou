@@ -18,6 +18,7 @@ public class DAO {
 	
 	ArrayList<challengeBoardVO> ch_boards = null;
 	challengeBoardVO cbv = null;
+	diaryVO dvo = null;
 	
 	public void connection() {
 		try {
@@ -295,5 +296,134 @@ public class DAO {
 		}
 		return cnt;
 	}
+	public int diarylist(String diary_subject, String diary_date, String diary_content, String diary_file1,
+			String diary_file2, String m_id) {
+
+		connection();
+
+		try {
+
+			// 3.sql문 준비
+			sql = "insert into tbl_diary values(TBL_DIARY_SEQ.nextval,?,?,?,?,?,?,sysdate)";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, diary_subject);
+			psmt.setString(2, diary_date);
+			psmt.setString(3, diary_content);
+			psmt.setString(4, diary_file1);
+			psmt.setString(5, diary_file2);
+			psmt.setString(6, m_id);
+
+			// 5. 실행!
+			// select ->executeQury()-->return Resultset
+			// insert,delete, update ->esecutUpdate()
+			// ->return int(몇 행이 성공했는지
+
+			cnt = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 6.연결닫아주기
+			close();
+		}
+
+		return cnt;
+
+	}
+
+	public ArrayList<diaryVO> SelectDiary(String now_m_id) {
+
+		connection();
+
+// 결과를 담아줄 ArrayList
+		ArrayList<diaryVO> dlist = new ArrayList<diaryVO>();
+
+// try문
+		try {
+
+			String sql = "select * from tbl_diary where m_id = ? order by diary_seq";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, now_m_id);
+
+			rs = psmt.executeQuery();
+
+// 모든 회원정보를 가져옴 > 몇 번 반복해야 될지 모름
+			while (rs.next() == true) {
+				int diary_seq = rs.getInt(1);
+				String diary_subject = rs.getString(2);
+				String diary_date = rs.getString(3);
+				String diary_content = rs.getString(4);
+				String diary_file1 = rs.getString(5);
+				String diary_file2 = rs.getString(6);
+				String m_id = rs.getString(7);
+				String reg_date = rs.getString(8);
+
+				// select 문의 결과를 묶어서 vo객체로 만들기
+				dvo = new diaryVO(diary_seq, diary_subject, diary_date, diary_content, diary_file1, diary_file2, m_id,
+						reg_date);
+				dlist.add(dvo);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 6. 연결을 닫아주기
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return dlist;
+	}
+
+	public diaryVO DiaryJoin(int diary_seq) {
+
+		connection();
+		diaryVO dvo = null;
+
+		try {
+			String sql = "select * from tbl_diary where diary_seq = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, diary_seq);
+			rs = psmt.executeQuery();
+
+			if (rs.next() == true) {
+
+				int diary_seq_1 = diary_seq;
+				String diary_subject = rs.getString(2);
+				String diary_date = rs.getString(3);
+				String diary_content = rs.getString(4);
+				String diary_file1 = rs.getString(5);
+				String diary_file2 = rs.getString(6);
+				String m_id = rs.getString(7);
+				String reg_date = rs.getString(8);
+
+				dvo = new diaryVO(diary_seq_1, diary_subject, diary_date, diary_content, diary_file1, diary_file2, m_id,
+						reg_date);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return dvo;
+	}
 
 }
+
+

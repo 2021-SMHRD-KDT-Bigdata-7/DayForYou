@@ -1,15 +1,44 @@
+
+<%@page import="model.diaryVO"%>
+<%@page import="java.util.ArrayList"%>
+
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!--   <script language="javascript">
+	 function time(){
+	  var time= new Date(); //시간받기위해서 new date
+	  var dt = new Date();
+	    var Year = dt.getFullYear();        
+	    var Month = "" + (dt.getMonth()+1);
+	    var Day = "" + dt.getDate();            
+	    var Today = Year.toString() + Month + Day;
+	    
+	    document.getElementById("TODAY").innerHTML=dt.getFullYear()+"년"+(dt.getMonth()+1)+"월"+ dt.getDate()+"일";
+	  
+
+
+	/* 출처: https://shxrecord.tistory.com/128 [유에서 유] */
+	      document.getElementById("now").innerHTML=time.getHours()+"시"+time.getMinutes()+"분"+time.getSeconds()+"초";
+	     setInterval("time()",1000);     //1초 지난후 time()실행
+	  }
+      </script> -->
+</head>
+<body>
 
 <head>
-    <meta charset="EUC-KR">
+    <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Diary form</title>
+    <title>Diary-individual</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/main-img/white.PNG">
@@ -19,7 +48,7 @@
 
 </head>
 
-<body>
+<body onload="time()">
 	
     <!-- Preloader -->
     <div id="preloader">
@@ -56,7 +85,7 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <a href="index.html" class="original-logo"><img alt=""></a>
-                            <h1>Diary Writing Form</h1>
+                            <h1>Diary 상세보기</h1>
                         </div>
                     </div>
                 </div>
@@ -75,76 +104,67 @@
                     <!-- Contact Form Area -->
                     <div class="col-12 col-md-10 col-lg-9">
                         <div class="contact-form">
-                            <h5>Write here :)</h5>
+                        <!-- 현재시간 나오기 -->
+                       <!--      <p><span id = "TODAY"></span>   <span id="now"></span></p> -->
                             <!-- Contact Form -->
-                            <form action="DiaryService" method="post" enctype="multipart/form-data">
+                  				<%
+                  					
+                  				diaryVO dvo = (diaryVO)request.getAttribute("dv");
+                  					
+								%>	
+	
+                            <form action="#" method="post">
+                            
+                            	 <div class="col-12 col-md-6">
+                                        <div class="group">
+                                        	<p>작성일시</p>
+                                        	<p><%=dvo.getReg_date()%></p>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                           
+                                        </div>
+                                    </div>
                                 <div class="row">
                                     <div class="col-12 col-md-6">
                                         <div class="group">
-                                            <input type="text" name="diary_subject" id="name" required>
+                                        	<h3><%=dvo.getDiary_subject()%></h3>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>제목</label>
+                                            
                                         </div>
                                     </div>
-
-                                    <div class="col-12 col-md-6">
+                           
+                                    
+                                    <div class="col-12">
                                         <div class="group">
-                                            <input type="date" name="diary_date" id="date" required>
+                                            <p><%=dvo.getDiary_content()%></p>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                            
                                         </div>
                                     </div>
                                     
-           						
-                                    <div class="col-12">
+                                    
+                                     <div class="col-12 col-md-6">
                                         <div class="group">
-                                        	<!-- 이미지 이름이 들어갈 input -->
-                                        	<input type="text" style="display : none;" name="images" id="image_arr">
-                                            <input multiple = "multiple" type = "file" name="diary_file1[]" accept="image/*" onchange="setThumbnail(event);" multiple/>
-                                            <div id="image_container"></div>
-									<script> 
-												let img_names='';
-												function setThumbnail(event) {
-												for (var image of event.target.files) { 
-												var reader = new FileReader(); 
-												reader.onload = function(event) { 
-												var img = document.createElement("img"); 
-												img.setAttribute("src", event.target.result); 
-												document.querySelector("div#image_container").appendChild(img); }; 
-												console.log(image); 
-												reader.readAsDataURL(image); 
-												
-												// input에 이미들 이름 이어붙여줌 / 로 구분하도록
-												img_names +=("/"+ image.name);
-												
-												} 
-												// 붙여진 이름을 input태그 안에 값으로 넣어줌
-												document.querySelector("#image_arr").setAttribute("value", img_names);											
-												console.log(document.querySelector("#image_arr").value);
-												} 
-												
-									</script>
-
-                                            <label>사진추가</label>                                           
-                                        </div>
-                                    </div>
-                                    
-                                    <br><br>
-                                    
-                                    
-                                    <div class="col-12">
-                                        <div class="group">
-                                            <textarea name="diary_content" id="message" required></textarea>
+                                        	<%
+                                        		String imageNames = dvo.getDiary_file1();
+                                        		String images[] = imageNames.split("/");
+                                        	%>
+                                        	<%for(int i = 0; i < images.length; i++) {
+                                        		if(i > 0){
+                                        	%>
+                                        	<img src="./img/<%=images[i]%>">
+                                        	<%} %>
+                                        	<%} %>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>내용작성</label>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-12">
-                                     	<button class = "button7" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">취소</button>
-                                        <button class = "button6" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">저장</button>
+                                     	<button class = "button7" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">목록</button>
+                                        
                                     </div>
                                 </div>
                             </form>
@@ -234,4 +254,6 @@
 
 </body>
 
+</html>
+</body>
 </html>
