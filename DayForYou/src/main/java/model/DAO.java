@@ -343,7 +343,7 @@ public class DAO {
 // try¹®
 		try {
 
-			String sql = "select * from tbl_diary where m_id = ? order by diary_seq";
+			String sql = "select * from tbl_diary where m_id = ? order by diary_seq desc";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, now_m_id);
 

@@ -140,7 +140,7 @@ a {
     font-size: 14px; }
     
      .button7{
-   
+   	
    	 color: #000000;
 	  padding: 4px 10px;
 	  text-align: center;
@@ -152,8 +152,9 @@ a {
 	  border: 2px solid #c0c0c0;
 	  background-color : #acdaa7;
 	  position : relative;
-	  left: 350px;
+	  left: 300px;
 	  border-radius: 8px;
+	
   
   
   }
@@ -178,7 +179,7 @@ a {
 	  border: 2px solid #ade49a;
 	  background-color: #acdaa7;
 	  position: relative;
-	  left: 350px;
+	  left: 300px;
 	  border-radius: 8px;
 	  
   
@@ -204,7 +205,7 @@ a {
 	  border: 2px solid #ffffff;
 	  background-color: #acdaa7;
 	  position : relative;
-	  left: 400px;
+	  left: 350px;
   
   }
     
