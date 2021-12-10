@@ -49,84 +49,92 @@ public class DAO {
 			e.printStackTrace();
 		}
 	}
-//=============================로그인==============================
-	public MemberVo login(String id, String pw) {
-		connection();
-		try {
 
-			sql = "select * from tbl_member where id=? and pw=?";
+	//=============================로그인==============================
+		public MemberVo login(String id, String pw) {
+			connection();
+			try {
 
-			psmt = conn.prepareStatement(sql);
+				sql = "select * from tbl_member where m_id=? and m_pwd=?";
 
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
+				psmt = conn.prepareStatement(sql);
 
-			rs = psmt.executeQuery();
+				psmt.setString(1, id);
+				psmt.setString(2, pw);
 
-			if (rs.next() == true) {
-				String uid = rs.getString("id");
-				String upw = rs.getString("pw");
-				String uname = rs.getString("name");
-				String unick = rs.getString("nick");
-				String uphon = rs.getString("phon");
-				String uemail = rs.getString("email");
-				String ugender = rs.getString("gender");
-				String ujob = rs.getString("job");
-				String uadress = rs.getString("adress");
-				String ubirthday = rs.getString("birthday");
+				rs = psmt.executeQuery();
 
-				vo = new MemberVo(uid, upw, uname, unick, uphon, uemail, ugender, ujob, uadress, ubirthday);
+				if (rs.next()) {
+					String uid = rs.getString(1);
+					String upw = rs.getString(2);
+					String uname = rs.getString(3);
+					String unick = rs.getString(4);
+					String uphon = rs.getString(5);
+					String uemail = rs.getString(6);
+					String ubirthday = rs.getString(7);
+					String ugender = rs.getString(8);
+					String ujob = rs.getString(9);
+					String uaddress = rs.getString(10);
+					String ujoinday = rs.getString(11);
+					int upoint = rs.getInt(12);
+					String uadminYn = rs.getString(13);
+					
+				
+					vo = new MemberVo(uid, upw, uname, unick, uphon, uemail,ubirthday,ugender, ujob, uaddress,ujoinday,upoint,uadminYn);
+
+				}
+				
+				
+			} catch (Exception e) {
+
+			} finally {
+				close();
 
 			}
-		} catch (Exception e) {
 
-		} finally {
-			close();
-
+			return vo;
 		}
+	//==================================회원가입=============================
+		public int Join(String id, String pw, String name, String nick, String phone, String email, String birthday,
+				String gender, String job, String address) {
 
-		return vo;
-	}
-//==================================회원가입=============================
-	public int Join(String id, String pw, String name, String nick, String phone, String email, String birthday,
-			String gender, String job, String address) {
+			connection();
+			
+			try {
+			
+				// 3.sql문 준비
+				sql = "insert into tbl_member values(?,?,?,?,?,?,?,?,?,?,sysdate,0,'N')";
 
-		connection();
-		
-		try {
-		
-			// 3.sql문 준비
-			String sql = "insert into tbl_member values(?,?,?,?,?,?,?,?,?,?,sysdate,0,'N')";
+				psmt = conn.prepareStatement(sql);
 
-			psmt = conn.prepareStatement(sql);
+				psmt.setString(1, id);
+				psmt.setString(2, pw);
+				psmt.setString(3, name);
+				psmt.setString(4, nick);
+				psmt.setString(5, phone);
+				psmt.setString(6, email);
+				psmt.setString(7, birthday);
+				psmt.setString(8, gender);
+				psmt.setString(9, job);
+				psmt.setString(10, address);
 
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
-			psmt.setString(3, name);
-			psmt.setString(4, nick);
-			psmt.setString(5, phone);
-			psmt.setString(6, email);
-			psmt.setString(7, birthday);
-			psmt.setString(8, gender);
-			psmt.setString(9, job);
-			psmt.setString(10, address);
+				// 5. 실행!
+				// select ->executeQury()-->return Resultset
+				// insert,delete, update ->esecutUpdate()
+				// ->return int(몇 행이 성공했는지
 
-			// 5. 실행!
-			// select ->executeQury()-->return Resultset
-			// insert,delete, update ->esecutUpdate()
-			// ->return int(몇 행이 성공했는지
+				cnt = psmt.executeUpdate();
 
-			cnt = psmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				// 6.연결닫아주기
+				close();
+			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			// 6.연결닫아주기
-			close();
+			return cnt;
 		}
-
-		return cnt;
-	}
+		
 	
 	//----------
 	/*

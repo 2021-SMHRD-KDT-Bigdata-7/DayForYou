@@ -6,26 +6,47 @@ public class MemberVo {
 	private String pw;
 	private String name;
 	private String nick;
-	private String phon;
+	private String phone;
 	private String email;
 	private String birthday;
 	private String gender;
 	private String job;
 	private String address;
-	public MemberVo(String id, String pw, String name, String nick, String phon, String email, String birthday,
+	private String joindate;
+	private int point;
+	private String adminYn;
+	public MemberVo(String id, String pw, String name, String nick, String phone, String email, String birthday,
+			String gender, String job, String address, String joindate, int point, String adminYn) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.nick = nick;
+		this.phone = phone;
+		this.email = email;
+		this.birthday = birthday;
+		this.gender = gender;
+		this.job = job;
+		this.address = address;
+		this.joindate = joindate;
+		this.point = point;
+		this.adminYn = adminYn;
+	}
+	
+	/* 회원가입(join) 생성자로 쓰임 */
+	public MemberVo(String id, String pw, String name, String nick, String phone, String email, String birthday,
 			String gender, String job, String address) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.nick = nick;
-		this.phon = phon;
+		this.phone = phone;
 		this.email = email;
 		this.birthday = birthday;
 		this.gender = gender;
 		this.job = job;
 		this.address = address;
-		
 		
 	}
 	public String getId() {
@@ -52,11 +73,11 @@ public class MemberVo {
 	public void setNick(String nick) {
 		this.nick = nick;
 	}
-	public String getPhon() {
-		return phon;
+	public String getPhone() {
+		return phone;
 	}
-	public void setPhon(String phon) {
-		this.phon = phon;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public String getEmail() {
 		return email;
@@ -82,12 +103,29 @@ public class MemberVo {
 	public void setJob(String job) {
 		this.job = job;
 	}
-	public String getAdress() {
+	public String getAddress() {
 		return address;
 	}
-	public void setAdress(String adress) {
-		this.address = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	
+	public String getJoindate() {
+		return joindate;
+	}
+	public void setJoindate(String joindate) {
+		this.joindate = joindate;
+	}
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	public String getAdminYn() {
+		return adminYn;
+	}
+	public void setAdminYn(String adminYn) {
+		this.adminYn = adminYn;
+	}
 	
 }
