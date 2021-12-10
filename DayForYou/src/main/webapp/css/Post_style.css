@@ -5,6 +5,7 @@
 
 html {
     font-size: 10px;
+    
 }
 
 ul, li {
@@ -23,6 +24,7 @@ a {
 
 .board_title {
     margin-bottom: 30px;
+    
 }
 
 .board_title strong {
