@@ -31,7 +31,7 @@
         <div align ="center" margin"10px">
         <a class="btn btn-outline-dark mt-auto" href ="shop_chicken.jsp">치킨</a>
         <a class="btn btn-outline-dark mt-auto" href ="shop_movie.jsp">영화</a>
-        <a class="btn btn-outline-dark mt-auto" href ="shop_gift">상품권</a>
+        <a class="btn btn-outline-dark mt-auto" href ="shop_gift.jsp">상품권</a>
         <br>
         
         <a class="btn btn-outline-dark mt-auto" href="shop_coffe.jsp">커피</a>
