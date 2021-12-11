@@ -13,7 +13,7 @@ import model.DAO;
 import model.diaryVO;
 
 
-@WebServlet("/DiarySingleService")
+@WebServlet("/ChallengeSingleService")
 public class ChallengeSingleService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

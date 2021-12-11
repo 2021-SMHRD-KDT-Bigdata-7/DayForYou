@@ -77,7 +77,7 @@ public class BoardDAO {
 	
 	// 其捞隆 贸府 皋家靛
 	public boolean nextPage(int pageNumber) {
-		String sql = "select * from tbi_nea where m_id < ? and "
+		String sql = "select * from tbi_nea where m_id < ? and ";
 		return false;
 	}
 }
