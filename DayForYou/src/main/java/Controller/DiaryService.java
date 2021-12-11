@@ -56,8 +56,7 @@ public class DiaryService extends HttpServlet {
 
 //				String diary_file2 = multi.getFilesystemName("diary_file2");
 				//임의로 null을 줌. 아래 한 줄"String diary_file2 = null;" 은 지워두됨.
-				String diary_file2 = null;
-				String reg_date = multi.getParameter("reg_date");
+				String diary_file2 = null;			
 				
 				// 이미지 이름들
 				String image_name = multi.getParameter("images");
@@ -73,19 +72,15 @@ public class DiaryService extends HttpServlet {
 						imageNames += URLEncoder.encode(images[i], "euc-kr");
 					}
 					
-				}
-				
-				//로그인 완성되면 이거 아래로 쓰기
-				
-				 HttpSession session = request.getSession(); MemberVo vo = (MemberVo)
-				  session.getAttribute("vo"); String m_id = vo.getId();
-				 
+				}			
+				String m_id = multi.getParameter("m_id");				 
+			
 				
 				//이거 아래는 임의로 줌.
-				//String m_id = "m_id 01";
+//				String m_id = "hyein";
 				
 				// DAO 메서드 사용해서 Diarylist 테이블에 저장
-				DAO dao = new DAO();
+				DAO dao = new DAO();			
 				int cnt = dao.diarylist(diary_subject, diary_date, diary_content, imageNames,diary_file2, m_id);
 				
 				
@@ -98,7 +93,7 @@ public class DiaryService extends HttpServlet {
 					RequestDispatcher rd = request.getRequestDispatcher("Diarylist.jsp");
 					rd.forward(request, response);			
 					
-				}else {
+				}else {				
 					System.out.println("일기 업로드 실패...");
 				}
 				

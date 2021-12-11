@@ -30,13 +30,15 @@
 
 <body>
 	<%
-				HttpSession session1 = request.getSession();
-				MemberVo vo = (MemberVo) session1.getAttribute("vo");
-				String m_id = vo.getId();
-		 	//String m_id ="m_id 01"; 
+	HttpSession session1 = request.getSession();
+	MemberVo vo = (MemberVo) session1.getAttribute("vo");
+	String m_id = vo.getId();
+	//String m_id ="m_id 01"; 
 
-			DAO dao = new DAO();
-			ArrayList<diaryVO> diarys = dao.SelectDiary(m_id);%>
+	DAO dao = new DAO();
+	ArrayList<diaryVO> diarys = dao.SelectDiary(m_id);
+	
+	%>
 	<!-- Preloader -->
 	<div id="preloader">
 		<div class="preload-content">
@@ -235,8 +237,8 @@
 							<a href="#" class="post-tag">Calendar</a>
 
 							<div>
-								<h1>Diary</h1>
-								<button class="button5" onclick="location.href='Diaryform.html'">write</button>
+								<h1>Diary</h1>							
+								<button class="button5" onclick="location.href='Diaryform.jsp'">write</button>
 							</div>
 							<hr>
 

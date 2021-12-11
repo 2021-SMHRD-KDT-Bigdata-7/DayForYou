@@ -25,13 +25,15 @@ public class loginService extends HttpServlet {
 		String pw = request.getParameter("pw");
 
 		DAO dao = new DAO();
-		MemberVo vo = dao.login(id, pw);
+		MemberVo vo = dao.login(id, pw);	
+	
 
 		if (vo != null) {
-			System.out.print("로그인 성공");
-
+			System.out.println("로그인 성공" + vo.getId());
+			
 			HttpSession session = request.getSession();
-			session.setAttribute("vo", vo);
+			session.removeAttribute("vo");
+			session.setAttribute("vo", vo);			
 
 			response.sendRedirect("main.html");
 		} else {

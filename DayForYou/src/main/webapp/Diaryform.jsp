@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@page import="model.MemberVo"%>
+<html>
 
 <head>
-    <meta charset="EUC-KR">
+    <meta charset="utf-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,6 +23,15 @@
 </head>
 
 <body>
+<%
+HttpSession session1 = request.getSession();
+String m_id = "a";
+MemberVo vo = (MemberVo)session1.getAttribute("vo");
+if(vo != null){
+m_id = vo.getId();
+}
+
+ %>
 	
     <!-- Preloader -->
     <div id="preloader">
@@ -75,16 +87,16 @@
                     <!-- Contact Form Area -->
                     <div class="col-12 col-md-10 col-lg-9">
                         <div class="contact-form">
-                            <h5>Write here ��</h5>
+                            <h5>Write here :)</h5>
                             <!-- Contact Form -->
-                            <form action="DiaryService" method="post" enctype="multipart/form-data">
+                            <form action="DiaryService?m_id=<%=m_id %>" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-12 col-md-6">
                                         <div class="group">
                                             <input type="text" name="diary_subject" id="name" required>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>����</label>
+                                            <label>제목</label>
                                         </div>
                                     </div>
 
@@ -100,7 +112,7 @@
            						
                                     <div class="col-12">
                                         <div class="group">
-                                        	<!-- �̹��� �̸��� �� input -->
+                                        	<!-- ì´ë¯¸ì§ ì´ë¦ì´ ë¤ì´ê° input -->
                                         	<input type="text" style="display : none;" name="images" id="image_arr">
                                             <input multiple = "multiple" type = "file" name="diary_file1[]" accept="image/*" onchange="setThumbnail(event);" multiple/>
                                             <div id="image_container"></div>
@@ -116,18 +128,18 @@
 												console.log(image); 
 												reader.readAsDataURL(image); 
 												
-												// input�� �̵̹� �̸� �̾�ٿ��� / �� �����ϵ���
+												// inputì ì´ë¯¸ë¤ ì´ë¦ ì´ì´ë¶ì¬ì¤ / ë¡ êµ¬ë¶íëë¡
 												img_names +=("/"+ image.name);
 												
 												} 
-												// �ٿ��� �̸��� input�±� �ȿ� ������ �־���
+												// ë¶ì¬ì§ ì´ë¦ì inputíê·¸ ìì ê°ì¼ë¡ ë£ì´ì¤
 												document.querySelector("#image_arr").setAttribute("value", img_names);											
 												console.log(document.querySelector("#image_arr").value);
 												} 
 												
 									</script>
 
-                                            <label>�����߰�</label>                                           
+                                            <label>사진추가</label>                                           
                                         </div>
                                     </div>
                                     
@@ -139,13 +151,13 @@
                                             <textarea name="diary_content" id="message" required></textarea>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>�����ۼ�</label>
+                                            <label>내용작성</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                   
-                                    <!--  	<button class = "button7" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">���</button>
-                                        <button class = "button6" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">����</button> -->
+                                    <!--  	<button class = "button7" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">ì·¨ì</button>
+                                        <button class = "button6" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">ì ì¥</button> -->
                                         <img src = "img/main-img/diaryn.PNG">                                       
                                         <button type = "submit"><img src = "img/main-img/diaryoo.PNG" alt = "" align = "right"></button>
                                     </div>
