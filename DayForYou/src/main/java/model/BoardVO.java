@@ -12,6 +12,9 @@ public class BoardVO {
 	private String article_file1;
 	private String article_file2;
 	private String article_count;
+	
+	public BoardVO() {}
+	
 	public BoardVO(int article_seq, String article_kind, String article_subject, String article_content, String reg_date,
 			String m_id, String article_file1, String article_file2, String article_count) {
 		super();

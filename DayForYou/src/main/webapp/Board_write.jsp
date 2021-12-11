@@ -1,3 +1,5 @@
+<%@page import="model.BoardDAO"%>
+<%@page import="model.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -309,6 +311,48 @@
                 <a href="Board_view.jsp" class="on">등록</a>
                 <a href="Board_list.jsp">취소</a>
             </div>
+            	<% 
+            	//입력이 안 된 부분이 있는지 체크한다.
+            	BoardVO vo = new BoardVO();
+            	BoardDAO dao = new BoardDAO();
+            	%>
+            	
+            <% 
+            	//현재 세션 상태를 체크한다.
+            	String m_id = null;
+            	if(session.getAttribute("m_id") != null){
+            		m_id = (String)session.getAttribute("m_id");
+            	}
+            	if(m_id == null){%>
+            		<script>
+            			alert('로그인을 하세요');
+            			location.href = 'login.jsp'
+            		</script>
+            	<%}else{
+          				if(vo.getArticle_subject() == null || vo.getArticle_content() == null){%>
+            		<script>
+            			alert('입력이 안 된 사항이 있습니다.');
+            			history.back();
+            		</script>
+            	<%}else{
+            		int result = dao.write(vo.getArticle_subject(), vo.getM_id(), vo.getArticle_content());
+            		
+            		if(result == -1){%>
+            		
+            		<script>
+            			alert('글쓰기에 실패했습니다.');
+            			history.back();
+            			// 글쓰기가 정상적으로 실행되면 알림창을 띄우고 게시판 메인으로 이동한다.
+            		</script>
+            		
+            	<%}else{%>
+            	<script> 
+            		alert('글쓰기 성공');
+            		location.href = 'Board_list.jsp'
+            	</script>
+            	   <%} %>
+            	<%} %>
+            	<%} %>
         </div>
     </div>
                 

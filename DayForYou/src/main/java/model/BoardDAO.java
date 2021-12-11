@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class BoardDAO {
 	
@@ -80,4 +81,5 @@ public class BoardDAO {
 		String sql = "select * from tbi_nea where m_id < ? and ";
 		return false;
 	}
+	
 }
