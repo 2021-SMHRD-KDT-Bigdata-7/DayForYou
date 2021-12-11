@@ -25,14 +25,13 @@ public class ChallService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("euc-kr");
 		
 		String savePath= request.getServletContext().getRealPath("img");
 		//최대 파일크기(단위 : byte) : 5MB
 		int maxSize = 5*1024*1024;
 		//인코딩 타입
 		String encoding = "euc-kr";
-		MultipartRequest multi = new MultipartRequest(request, savePath,maxSize,encoding);
+		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 		//파라미터 수집
 		
 		

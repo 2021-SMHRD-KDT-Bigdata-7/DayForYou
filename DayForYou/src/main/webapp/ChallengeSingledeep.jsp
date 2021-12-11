@@ -133,7 +133,7 @@
 
 									<div class="col-12">
 										<div class="group">
-											<p><%=dvo.getDiary_content()%></p>
+											<p><%=vo.getChalContent()%></p>
 											<span class="highlight"></span> <span class="bar"></span>
 
 										</div>
@@ -142,16 +142,11 @@
 
 									<div class="col-12 col-md-6">
 										<div class="group">
-											<%
-                                        		String imageNames = dvo.getDiary_file1();
-                                        		String images[] = imageNames.split("/");
-                                        	%>
-											<%for(int i = 0; i < images.length; i++) {
-                                        		if(i > 0){
-                                        	%>
-											<img src="./img/<%=images[i]%>">
-											<%} %>
-											<%} %>
+											<p><%=vo.getChalPic1() %></p>
+											<p><%=vo.getChalPic2() %></p>
+											<p><%=vo.getChalPic3() %></p>
+											<p></p>
+											<p></p>
 											<span class="highlight"></span> <span class="bar"></span>
 										</div>
 									</div>

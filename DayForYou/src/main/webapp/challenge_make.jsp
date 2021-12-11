@@ -1,13 +1,12 @@
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"	pageEncoding="euc-kr"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
-<meta charset="UTF-8">
+<meta charset="euc-kr">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -27,7 +26,7 @@
 </head>
 
 <body>
-	<!-- ìŠ¤í¬ë¦½íŠ¸ë¦¿ -->
+	<!-- ½ºÅ©¸³Æ®¸´ -->
 
 	<!-- Preloader -->
 	<div id="preloader">
@@ -220,7 +219,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>ì±Œë¦°ì§€Â€</h2>
+						<h2>Ã§¸°Áö</h2>
 					</div>
 				</div>
 			</div>
@@ -233,64 +232,64 @@
 
 			<hr style="border: solid 1px gray;">
 				<tr height="35px" bgcolor="whitesmoke">
-					<td align="right">ì±Œë¦°ì§€ ë¶„ë¥˜</td>
+					<td align="right">Ã§¸°Áö ºĞ·ù</td>
 					<td align="left">
 					<select name="chall_cat1">
-							<option value="ê°œì¸">ê°œì¸</option>
-							<option value="ê·¸ë£¹">ê·¸ë£¹</option>
-							<option value="ì „ì²´">ì „ì²´</option>
-							<option value="ì¸ê¸°">ì¸ê¸°</option>
-							<option value="ì¶”ì²œ">ì¶”ì²œ</option>
+							<option value="°³ÀÎ">°³ÀÎ</option>
+							<option value="±×·ì">±×·ì</option>
+							<option value="ÀüÃ¼">ÀüÃ¼</option>
+							<option value="ÀÎ±â">ÀÎ±â</option>
+							<option value="ÃßÃµ">ÃßÃµ</option>
 					</select></td>
 				</tr>
 			<hr style="border: solid 1px gray;">
 
-			<h5 align="center">ì–´ë–¤ ì£¼ì œì™€ ê´€ë ¨ì´ ìˆë‚˜ìš”?</h5>
+			<h5 align="center">¾î¶² ÁÖÁ¦¿Í °ü·ÃÀÌ ÀÖ³ª¿ä?</h5>
 			<br>
 
 			<ul>
 				<li><span class="radio" id="all_list"> <input
 						type="radio" id="view_all1" name="chall_cat2" value="health">
-						<label for="view_all1"><span class="round"></span>ê±´ê°•</label>
+						<label for="view_all1"><span class="round"></span>°Ç°­</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_live1" name="chall_cat2" value="emotion">
-						<label for="view_live1"> <span class="round"></span>ì •ì„œ
+						<label for="view_live1"> <span class="round"></span>Á¤¼­
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_live2" name="chall_cat2" value="life">
-						<label for="view_live2"> <span class="round"></span>ìƒí™œ
+						<label for="view_live2"> <span class="round"></span>»ıÈ°
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_live3" name="chall_cat2" value="ability">
-						<label for="view_live3"> <span class="round"></span>ì—­ëŸ‰
+						<label for="view_live3"> <span class="round"></span>¿ª·®
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_live4" name="chall_cat2" value="asset">
-						<label for="view_live4"> <span class="round"></span>ìì‚°
+						<label for="view_live4"> <span class="round"></span>ÀÚ»ê
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_live5" name="chall_cat2" value="hobby">
-						<label for="view_live5"> <span class="round"></span>ì·¨ë¯¸
+						<label for="view_live5"> <span class="round"></span>Ãë¹Ì
 					</label>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_live6" name="chall_cat2" value="etc">
-						<label for="view_live6"> <span class="round"></span>ê·¸ì™¸
+						<label for="view_live6"> <span class="round"></span>±×¿Ü
 					</label>
 				</span></li>
 			</ul>
 			<br> <br> <br>
 			<hr style="border: solid 1px gray;">
 			<br>
-			<h5 align="center">ì±Œë¦°ì§€ ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.</h5>
+			<h5 align="center">Ã§¸°Áö Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.</h5>
 			<br>
-			<!-- ë°‘ ì‚¬ì´ì¦ˆ ì‘ê²Œ -->
-			<p class="mb-15">íƒ€ì¸ì—ê²Œ ë¶ˆì¾Œê°ì„ ì£¼ëŠ” ë‹¨ì–´ë¥¼ ì‚¬ìš©í•  ê²½ìš° ê³„ì •ì´ ì˜êµ¬ì •ì§€ ë  ìˆ˜ ìˆìŠµë‹ˆë‹¤</p>
+			<!-- ¹Ø »çÀÌÁî ÀÛ°Ô -->
+			<p class="mb-15">Å¸ÀÎ¿¡°Ô ºÒÄè°¨À» ÁÖ´Â ´Ü¾î¸¦ »ç¿ëÇÒ °æ¿ì °èÁ¤ÀÌ ¿µ±¸Á¤Áö µÉ ¼ö ÀÖ½À´Ï´Ù</p>
 			<div align="center">
 				<input type="text" name="chall_subject" style="width: 300px" required><br>
 			</div>
@@ -300,26 +299,26 @@
 
 			<!--===========================================================  -->
 			<br>
-			<h5 align="center">ì±Œë¦°ì§€ë¥¼ ì†Œê°œí•˜ì„¸ìš”.</h5>
+			<h5 align="center">Ã§¸°Áö¸¦ ¼Ò°³ÇÏ¼¼¿ä.</h5>
 			<br>
-			<!-- ë°‘ ì‚¬ì´ì¦ˆ ì‘ê²Œ -->
+			<!-- ¹Ø »çÀÌÁî ÀÛ°Ô -->
 			<div align="center">
 
 				<textarea name="chall_Introduce" id="" cols="34" rows="5"
-					placeholder="ì¶”ê°€ ê¸€ë¡œ ì±Œë¦°ì§€ë¥¼ ìì„¸íˆ ì†Œê°œí•´ë³´ì„¸ìš”." required></textarea>
+					placeholder="Ãß°¡ ±Û·Î Ã§¸°Áö¸¦ ÀÚ¼¼È÷ ¼Ò°³ÇØº¸¼¼¿ä." required></textarea>
 			</div>
-			<!-- ê¸€ììˆ˜ ì²´í¬í•´ì£¼ëŠ” ê²ƒ ë„£ì–´ì•¼í•¨ -->
+			<!-- ±ÛÀÚ¼ö Ã¼Å©ÇØÁÖ´Â °Í ³Ö¾î¾ßÇÔ -->
 			<br> <br>
 			<hr style="border: solid 1px gray;">
 			<input type="file" id="chooseFile1" name="chall_pic1"
 				accept="image/*" onchange="loadFile(this)">
-			<h5 align="center">ì±Œë¦°ì§€ ëŒ€í‘œ ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•˜ì„¸ìš”.</h5>
+			<h5 align="center">Ã§¸°Áö ´ëÇ¥ ÀÌ¹ÌÁö¸¦ µî·ÏÇÏ¼¼¿ä.</h5>
 			<!-- ================================================================== -->
 			<div align="center">
 				<div class="single-image-1">
 					<label for="chooseFile1">
 						<div class="labelbox">
-							<p id="labeltext">í´ë¦­</p>
+							<p id="labeltext">Å¬¸¯</p>
 						</div>
 					</label>
 				</div>
@@ -335,34 +334,34 @@
 			<hr style="border: solid 1px gray;">
 
 			<!--===========================================================  -->
-			<h5 align="center">ì±Œë¦°ì§€ ì‹œì‘ì¼</h5>
+			<h5 align="center">Ã§¸°Áö ½ÃÀÛÀÏ</h5>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
 						type="radio" id="view_all2" name="chall_start" value="today">
 						<label for="view_all2"><span class="round"></span> <span
-							class="selectDate">ì˜¤ëŠ˜??</span> </label>
+							class="selectDate">¿À´Ã??</span> </label>
 						<p class="start1" style="display: none;"></p>
 
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_liv1" name="chall_start" value="1_week">
 						<label for="view_liv1"> <span class="round"></span> <span
-							class="selectDate">ì•„ëƒ.. ë‹´ì£¼?</span>
+							class="selectDate">¾Æ³Ä.. ´ãÁÖ?</span>
 					</label>
 						<p class="start2" style="display: none;"></p>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_liv2" name="chall_start" value="2_weeks">
 						<label for="view_liv2"> <span class="round"></span> <span
-							class="selectDate">ì—­ì‹œ 2ì£¼ ì •ë„?</span>
+							class="selectDate">¿ª½Ã 2ÁÖ Á¤µµ?</span>
 					</label>
 						<p class="start3" style="display: none;"></p>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_liv3" name="chall_start" value="1_month">
 						<label for="view_liv3"> <span class="round"></span> <span
-							class="selectDate">ë‹´ë‹¬ì— í• ê¹Œ?</span>
+							class="selectDate">´ã´Ş¿¡ ÇÒ±î?</span>
 					</label>
 						<p class="start4" style="display: none;"></p>
 				</span></li>
@@ -370,7 +369,7 @@
 			<br> <br>
 			<hr style="border: solid 1px gray;">
 			<br>
-			<h5 align="center">ì±Œë¦°ì§€ ê¸°ê°„</h5>
+			<h5 align="center">Ã§¸°Áö ±â°£</h5>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
@@ -399,35 +398,35 @@
 				</span></li>
 			</ul>
 			<br> <br>
-			<!-- ê¸°í•œ ë‚˜íƒ€ë‚´ì£¼ëŠ” jquary  -->
+			<!-- ±âÇÑ ³ªÅ¸³»ÁÖ´Â jquary  -->
 			<p class="start1" style="display: none;"></p>
 			<p class="start2" style="display: none;"></p>
 			<p class="start3" style="display: none;"></p>
 			<p class="start4" style="display: none;"></p>
 			<p id="period" style="display: none;"></p>
 
-			<!-- ì±Œë¦°ì§€ ì˜ˆìƒ ì¢…ë£Œì¼ ë³´ì—¬ì£¼ëŠ” ë¶€ë¶„ ìˆìœ¼ë©´ ì¢‹ì„ë“¯-->
+			<!-- Ã§¸°Áö ¿¹»ó Á¾·áÀÏ º¸¿©ÁÖ´Â ºÎºĞ ÀÖÀ¸¸é ÁÁÀ»µí-->
 			<hr style="border: solid 1px gray;">
 			<br>
-			<h5 align="center">ëª¨ì§‘ ë°©ì‹ì„ ì„ íƒí•´ì£¼ì„¸ìš”.</h5>
+			<h5 align="center">¸ğÁı ¹æ½ÄÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.</h5>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
 						type="radio" id="view_all4" name="chall_Private" value="official"
 						onClick="this.form.chall_pw.disabled=true"> <label
-						for="view_all4"><span class="round"></span>ê³µê°œëª¨ì§‘</label> <!-- ê¸°ë³¸ì€ ê³µê°œëª¨ì§‘ ìœ¼ë¡œì¨ ê³µê°œëª¨ì§‘ ì„ íƒì‹œ íƒœê·¸ì„¤ì •íƒ­-->
+						for="view_all4"><span class="round"></span>°ø°³¸ğÁı</label> <!-- ±âº»Àº °ø°³¸ğÁı À¸·Î½á °ø°³¸ğÁı ¼±ÅÃ½Ã ÅÂ±×¼³Á¤ÅÇ-->
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_l1" name="chall_Private" value="informal"
 						onClick="this.form.chall_pw.disabled=false"> <label
-						for="view_l1"> <span class="round"></span>ë¹„ê³µê°œëª¨ì§‘
-					</label> <!-- ë¹„ë°€ë²ˆí˜¸ ì„¤ì • ì°½ì´ ë‚˜ì™€ì•¼í•¨ (ì°¸ê°€ì½”ë“œì„¤ì •)-->
+						for="view_l1"> <span class="round"></span>ºñ°ø°³¸ğÁı
+					</label> <!-- ºñ¹Ğ¹øÈ£ ¼³Á¤ Ã¢ÀÌ ³ª¿Í¾ßÇÔ (Âü°¡ÄÚµå¼³Á¤)-->
 				</span></li>
 			</ul>
 			<br>
 			<div align="center">
 				<input type="text" name="chall_pw" size="30" disabled
-					placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”" required>
+					placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä" required>
 			</div>
 
 			<br> <br>
@@ -437,9 +436,9 @@
 
 
 			<br>
-			<h5 align="center">ì¸ì¦ìƒ· ì˜ˆì‹œë¥¼ ë“±ë¡í•˜ì„¸ìš”.</h5>
+			<h5 align="center">ÀÎÁõ¼¦ ¿¹½Ã¸¦ µî·ÏÇÏ¼¼¿ä.</h5>
 			<br>
-			<p class="mb-3">ë‹¤ë¥¸ ì‚¬ëŒë“¤ê³¼ í•¨ê»˜í•˜ê²Œ ëœë‹¤ë©´, ì •í™•í•œ ê¸°ì¤€ì¼ìˆ˜ë¡ í–¥í›„ ë¶„ìŸ ì†Œì§€ê°€ ì ìŠµë‹ˆë‹¤.</p>
+			<p class="mb-3">´Ù¸¥ »ç¶÷µé°ú ÇÔ²²ÇÏ°Ô µÈ´Ù¸é, Á¤È®ÇÑ ±âÁØÀÏ¼ö·Ï ÇâÈÄ ºĞÀï ¼ÒÁö°¡ Àû½À´Ï´Ù.</p>
 			<br>
 			<!--=========================================================================  -->
 			<!--=========================================================================  -->
@@ -448,11 +447,11 @@
 			<input type="file" id="chooseFile2" name="chall_pic2" accept="image/*"
 						onchange="loadFile(this)">
 			<div class="image-box">
-				<h5>ì¢‹ì€ ì¸ì¦ìƒ· ì˜ˆì‹œ</h5>
+				<h5>ÁÁÀº ÀÎÁõ¼¦ ¿¹½Ã</h5>
 				<div class="single-image-1">
 					<label class="single-label" for="chooseFile2"> 
 						<div class="labelbox">
-							<p id="labeltext">í´ë¦­</p>
+							<p id="labeltext">Å¬¸¯</p>
 						</div>
 					</label>
 				</div>
@@ -461,13 +460,13 @@
 				<img class="image-thumbnail" id="image2" /> <br>
 			</div>
 			<div class="image-box">
-				<h5>ë‚˜ìœ ì¸ì¦ìƒ· ì˜ˆì‹œ</h5>
+				<h5>³ª»Û ÀÎÁõ¼¦ ¿¹½Ã</h5>
 				<div class="single-image-1">
 					<label class="single-label" for="chooseFile3"> <input
 						type="file" id="chooseFile3" name="chall_pic3" accept="image/*"
 						onchange="loadFile(this)">
 						<div class="labelbox">
-							<p id="labeltext">í´ë¦­</p>
+							<p id="labeltext">Å¬¸¯</p>
 						</div>
 					</label>
 
@@ -483,11 +482,11 @@
 			<!--=========================================================================  -->
 			<hr style="border: solid 1px gray;">
 			<br>
-			<!-- ë§ˆì§€ë§‰ ì œì¶œì„ ëˆ„ë¥¼ì‹œ ëª¨ë“ ê²ƒì„ ë³´ì—¬ì£¼ëŠ” ì°½ì´ìˆìœ¼ë©´ ì¢‹ê² ìŒ -->
+			<!-- ¸¶Áö¸· Á¦ÃâÀ» ´©¸¦½Ã ¸ğµç°ÍÀ» º¸¿©ÁÖ´Â Ã¢ÀÌÀÖÀ¸¸é ÁÁ°ÚÀ½ -->
 			<div align="center">
 			<input type="submit"
 				style="width: 300px; background-color: ##caffbf; "
-				value="ì±Œë¦°ì§€ ê°œì„¤í•˜ê¸°">
+				value="Ã§¸°Áö °³¼³ÇÏ±â">
 			</div>
 		</form>
 	</div>
@@ -536,8 +535,8 @@
 					var today = new Date();
 
 					$('#period').html(
-							" ~ " + year + "ë…„ë„" + month + "ì›” " + day + "ì¼ "
-									+ hours + "ì‹œ" + minutes + "ë¶„ ê¹Œì§€")
+							" ~ " + year + "³âµµ" + month + "¿ù " + day + "ÀÏ "
+									+ hours + "½Ã" + minutes + "ºĞ ±îÁö")
 					$('#period').css('display', 'block');
 				});
 
@@ -567,32 +566,32 @@
 
 					if (changed == 'today') {
 						$('.start1').css('display', 'inline').html(
-								eyear + "ë…„ë„" + emonth + "ì›” " + eday + "ì¼ "
-										+ ehours + "ì‹œ" + eminutes + "ë¶„")
+								eyear + "³âµµ" + emonth + "¿ù " + eday + "ÀÏ "
+										+ ehours + "½Ã" + eminutes + "ºĞ")
 						$('.start2').css('display', 'none');
 						$('.start3').css('display', 'none');
 						$('.start4').css('display', 'none');
 					} else if (changed == '1_month') {
 						$('.start4').css('display', 'inline');
 						$('.start4').html(
-								eyear + "ë…„ë„" + emonth + "ì›” " + eday + "ì¼ "
-										+ ehours + "ì‹œ" + eminutes + "ë¶„")
+								eyear + "³âµµ" + emonth + "¿ù " + eday + "ÀÏ "
+										+ ehours + "½Ã" + eminutes + "ºĞ")
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');
 						$('.start3').css('display', 'none');
 					} else if (changed == '1_week') {
 						$('.start2').css('display', 'inline');
 						$('.start2').html(
-								eyear + "ë…„ë„" + emonth + "ì›” " + eday + "ì¼ "
-										+ ehours + "ì‹œ" + eminutes + "ë¶„")
+								eyear + "³âµµ" + emonth + "¿ù " + eday + "ÀÏ "
+										+ ehours + "½Ã" + eminutes + "ºĞ")
 						$('.start1').css('display', 'none');
 						$('.start3').css('display', 'none');
 						$('.start4').css('display', 'none');
 					} else {
 						$('.start3').css('display', 'inline');
 						$('.start3').html(
-								eyear + "ë…„ë„" + emonth + "ì›” " + eday + "ì¼ "
-										+ ehours + "ì‹œ" + eminutes + "ë¶„")
+								eyear + "³âµµ" + emonth + "¿ù " + eday + "ÀÏ "
+										+ ehours + "½Ã" + eminutes + "ºĞ")
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');
 						$('.start4').css('display', 'none');
