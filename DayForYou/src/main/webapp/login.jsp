@@ -59,33 +59,22 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				<br>
-				<br>
-				
+				<br> <br>
+
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn" type="submit">login</button>
 				</div>
 			</form>
-
 			<br>
-
 			<div class="container-login100-form-btn">
 				<a href="main.html">
 					<button class="login100-form-btn">B_login</button>
 				</a>
 			</div>
-
 			<br>
-
-
-
-
 			<div class="text-center">
 				<a href="join.jsp" class="txt2 hov1"> Sign Up </a>
 			</div>
-
-
-
 		</div>
 	</div>
 

@@ -1,13 +1,14 @@
+<%@page import="java.net.URLDecoder"%>
 <%@page import="Controller.loginService"%>
 <%@page import="model.DAO"%>
 <%@page import="model.MemberVo"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>Login V9</title>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
@@ -44,8 +45,8 @@
 <% Cookie co[] = request.getCookies();
 String error_id = "";
 for(Cookie i: co){
-	if(i.getName().equals("error_id")){
-		error_id = i.getValue();
+	if(i.getName().equals("error_id")){		
+		error_id = URLDecoder.decode(i.getValue(), "UTF-8");
 		break;
 	}
 }
@@ -71,8 +72,8 @@ for(Cookie i: co){
 					<span class="focus-input100"></span>
 				</div>
 				<input type="hidden" name="ACCESS" value="true">
-				<!-- �α��� ���� ��, ��� -->
-				<div id = "failMsg"> <p style = "color:red;">���̵� �Ǵ� ��й�ȣ�� �ٽ� Ȯ���ϼ���.</p></div>
+				<!-- 로그인 실패 시, 출력 -->
+				<div id = "failMsg"> <p style = "color:red;">아이디 또는 비밀번호를 다시 확인하세요.</p></div>
 				 <br> 
 
 				<div class="container-login100-form-btn">

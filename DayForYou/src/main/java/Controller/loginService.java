@@ -1,8 +1,11 @@
 package Controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,8 +35,10 @@ public class loginService extends HttpServlet {
 
 			response.sendRedirect("main.html");
 		} else {
+			Cookie cookie = new Cookie("error_id", URLEncoder.encode(id,"UTF-8"));
+			response.addCookie(cookie);
 			
-			System.out.print("로그인 실패");
+			response.sendRedirect("login_error.jsp");			
 		}
 
 	}
