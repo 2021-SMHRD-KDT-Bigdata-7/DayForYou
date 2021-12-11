@@ -1,4 +1,5 @@
 
+<%@page import="model.MemberVo"%>
 <%@page import="model.diaryVO"%>
 <%@page import="model.DAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -29,10 +30,10 @@
 
 <body>
 	<%
-//								HttpSession session = request.getSession();
-//								MemberVo vo = (MemberVo) session.getAttribute("vo");
-//								String m_id = vo.getId();
-		 	String m_id ="m_id 01";
+				HttpSession session1 = request.getSession();
+				MemberVo vo = (MemberVo) session1.getAttribute("vo");
+				String m_id = vo.getId();
+		 	//String m_id ="m_id 01"; 
 
 			DAO dao = new DAO();
 			ArrayList<diaryVO> diarys = dao.SelectDiary(m_id);%>

@@ -9,11 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import model.DAO;
+import model.MemberVo;
 import model.diaryVO;
 
 /**
@@ -74,12 +76,13 @@ public class DiaryService extends HttpServlet {
 				}
 				
 				//로그인 완성되면 이거 아래로 쓰기
-//				HttpSession session = request.getSession();
-//				MemberVo vo = (MemberVo) session.getAttribute("vo");
-//				String m_id = vo.getId();
+				
+				 HttpSession session = request.getSession(); MemberVo vo = (MemberVo)
+				  session.getAttribute("vo"); String m_id = vo.getId();
+				 
 				
 				//이거 아래는 임의로 줌.
-				String m_id = "m_id 01";
+				//String m_id = "m_id 01";
 				
 				// DAO 메서드 사용해서 Diarylist 테이블에 저장
 				DAO dao = new DAO();
