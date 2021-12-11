@@ -292,7 +292,7 @@
 			<!-- 밑 사이즈 작게 -->
 			<p class="mb-15">타인에게 불쾌감을 주는 단어를 사용할 경우 계정이 영구정지 될 수 있습니다</p>
 			<div align="center">
-				<input type="text" name="chall_subject" style="width: 300px"><br>
+				<input type="text" name="chall_subject" style="width: 300px" required><br>
 			</div>
 			<br>
 			<hr style="border: solid 1px gray;">
@@ -306,7 +306,7 @@
 			<div align="center">
 
 				<textarea name="chall_Introduce" id="" cols="34" rows="5"
-					placeholder="추가 글로 챌린지를 자세히 소개해보세요."></textarea>
+					placeholder="추가 글로 챌린지를 자세히 소개해보세요." required></textarea>
 			</div>
 			<!-- 글자수 체크해주는 것 넣어야함 -->
 			<br> <br>
@@ -427,7 +427,7 @@
 			<br>
 			<div align="center">
 				<input type="text" name="chall_pw" size="30" disabled
-					placeholder="비밀번호를 입력해 주세요">
+					placeholder="비밀번호를 입력해 주세요" required>
 			</div>
 
 			<br> <br>
