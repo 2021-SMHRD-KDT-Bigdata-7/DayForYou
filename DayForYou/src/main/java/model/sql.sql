@@ -1,9 +1,10 @@
 select * from tbl_member
 select * from tbl_challenge;
+select * from tbl_challenge where chal_seq = 243;
+ALTER TABLE tbl_challenge MODIFY (chal_period VARCHAR2(150));
 
 
-
-INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('m_id 01', 'm_pwd 01', 'm_name 01', 'm_nick 01', 'm_phone 01', 'm_email 01', sysdate, 'N', 'm_job 01', 'm_addr 01', sysdate, 01, 'N');
+INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('a', 'm_pwd 01', 'm_name 01', 'm_nick 01', 'm_phone 01', 'm_email 01', sysdate, 'N', 'm_job 01', 'm_addr 01', sysdate, 01, 'N');
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('m_id 02', 'm_pwd 02', 'm_name 02', 'm_nick 02', 'm_phone 02', 'm_email 02', sysdate, 'N', 'm_job 02', 'm_addr 02', sysdate, 02, 'N');
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('m_id 03', 'm_pwd 03', 'm_name 03', 'm_nick 03', 'm_phone 03', 'm_email 03', sysdate, 'N', 'm_job 03', 'm_addr 03', sysdate, 03, 'N');
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('m_id 04', 'm_pwd 04', 'm_name 04', 'm_nick 04', 'm_phone 04', 'm_email 04', sysdate, 'N', 'm_job 04', 'm_addr 04', sysdate, 04, 'N');
