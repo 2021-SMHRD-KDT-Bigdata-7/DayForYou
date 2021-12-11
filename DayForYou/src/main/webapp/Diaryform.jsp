@@ -154,12 +154,12 @@ m_id = vo.getId();
                                             <label>내용작성</label>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12" align = "right">
                                   
                                     <!--  	<button class = "button7" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">ì·¨ì</button>
                                         <button class = "button6" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">ì ì¥</button> -->
-                                        <img src = "img/main-img/diaryn.PNG">                                       
-                                        <button type = "submit"><img src = "img/main-img/diaryoo.PNG" alt = "" align = "right"></button>
+                                        <span><a href = "Diarylist.jsp"><img src = "img/main-img/diaryn.PNG" align = "right"></a></span>                                      
+                                        <a><button type = "submit" style = "border: 0;"><img src = "img/main-img/diaryoo.PNG" alt = ""></button></a>
                                     </div>
                                 </div>
                             </form>

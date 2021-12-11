@@ -4,8 +4,8 @@
 <%@page import="model.DAO"%>
 <%@page import="java.util.ArrayList"%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,11 +30,14 @@
 
 <body>
 	<%
+	
 	HttpSession session1 = request.getSession();
 	MemberVo vo = (MemberVo) session1.getAttribute("vo");
-	String m_id = vo.getId();
+	String m_id = "a";
+	if(vo != null){
+	m_id = vo.getId();
 	//String m_id ="m_id 01"; 
-
+	}
 	DAO dao = new DAO();
 	ArrayList<diaryVO> diarys = dao.SelectDiary(m_id);
 	
@@ -273,7 +276,7 @@
 
 							<div>
 								<hr>
-								<button class="button4" id="more">¥ı∫∏±‚</button>
+								<button class="button4" id="more">ÎçîÎ≥¥Í∏∞</button>
 							</div>
 							<h4>
 								<a href="#" class="post-headline"></a>
