@@ -204,7 +204,8 @@
 							<br><br>
 							<a><img src = "img/portfolio-img/portfolioE.PNG"></a>
 							<br><br>
-							<a>5. DayForYou가 제공하는 기록 그래프로 한 눈에 확인하기</a>
+							<span><a>5. DayForYou가 제공하는 기록 그래프 활용</a></span>
+							<span><a href = "mychart.html"><img src = "img/portfolio-img/graphkey.PNG" width = "100px" align = "right"></a></span>
 							<br><br>
 							<a><img src = "img/portfolio-img/portfolioF.PNG"></a>
 							
