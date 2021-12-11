@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +39,7 @@
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="modal-body">
-                        <h5 class="title">ê²Œì‹œê¸€ ê²€ìƒ‰</h5>
+                        <h5 class="title">°Ô½Ã±Û °Ë»ö</h5>
                         <form action="#" class="newsletterForm" method="post">
                             <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
                             <button type="submit" class="btn original-btn">Subscribe</button>
@@ -228,7 +230,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last nightâ€™s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night¡¯s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -243,7 +245,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last nightâ€™s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night¡¯s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -258,7 +260,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last nightâ€™s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night¡¯s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -276,48 +278,48 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-area clearfix mb-100">
                         <!-- Blog Content -->
-      <div class="board_wrap">
+     <div class="board_wrap">
         <div class="board_title">
-            <strong>ê³µì§€ì‚¬í•­</strong>
-            <p>ê³µì§€ì‚¬í•­ì„ ë¹ ë¥´ê³  ì •í™•í•˜ê²Œ ì•ˆë‚´í•´ë“œë¦½ë‹ˆë‹¤.</p>
+            <strong>°øÁö»çÇ×</strong>
+            <p>°øÁö»çÇ×À» ºü¸£°í Á¤È®ÇÏ°Ô ¾È³»ÇØµå¸³´Ï´Ù.</p>
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    ê¸€ ì œëª©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤.
+                    ±Û Á¦¸ñÀÌ µé¾î°©´Ï´Ù.
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>ë²ˆí˜¸</dt>
+                        <dt>¹øÈ£</dt>
                         <dd>1</dd>
                     </dl>
                     <dl>
-                        <dt>ê¸€ì“´ì´</dt>
-                        <dd>ê¹€ì´ë¦„</dd>
+                        <dt>±Û¾´ÀÌ</dt>
+                        <dd>±èÀÌ¸§</dd>
                     </dl>
                     <dl>
-                        <dt>ìž‘ì„±ì¼</dt>
+                        <dt>ÀÛ¼ºÀÏ</dt>
                         <dd>2021.1.16</dd>
                     </dl>
                     <dl>
-                        <dt>ì¡°íšŒ</dt>
+                        <dt>Á¶È¸</dt>
                         <dd>33</dd>
                     </dl>
                 </div>
                 <div class="cont">
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤<br>
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤<br>
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤<br>
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤<br>
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤<br>
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤<br>
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤<br>
-                    ê¸€ ë‚´ìš©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù<br>
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù<br>
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù<br>
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù<br>
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù<br>
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù<br>
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù<br>
+                    ±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="list.html" class="on">ëª©ë¡</a>
-                <a href="edit.html">ìˆ˜ì •</a>
+                <a href="Board_list.jsp" class="on">¸ñ·Ï</a>
+                <a href="Board_edit.jsp">¼öÁ¤</a>
             </div>
         </div>
     </div>

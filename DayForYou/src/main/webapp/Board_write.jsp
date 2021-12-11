@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +39,7 @@
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="modal-body">
-                        <h5 class="title">게시글 검색</h5>
+                        <h5 class="title">�Խñ� �˻�</h5>
                         <form action="#" class="newsletterForm" method="post">
                             <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
                             <button type="submit" class="btn original-btn">Subscribe</button>
@@ -228,7 +230,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night��s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -243,7 +245,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night��s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -258,7 +260,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night��s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -276,46 +278,36 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-area clearfix mb-100">
                         <!-- Blog Content -->
-     <div class="board_wrap">
+    <div class="board_wrap">
         <div class="board_title">
-            <strong>공지사항</strong>
-            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
-
+            <strong>�Խñ�</strong>
+            <p>�Խñ��� ���Ӱ� ����ϴ� �� �Դϴ�. ������ �߲ٶ�</p>
         </div>
         <div class="board_write_wrap">
             <div class="board_write">
-                
                 <div class="title">
                     <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력" value="글 제목이 들어갑니다"></dd>
+                        <dt>����</dt>
+                        <dd><input type="text" placeholder="���� �Է�"></dd>
                     </dl>
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>글쓴이</dt>
-                        <dd><input type="text" placeholder="글쓴이 입력" value="김이름"></dd>
+                        <dt>�۾���</dt>
+                        <dd><input type="text" placeholder="�۾��� �Է�"></dd>
                     </dl>
                     <dl>
-                        <dt>비밀번호</dt>
-                        <dd><input type="password" placeholder="비밀번호 입력" value="1234"></dd>
+                        <dt>��й�ȣ</dt>
+                        <dd><input type="password" placeholder="��й�ȣ �Է�"></dd>
                     </dl>
                 </div>
                 <div class="cont">
-                    <textarea placeholder="내용 입력">
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.</textarea>
+                    <textarea placeholder="���� �Է�"></textarea>
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">수정</a>
-                <a href="view.html">취소</a>
+                <a href="Board_view.jsp" class="on">���</a>
+                <a href="Board_list.jsp">���</a>
             </div>
         </div>
     </div>

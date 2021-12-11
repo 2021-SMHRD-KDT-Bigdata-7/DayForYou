@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +39,7 @@
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="modal-body">
-                        <h5 class="title">ê²Œì‹œê¸€ ê²€ìƒ‰</h5>
+                        <h5 class="title">°Ô½Ã±Û °Ë»ö</h5>
                         <form action="#" class="newsletterForm" method="post">
                             <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
                             <button type="submit" class="btn original-btn">Subscribe</button>
@@ -228,7 +230,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last nightâ€™s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night¡¯s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -243,7 +245,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last nightâ€™s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night¡¯s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -258,7 +260,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last nightâ€™s party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night¡¯s party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -276,74 +278,49 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-area clearfix mb-100">
                         <!-- Blog Content -->
-     <div class="board_wrap">
+    <div class="board_wrap">
         <div class="board_title">
-            <strong>ê³µì§€ì‚¬í•­</strong>
-            <p>ê³µì§€ì‚¬í•­ì„ ë¹ ë¥´ê³  ì •í™•í•˜ê²Œ ì•ˆë‚´í•´ë“œë¦½ë‹ˆë‹¤.</p>
+            <strong>°øÁö»çÇ×</strong>
+            <p>°øÁö»çÇ×À» ºü¸£°í Á¤È®ÇÏ°Ô ¾È³»ÇØµå¸³´Ï´Ù.</p>
+
         </div>
-        <div class="board_list_wrap">
-            <div class="board_list">
-                <div class="top">
-                    <div class="num">ë²ˆí˜¸</div>
-                    <div class="title">ì œëª©</div>
-                    <div class="writer">ê¸€ì“´ì´</div>
-                    <div class="date">ìž‘ì„±ì¼</div>
-                    <div class="count">ì¡°íšŒ</div>
+        <div class="board_write_wrap">
+            <div class="board_write">
+                
+                <div class="title">
+                    <dl>
+                        <dt>Á¦¸ñ</dt>
+                        <dd><input type="text" placeholder="Á¦¸ñ ÀÔ·Â" value="±Û Á¦¸ñÀÌ µé¾î°©´Ï´Ù"></dd>
+                    </dl>
                 </div>
-                <div>
-                    <div class="num">5</div>
-                    <div class="title"><a href="view.html">ê¸€ ì œëª©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤.</a></div>
-                    <div class="writer">ê¹€ì´ë¦„</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
+                <div class="info">
+                    <dl>
+                        <dt>±Û¾´ÀÌ</dt>
+                        <dd><input type="text" placeholder="±Û¾´ÀÌ ÀÔ·Â" value="±èÀÌ¸§"></dd>
+                    </dl>
+                    <dl>
+                        <dt>ºñ¹Ð¹øÈ£</dt>
+                        <dd><input type="password" placeholder="ºñ¹Ð¹øÈ£ ÀÔ·Â" value="1234"></dd>
+                    </dl>
                 </div>
-                <div>
-                    <div class="num">4</div>
-                    <div class="title"><a href="view.html">ê¸€ ì œëª©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤.</a></div>
-                    <div class="writer">ê¹€ì´ë¦„</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
+                <div class="cont">
+                    <textarea placeholder="³»¿ë ÀÔ·Â">
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.
+±Û ³»¿ëÀÌ µé¾î°©´Ï´Ù.</textarea>
                 </div>
-                <div>
-                    <div class="num">3</div>
-                    <div class="title"><a href="view.html">ê¸€ ì œëª©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤.</a></div>
-                    <div class="writer">ê¹€ì´ë¦„</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">2</div>
-                    <div class="title"><a href="view.html">ê¸€ ì œëª©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤.</a></div>
-                    <div class="writer">ê¹€ì´ë¦„</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">1</div>
-                    <div class="title"><a href="view.html">ê¸€ ì œëª©ì´ ë“¤ì–´ê°‘ë‹ˆë‹¤.</a></div>
-                    <div class="writer">ê¹€ì´ë¦„</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-            </div>
-            <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
             </div>
             <div class="bt_wrap">
-                <a href="write.html" class="on">ë“±ë¡</a>
-                <!--<a href="#">ìˆ˜ì •</a>-->
+                <a href="Board_view.jsp" class="on">¼öÁ¤</a>
+                <a href="Board_view.jsp">Ãë¼Ò</a>
             </div>
         </div>
-    </div>
-                
+    </div> 
         
     <!-- ##### Instagram Feed Area End ##### -->
 
