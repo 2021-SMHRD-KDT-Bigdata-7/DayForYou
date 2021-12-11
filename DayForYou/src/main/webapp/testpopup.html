@@ -10,77 +10,17 @@
 
 <body>
    
-    <button id="diary">다이어리</button>
-    <button id="cal">캘린더</button>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
 
-        let diary = `
-        <h1>일기 작성</h1>
-        `;
 
-        let cale = `
-        <h1>캘린더 작성</h1>
-		<table> 
-			<tr>
-				<td>하루종일</td>
-				<td><input type="checkbox"></td>
-			</tr>
-			 
-	        <tr>
-	        	<td>일정명</td>
-	        	<td><input type="text"></td>
-	        </tr>
-	        
-		    <tr>
-		    	<td>시작</td>
-		    	<td><input type="datetime-local"></td>
-		    </tr>
-		      
-			<tr>
-				<td>끝</td>
-				<td><input type="datetime-local"></td>
-			</tr>
-			
-			<tr>
-				<td>구분</td>
-				<td>
-				<select>
-			    	<option value="study">공부</option>
-			    	<option value="sport">운동</option>
-			   		<option value="hobby">취미</option>
-			    	<option value="etc">기타</option>
-	 		 	</select>
-	 		 	</td>
-			</tr>
-			
-			<tr>
-				<td>색상</td>
-				<td><input type="color"></td>
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td><textarea cols = "30" rows = "10"></textarea></td>
-			</tr>
-			
-			<tr>
-				<td align = "Right" colspan = "2">
-					<button id="CalCancle" onClick="#">취소</button>
+        let cale = ` title : <input type = "text">
 		       		<button id="CalSubmit" onClick="makeCal()">저장</button>
-				</td>			
-			</tr>
-		</table> 
+	
         `
-        $('#diary').on('click', function(){
-            $('body').html(diary);
-        });
-
-        $('#cal').on('click', function(){
-            $('body').html(cale);
-        });
-
+        $('body').html(cale);
         console.log(window.arg);
+
         let makeCal = function(){
             window.cal.addEvent({
                 title: $('input').val(),
