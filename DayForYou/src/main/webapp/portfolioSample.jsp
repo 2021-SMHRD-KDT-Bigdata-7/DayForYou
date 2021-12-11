@@ -127,7 +127,7 @@
                                     </li>
                                      <li><a href="#">Portfolio</a>
                                         <ul class="dropdown">
-                                            <li><a href="PortfolioSample.jsp">Sample</a></li>
+                                            <li><a href="portfolioSample.jsp">Sample</a></li>
                                             <li><a href="about-us.html">Create</a></li>
                                         </ul>
                                     </li>
