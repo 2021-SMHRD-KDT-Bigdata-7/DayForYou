@@ -183,7 +183,7 @@
                             </div>
                             <hr>
                             <br>
-                            <a><img src = "img/main-img/intro2.PNG"></a>
+                            <a><img src = "img/portfolio-img/intro2.PNG"></a>
 							<br><br><br>
 							
 							<a>1. Ç¥Áö</a>
