@@ -140,7 +140,7 @@
                                     </li>
                                     
                                   
-                                    <li><a href="contact.html">About Us</a></li>
+                                    <li><a href="mypage.html">MyPage</a></li>
                                 </ul>
 
                             <!-- Nav End -->
