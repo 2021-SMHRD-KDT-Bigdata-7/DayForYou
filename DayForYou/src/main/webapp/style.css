@@ -1602,5 +1602,8 @@ textarea:focus ~ .highlight {
 
 /*# sourceMappingURL=style.css.map */
 
-
+.img-mini {
+	 height: auto;
+  max-width: 50%; 
+}
 

@@ -27,19 +27,21 @@
 
 <body>
 	<!-- 스크립트릿 -->
-	<%
+	<%	
+	
 	DAO dao = new DAO();
+
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
-	
+
 	ArrayList<challengeBoardVO> chall_group = dao.SelectChallengeBoard_cat("그룹");
-	
-	ArrayList<challengeBoardVO> chall_all= dao.SelectChallengeBoard_cat("전체");
-	
+
+	ArrayList<challengeBoardVO> chall_all = dao.SelectChallengeBoard_cat("전체");
+
 	ArrayList<challengeBoardVO> chall_popularity = dao.SelectChallengeBoard_cat("인기");
-	
-	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("추천");
-	
-	if (chall_personal == null){
+
+	ArrayList<challengeBoardVO> chall_suggestion = dao.SelectChallengeBoard_cat("추천");
+
+	if (chall_personal == null) {
 		System.out.println("불러올 수 없습니다.");
 	}
 	%>
@@ -54,8 +56,6 @@
 	<!-- Subscribe Modal -->
 	<div class="subscribe-newsletter-area">
 		<div class="modal fade" id="subsModal" tabindex="-1" role="dialog"
-		
-
 			aria-labelledby="subsModal" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
@@ -247,82 +247,11 @@
 			</div>
 		</div>
 	</div>
-
-
-	<!-- ##### Cool Facts Area Start ##### -->
-	<div
-		class="cool-facts-area section-padding-100-0 bg-img background-overlay"
-		style="background-image: url(img/bg-img/b4.jpg);">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="single-blog-area blog-style-2 text-center mb-100">
-						<!-- Blog Content -->
-						<div class="single-blog-content">
-							<div class="line"></div>
-							<a href="#" class="post-tag">공 지 사 항</a>
-							<h4>
-								<a href="#" class="post-headline">챌린지에 오신 것을 환영합니다!</a>
-							</h4>
-							<p>이곳은 Day For You입니다. 모두 함께 챌린지에 도전해보세요!!</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<!-- Single Cool Facts Area -->
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="single-cool-facts-area text-center mb-100">
-						<table style="margin: 20%;">
-							<tr>
-								<td>
-									<h2>
-										<span class="counter">25</span>
-									</h2>
-								</td>
-								<td rowspan="2" width="30px"></td>
-								<td>
-									<h2>
-										<span class="counter">23</span>
-									</h2>
-								</td>
-							</tr>
-							<tr>
-								<td><p>Awards won</p></td>
-
-								<td><p>Awards won</p></td>
-							</tr>
-						</table>
-						<table style="margin: 20%">
-							<tr>
-								<td>
-									<h2>
-										<span class="counter">25</span>
-									</h2>
-								</td>
-								<td></td>
-								<td>
-									<h2>
-										<span class="counter">23</span>
-									</h2>
-								</td>
-							</tr>
-							<tr>
-								<td><p>Awards won</p></td>
-								<td></td>
-								<td><p>Awards won</p></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- ##### Cool Facts Area End ##### -->
 
 	<!-- ##### Blog Wrapper Start ##### -->
-	<div class="blog-wrapper section-padding-100-0 clearfix">
+	<div class="blog-wrapper section-padding-50-0 clearfix">
 		<div class="container">
 			<div class="row">
 
@@ -330,32 +259,58 @@
 
 				<div class="col-12 col-md-6 col-lg-4">
 					<div>
-						<h2>My 챌린지</h2>
+						<h2> 챌린지</h2>
 					</div>
-					<% for(challengeBoardVO arr :chall_personal){%>
-					<div class="single-blog-area blog-style-2 mb-100"
+					<div class="single-blog-area blog-style-2"
 						style="margin: 10 0 0 0">
-
+					
+					<table>
+					<tr>
+						<td>
 						<div class="single-blog-thumbnail">
 
-							<a href="temp.html"><img src="<%= arr.getChalPic1()%>" alt="img/logo.png">
-							</a>
+							<a href="temp.html"><img
+								src="<%=chall_personal.get(0).getChalPic1()%>"
+								alt="img/challenge_sample/none.png" class = "img-mini"> </a>
 							<div class="post-date">
-								<a href="#"><%= arr.getChalCnt() %> <span>0명</span></a>
+								<a href="#"><%=chall_personal.get(0).getChalCnt()%> <span>0명</span></a>
 							</div>
 
 						</div>
+						</td>
+						<td>
+						
+						</td>
+					</tr>
+					<tr>
+						<td>
 						<!-- Blog Content -->
-						<div class="single-blog-content mt-50" style="margin: 10 0 0 0">
-							<div class="line"></div>
-							<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
-							<h4>
-								<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
-							</h4>
+						<div class="single-blog-content" style="margin: 10 0 0 0">
+						<a href="#" class="post-tag"><%=chall_personal.get(0).getChalCat2()%></a>
 						</div>
-
-					</div>
-					<%} %>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+								<h4>
+								<a href="#" class="post-headline"><%=chall_personal.get(0).getChalSubject()%></a>
+							</h4>
+						</td>
+						<td>
+						</td>
+					</tr>
+					
+					</table>
+					</div>	
+						
+						
+							
+							
+					
+						
+									
 				</div>
 
 				<!-- 추천 챌린지 영역  -->
@@ -363,104 +318,122 @@
 					<div>
 						<h2>추천 챌린지</h2>
 					</div>
-					<div class="single-blog-area blog-style-2 mb-100">
-						<% for(challengeBoardVO arr :chall_suggestion){%>
+					<div class="single-blog-area blog-style-2">
+
 						<div class="single-blog-thumbnail">
-							<a href="temp.html"><img src="<%=arr.getChalPic1() %>" alt="img/logo.png">
-							</a>
+							<a href="temp.html"><img
+								src="<%=chall_suggestion.get(0).getChalPic1()%>"
+								alt="img/challenge_sample/none.png"> </a>
 							<div class="post-date">
-								<a href="#"><%= arr.getChalCnt() %><span>1명</span></a>
+								<a href="#"><%=chall_suggestion.get(0).getChalCnt()%><span>1명</span></a>
 							</div>
 						</div>
 						<!-- Blog Content -->
-						<div class="single-blog-content mt-50">
+						<div class="single-blog-content">
 							<div class="line"></div>
-							<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
+							<a href="#" class="post-tag"><%=chall_suggestion.get(0).getChalCat2()%></a>
 							<h4>
-								<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
+								<a href="#" class="post-headline"><%=chall_suggestion.get(0).getChalSubject()%></a>
 							</h4>
 						</div>
-						<%} %>
+
 					</div>
+					<div align="right">
+						<a href="#">더보기</a>
+					</div>
+					<hr>
 				</div>
 				<!-- 인기 챌린지 영역  -->
 				<div class="col-12 col-md-6 col-lg-4">
 					<div>
 						<h2>인기 챌린지</h2>
 					</div>
-					<div class="single-blog-area blog-style-2 mb-100">
-						<% for(challengeBoardVO arr :chall_popularity){%>
+					<div class="single-blog-area blog-style-2">
+
 						<div class="single-blog-thumbnail">
-							<a href="temp.html"><img src="<%=arr.getChalPic1() %>" alt="img/logo.png">
-							</a>
+							<a href="temp.html"><img
+								src="<%=chall_popularity.get(0).getChalPic1()%>"
+								alt="img/challenge_sample/none.png"> </a>
 							<div class="post-date">
-								<a href="#"><%= arr.getChalCnt() %> <span>0명</span></a>
+								<a href="#"><%=chall_popularity.get(0).getChalCnt()%> <span>0명</span></a>
 							</div>
 						</div>
 						<!-- Blog Content -->
-						<div class="single-blog-content mt-50">
+						<div class="single-blog-content">
 							<div class="line"></div>
-							<a href="#" class="post-tag"><%=arr.getChalCat2() %></a>
+							<a href="#" class="post-tag"><%=chall_popularity.get(0).getChalCat2()%></a>
 							<h4>
-								<a href="#" class="post-headline"><%=arr.getChalSubject()%></a>
+								<a href="#" class="post-headline"><%=chall_popularity.get(0).getChalSubject()%></a>
 							</h4>
 
 						</div>
 					</div>
-					<%} %>
+					<div align="right">
+						<a href="#">더보기</a>
+					</div>
+					<hr>
 				</div>
-			</div>
-			<!-- 그룹 챌린지 영역  -->
-			<div class="col-12 col-md-6 col-lg-4">
-				<div>
-					<h2>그룹 챌린지</h2>
-				</div>
-				<div class="single-blog-area blog-style-2 mb-100">
-				
-					<div class="single-blog-thumbnail">
-						<img src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
-						<div class="post-date">
-							<a href="#"><%= chall_group.get(0).getChalCnt() %> <span>0명</span></a>
+				<!-- 그룹 챌린지 영역  -->
+				<div class="col-12 col-md-6 col-lg-4">
+					<div>
+						<h2>그룹 챌린지</h2>
+					</div>
+					<div class="single-blog-area blog-style-2">
+
+						<div class="single-blog-thumbnail">
+							<img src="<%=chall_group.get(0).getChalPic1()%>"
+								alt="img/challenge_sample/none.png">
+							<div class="post-date">
+								<a href="#"><%=chall_group.get(0).getChalCnt()%> <span>0명</span></a>
+							</div>
+						</div>
+						<!-- Blog Content -->
+						<div class="single-blog-content">
+							<div class="line"></div>
+							<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2()%></a>
+							<h4>
+								<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
+							</h4>
 						</div>
 					</div>
-					<!-- Blog Content -->
-					<div class="single-blog-content mt-50">
-						<div class="line"></div>
-						<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
-						<h4>
-							<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
-						</h4>
-					</div>				
-				</div>
-			</div>
-			<!-- 전체 챌린지 영역  -->
-			<div class="col-12 col-md-6 col-lg-4">
-				<div>
-					<h2>전체 챌린지</h2>
-				</div>
-				<div class="single-blog-area blog-style-2 mb-100">
-				
-					<div class="single-blog-thumbnail">
-						<img src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
-						<div class="post-date">
-							<a href="#"><%= chall_group.get(0).getChalCnt() %> <span>0명</span></a>
-						</div>
+					<div align="right">
+						<a href="#">더보기</a>
 					</div>
-					<!-- Blog Content -->
-					<div class="single-blog-content mt-50">
-						<div class="line"></div>
-						<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
-						<h4>
-							<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
-						</h4>
+					<hr>
+				</div>
+				<!-- 전체 챌린지 영역  -->
+				<div class="col-12 col-md-6 col-lg-4">
+					<div>
+						<h2>전체 챌린지</h2>
+					</div>
+					<div class="single-blog-area blog-style-2">
 
+						<div class="single-blog-thumbnail">
+							<img src="<%=chall_group.get(0).getChalPic1()%>"
+								alt="img/challenge_sample/none.png">
+							<div class="post-date">
+								<a href="#"><%=chall_group.get(0).getChalCnt()%> <span>0명</span></a>
+							</div>
+						</div>
+						<!-- Blog Content -->
+						<div class="single-blog-content">
+							<div class="line"></div>
+							<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2()%></a>
+							<h4>
+								<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
+							</h4>
+						</div>
 
-					</div>				
+					</div>
+					<div align="right">
+						<a href="#">더보기</a>
+					</div>
+				
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
+
 	<!-- ##### Blog Wrapper End ##### -->
 
 	<!-- ##### Instagram Feed Area Start ##### -->
