@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +39,7 @@
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="modal-body">
-                        <h5 class="title">Í≤åÏãúÍ∏Ä Í≤ÄÏÉâ</h5>
+                        <h5 class="title">∞‘Ω√±€ ∞Àªˆ</h5>
                         <form action="#" class="newsletterForm" method="post">
                             <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
                             <button type="submit" class="btn original-btn">Subscribe</button>
@@ -228,7 +230,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night‚Äôs party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night°Øs party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -243,7 +245,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night‚Äôs party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night°Øs party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -258,7 +260,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">lifestyle</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night‚Äôs party!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night°Øs party!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -278,34 +280,68 @@
                         <!-- Blog Content -->
     <div class="board_wrap">
         <div class="board_title">
-            <strong>Í≥µÏßÄÏÇ¨Ìï≠</strong>
-            <p>Í≥µÏßÄÏÇ¨Ìï≠ÏùÑ Îπ†Î•¥Í≥† Ï†ïÌôïÌïòÍ≤å ÏïàÎÇ¥Ìï¥ÎìúÎ¶ΩÎãàÎã§.</p>
+            <strong>∞¯¡ˆªÁ«◊</strong>
+            <p>∞¯¡ˆªÁ«◊¿ª ∫¸∏£∞Ì ¡§»Æ«œ∞‘ æ»≥ª«ÿµÂ∏≥¥œ¥Ÿ.</p>
         </div>
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>Ï†úÎ™©</dt>
-                        <dd><input type="text" placeholder="Ï†úÎ™© ÏûÖÎ†•"></dd>
-                    </dl>
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="num">π¯»£</div>
+                    <div class="title">¡¶∏Ò</div>
+                    <div class="writer">±€æ¥¿Ã</div>
+                    <div class="date">¿€º∫¿œ</div>
+                    <div class="count">¡∂»∏</div>
                 </div>
-                <div class="info">
-                    <dl>
-                        <dt>Í∏ÄÏì¥Ïù¥</dt>
-                        <dd><input type="text" placeholder="Í∏ÄÏì¥Ïù¥ ÏûÖÎ†•"></dd>
-                    </dl>
-                    <dl>
-                        <dt>ÎπÑÎ∞ÄÎ≤àÌò∏</dt>
-                        <dd><input type="password" placeholder="ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†•"></dd>
-                    </dl>
+                <div>
+                    <div class="num">5</div>
+                    <div class="title"><a href="Board_view.jsp">±€ ¡¶∏Ò¿Ã µÈæÓ∞©¥œ¥Ÿ.</a></div>
+                    <div class="writer">±Ë¿Ã∏ß</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
                 </div>
-                <div class="cont">
-                    <textarea placeholder="ÎÇ¥Ïö© ÏûÖÎ†•"></textarea>
+                <div>
+                    <div class="num">4</div>
+                    <div class="title"><a href="Board_view.jsp">±€ ¡¶∏Ò¿Ã µÈæÓ∞©¥œ¥Ÿ.</a></div>
+                    <div class="writer">±Ë¿Ã∏ß</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">3</div>
+                    <div class="title"><a href="Board_view.jsp">±€ ¡¶∏Ò¿Ã µÈæÓ∞©¥œ¥Ÿ.</a></div>
+                    <div class="writer">±Ë¿Ã∏ß</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">2</div>
+                    <div class="title"><a href="Board_view.jsp">±€ ¡¶∏Ò¿Ã µÈæÓ∞©¥œ¥Ÿ.</a></div>
+                    <div class="writer">±Ë¿Ã∏ß</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">1</div>
+                    <div class="title"><a href="Board_view.jsp">±€ ¡¶∏Ò¿Ã µÈæÓ∞©¥œ¥Ÿ.</a></div>
+                    <div class="writer">±Ë¿Ã∏ß</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
                 </div>
             </div>
+            <div class="board_page">
+                <a href="#" class="bt first"><<</a>
+                <a href="#" class="bt prev"><</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="num">4</a>
+                <a href="#" class="num">5</a>
+                <a href="#" class="bt next">></a>
+                <a href="#" class="bt last">>></a>
+            </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">Îì±Î°ù</a>
-                <a href="list.html">Ï∑®ÏÜå</a>
+                <a href="Board_write.jsp" class="on">µÓ∑œ</a>
+                <!--<a href="#">ºˆ¡§</a>-->
             </div>
         </div>
     </div>

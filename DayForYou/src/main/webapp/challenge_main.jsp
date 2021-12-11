@@ -30,18 +30,21 @@
 	<%
 	DAO dao = new DAO();
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
+	int last_chall_personal = chall_personal.size()-1;
+	
 	
 	ArrayList<challengeBoardVO> chall_group = dao.SelectChallengeBoard_cat("그룹");
+	int last_chall_group = chall_group.size()-1;
 	
 	ArrayList<challengeBoardVO> chall_all= dao.SelectChallengeBoard_cat("전체");
+	int last_chall_all = chall_all.size()-1;
 	
 	ArrayList<challengeBoardVO> chall_popularity = dao.SelectChallengeBoard_cat("인기");
+	int last_chall_popularity = chall_popularity.size()-1;
 	
 	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("추천");
-	
-	if (chall_personal == null){
-		System.out.println("불러올 수 없습니다.");
-	}
+	int last_chall_suggestion = chall_suggestion.size()-1;
+		
 	%>
 
 	<!-- Preloader -->
@@ -341,7 +344,6 @@
 							<div class="post-date">
 								<a href="#"><%= chall_personal.get(0).getChalCnt() %> <span>0명</span></a>
 							</div>
-
 						</div>
 						<!-- Blog Content -->
 						<div class="single-blog-content" style="margin: 10 0 0 0">
@@ -353,7 +355,7 @@
 						</div>
 					</div>
 					<div align="right">
-						<a href="#">더보기</a>
+						<a href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
 					</div>
 				</div>
 			</div>
@@ -413,7 +415,7 @@
 				</div>
 			</div>
 			<div align="right">
-				<a href="#">더보기</a>
+				<a href="challenge_deep.jsp">더보기</a>
 			</div>
 			<hr>
 		</div>		

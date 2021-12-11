@@ -27,23 +27,11 @@
 
 <body>
 	<!-- 스크립트릿 -->
-	<%	
-	
+	<%		
 	DAO dao = new DAO();
-
+	String chal_cat1 = request.getParameter("chal_cat1");
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
-
-	ArrayList<challengeBoardVO> chall_group = dao.SelectChallengeBoard_cat("그룹");
-
-	ArrayList<challengeBoardVO> chall_all = dao.SelectChallengeBoard_cat("전체");
-
-	ArrayList<challengeBoardVO> chall_popularity = dao.SelectChallengeBoard_cat("인기");
-
-	ArrayList<challengeBoardVO> chall_suggestion = dao.SelectChallengeBoard_cat("추천");
-
-	if (chall_personal == null) {
-		System.out.println("불러올 수 없습니다.");
-	}
+	
 	%>
 
 	<!-- Preloader -->
@@ -303,133 +291,8 @@
 					</tr>
 					
 					</table>
-					</div>	
-						
-						
-							
-							
-					
-						
-									
-				</div>
-
-				<!-- 추천 챌린지 영역  -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div>
-						<h2>추천 챌린지</h2>
-					</div>
-					<div class="single-blog-area blog-style-2">
-
-						<div class="single-blog-thumbnail">
-							<a href="temp.html"><img
-								src="<%=chall_suggestion.get(0).getChalPic1()%>"
-								alt="img/challenge_sample/none.png"> </a>
-							<div class="post-date">
-								<a href="#"><%=chall_suggestion.get(0).getChalCnt()%><span>1명</span></a>
-							</div>
-						</div>
-						<!-- Blog Content -->
-						<div class="single-blog-content">
-							<div class="line"></div>
-							<a href="#" class="post-tag"><%=chall_suggestion.get(0).getChalCat2()%></a>
-							<h4>
-								<a href="#" class="post-headline"><%=chall_suggestion.get(0).getChalSubject()%></a>
-							</h4>
-						</div>
-
-					</div>
-					<div align="right">
-						<a href="#">더보기</a>
-					</div>
-					<hr>
-				</div>
-				<!-- 인기 챌린지 영역  -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div>
-						<h2>인기 챌린지</h2>
-					</div>
-					<div class="single-blog-area blog-style-2">
-
-						<div class="single-blog-thumbnail">
-							<a href="temp.html"><img
-								src="<%=chall_popularity.get(0).getChalPic1()%>"
-								alt="img/challenge_sample/none.png"> </a>
-							<div class="post-date">
-								<a href="#"><%=chall_popularity.get(0).getChalCnt()%> <span>0명</span></a>
-							</div>
-						</div>
-						<!-- Blog Content -->
-						<div class="single-blog-content">
-							<div class="line"></div>
-							<a href="#" class="post-tag"><%=chall_popularity.get(0).getChalCat2()%></a>
-							<h4>
-								<a href="#" class="post-headline"><%=chall_popularity.get(0).getChalSubject()%></a>
-							</h4>
-
-						</div>
-					</div>
-					<div align="right">
-						<a href="#">더보기</a>
-					</div>
-					<hr>
-				</div>
-				<!-- 그룹 챌린지 영역  -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div>
-						<h2>그룹 챌린지</h2>
-					</div>
-					<div class="single-blog-area blog-style-2">
-
-						<div class="single-blog-thumbnail">
-							<img src="<%=chall_group.get(0).getChalPic1()%>"
-								alt="img/challenge_sample/none.png">
-							<div class="post-date">
-								<a href="#"><%=chall_group.get(0).getChalCnt()%> <span>0명</span></a>
-							</div>
-						</div>
-						<!-- Blog Content -->
-						<div class="single-blog-content">
-							<div class="line"></div>
-							<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2()%></a>
-							<h4>
-								<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
-							</h4>
-						</div>
-					</div>
-					<div align="right">
-						<a href="#">더보기</a>
-					</div>
-					<hr>
-				</div>
-				<!-- 전체 챌린지 영역  -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div>
-						<h2>전체 챌린지</h2>
-					</div>
-					<div class="single-blog-area blog-style-2">
-
-						<div class="single-blog-thumbnail">
-							<img src="<%=chall_group.get(0).getChalPic1()%>"
-								alt="img/challenge_sample/none.png">
-							<div class="post-date">
-								<a href="#"><%=chall_group.get(0).getChalCnt()%> <span>0명</span></a>
-							</div>
-						</div>
-						<!-- Blog Content -->
-						<div class="single-blog-content">
-							<div class="line"></div>
-							<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2()%></a>
-							<h4>
-								<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
-							</h4>
-						</div>
-
-					</div>
-					<div align="right">
-						<a href="#">더보기</a>
-					</div>
-				
-				</div>
+					</div>		
+				</div>				
 			</div>
 		</div>
 	</div>
