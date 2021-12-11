@@ -359,6 +359,7 @@ public class DAO {
 				String diary_file2 = rs.getString(6);
 				String m_id = rs.getString(7);
 				String reg_date = rs.getString(8);
+				
 
 				// select 문의 결과를 묶어서 vo객체로 만들기
 				dvo = new diaryVO(diary_seq, diary_subject, diary_date, diary_content, diary_file1, diary_file2, m_id,
@@ -422,6 +423,47 @@ public class DAO {
 		}
 
 		return dvo;
+	}
+
+	public challengeBoardVO ChallengeSingleService(int chal_seq) {
+		connection();
+		challengeBoardVO vo = null;
+
+		try {
+			String sql = "select * from tbl_challenge where chal_seq = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, chal_seq);
+			rs = psmt.executeQuery();
+			
+
+			if (rs.next() == true) {
+
+				int chal_seq1 = chal_seq;
+				String chall_cat1 = rs.getString(2);
+				String chall_cat2 = rs.getString(3);
+				String chall_subject = rs.getString(4);
+				String chall_start = rs.getString(5);
+				String chall_period = rs.getString(6);
+				String chall_pic1 = rs.getString(9);
+				String chall_pic2 = rs.getString(10);
+				String chall_pic3 = rs.getString(11);
+				String reg_date = rs.getString(12);
+				String m_id = rs.getString(13);
+				int chal_cnt = rs.getInt(14);
+				String chal_public = rs.getString(16);
+
+				vo = new challengeBoardVO(chal_seq1, chall_cat1, chall_cat2, chall_subject, chall_start, chall_period,chall_pic1, chall_pic2, chall_pic3,
+						reg_date, m_id,chal_cnt, chal_public);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return vo;
 	}
 
 }

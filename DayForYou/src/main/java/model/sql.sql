@@ -1,6 +1,6 @@
 select * from tbl_member
 select * from tbl_challenge;
-
+select * from tbl_challenge where chal_seq = 243;
 
 
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('m_id 01', 'm_pwd 01', 'm_name 01', 'm_nick 01', 'm_phone 01', 'm_email 01', sysdate, 'N', 'm_job 01', 'm_addr 01', sysdate, 01, 'N');
