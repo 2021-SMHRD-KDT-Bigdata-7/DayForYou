@@ -290,21 +290,21 @@ div {
 						allDay : arg.allDay,
 						color : 'green'
 					})
-					$.ajax({
-						type : "POST",
-						url : "#",
-						data : {
-							'event-title-give' : title,
-							'event_start_data-give' : dataFormat(arg.start),
-							'event_end_data-give' : dataFormat(arg.end),
-							'event_allday' : allDay,
-							'event_color' : color
-
-						},
-						success : function(response) {
-							alert('일정이 추가되었습니다.');
-						}
-					})
+//					$.ajax({
+//						type : "POST",
+//						url : "#",
+//						data : {
+//							'event-title-give' : title,
+//							'event_start_data-give' : dataFormat(arg.start),
+//							'event_end_data-give' : dataFormat(arg.end),
+//							'event_allday' : allDay,
+//							'event_color' : color
+//
+//						},
+//						success : function(response) {
+//							alert('일정이 추가되었습니다.');
+//						}
+//					})
 
 				}
 
@@ -314,21 +314,21 @@ div {
 				let delcal = confirm(info.event.title + "일정을 삭제하시겠습니까?");
 				if (delcal == true) {
 					info.event.remove();
-					$.ajax({
-						type : "POST",
-						url : "#",
-						data : {
-							'event-title-give' : title,
-							'event_start_data-give' : dataFormat(arg.start),
-							'event_end_data-give' : dataFormat(arg.end),
-							'event_allday' : allDay,
-							'event_color' : color
-
-						},
-						success : function(response) {
-							alert('일정이 삭제되었습니다.');
-						}
-					})
+//					$.ajax({
+//						type : "POST",
+//						url : "#",
+//						data : {
+//							'event-title-give' : title,
+//							'event_start_data-give' : dataFormat(arg.start),
+//							'event_end_data-give' : dataFormat(arg.end),
+//							'event_allday' : allDay,
+//							'event_color' : color
+//
+//						},
+//						success : function(response) {
+//							alert('일정이 삭제되었습니다.');
+//						}
+//					})
 				}
 			},
 			// initialView: 'resourceTimelineDay',
