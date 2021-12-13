@@ -52,6 +52,10 @@ public class MemberVo {
 		this.address = address;
 		
 	}
+	//shop
+	public MemberVo(String id, int point) {
+		// TODO Auto-generated constructor stub
+	}
 	public String getId() {
 		return id;
 	}

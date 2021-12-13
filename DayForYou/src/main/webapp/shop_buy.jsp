@@ -65,12 +65,17 @@
 									<!-- Product details-->
 								</div>
 								<!-- Product actions-->
+								<br>
+							
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-									<div class="text-center" position="felx">
-										<a class="btn btn-outline-dark mt-auto" href="shop.jsp">교환하기</a>
+									<div class="text-center"  >
+									<input name="point"
+										<a class="btn btn-outline-dark mt-auto" href="shop.jsp" >BUY</a>
+										>
 									</div>
 								</div>
-							</div>
+							
+						</div>
 						</div>
 					</div>
 				</div>

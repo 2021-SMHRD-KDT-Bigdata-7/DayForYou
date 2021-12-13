@@ -468,7 +468,49 @@ public class DAO {
 		System.out.println(zvo);
 		return zvo;
 	}
+	//===========================
+	//=================================shop===================
+			public int shopbuy(String id, int point) {
+				connection();
+				try {
 
-}
+					sql = "update tbl_members set m_id=? ,m_point=?";
+
+					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, id);
+					psmt.setInt(2, point);
+					
+					
+				
+
+					cnt = psmt.executeUpdate();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					
+					try {
+						if(psmt !=null) {
+							psmt.close();
+						}
+						if(conn !=null) {
+							conn.close();
+						}
+
+					} catch (Exception e2) {
+						
+					}
+				}
+				 
+			return cnt ;
+
+
+				}
+
+			}
+			
+
+
+
 
 
