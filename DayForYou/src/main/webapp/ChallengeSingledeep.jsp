@@ -41,8 +41,8 @@
 	max-width: 400px;
 	max-height: 350px;
 }
+
 .product-title23 {
-	
 	text-align: center;
 	display: table;
 	border: 1px solid #cecece;
@@ -51,6 +51,8 @@
 }
 
 .product-img-div23 {
+	width: 170px;
+	height: 120px;
 	display: table-cell;
 	vertical-align: middle;
 }
@@ -146,7 +148,7 @@
 				</div>
 				<!-- 글쓰기 버튼 -->
 				<div class="write-bar">
-					<a href="chall.jsp"><img
+					<a href="ChallengeSingleService?chal_seq=327"><img
 						src="img/challenge-main/write_button.png"
 						style="position: fixed; bottom: 5%; left: 33%; right: 50%"></a>
 				</div>
@@ -293,34 +295,41 @@
 		<hr style="border: solid 1px gray;">
 		<p><%=zvo.getChalContent()%></p>
 
+
 		<hr style="border: solid 1px gray;">
+		<div style="height: 200px">
+			<div style="float: left; width: 50%">
+				<p align="center">좋은 인증샷 예시</p>
+				<div class="product-title23">
+					<div class="product-img-div23">
+						<img class="product-img23" src="<%=zvo.getChalPic1()%>"
+							alt="img/logo.jpg">
+					</div>
+				</div>
+			</div>
+			<div style="float: left; width: 50%">
+				<p align="center">나쁜 인증샷 예시</p>
+				<div class="product-title23">
+					<div class="product-img-div23">
+						<img class="product-img23" src="<%=zvo.getChalPic1()%>"
+							alt="img/logo.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+				<hr style="border: solid 1px gray;">
 		<h4>챌린지 진행시 꼭 알아주세요!!!!</h4>
 		<p>전체 기간 동안 평일 매일,하루에 1번 인증샷을 촬영하셔야 합니다. 
 		사진첩을 사용하실수 없습니다. 
 		인증샷이 참가자에게만 공개됩니다. 
 		공휴일에는 인증하지 않으셔도 됩니다.</p>
-		<hr style="border: solid 1px gray;">
-		<div style="float: left; width: 50%">
-					<p align="center">좋은 인증샷 예시</p>
-			<div class="product-title23">
-				<div class="product-img-div23">
-					<img class="product-img23" src="<%=zvo.getChalPic1()%>"
-						alt="img/logo.jpg">
-				</div>
-			</div>
-		</div>
-		<div style="float: left; width: 50%">
-			<p align="center">나쁜 인증샷 예시</p>
-			<div class="product-title23">
-				<div class="product-img-div23">
-					<img class="product-img23" src="<%=zvo.getChalPic1()%>"
-						alt="img/logo.jpg">
-				</div>
-			</div>
-		</div>
+		<br>
+		<br>
+		
 		<br>
 		<br>
 	</div>
+		<br>
 
 
 

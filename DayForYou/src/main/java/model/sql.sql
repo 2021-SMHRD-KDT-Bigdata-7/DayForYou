@@ -3,6 +3,7 @@ select * from tbl_challenge;
 select * from tbl_challenge where chal_seq = 298;
 update tbl_challenge set chal_pic1 = "asd" where chal_seq=326;
 
+SELECT TO_NUMBER(NVL(MAX(Column), '0')) + 1 FROM TABLENAME
 
 ALTER TABLE tbl_challenge MODIFY (chal_period VARCHAR2(150));
 
