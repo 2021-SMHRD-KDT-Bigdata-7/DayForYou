@@ -114,7 +114,7 @@
 				<div class="row h-100 align-items-center">
 					<div class="col-12">
 						<a href="index.html" class="original-logo"><img
-							src="img/logo-img/logomini.PNG" alt=""></a>
+							src="img/main-img/logo3.png" alt=""></a>
 					</div>
 				</div>
 			</div>
