@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class CalenderDAO {
 	
@@ -99,19 +100,21 @@ public class CalenderDAO {
 	
 	// 일정 확인
 	
-	public CalenderVO Todo_check(int todo_seq) {
+	public ArrayList<CalenderVO> select() {
 
+		ArrayList<CalenderVO> todo = new ArrayList<CalenderVO>();
+		
 		try {
 
 			connection();
 
 			// 3. sql문 준비
-			String sql = "select * from tbl_todo where todo_seq";
+			String sql = "select * from tbl_todo";
 
 			psmt = conn.prepareStatement(sql);
 
 			// 4. 바인드 변수 채우기
-			psmt.setInt(1, todo_seq);
+			
 
 			// 5. 실행
 			rs = psmt.executeQuery();
@@ -133,6 +136,7 @@ public class CalenderDAO {
 									u_todo_sdate, u_todo_edate,u_todo_content, 
 									u_reg_date, u_m_id, u_todo_check);
 
+				todo.add(cvo);
 			}
 
 		} catch (Exception e) {
@@ -141,7 +145,7 @@ public class CalenderDAO {
 			// 6. 연결 닫아주기
 			close();
 		}
-		return cvo;
+		return todo;
 
 	}
 	
@@ -191,7 +195,7 @@ public class CalenderDAO {
 	// 일정 삭제
 
 	public int Todo_delete(int todo_seq) {
-
+		
 		try {
 
 			connection();
