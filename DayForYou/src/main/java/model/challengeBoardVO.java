@@ -81,11 +81,6 @@ public class challengeBoardVO {
 		}
 
 
-		public challengeBoardVO(int chal_seq1, String chall_cat1, String chall_cat2, String chall_subject,
-				String chall_start, String chall_period, String chall_pic1, String chall_pic2, String chall_pic3,
-				String reg_date, String m_id, int chal_cnt, String chal_public) {
-			// TODO Auto-generated constructor stub
-		}
 
 
 		public int getChalSeq() {

@@ -368,7 +368,8 @@
 				<div class="single-blog-area blog-style-2">
 
 					<div class="single-blog-thumbnail">
-						<a href="temp.html"><img
+<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
+						<a href="ChallengeSingleService?chal_seq=298"><img
 							src="<%=chall_suggestion.get(0).getChalPic1() %>"
 							alt="img/logo.png"> </a>
 						<div class="post-date">

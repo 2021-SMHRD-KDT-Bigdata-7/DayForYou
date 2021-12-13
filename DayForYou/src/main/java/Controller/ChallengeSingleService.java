@@ -27,13 +27,12 @@ public class ChallengeSingleService extends HttpServlet {
 				// 3. dao의 메서드
 				// delete from web_member where email=?
 				// psmt.delete -> executeUpdate(); , return int(성공한 행의 수) = 메서드의 리턴값
-				challengeBoardVO vo = dao.ChallengeSingleService(chal_seq);
-				
-				if(vo != null) {
+				challengeBoardVO zvo = dao.ChallengeSingleService(chal_seq);
+				if(zvo != null) {
 					System.out.println("성공");
 				// 페이지 이동
 					
-					request.setAttribute("vo", vo);
+					request.setAttribute("zvo", zvo);
 					
 					// request영역에 데이터를 저장해서 이동하려면 >> forward 
 					RequestDispatcher rd = request.getRequestDispatcher("ChallengeSingledeep.jsp");
@@ -41,6 +40,7 @@ public class ChallengeSingleService extends HttpServlet {
 				
 				}else {
 					System.out.println("실패");
+//					System.out.println(zvo.getChalSeq());
 				}
 	}
 

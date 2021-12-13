@@ -96,70 +96,22 @@
 		<!-- ##### Coming Soon Area End ##### -->
 
 		<!-- ##### Contact Area Start ##### -->
-		<div class="contact-area section-padding-100">
-			<div class="container">
-				<div class="row justify-content-center">
-					<!-- Contact Form Area -->
-					<div class="col-12 col-md-10 col-lg-9">
-						<div class="contact-form">
 							<!-- 현재시간 나오기 -->
 							<!--      <p><span id = "TODAY"></span>   <span id="now"></span></p> -->
 							<!-- Contact Form -->
 							<%
                   					
-							challengeBoardVO vo = (challengeBoardVO)request.getAttribute("vo");
+							challengeBoardVO zvo = (challengeBoardVO)request.getAttribute("zvo");
                   					
 								%>
 
-							<form action="#" method="post">
-
-								<div class="col-12 col-md-6">
-									<div class="group">
 										<p>작성일시</p>
-										<p><%= vo.getRegDate()%></p>
-										<span class="highlight"></span> <span class="bar"></span>
-
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-12 col-md-6">
-										<div class="group">
-											<h3><%=vo.getChalSubject()%></h3>
-											<span class="highlight"></span> <span class="bar"></span>
-
-										</div>
-									</div>
-
-
-									<div class="col-12">
-										<div class="group">
-											<p><%=vo.getChalContent()%></p>
-											<span class="highlight"></span> <span class="bar"></span>
-
-										</div>
-									</div>
-
-
-									<div class="col-12 col-md-6">
-										<div class="group">
-											<p><%=vo.getChalPic1() %></p>
-											<p><%=vo.getChalPic2() %></p>
-											<p><%=vo.getChalPic3() %></p>
-											<p></p>
-											<p></p>
-											<span class="highlight"></span> <span class="bar"></span>
-										</div>
-									</div>
-									
-								</div>
-							</form>
-							<div style = "padding: 0px">
-								<!-- <a href="Diarylist.jsp">
-								<input type = "button" value = "목록" ></a> -->
-									
-									
-									<button class="button7"
-							class="btn original-btn" onclick = "location.href='Diarylist.jsp'">목록</button>	
+										<p>123<%= zvo.getRegDate()%></p>
+											<h3><%=zvo.getChalSubject()%></h3>
+											<p><%=zvo.getChalContent()%></p>
+											<p><%=zvo.getChalPic1() %></p>
+											<p><%=zvo.getChalPic2() %></p>
+											<p><%=zvo.getChalPic3() %></p>
 															
 							</div>
 						</div>

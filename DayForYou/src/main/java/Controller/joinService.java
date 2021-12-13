@@ -20,7 +20,7 @@ public class joinService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		 request.setCharacterEncoding("euc-kr");
+		 request.setCharacterEncoding("EUC-KR");
 
 	     
 	      String id = request.getParameter("id");
