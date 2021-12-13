@@ -267,8 +267,8 @@
 										<a href="temp.html"><img
 											src="<%=chall_personal.get(j).getChalPic1()%>"
 											alt="img/challenge_sample/none.png"> </a>
-										<div class="post-date">
-											<a href="#"><%=chall_personal.get(j).getChalCnt()%> <span>0명</span></a>
+										<div class="howMany">
+											<span><%=chall_personal.get(j).getChalCnt()%></span>
 										</div>
 									</div>
 								</td>

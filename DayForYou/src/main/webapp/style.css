@@ -1608,6 +1608,15 @@ textarea:focus ~ .highlight {
   object-fit: fill;
 }
 
+ .howMany {
+      position: absolute;
+      z-index: 10;
+      left: 15px;
+      top: 15px;
+      border: 1px solid #787878;
+      background-color: #ffffff;
+      padding: 3px 3px;
+      text-align: center; }
 
 
 

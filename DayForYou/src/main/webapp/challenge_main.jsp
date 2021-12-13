@@ -344,7 +344,7 @@
 								src="<%= chall_personal.get(0).getChalPic1()%>"
 								alt="img/logo.png"> </a>
 							<div class="post-date">
-								<a href="#"><%= chall_personal.get(0).getChalCnt() %> <span>0명</span></a>
+								<a href="#"><%= chall_personal.get(0).getChalCnt() %> </a>
 							</div>
 						</div>
 						<!-- Blog Content -->
@@ -375,7 +375,7 @@
 							src="<%=chall_suggestion.get(0).getChalPic1() %>"
 							alt="img/logo.png"> </a>
 						<div class="post-date">
-							<a href="#"><%= chall_suggestion.get(0).getChalCnt() %><span>1명</span></a>
+							<a href="#"><%= chall_suggestion.get(0).getChalCnt() %></a>
 						</div>
 					</div>
 					<!-- Blog Content -->
@@ -388,7 +388,7 @@
 
 				</div>
 				<div align="right">
-					<a href="#">더보기</a>
+						<a href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
 				</div>
 			</div>
 			<hr>
@@ -406,7 +406,7 @@
 						src="<%=chall_popularity.get(0).getChalPic1() %>"
 						alt="img/logo.png"> </a>
 					<div class="post-date">
-						<a href="#"><%=chall_popularity.get(0).getChalCnt() %> <span>0명</span></a>
+						<a href="#"><%=chall_popularity.get(0).getChalCnt() %> </a>
 					</div>
 				</div>
 				<!-- Blog Content -->
@@ -418,7 +418,7 @@
 				</div>
 			</div>
 			<div align="right">
-				<a href="challenge_deep.jsp">더보기</a>
+					<a href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
 			</div>
 			<hr>
 		</div>		
@@ -434,14 +434,14 @@
 			<div class="single-blog-thumbnail">
 				<img src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
 				<div class="post-date">
-					<a href="#"><%= chall_group.get(0).getChalCnt() %> <span>0명</span></a>
+					<a href="#"><%= chall_group.get(0).getChalCnt() %></a>
 				</div>
 			</div>
 			<!-- Blog Content -->
 			<div class="single-blog-content">				
 				<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
 				<h4>
-					<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
+					<a href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
 				</h4>
 			</div>
 			<div align="right">
@@ -459,21 +459,21 @@
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
-				<img src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
+				<img src="<%=chall_all.get(0).getChalPic1() %>" alt="img/logo.png">
 				<div class="post-date">
-					<a href="#"><%= chall_group.get(0).getChalCnt() %> <span>0명</span></a>
+					<a href="#"><%= chall_all.get(0).getChalCnt() %></a>
 				</div>
 			</div>
 			<!-- Blog Content -->
 			<div class="single-blog-content">				
-				<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
+				<a href="#" class="post-tag"><%=chall_all.get(0).getChalCat2() %></a>
 				<h4>
-					<a href="#" class="post-headline"><%=chall_group.get(0).getChalSubject()%></a>
+					<a href="#" class="post-headline"><%=chall_all.get(0).getChalSubject()%></a>
 				</h4>
 			</div>
 		</div>
 		<div align="right">
-			<a href="#">더보기</a>
+				<a href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
 		</div>
 	</div>
 
