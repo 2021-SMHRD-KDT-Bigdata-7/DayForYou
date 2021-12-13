@@ -26,7 +26,7 @@
 </head>
 
 <body>
-	<!-- 스크립트릿 -->
+	<!-- 스크립트릿 !-->
 	<%
 	DAO dao = new DAO();
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
