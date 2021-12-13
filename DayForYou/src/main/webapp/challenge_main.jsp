@@ -44,6 +44,8 @@
 	
 	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("추천");
 	int last_chall_suggestion = chall_suggestion.size()-1;
+	
+	
 		
 	%>
 
@@ -242,7 +244,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>챌린지</h2>
+						<h2>챌린지</h2>						
 					</div>
 				</div>
 			</div>
@@ -355,7 +357,7 @@
 						</div>
 					</div>
 					<div align="right">
-						<a href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
+						<a href="challenge_deep.jsp?chal_cat1='개인'">더보기</a>
 					</div>
 				</div>
 			</div>

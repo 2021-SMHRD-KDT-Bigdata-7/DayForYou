@@ -30,7 +30,10 @@
 	<%		
 	DAO dao = new DAO();
 	String chal_cat1 = request.getParameter("chal_cat1");
-	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
+	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("chal_cat1");
+	if (chall_personal == null){
+		
+	}
 	
 	%>
 
