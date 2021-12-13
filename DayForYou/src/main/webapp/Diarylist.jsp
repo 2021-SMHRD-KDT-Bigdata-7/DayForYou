@@ -1,9 +1,7 @@
-
 <%@page import="model.MemberVo"%>
 <%@page import="model.diaryVO"%>
 <%@page import="model.DAO"%>
 <%@page import="java.util.ArrayList"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -114,7 +112,7 @@
 				<div class="row h-100 align-items-center">
 					<div class="col-12">
 						<a href="index.html" class="original-logo"><img
-							src="img/logo-img/logomini.PNG" alt=""></a>
+							src="img/main-img/logo3.png" alt=""></a>
 					</div>
 				</div>
 			</div>
