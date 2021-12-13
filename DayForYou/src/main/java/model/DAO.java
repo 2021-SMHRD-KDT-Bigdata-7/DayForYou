@@ -436,9 +436,8 @@ public class DAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, chal_seq);
 			rs = psmt.executeQuery();
-			
 
-			if (rs.next() == true) {
+			if (rs.next()) {
 				int chal_seq1 = rs.getInt(1);
 				String chal_cat1 = rs.getString(2);
 				String chal_cat2 = rs.getString(3);
@@ -456,7 +455,6 @@ public class DAO {
 				int chal_cnt=rs.getInt(15);
 				String chal_pw = rs.getString(16);
 				String chal_public = rs.getString(17);
-
 				zvo = new challengeBoardVO(chal_seq1, chal_cat1, chal_cat2, chal_subject, chal_content, chal_start, chal_period,chal_time,chal_point,chal_pic1, chal_pic2, chal_pic3,
 						reg_date, m_id, chal_cnt, chal_pw, chal_public);
 			}
@@ -466,7 +464,6 @@ public class DAO {
 		} finally {
 			close();
 		}
-
 		return zvo;
 	}
 
