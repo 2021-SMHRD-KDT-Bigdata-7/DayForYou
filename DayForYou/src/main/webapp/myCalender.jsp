@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.CalenderDAO"%>
+<%@page import="model.CalenderVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -304,10 +307,10 @@
 
             calendar.addEvent({
 
-              title: title,
-              start: arg.start,
-              end: arg.end,
-              allDay: arg.allDay,
+              title: <%= %>, 
+              start: <%= %>,
+              end: <%= %>,
+              allDay: <%= %>,
               color : 'green'
             })
           //   $.ajax({
@@ -488,7 +491,10 @@
 </head>
 
 <body>
-
+<%
+  CalenderDAO cdao = new CalenderDAO();
+  ArrayList<CalenderVO> cvo = cdao.todo_select(); //이부분 뭔가 이상한데?%>
+ 
   <!-- Preloader -->
   <div id="preloader">
     <div class="preload-content">

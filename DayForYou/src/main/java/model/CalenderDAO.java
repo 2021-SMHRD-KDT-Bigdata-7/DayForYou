@@ -100,7 +100,7 @@ public class CalenderDAO {
 	
 	// 일정 확인
 	
-	public ArrayList<CalenderVO> select() {
+	public ArrayList<CalenderVO> todo_select() {
 
 		ArrayList<CalenderVO> todo = new ArrayList<CalenderVO>();
 		
