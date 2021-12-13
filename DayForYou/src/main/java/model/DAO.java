@@ -438,6 +438,7 @@ public class DAO {
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
+				System.out.println("들어오닝~");
 				int chal_seq1 = rs.getInt(1);
 				String chal_cat1 = rs.getString(2);
 				String chal_cat2 = rs.getString(3);
@@ -446,11 +447,11 @@ public class DAO {
 				 String chal_start =rs.getString(6);
 				 String chal_period =rs.getString(7);
 				int chal_time=rs.getInt(8);
-				int chal_point = rs.getInt(10);
+				int chal_point = rs.getInt(9);
 				String chal_pic1 =rs.getString(10);
 				String chal_pic2 = rs.getString(11);
 				String chal_pic3 =rs.getString(12);
-				String reg_date=rs.getString(13);
+				String reg_date= rs.getString(13); //Date 자료형
 				String m_id=rs.getString(14);
 				int chal_cnt=rs.getInt(15);
 				String chal_pw = rs.getString(16);
@@ -464,6 +465,7 @@ public class DAO {
 		} finally {
 			close();
 		}
+		System.out.println(zvo);
 		return zvo;
 	}
 

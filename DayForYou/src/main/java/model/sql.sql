@@ -2,6 +2,8 @@ select * from tbl_member
 select * from tbl_challenge;
 select * from tbl_challenge where chal_seq = 298;
 
+
+
 ALTER TABLE tbl_challenge MODIFY (chal_period VARCHAR2(150));
 
 
