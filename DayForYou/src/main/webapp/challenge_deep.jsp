@@ -30,10 +30,12 @@
 	<%		
 	DAO dao = new DAO();
 	String chal_cat1 = request.getParameter("chal_cat1");
-	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("chal_cat1");
+	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat(chal_cat1);
 	if (chall_personal == null){
-		
+		System.out.println("null입니다.");
 	}
+	int lastIndex = chall_personal.size()-1;
+	
 	
 	%>
 
@@ -238,7 +240,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- ##### Cool Facts Area End ##### -->
 
 	<!-- ##### Blog Wrapper Start ##### -->
@@ -250,52 +252,54 @@
 
 				<div class="col-12 col-md-6 col-lg-4">
 					<div>
-						<h2> 챌린지</h2>
+						<h2>챌린지</h2>
 					</div>
-					<div class="single-blog-area blog-style-2"
-						style="margin: 10 0 0 0">
-					
-					<table>
-					<tr>
-						<td>
-						<div class="single-blog-thumbnail">
-
-							<a href="temp.html"><img
-								src="<%=chall_personal.get(0).getChalPic1()%>"
-								alt="img/challenge_sample/none.png" class = "img-mini"> </a>
-							<div class="post-date">
-								<a href="#"><%=chall_personal.get(0).getChalCnt()%> <span>0명</span></a>
-							</div>
-
-						</div>
-						</td>
-						<td>
+					<div class="single-blog-area blog-style-2" >
+						<%for(int i = 0 ; i < chall_personal.size(); i = i + 2) {%>
+						<table border = 1 class = "img-mini">
+							<tr>
 						
-						</td>
-					</tr>
-					<tr>
-						<td>
-						<!-- Blog Content -->
-						<div class="single-blog-content" style="margin: 10 0 0 0">
-						<a href="#" class="post-tag"><%=chall_personal.get(0).getChalCat2()%></a>
-						</div>
-						</td>
-						<td>
-						</td>
-					</tr>
-					<tr>
-						<td>
-								<h4>
-								<a href="#" class="post-headline"><%=chall_personal.get(0).getChalSubject()%></a>
-							</h4>
-						</td>
-						<td>
-						</td>
-					</tr>
-					
-					</table>
-					</div>		
-				</div>				
+								<%for(int j = i; j < i+2; j++){ %>
+								<%if(j == chall_personal.size()){break;} %>
+								<td>
+									
+									<div class="single-blog-thumbnail">
+										<a href="temp.html"><img
+											src="<%=chall_personal.get(j).getChalPic1()%>"
+											alt="img/challenge_sample/none.png"> </a>
+										<div class="post-date">
+											<a href="#"><%=chall_personal.get(j).getChalCnt()%> <span>0명</span></a>
+										</div>
+									</div>
+								</td>
+								<%} %>
+							</tr>
+							<tr>
+								<%for (int j = i; j < i+2; j++){ %>
+								<%if(j == chall_personal.size()){break;} %>
+								<td>
+									<!-- Blog Content -->
+									<div class="single-blog-content">
+										<a href="#" class="post-tag"><%=chall_personal.get(j).getChalCat2()%></a>
+									</div>
+								</td>
+								<%} %>
+							</tr>
+							<tr>
+								<%for (int j = i; j < i+2; j++){ %>
+								<%if(j == chall_personal.size()){break;} %>
+								<td>
+									<h4>
+										<a href="#" class="post-headline"><%=chall_personal.get(j).getChalSubject()%></a>
+									</h4>
+								</td>
+								<%} %>
+							</tr>
+
+						</table>
+						<%} %>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -26,7 +26,7 @@
 </head>
 
 <body>
-	<!-- 스크립트릿 !-->
+	<!-- 스크립트릿 --!>
 	<%
 	DAO dao = new DAO();
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
@@ -277,7 +277,7 @@
 				<!-- Single Cool Facts Area -->
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="single-cool-facts-area text-center mb-100">
-						<table style="margin: 20%;">
+						<table>
 							<tr>
 								<td>
 									<h2>
@@ -357,7 +357,7 @@
 						</div>
 					</div>
 					<div align="right">
-						<a href="challenge_deep.jsp?chal_cat1='개인'">더보기</a>
+						<a href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
 					</div>
 				</div>
 			</div>
@@ -371,7 +371,7 @@
 
 					<div class="single-blog-thumbnail">
 <%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
-						<a href="ChallengeSingleService?chal_seq=298"><img
+						<a href="ChallengeSingleService?chal_seq=327"><img
 							src="<%=chall_suggestion.get(0).getChalPic1() %>"
 							alt="img/logo.png"> </a>
 						<div class="post-date">

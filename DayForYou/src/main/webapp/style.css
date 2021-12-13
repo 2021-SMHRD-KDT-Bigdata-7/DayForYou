@@ -1604,6 +1604,10 @@ textarea:focus ~ .highlight {
 
 .img-mini {
 	 height: auto;
-  max-width: 50%; 
+    width: 200px;
+  object-fit: fill;
 }
+
+
+
 
