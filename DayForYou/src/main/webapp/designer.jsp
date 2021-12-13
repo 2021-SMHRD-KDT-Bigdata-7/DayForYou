@@ -125,7 +125,7 @@
                                           
                                         </ul>
                                     </li>
-                                     <li><a href="#">Portfolio</a>
+                                    <li><a href="#">Portfolio</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">developer</li>
@@ -134,7 +134,7 @@
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">designer</li>
-                                                <li><a href="#">sample 1</a></li>
+                                                <li><a href="designer.jsp">sample 1</a></li>
                                                 <li><a href="#">sample 2</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
@@ -202,7 +202,7 @@
                             <div class="line"></div>
                             <a href="#" class="post-tag">samples</a>
                             <div>
-                            <h1>Marketer Sample 1  </h1>
+                            <h1>designer Sample 1</h1>
                             </div>
                             <hr>
                             <br>
@@ -211,30 +211,31 @@
 							
 							<a>1. 표지</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar1.PNG"></a>
+							<a><img src = "img/portfolio-img/designer/de1.PNG"></a>
 							<br><br>
-							<a>2. 프로필</a>
+							<a>2. 목차</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar2.PNG"></a>
+							<a><img src = "img/portfolio-img/designer/de2.PNG"></a>
 							<br><br>
 							<a>3. 역량</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar3.PNG"></a>
+							<a><img src = "img/portfolio-img/designer/de3.PNG"></a>
 							<br><br>
-							<a>4. 나만의 스토리</a>
+							<a>4. 프로젝트 및 경력사항</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar4.PNG"></a>
+							<a><img src = "img/portfolio-img/designer/de4.PNG"></a>
 							<br><br>
-							<a>5. 다짐 및 각오</a>
-							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar5.PNG"></a>
+							<a><img src = "img/portfolio-img/designer/de5.PNG"></a>
 							
 							<!-- <span><a href = "mychart.html"><img src = "img/portfolio-img/graphkey.PNG" width = "100px" align = "right"></a></span> -->
 							<br><br>
-							<a>6. 마무리</a>
-							<a><img src = "img/portfolio-img/marketer/mar6.PNG"></a>
+							<a><img src = "img/portfolio-img/designer/de6.PNG"></a>
 							<br><br>
-						
+							<a><img src = "img/portfolio-img/designer/de7.PNG"></a>
+							<br><br>
+							<a>5. 마무리</a>
+							<br><br>
+							<a><img src = "img/portfolio-img/designer/de8.PNG"></a>
 							
 							<br><br>
 							

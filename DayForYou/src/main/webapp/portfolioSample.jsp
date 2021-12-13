@@ -131,17 +131,15 @@
                                                 <li class="title">developer</li>
                                                 <li><a href="portfolioSample.jsp">sample 1</a></li>
                                                 <li><a href="#">sample 2</a></li>
-                                                <li><a href="#">sample 3</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">designer</li>
                                                 <li><a href="#">sample 1</a></li>
                                                 <li><a href="#">sample 2</a></li>
-                                                <li><a href="#">sample 3</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">marketer</li>
-                                                <li><a href="#">sample 1</a></li>
+                                                <li><a href="marketer.jsp">sample 1</a></li>
                                                 <li><a href="#">sample 2</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">

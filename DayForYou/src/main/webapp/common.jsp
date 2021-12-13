@@ -125,7 +125,7 @@
                                           
                                         </ul>
                                     </li>
-                                     <li><a href="#">Portfolio</a>
+                                    <li><a href="#">Portfolio</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">developer</li>
@@ -134,7 +134,7 @@
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">designer</li>
-                                                <li><a href="#">sample 1</a></li>
+                                                <li><a href="designer.jsp">sample 1</a></li>
                                                 <li><a href="#">sample 2</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
@@ -148,8 +148,8 @@
                                                 <li><a href="#">sample 2</a></li>
                                             </ul>
                                               <ul class="single-mega cn-col-4">
-                                                <li class="title">students</li>
-                                                <li><a href="#">sample 1</a></li>
+                                                <li class="title">common</li>
+                                                <li><a href="common.jsp">sample 1</a></li>
                                                 <li><a href="#">sample 2</a></li>
                                             </ul>
                                         </div>
@@ -202,7 +202,7 @@
                             <div class="line"></div>
                             <a href="#" class="post-tag">samples</a>
                             <div>
-                            <h1>Marketer Sample 1  </h1>
+                            <h1>경력직 포트폴리오 샘플</h1>
                             </div>
                             <hr>
                             <br>
@@ -211,31 +211,46 @@
 							
 							<a>1. 표지</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar1.PNG"></a>
+							<a><img src = "img/portfolio-img/common/co1.PNG"></a>
+							<br><br><br>
+							<a>2.프로필/경력사항</a>
 							<br><br>
-							<a>2. 프로필</a>
+							<a><img src = "img/portfolio-img/common/co22.PNG"></a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar2.PNG"></a>
+							<a>3.자기소개</a>
 							<br><br>
-							<a>3. 역량</a>
+							<a><img src = "img/portfolio-img/common/co3.PNG"></a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar3.PNG"></a>
+							<a>4.핵심역량</a>
 							<br><br>
-							<a>4. 나만의 스토리</a>
+							<a><img src = "img/portfolio-img/common/co4.PNG"></a>
 							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar4.PNG"></a>
+							<a>5.관련 프로젝트 및 경험</a>
 							<br><br>
-							<a>5. 다짐 및 각오</a>
-							<br><br>
-							<a><img src = "img/portfolio-img/marketer/mar5.PNG"></a>
+							<a><img src = "img/portfolio-img/common/co5.PNG"></a>
 							
 							<!-- <span><a href = "mychart.html"><img src = "img/portfolio-img/graphkey.PNG" width = "100px" align = "right"></a></span> -->
 							<br><br>
-							<a>6. 마무리</a>
-							<a><img src = "img/portfolio-img/marketer/mar6.PNG"></a>
+							<a><img src = "img/portfolio-img/common/co6.PNG"></a>
 							<br><br>
-						
+							<a><img src = "img/portfolio-img/common/co7.PNG"></a>
+							<br><br>
+							<br><br>
+							<a><img src = "img/portfolio-img/common/co8.PNG"></a>
 							
+							<br><br>
+							<br><br>
+							<a><img src = "img/portfolio-img/common/co9.PNG"></a>
+							<br><br>
+							<br><br>
+							<a><img src = "img/portfolio-img/common/co10.PNG"></a>
+							<br><br>
+							<br><br>
+							<a><img src = "img/portfolio-img/common/co11.PNG"></a>
+							<br><br>
+							<a>6. 마무리</a>
+							<br><br>
+							<a><img src = "img/portfolio-img/common/co12.PNG"></a>
 							<br><br>
 							
 								<div>

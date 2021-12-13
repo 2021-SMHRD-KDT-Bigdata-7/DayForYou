@@ -125,11 +125,34 @@
                                           
                                         </ul>
                                     </li>
-                                     <li><a href="#">Portfolio</a>
-                                        <ul class="dropdown">
-                                            <li><a href="portfolioSample.jsp">Sample</a></li>
-                                            <li><a href="about-us.html">Create</a></li>
-                                        </ul>
+                                    <li><a href="#">Portfolio</a>
+                                        <div class="megamenu">
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">developer</li>
+                                                <li><a href="portfolioSample.jsp">sample 1</a></li>
+                                                <li><a href="#">sample 2</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">designer</li>
+                                                <li><a href="designer.jsp">sample 1</a></li>
+                                                <li><a href="#">sample 2</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">marketer</li>
+                                                <li><a href="marketer.jsp">sample 1</a></li>
+                                                <li><a href="#">sample 2</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">photographer</li>
+                                                <li><a href="photograph.jsp">sample 1</a></li>
+                                                <li><a href="#">sample 2</a></li>
+                                            </ul>
+                                              <ul class="single-mega cn-col-4">
+                                                <li class="title">students</li>
+                                                <li><a href="#">sample 1</a></li>
+                                                <li><a href="#">sample 2</a></li>
+                                            </ul>
+                                        </div>
                                     </li>
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
