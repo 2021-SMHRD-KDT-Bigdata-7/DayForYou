@@ -65,7 +65,7 @@ public class DAO {
 
 				rs = psmt.executeQuery();
 
-				if (rs.next()) {
+				if (rs.next()==true) {
 					String uid = rs.getString(1);
 					String upw = rs.getString(2);
 					String uname = rs.getString(3);

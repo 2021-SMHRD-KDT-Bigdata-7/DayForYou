@@ -15,6 +15,9 @@ public class MemberVo {
 	private String joindate;
 	private int point;
 	private String adminYn;
+	public MemberVo() {
+		
+	}
 	public MemberVo(String id, String pw, String name, String nick, String phone, String email, String birthday,
 			String gender, String job, String address, String joindate, int point, String adminYn) {
 		super();

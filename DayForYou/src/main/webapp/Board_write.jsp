@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@page import="model.BoardDAO"%>
 <%@page import="model.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -315,15 +316,16 @@
             	//입력이 안 된 부분이 있는지 체크한다.
             	BoardVO vo = new BoardVO();
             	BoardDAO dao = new BoardDAO();
+            	MemberVo mvo = new MemberVo();
             	%>
             	
             <% 
             	//현재 세션 상태를 체크한다.
-            	String m_id = null;
-            	if(session.getAttribute("m_id") != null){
-            		m_id = (String)session.getAttribute("m_id");
+            	
+            	if(session.getAttribute("vo") != null){
+            		mvo = (MemberVo)session.getAttribute("vo");
             	}
-            	if(m_id == null){%>
+            	if(mvo == null){%>
             		<script>
             			alert('로그인을 하세요');
             			location.href = 'login.jsp'

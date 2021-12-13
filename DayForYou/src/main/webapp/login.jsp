@@ -1,6 +1,7 @@
+<%@page import="model.MemberVo"%>
 <%@page import="Controller.loginService"%>
 <%@page import="model.DAO"%>
-<%@page import="model.MemberVo"%>
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -40,7 +41,24 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
+	<% 
+		//현재 세션 상태를 체크한다.
+		MemberVo vo = null;
+		if(session.getAttribute("vo") != null){
+				vo = (MemberVo)session.getAttribute("vo");
+		}
+		//이미 로그인했으면 다시 로그인을 할 수 없게 한다.
+		if(vo != null){%>
+			<script>
+				alert("이미 로그인이 되어 있습니다.");
+				location.href = 'main.html'			
+			</script>
+		<%} 
+			DAO userdao = new DAO();
+			MemberVo mvo = new MemberVo();
+			MemberVo result = userdao.login(vo.getId(),vo.getPw());
+		%>
+	
 
 	<div class="container-login100">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
