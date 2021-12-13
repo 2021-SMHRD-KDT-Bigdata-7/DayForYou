@@ -507,50 +507,6 @@ public class DAO {
 
 				}
 
-			public int ChallengeCntUp(int chal_seq) {
-				
-				connection();
-
-				try {
-					sql = "update tbl_challenge set chal_cnt='' where chal_seq = ?";
-					UPDATE [테이블] SET [열] = '변경할값' WHERE [조건]
-
-							출처: https://121202.tistory.com/28 [안방철의 방구석]
-					psmt = conn.prepareStatement(sql);
-					psmt.setInt(1, chal_seq);
-					rs = psmt.executeQuery();
-
-					if (rs.next()) {
-						System.out.println("들어오닝~");
-						int chal_seq1 = rs.getInt(1);
-						String chal_cat1 = rs.getString(2);
-						String chal_cat2 = rs.getString(3);
-						String chal_subject = rs.getString(4);
-						 String chal_content= rs.getString(5);
-						 String chal_start =rs.getString(6);
-						 String chal_period =rs.getString(7);
-						int chal_time=rs.getInt(8);
-						int chal_point = rs.getInt(9);
-						String chal_pic1 =rs.getString(10);
-						String chal_pic2 = rs.getString(11);
-						String chal_pic3 =rs.getString(12);
-						String reg_date= rs.getString(13); //Date 자료형
-						String m_id=rs.getString(14);
-						int chal_cnt=rs.getInt(15);
-						String chal_pw = rs.getString(16);
-						String chal_public = rs.getString(17);
-						zvo = new challengeBoardVO(chal_seq1, chal_cat1, chal_cat2, chal_subject, chal_content, chal_start, chal_period,chal_time,chal_point,chal_pic1, chal_pic2, chal_pic3,
-								reg_date, m_id, chal_cnt, chal_pw, chal_public);
-					}
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					close();
-				}
-				System.out.println(zvo);
-				return zvo;
-			}
 			}
 			
 

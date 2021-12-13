@@ -68,6 +68,8 @@
 	<!-- 스크립트릿 -->
 	<%
 	challengeBoardVO zvo = (challengeBoardVO) request.getAttribute("zvo");
+	
+	DAO dao = new DAO();
 	%>
 
 	<!-- Preloader -->
@@ -148,7 +150,7 @@
 				</div>
 				<!-- 글쓰기 버튼 -->
 				<div class="write-bar">
-					<a href="ChallengeSingleService?chal_seq=327"><img
+					<a href="ChallengeCnt?chal_seq=327"><img
 						src="img/challenge-main/write_button.png"
 						style="position: fixed; bottom: 5%; left: 33%; right: 50%"></a>
 				</div>
