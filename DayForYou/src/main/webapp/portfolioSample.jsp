@@ -125,35 +125,7 @@
                                           
                                         </ul>
                                     </li>
-                                     <li><a href="#">Portfolio</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">developer</li>
-                                                <li><a href="portfolioSample.jsp">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">designer</li>
-                                                <li><a href="#">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">marketer</li>
-                                                <li><a href="marketer.jsp">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">photographer</li>
-                                                <li><a href="photograph.jsp">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                              <ul class="single-mega cn-col-4">
-                                                <li class="title">students</li>
-                                                <li><a href="#">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                     <li><a href="portfolioMain.jsp">Portfolio</a></li>
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
                                             <li><a href="index.html">Community</a></li>
@@ -188,7 +160,18 @@
         </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
-
+	<div>
+		<table style= "border: none solid;" >
+		  <tr>
+		    <td><img src="img/portfolio-img/debutton.png" onclick = "location.href='portfolioMain.jsp'"></td>
+		    <td><img src="img/portfolio-img/devbutton.PNG" onclick = "location.href='portfolioSample.jsp'"></td>
+		    <td><img src="img/portfolio-img/mabutton.png" onclick = "location.href='marketer.jsp'"></td>
+		    <td><img src="img/portfolio-img/phobutton.png" onclick = "location.href='photograph.jsp'"></td>
+		    <td><img src="img/portfolio-img/combutton.png" onclick = "location.href='common.jsp'"></td>
+		  <tr>
+		</table>
+	
+	</div>
 
 
     <div class="blog-wrapper section-padding-100-0 clearfix">
@@ -202,7 +185,7 @@
                             <div class="line"></div>
                             <a href="#" class="post-tag">samples</a>
                             <div>
-                            <h1>Developer Sample 1</h1>
+                            <h1>개발 분야 포트폴리오 샘플</h1>
                             </div>
                             <hr>
                             <br>
