@@ -254,19 +254,25 @@
 					<div>
 						<h2>챌린지</h2>
 					</div>
-					<div class="single-blog-area blog-style-2" >
+					<div class="single-blog-area blog-style-2">
 						<%for(int i = 0 ; i < chall_personal.size(); i = i + 2) {%>
-						<table border = 1 class = "img-mini">
+						<table border=1 class="img-mini">
 							<tr>
-						
+
 								<%for(int j = i; j < i+2; j++){ %>
-								<%if(j == chall_personal.size()){break;} %>
-								<td>
-									
+								<%if(j == chall_personal.size()){break;}
+								String password = chall_personal.get(j).getChalPw();
+								if(password == null){
+									password = "9999999z"; 
+								}
+								%>
+								<td width="50%">
+
 									<div class="single-blog-thumbnail">
-										<a href="temp.html"><img
-											src="<%=chall_personal.get(j).getChalPic1()%>"
-											alt="img/challenge_sample/none.png"> </a>
+										<a><img src="<%=chall_personal.get(j).getChalPic1()%>"
+											alt="img/challenge_sample/none.png"
+											onclick="password(<%=chall_personal.get(j).getChalPw()%>);">
+										</a>
 										<div class="howMany">
 											<span><%=chall_personal.get(j).getChalCnt()%></span>
 										</div>
@@ -417,6 +423,26 @@
 	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
+	<script>
+	function password(pass) {
+		
+		if(typeof pass == "undefined" || pass == null){
+
+			
+			location.replace('shop.jsp');	
+		}
+		let password = prompt("비밀번호를 입력하세요.");
+		if(pass != password){
+			alert("비밀번호가 틀립니다.");
+			
+			console.log("2");
+			}	
+		else{
+			console.log("1");
+			location.replace('temp.html');	
+		}
+		}
+	</script>
 
 </body>
 
