@@ -5,14 +5,14 @@ package model;
 public class CalenderVO {
 
 	private int todo_seq;
-	private String todo_subject;
-	private String todo_cate;
-	private String todo_sdate;
-	private String todo_edate;
-	private String todo_content;
-	private String reg_date;
-	private String m_id;
-	private String todo_check;
+	private String todo_subject; //제목
+	private String todo_cate; // 카테고리
+	private String todo_sdate; // 시작날짜
+	private String todo_edate; // 마감날짜
+	private String todo_content; // 내용
+	private String reg_date; // 등록날짜
+	private String m_id; // 등록 아이디
+	private String todo_check; // 하루종일
 //?	private boolean allDay = false;
 
 //=====생성자.======
