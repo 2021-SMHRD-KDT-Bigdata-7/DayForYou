@@ -12,7 +12,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Developer Sample 1</title>
+    <title>Developer Sample 2</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -126,35 +126,10 @@
                                         </ul>
                                     </li>
                                      <li><a href="#">Portfolio</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">developer</li>
-                                                <li><a href="portfolioSample.jsp">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                                <li><a href="#">sample 3</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">designer</li>
-                                                <li><a href="#">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                                <li><a href="#">sample 3</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">marketer</li>
-                                                <li><a href="#">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">photographer</li>
-                                                <li><a href="photograph.jsp">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                              <ul class="single-mega cn-col-4">
-                                                <li class="title">students</li>
-                                                <li><a href="#">sample 1</a></li>
-                                                <li><a href="#">sample 2</a></li>
-                                            </ul>
-                                        </div>
+                                        <ul class="dropdown">
+                                            <li><a href="portfolioSample.jsp">Sample</a></li>
+                                            <li><a href="about-us.html">Create</a></li>
+                                        </ul>
                                     </li>
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
@@ -204,7 +179,7 @@
                             <div class="line"></div>
                             <a href="#" class="post-tag">samples</a>
                             <div>
-                            <h1>Developer Sample 1</h1>
+                            <h1>photographer Sample 1</h1>
                             </div>
                             <hr>
                             <br>
@@ -213,26 +188,30 @@
 							
 							<a>1. 표지</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/portfolioA.PNG"></a>
+							<a><img src = "img/portfolio-img/photograph/pho1.PNG"></a>
 							<br><br>
-							<a>2. 이력사항</a>
+							<a>2. 목차</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/portfolioB.PNG"></a>
+							<a><img src = "img/portfolio-img/photograph/pho2.PNG"></a>
 							<br><br>
-							<a>3. 역량 및 자질</a>
+							<a>3. 프로필</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/portfolioC.PNG"></a>
+							<a><img src = "img/portfolio-img/photograph/pho3.PNG"></a>
 							<br><br>
 							<a>4. 프로젝트 및 활동 경험</a>
 							<br><br>
-							<a><img src = "img/portfolio-img/portfolioD.PNG"></a>
+							<a><img src = "img/portfolio-img/photograph/pho4.PNG"></a>
 							<br><br>
-							<a><img src = "img/portfolio-img/portfolioE.PNG"></a>
+							<a><img src = "img/portfolio-img/photograph/pho5.PNG"></a>
+							
+							<!-- <span><a href = "mychart.html"><img src = "img/portfolio-img/graphkey.PNG" width = "100px" align = "right"></a></span> -->
 							<br><br>
-							<span><a>5. DayForYou가 제공하는 기록 그래프 활용</a></span>
-							<span><a href = "mychart.html"><img src = "img/portfolio-img/graphkey.PNG" width = "100px" align = "right"></a></span>
+							<a><img src = "img/portfolio-img/photograph/pho6.PNG"></a>
 							<br><br>
-							<a><img src = "img/portfolio-img/portfolioF.PNG"></a>
+							<a>5. 마무리</a>
+							<br><br>
+							<a><img src = "img/portfolio-img/photograph/pho7.PNG"></a>
+							<br><br>
 							
 							<br><br>
 							
