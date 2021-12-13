@@ -159,6 +159,7 @@
             </div>
         </div>
     </div>
+    <br><br>
     <!-- ##### Breadcumb Area End ##### -->
 	<div>
 		<table style= "border: none solid;" >
@@ -188,8 +189,8 @@
                             <h1>마케팅 분야 포트폴리오 샘플</h1>
                             </div>
                             <hr>
-                            <br>
-                            <a><img src = "img/portfolio-img/intro2.PNG"></a>
+                            <br><br>
+                            <a href="mychart.html" class="post-tag">dayforyou에서 제공하는 포트폴리오 샘플입니다. 더욱 완성도 높은 포트폴리오를 제작하기 위해 메뉴 - MyPage에서 통계 자료를 활용할 수 있습니다. (클릭 시 개인통계 페이지로 이동합니다.)</a>
 							<br><br><br>
 							
 							<a>1. 표지</a>
