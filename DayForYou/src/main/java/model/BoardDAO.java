@@ -44,7 +44,7 @@ public class BoardDAO {
 	
 	// 게시글 번호 부여 메소드
 	public int getArticle_seq() {
-		String sql = "select m_id from tbi_nea order by m_id desc";
+		String sql = "select article_seq from tbi_nea order by article_seq desc";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -76,9 +76,42 @@ public class BoardDAO {
 		return -1; // 데이터베이스 오류
 	}
 	
+	// 게시클 리스트 메소드
+	public ArrayList<BoardVO> getList(int article_seq){
+		String sql = "select * from tbi_nea where article_seq < ? order by article_seq desc limit 10";
+		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, getArticle_seq() - (article_seq - 1)*10);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BoardVO vo = new BoardVO();
+				vo.setArticle_seq(rs.getInt(1));
+				vo.setArticle_subject(rs.getString(2));
+				vo.setM_id(rs.getString(3));
+				vo.setReg_date(rs.getString(4));
+				vo.setArticle_content(rs.getString(5));
+				list.add(vo);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	// 페이징 처리 메소드
-	public boolean nextPage(int pageNumber) {
-		String sql = "select * from tbi_nea where m_id < ? and ";
+	public boolean nextPage(int article_seq) {
+		String sql = "select * from tbi_nea where article_seq < ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, getArticle_seq() - (article_seq - 1)*10);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 	
