@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -39,6 +40,10 @@
 </head>
 
 <body>
+		<%
+			MemberVo vo = (MemberVo)session.getAttribute("vo");
+			out.print(vo);
+		%>
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
@@ -203,7 +208,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>아이디</a>
-	                        <input type="text" value = "hyein" name="id" id="name" required>
+	                        <input type="text" value = "hyein" name="m_id" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -216,7 +221,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>비밀번호</a>
-	                        <input type="password" value = "비밀번호" name="pw" id="name" required>
+	                        <input type="password" value = "비밀번호" name="m_pwd" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -229,7 +234,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>이름</a>
-	                        <input type="text" value = "국혜인" name="name" id="name" required>
+	                        <input type="text" value = "국혜인" name="m_name" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -242,7 +247,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>닉네임</a>
-	                        <input type="text" value = "혠이" name="nick" id="name" required>
+	                        <input type="text" value = "혠이" name="m_nick" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -255,7 +260,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>휴대폰 번호</a>
-	                        <input type="tel" value = "01064282438" name="tel" id="name" required>
+	                        <input type="tel" value = "01064282438" name="m_phone" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -268,7 +273,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>이메일</a>
-	                        <input type="email" value = "hyein@naver.com" name="email" id="name" required>
+	                        <input type="email" value = "hyein@naver.com" name="m_email" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -281,7 +286,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>생년월일</a>
-	                        <input type="date" value = "" name="birth" id="name" required>
+	                        <input type="date" value = "" name="m_birthdate" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -297,8 +302,8 @@
 	                     	<br><br>
 	                     	<table>
 		                        <tr>
-		                        	<td><font>Man</font><input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "" name="gender" id="name" required></td>
-		             				<td>Woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "" name="gender" id="name" required></td>
+		                        	<td><font>Man</font><input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "" name="m_gender" id="name" required></td>
+		             				<td>Woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "" name="m_gender" id="name" required></td>
 	                        	</tr>
 	                        </table>
 	                        <span class="highlight"></span>
@@ -306,6 +311,19 @@
 	                         
 	            	 </div>
 	              </div>
+	          <tr>
+     		<td>
+	     		<div class="col-12 col-md-6">
+	                  <div class="group">
+	                     <a>주소</a>
+	                        <input type="text" value = "" name="m_addr" id="name" required>
+	                        <span class="highlight"></span>
+	                         <span class="bar"></span>
+	            	 </div>
+	              </div>
+	         </td>
+	         <td></td>
+          </tr>
 
      	</table>
      	</div>
