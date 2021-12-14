@@ -438,7 +438,6 @@ public class DAO {
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				System.out.println("µé¾î¿À´×~");
 				int chal_seq1 = rs.getInt(1);
 				String chal_cat1 = rs.getString(2);
 				String chal_cat2 = rs.getString(3);
@@ -507,7 +506,51 @@ public class DAO {
 
 				}
 
+			public int ChallengeCheck(int chal_seq) {
+				challengeBoardVO zvo = null;
+				connection();
+
+				try {
+					sql = "select * from tbl_my_challenge where chal_seq = ?";
+
+					psmt = conn.prepareStatement(sql);
+					psmt.setInt(1, chal_seq);
+					rs = psmt.executeQuery();
+
+					if (rs.next()==false) {
+					}else {
+						chal_seq = 999999;
+					}
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				return chal_seq;
 			}
+			public void ChallengeCntUp(int chal_seq) {
+				connection();
+				
+				try {
+					sql = "UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = ?;";
+					
+					psmt = conn.prepareStatement(sql);
+					psmt.setInt(1, chal_seq);
+					rs = psmt.executeQuery();
+					
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+			}
+			
+			
+
+
+		}
 			
 
 

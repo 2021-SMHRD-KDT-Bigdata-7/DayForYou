@@ -454,6 +454,30 @@ img {
     #scrollUp {
       bottom: 30px;
       right: 30px; } }
+#scrollUp2 {
+  bottom: 60px;
+  right: 60px;
+  font-size: 13px;
+  text-align: center;
+  color: #878787;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #878787;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  line-height: 1; }
+  #scrollUp2:hover {
+    color: #30336b;
+    border-color: #30336b; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    #scrollUp2 {
+      bottom: 30px;
+      right: 30px; } }
+  @media only screen and (max-width: 767px) {
+    #scrollUp2 {
+      bottom: 12px;
+      right: 10px; } }
 
 .bg-gray {
   background-color: #ffffff; }
