@@ -84,6 +84,17 @@ public class DAO {
 
 				}
 				
+				sql = "SELECT TO_CHAR(m_birthdate, 'YYYY/MM/DD') FROM tbl_member where m_id=?";
+
+				psmt = conn.prepareStatement(sql);
+
+				psmt.setString(1, id);				
+
+				rs = psmt.executeQuery();
+				
+				if (rs.next()==true) {
+					vo.setBirthday(rs.getString(1));
+				}
 				
 			} catch (Exception e) {
 
@@ -137,90 +148,197 @@ public class DAO {
 		
 	
 	//----------
-	/*
-	 * 챌린지 게시판을 출력하는 메소드
-	 */
-	public ArrayList<challengeBoardVO> SelectChallengeBoard(){
-		
-		ch_boards = new ArrayList<>(); 
-		
-		connection();
-		
-		try {
-			sql = "select * from tbl_challenge";
-			
-			psmt = conn.prepareStatement(sql);
-			
-			rs = psmt.executeQuery();
-			
-			while(rs.next()) {				
-				
-				cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2),
-						rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getInt(8),
-						rs.getInt(9), rs.getString(10),
-						rs.getString(11), rs.getString(12), rs.getString(13),
-						rs.getString(14), rs.getInt(15), rs.getString(16),
-						rs.getString(17));
-				
-				ch_boards.add(cbv);				
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		
-		
-		return ch_boards;
-	}
-	
-	/**
-	 * 챌린지 게시판을 카테고리 별로 출력하는 메소드
-	 * 
-	 * @param cat
-	 * 		  챌린지 큰 그룹을 분류하기 위한 카테고리
-	 * 		  ex) 전체, 그룹, 개인, 추천, 인기... 등  
-	 */
-	
-	public ArrayList<challengeBoardVO> SelectChallengeBoard_cat(String cat){
-		
-		ch_boards = new ArrayList<>(); 
-		
-		connection();
-		
-		try {
-			sql = "select * from tbl_challenge where chal_cat1 = ?";
-			
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, cat);
-			
-			rs = psmt.executeQuery();
-			
-			while(rs.next()) {				
-				
-				cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2),
-						rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getInt(8),
-						rs.getInt(9), rs.getString(10),
-						rs.getString(11), rs.getString(12), rs.getString(13),
-						rs.getString(14), rs.getInt(15), rs.getString(16),
-						rs.getString(17));
-								
-				ch_boards.add(cbv);				
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		
-		
-		return ch_boards;
-	}
+		/*
+		 * 챌린지 게시판을 출력하는 메소드
+		 */
+		public ArrayList<challengeBoardVO> SelectChallengeBoard() {
 
+			ch_boards = new ArrayList<>();
+
+			connection();
+
+			try {
+				sql = "select * from tbl_challenge";
+
+				psmt = conn.prepareStatement(sql);
+
+				rs = psmt.executeQuery();
+
+				while (rs.next()) {
+
+					cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
+							rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8), rs.getInt(9), rs.getString(10),
+							rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getInt(15),
+							rs.getString(16), rs.getString(17));
+
+					ch_boards.add(cbv);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+
+			return ch_boards;
+		}
+
+		/**
+		 * 챌린지 게시판을 카테고리 별로 출력하는 메소드
+		 * 
+		 * @param cat 챌린지 큰 그룹을 분류하기 위한 카테고리 ex) 전체, 그룹, 개인, 추천, 인기... 등
+		 */
+
+		public ArrayList<challengeBoardVO> SelectChallengeBoard_cat(String cat) {
+
+			ch_boards = new ArrayList<>();
+
+			connection();
+
+			try {
+				sql = "select * from tbl_challenge where chal_cat1 = ?";
+
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, cat);
+
+				rs = psmt.executeQuery();
+
+				while (rs.next()) {
+
+					cbv = new challengeBoardVO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
+							rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8), rs.getInt(9), rs.getString(10),
+							rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getInt(15),
+							rs.getString(16), rs.getString(17));
+
+					ch_boards.add(cbv);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+
+			return ch_boards;
+		}
+		
+		/**
+		 * 챌린지 숫자 카운팅 메소드 모음: 전체 챌린지 수
+		 * 
+		 * @param 
+		 */
+		
+		public int CountAllChallenge() {
+			int num = 0;
+			
+			connection();
+			
+			try {
+				sql = "select count(*) from tbl_challenge";
+				psmt = conn.prepareStatement(sql);
+				
+				rs = psmt.executeQuery(sql);
+				
+				while(rs.next()) {
+					num = rs.getInt(1);
+				}
+				
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return num;
+			
+		}
+		/**
+		 * 챌린지 마감날짜 불러오는 메소드
+		 * 
+		 * @param 
+		 */
+		public ArrayList<String> getEndDateChallenge() {
+			ArrayList<String> endDateChall = new ArrayList<>();
+			
+			connection();
+			
+			try {
+				sql = "select chal_period from tbl_challenge";
+				psmt = conn.prepareStatement(sql);
+				
+				rs = psmt.executeQuery(sql);
+				
+				
+				while(rs.next()) {
+					endDateChall.add(rs.getString(1));				
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return endDateChall;
+		}
+		/**
+		 * 챌린지 누적 참가자 메소드
+		 * 
+		 * @param 
+		 */
+		
+		public int countChallCnt() {
+			int sum = 0;
+			
+			connection();
+			try {
+				sql = "select chal_cnt from tbl_challenge";
+				
+				psmt = conn.prepareStatement(sql);
+				
+				rs = psmt.executeQuery();
+				
+				
+				while(rs.next()) {
+					sum = sum + rs.getInt(1);
+				}
+				
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return sum;
+		}
+		/**
+		 * 챌린지 현재 참가자 알아내는 메소드
+		 * 
+		 * @param 
+		 */
+		public ArrayList<Integer> getNowCnt() {
+			ArrayList<Integer> cnt = null;
+			
+			connection();
+			
+			try {
+			sql = "select chal_cnt from tbl_challenge";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			cnt = new ArrayList<>();
+			
+			while(rs.next()) {
+				cnt.add(rs.getInt(1));
+			}
+			
+			
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}		
+			
+			
+			return cnt;
+		}
+		
 
 
 	public int ChallInsert(String chall_cat1, String chall_subject, String chall_cat2, String chall_Introduce,
@@ -438,7 +556,6 @@ public class DAO {
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				System.out.println("들어오닝~");
 				int chal_seq1 = rs.getInt(1);
 				String chal_cat1 = rs.getString(2);
 				String chal_cat2 = rs.getString(3);
@@ -507,7 +624,51 @@ public class DAO {
 
 				}
 
+			public int ChallengeCheck(int chal_seq) {
+				challengeBoardVO zvo = null;
+				connection();
+
+				try {
+					sql = "select * from tbl_my_challenge where chal_seq = ?";
+
+					psmt = conn.prepareStatement(sql);
+					psmt.setInt(1, chal_seq);
+					rs = psmt.executeQuery();
+
+					if (rs.next()==false) {
+					}else {
+						chal_seq = 999999;
+					}
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+				return chal_seq;
 			}
+			public void ChallengeCntUp(int chal_seq) {
+				connection();
+				
+				try {
+					sql = "UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = ?;";
+					
+					psmt = conn.prepareStatement(sql);
+					psmt.setInt(1, chal_seq);
+					rs = psmt.executeQuery();
+					
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+			}
+			
+			
+
+
+		}
 			
 
 

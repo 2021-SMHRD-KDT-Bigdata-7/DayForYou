@@ -1,5 +1,6 @@
 <%@page import="model.MemberVo"%>
 <%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -30,8 +31,13 @@
     	
     	
     	}
-    
-    
+    	
+    	
+    	.iu{
+    	
+    		border-bottom: 60px solid #fff;
+    	
+    	}
     
     
     
@@ -43,6 +49,7 @@
 		<%
 			MemberVo vo = (MemberVo)session.getAttribute("vo");
 			out.print(vo);
+
 		%>
     <!-- Preloader -->
     <div id="preloader">
@@ -202,13 +209,14 @@
                            
      <br><br>
      	<div>
+     	<form action="UpdateService" method = "post">
      	<table style = "border: none;">
      	<tr>
      		<td>
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>아이디</a>
-	                        <input type="text" value = "hyein" name="m_id" id="name" required>
+	                        <input type="text" value = <%=vo.getId()%> name="m_id" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -221,7 +229,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>비밀번호</a>
-	                        <input type="password" value = "비밀번호" name="m_pwd" id="name" required>
+	                        <input type="password" value = "<%=vo.getPw()%>" name="m_pwd" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -234,7 +242,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>이름</a>
-	                        <input type="text" value = "국혜인" name="m_name" id="name" required>
+	                        <input type="text" value = "<%=vo.getName()%>" name="m_name" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -247,7 +255,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>닉네임</a>
-	                        <input type="text" value = "혠이" name="m_nick" id="name" required>
+	                        <input type="text" value = "<%=vo.getNick()%>" name="m_nick" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -260,7 +268,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>휴대폰 번호</a>
-	                        <input type="tel" value = "01064282438" name="m_phone" id="name" required>
+	                        <input type="tel" value = "<%=vo.getPhone()%>" name="m_phone" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -273,7 +281,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>이메일</a>
-	                        <input type="email" value = "hyein@naver.com" name="m_email" id="name" required>
+	                        <input type="email" value = "<%=vo.getEmail()%>" name="m_email" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -286,7 +294,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>생년월일</a>
-	                        <input type="date" value = "" name="m_birthdate" id="name" required>
+	                        <input type="text" value = "<%=vo.getBirthday()%>" name="m_birthdate" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
@@ -298,12 +306,26 @@
      		<td>
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
-	                     <a>성별</a>
+	                     <a>성별/직종</a>
 	                     	<br><br>
 	                     	<table>
-		                        <tr>
-		                        	<td><font>Man</font><input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "" name="m_gender" id="name" required></td>
-		             				<td>Woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "" name="m_gender" id="name" required></td>
+		                        <tr class = "iu">
+		                        	<%if(vo.getGender() == "M"){ %>
+		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required checked></td>
+		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
+		                        	<%}else{ %>
+		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
+		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required checked></td>
+		                        	<%} %>
+	                        	</tr>
+	                          	 <tr>
+		                        	<%if(vo.getJob() == "student"){ %>
+		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required checked></td>
+		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
+		                        	<%}else{ %>
+		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
+		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required checked></td>
+		                        	<%} %>
 	                        	</tr>
 	                        </table>
 	                        <span class="highlight"></span>
@@ -311,21 +333,26 @@
 	                         
 	            	 </div>
 	              </div>
-	          <tr>
-     		<td>
+	     
+	          
+     		
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>주소</a>
-	                        <input type="text" value = "" name="m_addr" id="name" required>
+	                        <input type="text" value = "<%=vo.getAddress()%>" name="m_addr" id="name" required>
 	                        <span class="highlight"></span>
 	                         <span class="bar"></span>
 	            	 </div>
 	              </div>
-	         </td>
-	         <td></td>
-          </tr>
+	        
+	   
 
      	</table>
+     	<div style= "position: relative; left: 300px;">
+     	<input type = "submit" value = "수정하기" style="width: 100px; height:50px; background-color:smokewhite;">
+     	</div>
+     	</form>
+     	
      	</div>
      	<br><br>
      	<hr>
