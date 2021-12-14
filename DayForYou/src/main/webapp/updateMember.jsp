@@ -308,9 +308,9 @@
 	                  <div class="group">
 	                     <a>성별/직종</a>
 	                     	<br><br>
-	                     	<table>
+	                    <table>
 		                        <tr class = "iu">
-		                        	<%if(vo.getGender() == "M"){ %>
+		                        	<%if(vo.getGender().equals("M")){ %>
 		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required checked></td>
 		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
 		                        	<%}else{ %>
@@ -319,7 +319,8 @@
 		                        	<%} %>
 	                        	</tr>
 	                          	 <tr>
-		                        	<%if(vo.getJob() == "student"){ %>
+	     
+		                        	<%if(vo.getJob().equals("student")){ %>
 		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required checked></td>
 		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
 		                        	<%}else{ %>
