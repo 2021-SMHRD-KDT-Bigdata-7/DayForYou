@@ -1,6 +1,7 @@
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
+<%@page import="model.DayDAO"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="model.DAO"%>
@@ -34,71 +35,7 @@
   <meta name="viewport"
     content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-        //now: '2020-09-07', // 이거 비활성화하면 오늘 날짜로 나옴
-        scrollTime: '00:00', // undo default 6am scrollTime
-        height: '500px', // 캘린더 높이
-        expendRows: true, // 화면에 맞게 높이 설정
-        editable: true, // 달력에 생성된 이벤트를 수정할수 있는지
-        selectable: true, // 달력에 표시된 이벤트 드래그 설정가능.
-        aspectRatio: 1.8, // 가로, 세로 비율
-        dayMaxEvents: false, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
-        locale: 'ko', // 한국어 설정
-        buttonText: {
-          month: '캘린더',
-          today: '오늘',
-          list: '일정'
-        },
-        headerToolbar: { //캘린더 상단 툴바 부분 버튼 순서
-          right: 'dayGridMonth,today,listDay',
-          center: 'prev,next',
-          left: 'title'
-        },
-        dayMaxEventRows: true,
-        views: {
-          timeGrid: {
-            dayMaxEventRows: 5
-          }
-        },
-
-        resourceAreaHeaderContent: '일정',
-        resources: [
-          { id: 'a', title: '공부', eventColor: "blue" },
-          { id: 'b', title: '운동', eventColor: 'orange' },
-          { id: 'c', title: '취미', eventColor: 'green' },
-          { id: 'e', title: '기타', eventColor: 'purple' },
-        ],
-        events: [
-          {id: '1', resourceId: 'a', start: '2021-12-06T14:00:00', end: '2021-12-06T18:00:00', title: 'UX/UI' },
-          { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
-          { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },
-          { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '생일' },
-          { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: '프로젝트' },
-          { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: '프로젝트' },
-          { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: '발표' },
-          { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: '배드민턴' },
-          { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: '배드민턴' },
-          { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: '측구' },
-          { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: '월급' },
-          { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '영화' },
-          { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: '크리스마스 파티' },
-          { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: '도서 구매' },
-          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }
-        ]
-      });
-
-      calendar.render();
-    });
-
-
-
-  </script>
+ 
 
 </head>
 
@@ -133,36 +70,13 @@
 	int nowChallengeCountCnt = 0;
 	
 	
-	//챌린지 마감날짜 불러오기.
-	ArrayList<String> endDateChall = dao.getEndDateChallenge();
+	
 	//현재 챌린지를 진행하는 수들 
 	ArrayList<Integer> nowCnt = dao.getNowCnt();
 		
-	//챌린지 기간 ~를 기점으로 마감날짜만 빼오는 배열
-	ArrayList<String> divide1 = new ArrayList<String>();	
+	ArrayList<DayDAO> challengePeriod = null;
+	challengePeriod = dao.getChallengePeriod();
 	
-	
-	//챌린지 기간 부분에 '년월일'을 나누는 배열들.
-	ArrayList<String> year = new ArrayList<String>();
-	ArrayList<String> month = new ArrayList<String>();
-	ArrayList<String> day = new ArrayList<String>();
-	
-	int count = endDateChall.size();
-	
-	String[] endDate = new String[count];
-			
-	for(int i = 0; i < endDateChall.size(); i++){			
-		String[] arr = new String[2];
-		arr = endDateChall.get(i).split("~");
-		divide1.add(arr[1]);
-	}
-	
-	for(int i = 0 ; i < divide1.size(); i++){
-		String[] arr = divide1.get(i).split("/");			
-		year.add(arr[0]);
-		month.add(arr[1]);
-		day.add(arr[2]);		
-	}
 	
 	LocalDate now = LocalDate.now();
 	int nowYear = now.getYear();
@@ -170,11 +84,10 @@
 	int nowDate = now.getDayOfMonth();
 	
 	
-	for(int i = 0; i < year.size(); i++){	
-		if(Integer.parseInt(year.get(i))<=nowYear){			
-			if(Integer.parseInt(month.get(i)) <= nowMonth){
-				System.out.println(nowDate + " : " + day.get(i));
-				if(Integer.parseInt(day.get(i)) <= nowDate ){
+	for(int i = 0; i < challengePeriod.size(); i++){	
+		if(challengePeriod.get(i).getYear() <=nowYear){			
+			if(challengePeriod.get(i).getMonth() <= nowMonth){				
+				if(challengePeriod.get(i).getDate() <= nowDate ){
 					nowChallengeCount++;
 					nowChallengeCountCnt = nowChallengeCountCnt + nowCnt.get(i);
 				
@@ -186,8 +99,7 @@
 		
 	%>
 	
-	
-	
+
 
 	<!-- Preloader -->
 	<div id="preloader">
@@ -731,7 +643,73 @@
 	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
+	
+	 <script>
 
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+        //now: '2020-09-07', // 이거 비활성화하면 오늘 날짜로 나옴
+        scrollTime: '00:00', // undo default 6am scrollTime
+        height: '500px', // 캘린더 높이
+        expendRows: true, // 화면에 맞게 높이 설정
+        editable: true, // 달력에 생성된 이벤트를 수정할수 있는지
+        selectable: true, // 달력에 표시된 이벤트 드래그 설정가능.
+        aspectRatio: 1.8, // 가로, 세로 비율
+        dayMaxEvents: false, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+        locale: 'ko', // 한국어 설정
+        buttonText: {
+          month: '캘린더',
+          today: '오늘',
+          list: '일정'
+        },
+        headerToolbar: { //캘린더 상단 툴바 부분 버튼 순서
+          right: 'dayGridMonth,today,listDay',
+          center: 'prev,next',
+          left: 'title'
+        },
+        dayMaxEventRows: true,
+        views: {
+          timeGrid: {
+            dayMaxEventRows: 5
+          }
+        },
+
+        resourceAreaHeaderContent: '일정',
+        resources: [
+          { id: 'a', title: '공부', eventColor: "blue" },
+          { id: 'b', title: '운동', eventColor: 'orange' },
+          { id: 'c', title: '취미', eventColor: 'green' },
+          { id: 'e', title: '기타', eventColor: 'purple' },
+        ],
+        events: [
+          {id: '1', resourceId: 'a', start: '2021-12-06T14:00:00', end: '2021-12-06T18:00:00', title: 'UX/UI' },
+          { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
+          { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },
+          { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '생일' },
+          { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: '프로젝트' },
+          { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: '프로젝트' },
+          { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: '발표' },
+          { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: '배드민턴' },
+          { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: '배드민턴' },
+          { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: '측구' },
+          { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: '월급' },
+          { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '영화' },
+          { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: '크리스마스 파티' },
+          { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: '도서 구매' },
+          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }
+        ]
+      });
+
+      calendar.render();
+    });
+
+
+
+  </script>
+	
 </body>
 
 </html>
