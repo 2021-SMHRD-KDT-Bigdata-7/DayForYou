@@ -11,12 +11,12 @@ public class BoardVO {
 	private String m_id;
 	private String article_file1;
 	private String article_file2;
-	private String article_count;
+	private int article_count;
 	
 	public BoardVO() {}
 	
 	public BoardVO(int article_seq, String article_kind, String article_subject, String article_content, String reg_date,
-			String m_id, String article_file1, String article_file2, String article_count) {
+			String m_id, String article_file1, String article_file2, int article_count) {
 		super();
 		this.article_seq = article_seq;
 		this.article_kind = article_kind;
@@ -28,6 +28,17 @@ public class BoardVO {
 		this.article_file2 = article_file2;
 		this.article_count = article_count;
 	}
+	
+	public BoardVO(String article_kind, String article_subject, String m_id, String article_file1,
+			String article_content, int article_count) {
+		this.article_kind = article_kind;
+		this.article_subject = article_subject;
+		this.m_id = m_id;
+		this.article_file1 = article_file1;
+		this.article_content = article_content;
+		this.article_count = article_count;
+	}
+
 	public int getArticle_seq() {
 		return article_seq;
 	}
@@ -76,10 +87,10 @@ public class BoardVO {
 	public void setArticle_file2(String article_file2) {
 		this.article_file2 = article_file2;
 	}
-	public String getArticle_count() {
+	public int getArticle_count() {
 		return article_count;
 	}
-	public void setArticle_count(String article_count) {
+	public void setArticle_count(int article_count) {
 		this.article_count = article_count;
 	}
 	

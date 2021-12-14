@@ -1,3 +1,4 @@
+<%@page import="model.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -278,6 +279,9 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-area clearfix mb-100">
                         <!-- Blog Content -->
+    <%
+    	BoardVO bvo = (BoardVO)request.getAttribute("bvo");
+    %>
      <div class="board_wrap">
         <div class="board_title">
             <strong>공지사항</strong>
@@ -286,7 +290,7 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    글 제목이 들어갑니다.
+                    <%= bvo.getArticle_subject() %>
                 </div>
                 <div class="info">
                     <dl>
@@ -295,11 +299,11 @@
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>김이름</dd>
+                        <dd><%= bvo.getM_id() %></dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2021.1.16</dd>
+                        <dd><%=bvo.getReg_date() %></dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
@@ -307,14 +311,9 @@
                     </dl>
                 </div>
                 <div class="cont">
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다
+                    글 내용이 들어갑니다 <%=bvo.getArticle_content() %><br>
+                 
+                  
                 </div>
             </div>
             <div class="bt_wrap">

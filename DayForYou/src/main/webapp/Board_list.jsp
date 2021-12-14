@@ -302,6 +302,7 @@
 							<div class="board_title">
 								<strong>공지사항</strong>
 								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+								
 							</div>
 							<div class="board_list_wrap">
 								<div class="board_list">
@@ -330,8 +331,7 @@
 			%> 
 			 --%>
 		
-										</div>
-									</div>
+										
                 <div>
                     <div class="num">5</div>
                     <div class="title"><a href="Board_view.jsp">글 제목이 들어갑니다.</a></div>

@@ -286,6 +286,52 @@
             <strong>게시글</strong>
             <p>게시글을 새롭게 등록하는 곳 입니당. 혜인이 발꾸락</p>
         </div>
+        	<!-- <div id = "board">
+				<form action = "writerBoardService" method ="post" enctype = "multipart/form-data">
+				<table id="list">
+					<tr>
+						<td>순번</td>
+						<td><input type= "number" name = "article_seq"></td>
+					</tr>
+					<tr>
+						<td>카테고리</td>
+						<td><input type= "text" name = "article_kind"></td>
+					</tr>
+					<tr>
+						<td>조회수</td>
+						<td><input type= "number" name = "article_count"></td>
+					</tr>
+					<tr>
+						<td>제목</td>
+						<td><input type="text" name = "article_subject"> </td>
+					</tr>
+					<tr>
+						<td>작성자</td>
+						<td><input  type="text" name = "m_id"> </td>
+					</tr>
+					<tr>
+						<td colspan="2">내용</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input  type="file" name = "article_file1" style="float: right;">
+							<textarea  rows="10" name = "article_content" style="resize: none;"></textarea>			
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="reset" value="초기화">
+							<input type="submit" value="작성하기">
+						</td>
+					</tr>
+				</table>
+				</form>
+			</div>  -->
+			
+			<!-- ======================================================================================================================= -->
+					
+			
+			<!-- ======================================================================================================================= -->
         <div class="board_write_wrap">
             <div class="board_write">
                 <div class="title">
@@ -312,49 +358,6 @@
                 <a href="Board_view.jsp" class="on">등록</a>
                 <a href="Board_list.jsp">취소</a>
             </div>
-            	<% 
-            	//입력이 안 된 부분이 있는지 체크한다.
-            	BoardVO vo = new BoardVO();
-            	BoardDAO dao = new BoardDAO();
-            	MemberVo mvo = new MemberVo();
-            	%>
-            	
-            <% 
-            	//현재 세션 상태를 체크한다.
-            	
-            	if(session.getAttribute("vo") != null){
-            		mvo = (MemberVo)session.getAttribute("vo");
-            	}
-            	if(mvo == null){%>
-            		<script>
-            			alert('로그인을 하세요');
-            			location.href = 'login.jsp'
-            		</script>
-            	<%}else{
-          				if(vo.getArticle_subject() == null || vo.getArticle_content() == null){%>
-            		<script>
-            			alert('입력이 안 된 사항이 있습니다.');
-            			history.back();
-            		</script>
-            	<%}else{
-            		int result = dao.write(vo.getArticle_subject(), vo.getM_id(), vo.getArticle_content());
-            		
-            		if(result == -1){%>
-            		
-            		<script>
-            			alert('글쓰기에 실패했습니다.');
-            			history.back();
-            			// 글쓰기가 정상적으로 실행되면 알림창을 띄우고 게시판 메인으로 이동한다.
-            		</script>
-            		
-            	<%}else{%>
-            	<script> 
-            		alert('글쓰기 성공');
-            		location.href = 'Board_list.jsp'
-            	</script>
-            	   <%} %>
-            	<%} %>
-            	<%} %>
         </div>
     </div>
                 
