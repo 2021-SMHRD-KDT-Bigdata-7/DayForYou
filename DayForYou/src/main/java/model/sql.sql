@@ -133,3 +133,5 @@ INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m
 INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m_id, article_file1, article_file2, article_file3, article_file4, article_file5, article_count) VALUES ('article_kind 100', 'article_subject 100', 'article_content 100', sysdate, 'm_id 10', 'article_file1 100', 'article_file2 100', 'article_file3 100', 'article_file4 100', 'article_file5 100', 100);
 
 select * from tbl_member;
+INSERT INTO tbl_shop (shop_seq,goods_name, goods_category, shop_pic1, shop_pic2, goods_point, buy_day, exp_day, m_id) VALUES ('TBL_SHOP_SEQ.NEXTVAL','�Ѹ�Ŭ', 'ġŲ', 'null', 'null', 18000, sysdate, 2022/02/31, 'Y');
+select * from tbl_shop;
