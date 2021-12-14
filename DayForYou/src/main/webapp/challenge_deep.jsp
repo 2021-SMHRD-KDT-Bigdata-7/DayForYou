@@ -274,7 +274,7 @@
 									<div class="single-blog-thumbnail">
 										<img src="<%=chall_personal.get(j).getChalPic1()%>"
 											alt="img/challenge_sample/none.png"
-											onclick="password(<%=chall_personal.get(j).getChalPw()%>);">
+											onclick="password(<%=chall_personal.get(j).getChalPw()%>, <%=chall_personal.get(j).getChalSeq()%>);">
 									
 										<div class="howMany">
 											<span><%=chall_personal.get(j).getChalCnt()%></span>
@@ -447,17 +447,17 @@
 	<!-- Active js -->
 	<script src="js/active.js"></script>
 		<script>									
-	function password(pass) {
+	function password(pass, seq) {
+		let link = 'ChallengeSingleService?chal_seq=' + seq;
 		if(typeof pass == "undefined" || pass == null || pass == ""){		
-			location.replace('ChallengeSingledeep.jsp');	
+			location.replace(link);	
 		}else{		
 			let password = prompt("비밀번호를 입력하세요.");
 			if(pass != password){
-				alert("비밀번호가 틀립니다.");
-					console.log("2");
+				alert("비밀번호가 틀립니다.");					
 			}	
 			else{						
-				location.replace('temp.html');	
+				location.replace(link);	
 			}
 		}
 	}
