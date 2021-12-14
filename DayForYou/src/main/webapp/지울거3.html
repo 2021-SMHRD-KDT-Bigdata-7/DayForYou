@@ -10,17 +10,27 @@
 
 <body>
    
+   
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
 
+   
 
-        let cale = ` title : <input type = "text">
-		       		<button id="CalSubmit" onClick="makeCal()">저장</button>
-	
+        let cale = `
+        <h1>캘린더 작성</h1>
+
+        title : <input type="text"><br>
+        start : <input type="text"><br>
+        end : <input type="text"><br>
+        allday : <input type="checkbox"><br>
+        
+
+        <button id="CalSubmit" onClick="makeCal()">작성하기</button>
         `
-        $('body').html(cale);
-        console.log(window.arg);
+         $('body').html(cale);
+        
 
+        console.log(window.arg);
         let makeCal = function(){
             window.cal.addEvent({
                 title: $('input').val(),
@@ -30,6 +40,7 @@
             })
             window.close();
         }
+
     </script>
 
 </body>

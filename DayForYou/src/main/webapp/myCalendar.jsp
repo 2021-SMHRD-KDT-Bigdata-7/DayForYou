@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.CalenderDAO"%>
-<%@page import="model.CalenderVO"%>
+<%@page import="model.CalendarDAO"%>
+<%@page import="model.CalendarVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -492,8 +492,9 @@
 
 <body>
 <%
-  CalenderDAO cdao = new CalenderDAO();
-  ArrayList<CalenderVO> cvo = cdao.todo_select(); //이부분 뭔가 이상한데?%>
+CalendarDAO cdao = new CalendarDAO();
+  ArrayList<CalendarVO> cvo = cdao.todo_select(); //이부분 뭔가 이상한데?
+%>
  
   <!-- Preloader -->
   <div id="preloader">
@@ -866,7 +867,7 @@
   <!-- ##### Footer Area End ##### -->
 
   <!-- jQuery (Necessary for All JavaScript Plugins) -->
-  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+  <script src="js/jquery/jquery-3.6.0.min.js"></script>
   <!-- Popper js -->
   <script src="js/popper.min.js"></script>
   <!-- Bootstrap js -->

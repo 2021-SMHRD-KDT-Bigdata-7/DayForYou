@@ -19,9 +19,16 @@
 
 <!-- 추가 CSS-->
 <style>
+head{
+	width: 100%;
+	height: 100%;
+}
+
 body {
 	padding: 0;
 	margin: 0;
+	width: 100%;
+	height: 100%;
 }
 
 div {
@@ -230,9 +237,12 @@ div {
 
 .infoContainer .item:hover {
 	/*   background-color: #f8f8f8; */
-	
 }
+
 </style>
+
+
+
 <!--fullcaleder-->
 <link href='./fullcalender/lib/main.min.css' rel='stylesheet' />
 <script src='./fullcalender/lib/main.min.js'></script>
@@ -249,7 +259,7 @@ div {
 			schedulerLicenseKey : 'CC-Attribution-NonCommercial-NoDerivatives',
 			//now: '2020-09-07', // 이거 비활성화하면 오늘 날짜로 나옴
 			scrollTime : '00:00', // undo default 6am scrollTime
-			height : '550px', // 캘린더 높이
+			height : '750px', // 캘린더 높이
 			expendRows : true, // 화면에 맞게 높이 설정
 			editable : true, // enable draggable events
 			selectable : true, // 달력에 표시된 이벤트 드래그 설정가능.
@@ -279,16 +289,24 @@ div {
 			
 			select : function(arg) { // 캘린더에서 날짜 클릭으로 이벤트를 생성할 수 있다.
 
-				var title = prompt('Event Title:');
-
+				//var title = prompt('Event Title:');
+/* 				//document.getElementById('modal2').style.display = 'flex';
+				let title = document.getElementById('title2').value;
+				let allday = document.getElementById('allday').value;
+				let sdate = document.getElementById('sdate').value;
+				let edate = document.getElementById('edate').value;
+				let content = document.getElementById('content').value; */
+				
+				$("#calendar").append("<iframe src='myCalModal.jsp' style='position:absolute; width:100%; height:100%;z-index:1'></iframe>")
+				
 				if (title) {
 
 					calendar.addEvent({
 
 						title : title,
-						start : arg.start,
-						end : arg.end,
-						allDay : arg.allDay,
+						start : sdate,
+						end : edate,
+						allDay : allday,
 						color : 'green'
 					})
 
@@ -296,44 +314,34 @@ div {
 
 				calendar.unselect()
 			},
-		    //select: function(arg) {
-	        //   var url = "testpopup.html";
-	        //                   var name = "remove test";
-	        //                   var option = "width = 500, height = 500, top = 100, left = 200, location = no"
-	        //                   var windowObj = window.open(url, name, option);
-	        //                   windowObj.cal = calendar;
-	        //                   windowObj.arg = arg;
-	        //  },
-			eventClick : function(info) {
-				let delcal = confirm(info.event.title + "일정을 삭제하시겠습니까?");
+/*		    select: function(arg) {
+	           var url = "testpopup.html";
+	           var name = "remove test";
+	           var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+	           var windowObj = window.open(url, name, option);
+	           windowObj.cal = calendar;
+	           windowObj.arg = arg;
+	           
+	           calendar.unselect()
+	          },*/
+			eventClick : function(info) { // 이벤트 클릭하면 발생하는 이벤트. 현재는 삭제
+				
+				$("#calendar").append("<iframe src='myCalUpdateModal.jsp' style='position:absolute; width:100%; height:100%;z-index:1'></iframe>")
+			
+	/*			let delcal = confirm(info.event.title + "일정을 삭제하시겠습니까?");
 				if (delcal == true) {
 					info.event.remove();
 
-				}
+				}*/
 			},
 
 			resourceAreaHeaderContent : '일정',
-			resources : [ {
-				id : 'a',
-				title : '공부',
-				eventColor : "blue"
-			}, {
-				id : 'b',
-				title : '운동',
-				eventColor : 'orange'
-			}, {
-				id : 'c',
-				title : '취미',
-				eventColor : 'green'
-			}, {
-				id : 'd',
-				title : '중요일정',
-				eventColor : 'red'
-			}, {
-				id : 'e',
-				title : '기타',
-				eventColor : 'purple'
-			}, ],
+			resources : [ { id : 'a', title : '공부', eventColor : "blue"	}, 
+				{ id : 'b',	title : '운동', eventColor : 'orange'	}, 
+				{ id : 'c', title : '취미', eventColor : 'green'	}, 
+				{ id : 'd', title : '중요일정', eventColor : 'red' }, 
+				{ id : 'e', title : '기타', eventColor : 'purple' }, ],
+			
 			events : [ {
 				id : '1',
 				resourceId : 'a',
@@ -513,7 +521,10 @@ body {
 }
 </style>
 </head>
-<body>
+
+<body id="">
+<div id="test"></div>
+
 
 	<!-- Preloader -->
 	<div id="preloader">
@@ -729,8 +740,19 @@ body {
 	</header>
 	<!-- ##### Header Area End ##### -->
 
-	<div id='calendar'></div>
+	<!-- ##### caledar Area End ##### -->
 
+		<div>
+          <div class = "titleContainer">
+            <div id="mypage-category">MY CALENDAR</div>
+            <div class="name"><h3>Todo-List</h3></div>
+          </div>    
+          <div class="modify"></div>    
+        </div>	
+
+	<div id='calendar' style="position:relative; width: 100%; height:100%;">
+	</div>
+	
 	<div>
 		<div class="infoContainer">
 			<a href="#" class="item">
@@ -888,6 +910,7 @@ body {
 				</div>
 			</div>
 		</div>
+		
 
 		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 		<script>
@@ -900,7 +923,7 @@ body {
 	<!-- ##### Footer Area End ##### -->
 
 	<!-- jQuery (Necessary for All JavaScript Plugins) -->
-	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	
 	<!-- Popper js -->
 	<script src="js/popper.min.js"></script>
 	<!-- Bootstrap js -->
