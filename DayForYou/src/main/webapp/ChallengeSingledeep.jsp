@@ -1,13 +1,13 @@
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
-<meta charset="UTF-8">
+<meta charset="euc-kr">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -65,12 +65,11 @@
 </head>
 
 <body>
-	<!-- ìŠ¤í¬ë¦½íŠ¸ë¦¿ -->
+	<!-- ½ºÅ©¸³Æ®¸´ -->
 	<%
 	challengeBoardVO zvo = (challengeBoardVO) request.getAttribute("zvo");
 	
 	DAO dao = new DAO();
-	int chal_Seq=327;
 	%>
 
 	<!-- Preloader -->
@@ -149,8 +148,8 @@
 					<input type="text" id="search" placeholder="Search something...">
 
 				</div>
-				<!-- ê¸€ì“°ê¸° ë²„íŠ¼ -->
-					<a id="challcheck" href="#" style="border: solid 1px gray; text-align:center; font-size:20px; color:#535c68; width:400px;height:40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px ; background-color: #f5f6fa;">ì˜¤ëŠ˜ë¶€í„° ì±Œë¦°ì§€ ì‹œìž‘í•˜ê¸°</a>
+				<!-- ±Û¾²±â ¹öÆ° -->
+					<a id="challcheck" href="#" style="border: solid 1px gray; text-align:center; font-size:20px; color:#535c68; width:400px;height:40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px ; background-color: #f5f6fa;">¿À´ÃºÎÅÍ Ã§¸°Áö ½ÃÀÛÇÏ±â</a>
 
 				<!-- Navbar Toggler -->
 				<div class="classy-navbar-toggler">
@@ -277,17 +276,17 @@
 	<div style="padding: 30px;">
 		<br>
 		<h5><%=zvo.getChalPublic()%>
-			ì±Œë¦°ì§€
+			Ã§¸°Áö
 		</h5>
 		<br>
 
 		<h1>
 			[<%=zvo.getChalCat1()%>]
 			<%=zvo.getChalSubject()%></h1>
-		<p><%=zvo.getChalCnt()%>ëª…
+		<p><%=zvo.getChalCnt()%>¸í
 		</p>
 		<hr style="border: solid 1px gray;">
-		<h3>ì±Œë¦°ì§€ ê¸°ê°„</h3>
+		<h3>Ã§¸°Áö ±â°£</h3>
 		<br>
 		<h5><%=zvo.getChalPeriod()%></h5>
 
@@ -298,7 +297,7 @@
 		<hr style="border: solid 1px gray;">
 		<div style="height: 200px">
 			<div style="float: left; width: 50%">
-				<p align="center">ì¢‹ì€ ì¸ì¦ìƒ· ì˜ˆì‹œ</p>
+				<p align="center">ÁÁÀº ÀÎÁõ¼¦ ¿¹½Ã</p>
 				<div class="product-title23">
 					<div class="product-img-div23">
 						<img class="product-img23" src="<%=zvo.getChalPic1()%>"
@@ -307,7 +306,7 @@
 				</div>
 			</div>
 			<div style="float: left; width: 50%">
-				<p align="center">ë‚˜ìœ ì¸ì¦ìƒ· ì˜ˆì‹œ</p>
+				<p align="center">³ª»Û ÀÎÁõ¼¦ ¿¹½Ã</p>
 				<div class="product-title23">
 					<div class="product-img-div23">
 						<img class="product-img23" src="<%=zvo.getChalPic1()%>"
@@ -317,11 +316,11 @@
 			</div>
 		</div>
 				<hr style="border: solid 1px gray;">
-		<h4>ì±Œë¦°ì§€ ì§„í–‰ì‹œ ê¼­ ì•Œì•„ì£¼ì„¸ìš”!!!!</h4>
-		<p>ì „ì²´ ê¸°ê°„ ë™ì•ˆ í‰ì¼ ë§¤ì¼,í•˜ë£¨ì— 1ë²ˆ ì¸ì¦ìƒ·ì„ ì´¬ì˜í•˜ì…”ì•¼ í•©ë‹ˆë‹¤. 
-		ì‚¬ì§„ì²©ì„ ì‚¬ìš©í•˜ì‹¤ìˆ˜ ì—†ìŠµë‹ˆë‹¤. 
-		ì¸ì¦ìƒ·ì´ ì°¸ê°€ìžì—ê²Œë§Œ ê³µê°œë©ë‹ˆë‹¤. 
-		ê³µíœ´ì¼ì—ëŠ” ì¸ì¦í•˜ì§€ ì•Šìœ¼ì…”ë„ ë©ë‹ˆë‹¤.</p>
+		<h4>Ã§¸°Áö ÁøÇà½Ã ²À ¾Ë¾ÆÁÖ¼¼¿ä!!!!</h4>
+		<p>ÀüÃ¼ ±â°£ µ¿¾È ÆòÀÏ ¸ÅÀÏ,ÇÏ·ç¿¡ 1¹ø ÀÎÁõ¼¦À» ÃÔ¿µÇÏ¼Å¾ß ÇÕ´Ï´Ù. 
+		»çÁøÃ¸À» »ç¿ëÇÏ½Ç¼ö ¾ø½À´Ï´Ù. 
+		ÀÎÁõ¼¦ÀÌ Âü°¡ÀÚ¿¡°Ô¸¸ °ø°³µË´Ï´Ù. 
+		°øÈÞÀÏ¿¡´Â ÀÎÁõÇÏÁö ¾ÊÀ¸¼Åµµ µË´Ï´Ù.</p>
 		<br>
 		<br>
 		
@@ -451,10 +450,10 @@
 	<!-- Active js -->
 	<script src="js/active.js"></script>
 	 <script> 
-		 <%chal_Seq = dao.ChallengeCheck(327);%>
+		 <%int chal_Seq = dao.ChallengeCheck(zvo.getChalSeq());%>
 		 document.getElementById("challcheck").onclick = function() {
 		 		if(<%=chal_Seq%> == 999999){
-						 alert('ì „ì†¡ ì‹¤íŒ¨');
+						 alert('Àü¼Û ½ÇÆÐ');
 					}else{
 						<%dao.ChallengeCntUp(chal_Seq);%>
 						location.href ="MyChallengeinsert?chal_seq=<%=chal_Seq%>";
