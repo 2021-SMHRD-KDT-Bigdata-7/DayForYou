@@ -76,19 +76,19 @@ public class ChallService extends HttpServlet {
         
         if(chall_period.equals("1_day")) {
         	cal.add(Calendar.DATE, 1);
-        	chall_period =(chall_start+" ~ "+df.format(cal.getTime()));
+        	chall_period =(chall_start+"~"+df.format(cal.getTime()));
         }else if(chall_period.equals("1_week")) {
             cal.add(Calendar.WEEK_OF_MONTH, 1);
             chall_period =(chall_start+" ~ "+df.format(cal.getTime()));
         }else if(chall_period.equals("2_weeks")) {
         	cal.add(Calendar.WEEK_OF_MONTH, 2);
-        	chall_period =(chall_start+" ~ "+df.format(cal.getTime()));
+        	chall_period =(chall_start+"~"+df.format(cal.getTime()));
         }else if(chall_period.equals("3_weeks")) {
         	cal.add(Calendar.WEEK_OF_MONTH, 3);
-        	chall_period =(chall_start+" ~ "+df.format(cal.getTime()));
+        	chall_period =(chall_start+"~"+df.format(cal.getTime()));
         }else {
         	cal.add(Calendar.MONTH, 1);
-        	chall_period =(chall_start+" ~ "+df.format(cal.getTime()));
+        	chall_period =(chall_start+"~"+df.format(cal.getTime()));
         }
         
 
