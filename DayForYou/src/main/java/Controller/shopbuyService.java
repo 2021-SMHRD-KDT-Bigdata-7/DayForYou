@@ -36,11 +36,16 @@ public class shopbuyService extends HttpServlet {
 	      DAO dao = new DAO();
 	      shopVO  svo = new shopVO();
 	      
-
-	      int cnt = dao.shopbuy(id, point);
+	      int goodspoint=0;
 	      
+	      goodspoint=svo.getGoods_point();
+	      point =svo.getGoods_point();
 	      
-	      if(vo.getPoint() > svo.getGoods_point()) {
+	       
+	      
+	      if(point > goodspoint) {
+	    	  
+	    	  int cnt = dao.shopbuy(id, point);
 	         System.out.println("구입성공");
 	         response.sendRedirect("main.jsp");
 	         

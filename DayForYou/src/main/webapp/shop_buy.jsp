@@ -1,3 +1,6 @@
+<%@page import="model.shopVO"%>
+<%@page import="model.DAO"%>
+<%@page import="model.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -20,6 +23,17 @@
 </head>
 
 <body>
+<%
+	MemberVo vo = (MemberVo)session.getAttribute("vo");
+	out.print(vo);
+
+	DAO dao = new DAO();
+	
+	shopVO svo = new shopVO();
+	
+	
+	
+%>
 	<div align="left" withd="10px";margin"10px">
 		<a class="btn btn-outline-dark mt-auto" href="shop.jsp"> <img
 			src="./img/shop/icon1.png">
@@ -47,34 +61,22 @@
 							<div class="card-body p-4">
 								<div class="text-center">
 									<!-- Product name-->
-									<h5 class="fw-bolder">my point</h5>
-									<!-- Product price-->
-									p)
-
+									<h5 class="fw-bolder"><%=vo.getPoint() %></h5>
 								</div>
 								<div class="card-body p-4">
 									<div class="text-center">
 										<!-- Product name-->
-										<h5 class="fw-bolder">price</h5>
-										<!-- Product price-->
-										p)
-
+										<h5 class="fw-bolder"><%=svo.getGoods_point() %></h5>
 									</div>
-
-
-									<!-- Product details-->
 								</div>
 								<!-- Product actions-->
 								<br>
-							
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 									<div class="text-center"  >
-									<input name="point"
-										<a class="btn btn-outline-dark mt-auto" href="shop.jsp" >BUY</a>
-										>
+									<a name="point" class="btn btn-outline-dark mt-auto"href="shop.jsp">
+										BUY</a>	
 									</div>
 								</div>
-							
 						</div>
 						</div>
 					</div>

@@ -1,3 +1,6 @@
+<%@page import="model.shopVO"%>
+<%@page import="model.DAO"%>
+<%@page import="model.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,6 +20,8 @@
     </head>
    
     <body>
+
+
        <div align="left" withd="10px";margin"10px">
 		<a class="btn btn-outline-dark mt-auto" href="main.html"> <img
 			src="./img/shop/menu.png">
