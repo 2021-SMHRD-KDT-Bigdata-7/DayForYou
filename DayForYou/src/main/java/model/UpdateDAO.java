@@ -16,10 +16,6 @@ public class UpdateDAO {
 	MemberVo vo = null;
 	ResultSet rs = null;
 	
-	ArrayList<challengeBoardVO> ch_boards = null;
-	challengeBoardVO cbv = null;
-	diaryVO dvo = null;
-	
 	public void connection() {
 		try {
 
@@ -34,6 +30,7 @@ public class UpdateDAO {
 				e.printStackTrace();
 			}
 	}
+	
 	
 	public void close() {
 		try {
@@ -51,19 +48,28 @@ public class UpdateDAO {
 		}
 	}
 	
-	public int mupdate(String id, int point) {
+	public int mupdate(String m_id, String m_pwd, String m_name, String m_nick, String m_phone, String m_email, String m_birthdate,
+			String m_gender, String m_job, String m_addr) {
+		
 		connection();
+		
 		try {
 
-			sql = "update tbl_member set where m_id=?";
+			sql = "update tbl_member set m_pwd=?, m_name=?, m_nick=?, m_phone=?, m_email=?, m_birthdate=?, m_gender=?, m_job=?, m_addr=? where m_id=?";
 
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setInt(2, point);
 			
+			psmt.setString(1, m_pwd);
+			psmt.setString(2, m_name);
+			psmt.setString(3, m_nick);
+			psmt.setString(4, m_phone);
+			psmt.setString(5, m_email);
+			psmt.setString(6, m_birthdate);
+			psmt.setString(7, m_gender);
+			psmt.setString(8, m_job);
+			psmt.setString(9, m_addr);
+			psmt.setString(10, m_id);
 			
-		
-
 			cnt = psmt.executeUpdate();
 
 		} catch (Exception e) {
