@@ -19,7 +19,7 @@ public class MyChallengeinsert extends HttpServlet {
 		// 2. DAO °´Ã¼ »ý¼º
 		DAO dao = new DAO();
 		MyChallengeVO mvo = dao.MyVOChallengeinsert(chal_seq);
-		int cnt =dao.MyChallengeinsert(mvo.getChal_seq(),mvo.getChal_s_date(),mvo.getChal_e_date(),mvo.getChal_time(),mvo.getMy_chal_memo(),mvo.getM_id());
+		int cnt =dao.MyChallengeinsert(mvo.getChal_seq(),mvo.getChal_s_date(),mvo.getChal_e_date(),mvo.getChal_time(),mvo.getMy_chal_memo(),mvo.getM_id(),mvo.getChal_pic1());
 		System.out.println(mvo);
 		
 		if(cnt > 0) {

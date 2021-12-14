@@ -4,7 +4,10 @@ select * from tbl_my_challenge;
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id) VALUES (327, sysdate, sysdate, 'chal_time 1', 'my_chal_memo 1', 'b');
 select * from tbl_challenge where chal_seq = 298;
 update tbl_challenge set chal_pic1 = "asd" where chal_seq=326;
-
+update tbl_challenge set chal_period="2021/12/14~2021/12/21" where chal_seq=331;
+UPDATE [테이블] SET [열] = '변경할값' WHERE [조건]
+delete from tbl_challenge where chal_seq=331;
+출처: https://121202.tistory.com/28 [안방철의 방구석]
 SELECT TO_NUMBER(NVL(MAX(Column), '0')) + 1 FROM TABLENAME
 UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = 326;
 ALTER TABLE tbl_challenge MODIFY (chal_period VARCHAR2(150));

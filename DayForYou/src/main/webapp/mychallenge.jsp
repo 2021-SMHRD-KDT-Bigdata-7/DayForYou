@@ -183,7 +183,7 @@ table {
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2 id="recordyourday">point</h2>
+						<h2 id="recordyourday">Challenge</h2>
 					</div>
 				</div>
 			</div>
@@ -206,9 +206,9 @@ table {
 
 							<div class="centered">
 								<div class="line"></div>
-								<a href="#" class="post-tag"> my point</a>
+								<a href="#" class="post-tag"> my Challenge</a>
 								<div>
-									<h1>Æ÷ÀÎÆ®</h1>
+									<h1>Challenge</h1>
 								</div>
 								<hr>
 

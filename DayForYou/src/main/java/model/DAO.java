@@ -692,7 +692,7 @@ public class DAO {
 				String chal_pw = rs.getString(16);
 				String chal_public = rs.getString(17);
 				// 일단 추가할수 있으니 값 다 넣어준거임
-				mvo = new MyChallengeVO(chal_seq1, chal_start, chal_period, "null", "null", m_id);
+				mvo = new MyChallengeVO(chal_seq1, chal_start, chal_period, "null", "null", m_id,chal_pic1);
 			}
 
 		} catch (Exception e) {
@@ -702,13 +702,13 @@ public class DAO {
 	}
 
 	public int MyChallengeinsert(int chal_seq, String chal_s_date, String chal_e_date, String chal_time,
-			String my_chal_memo, String m_id) {
+			String my_chal_memo, String m_id, String chal_pic1) {
 		connection();
 
 		try {
 
 			// 3.sql문 준비
-			sql = "insert into tbl_my_challenge values(?,?,?,?,?,?)";
+			sql = "insert into tbl_my_challenge values(?,?,?,?,?,?,?)";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -718,6 +718,7 @@ public class DAO {
 			psmt.setString(4, chal_time);
 			psmt.setString(5, my_chal_memo);
 			psmt.setString(6, m_id);
+			psmt.setString(7, chal_pic1);
 
 			// 5. 실행!
 			// select ->executeQury()-->return Resultset

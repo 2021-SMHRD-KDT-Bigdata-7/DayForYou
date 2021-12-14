@@ -311,21 +311,21 @@
 	                    <table>
 		                        <tr class = "iu">
 		                        	<%if(vo.getGender().equals("M")){ %>
-		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required checked></td>
+		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
 		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
 		                        	<%}else{ %>
 		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
-		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required checked></td>
+		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
 		                        	<%} %>
 	                        	</tr>
 	                          	 <tr>
 	     
 		                        	<%if(vo.getJob().equals("student")){ %>
-		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required checked></td>
+		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
 		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
 		                        	<%}else{ %>
 		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
-		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required checked></td>
+		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
 		                        	<%} %>
 	                        	</tr>
 	                        </table>

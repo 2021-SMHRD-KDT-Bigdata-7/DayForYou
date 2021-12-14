@@ -7,9 +7,10 @@ public class MyChallengeVO {
 	private String chal_time;
 	private String my_chal_memo;
 	private String m_id;
+	private String chal_pic1;
 	
 	public MyChallengeVO(int chal_seq, String chal_s_date, String chal_e_date, String chal_time, String my_chal_memo,
-			String m_id) {
+			String m_id, String chal_pic1) {
 		super();
 		this.chal_seq = chal_seq;
 		this.chal_s_date = chal_s_date;
@@ -17,6 +18,16 @@ public class MyChallengeVO {
 		this.chal_time = chal_time;
 		this.my_chal_memo = my_chal_memo;
 		this.m_id = m_id;
+		this.chal_pic1 = chal_pic1;
+		
+	}
+	
+	public String getChal_pic1() {
+		return chal_pic1;
+	}
+
+	public void setChal_pic1(String chal_pic1) {
+		this.chal_pic1 = chal_pic1;
 	}
 
 	public int getChal_seq() {
