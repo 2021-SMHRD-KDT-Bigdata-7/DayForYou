@@ -474,7 +474,7 @@ public class DAO {
 				connection();
 				try {
 
-					sql = "update tbl_members set m_id=? ,m_point=?";
+					sql = "update tbl_member set m_id=? ,m_point=?";
 
 					psmt = conn.prepareStatement(sql);
 					psmt.setString(1, id);
