@@ -1,6 +1,9 @@
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="model.DAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,16 +26,91 @@
 <!-- Style CSS -->
 <link rel="stylesheet" href="style.css">
 
+ <!--fullcaleder-->
+  <link href='./fullcalender/lib/main.min.css' rel='stylesheet' />
+  <script src='./fullcalender/lib/main.min.js'></script>
+
+  <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+        //now: '2020-09-07', // 이거 비활성화하면 오늘 날짜로 나옴
+        scrollTime: '00:00', // undo default 6am scrollTime
+        height: '500px', // 캘린더 높이
+        expendRows: true, // 화면에 맞게 높이 설정
+        editable: true, // 달력에 생성된 이벤트를 수정할수 있는지
+        selectable: true, // 달력에 표시된 이벤트 드래그 설정가능.
+        aspectRatio: 1.8, // 가로, 세로 비율
+        dayMaxEvents: false, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+        locale: 'ko', // 한국어 설정
+        buttonText: {
+          month: '캘린더',
+          today: '오늘',
+          list: '일정'
+        },
+        headerToolbar: { //캘린더 상단 툴바 부분 버튼 순서
+          right: 'dayGridMonth,today,listDay',
+          center: 'prev,next',
+          left: 'title'
+        },
+        dayMaxEventRows: true,
+        views: {
+          timeGrid: {
+            dayMaxEventRows: 5
+          }
+        },
+
+        resourceAreaHeaderContent: '일정',
+        resources: [
+          { id: 'a', title: '공부', eventColor: "blue" },
+          { id: 'b', title: '운동', eventColor: 'orange' },
+          { id: 'c', title: '취미', eventColor: 'green' },
+          { id: 'e', title: '기타', eventColor: 'purple' },
+        ],
+        events: [
+          {id: '1', resourceId: 'a', start: '2021-12-06T14:00:00', end: '2021-12-06T18:00:00', title: 'UX/UI' },
+          { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
+          { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },
+          { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '생일' },
+          { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: '프로젝트' },
+          { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: '프로젝트' },
+          { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: '발표' },
+          { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: '배드민턴' },
+          { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: '배드민턴' },
+          { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: '측구' },
+          { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: '월급' },
+          { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '영화' },
+          { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: '크리스마스 파티' },
+          { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: '도서 구매' },
+          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }
+        ]
+      });
+
+      calendar.render();
+    });
+
+
+
+  </script>
+
 </head>
 
 <body>
 	<!-- 스크립트릿 --!>
 	<%
 	DAO dao = new DAO();
+	
+	//각 종류별로 게시글 불러오기.
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("개인");
 	int last_chall_personal = chall_personal.size()-1;
-	
-	
+		
 	ArrayList<challengeBoardVO> chall_group = dao.SelectChallengeBoard_cat("그룹");
 	int last_chall_group = chall_group.size()-1;
 	
@@ -45,9 +123,71 @@
 	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("추천");
 	int last_chall_suggestion = chall_suggestion.size()-1;
 	
+	//누적 챌린지 수
+	int allChallengeCount = dao.CountAllChallenge();	
+	//현재 진행중인 챌런지 수
+	int nowChallengeCount = 0;
+	//누적 참가자 수
+	int allChallengeCountCnt = dao.countChallCnt();
+	//현재 진행중인 참가자 수
+	int nowChallengeCountCnt = 0;
 	
+	
+	//챌린지 마감날짜 불러오기.
+	ArrayList<String> endDateChall = dao.getEndDateChallenge();
+	//현재 챌린지를 진행하는 수들 
+	ArrayList<Integer> nowCnt = dao.getNowCnt();
+		
+	//챌린지 기간 ~를 기점으로 마감날짜만 빼오는 배열
+	ArrayList<String> divide1 = new ArrayList<String>();	
+	
+	
+	//챌린지 기간 부분에 '년월일'을 나누는 배열들.
+	ArrayList<String> year = new ArrayList<String>();
+	ArrayList<String> month = new ArrayList<String>();
+	ArrayList<String> day = new ArrayList<String>();
+	
+	int count = endDateChall.size();
+	
+	String[] endDate = new String[count];
+			
+	for(int i = 0; i < endDateChall.size(); i++){			
+		String[] arr = new String[2];
+		arr = endDateChall.get(i).split("~");
+		divide1.add(arr[1]);
+	}
+	
+	for(int i = 0 ; i < divide1.size(); i++){
+		String[] arr = divide1.get(i).split("/");			
+		year.add(arr[0]);
+		month.add(arr[1]);
+		day.add(arr[2]);		
+	}
+	
+	LocalDate now = LocalDate.now();
+	int nowYear = now.getYear();
+	int nowMonth  = now.getMonthValue();
+	int nowDate = now.getDayOfMonth();
+	
+	
+	for(int i = 0; i < year.size(); i++){	
+		if(Integer.parseInt(year.get(i))<=nowYear){			
+			if(Integer.parseInt(month.get(i)) <= nowMonth){
+				System.out.println(nowDate + " : " + day.get(i));
+				if(Integer.parseInt(day.get(i)) <= nowDate ){
+					nowChallengeCount++;
+					nowChallengeCountCnt = nowChallengeCountCnt + nowCnt.get(i);
+				
+				}
+			}
+		}
+	}
+		
 		
 	%>
+	
+	
+	
 
 	<!-- Preloader -->
 	<div id="preloader">
@@ -277,44 +417,41 @@
 				<!-- Single Cool Facts Area -->
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="single-cool-facts-area text-center mb-100">
-						<table>
+						<table style = "margin-left:auto; margin-right:auto;">
 							<tr>
 								<td>
 									<h2>
-										<span class="counter">25</span>
+										<span class="counter"><%=allChallengeCount %></span>
 									</h2>
-								</td>
-								<td rowspan="2" width="30px"></td>
+								</td>								
 								<td>
 									<h2>
-										<span class="counter">23</span>
-									</h2>
-								</td>
-							</tr>
-							<tr>
-								<td><p>Awards won</p></td>
-
-								<td><p>Awards won</p></td>
-							</tr>
-						</table>
-						<table style="margin: 20%">
-							<tr>
-								<td>
-									<h2>
-										<span class="counter">25</span>
-									</h2>
-								</td>
-								<td></td>
-								<td>
-									<h2>
-										<span class="counter">23</span>
+										<span class="counter"><%=nowChallengeCount %></span>
 									</h2>
 								</td>
 							</tr>
 							<tr>
-								<td><p>Awards won</p></td>
-								<td></td>
-								<td><p>Awards won</p></td>
+								<td><p>누적 챌린지 수</p></td>
+								<td><p>진행중인 챌린지 수</p></td>
+							</tr>
+						
+							<tr>
+								<td>
+									<h2>
+										<span class="counter"><%=allChallengeCountCnt %></span>
+									</h2>
+								</td>
+							
+								<td>
+									<h2>
+										<span class="counter"><%=nowChallengeCountCnt %></span>
+									</h2>
+								</td>
+							</tr>
+							<tr>
+								<td><p>누적 참가자 수</p></td>
+								
+								<td><p>진행중인 참가자 수</p></td>
 							</tr>
 						</table>
 					</div>
@@ -322,7 +459,11 @@
 			</div>
 		</div>
 	</div>
-	<!-- ##### Cool Facts Area End ##### -->
+
+
+  <!-- ##### Calendar Area Start #####-->
+
+  <div id='calendar'></div>
 
 	<!-- ##### Blog Wrapper Start ##### -->
 	<div class="blog-wrapper section-padding-100-0 clearfix">

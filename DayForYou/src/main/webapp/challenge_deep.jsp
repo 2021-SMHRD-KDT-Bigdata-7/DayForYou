@@ -27,16 +27,14 @@
 
 <body>
 	<!-- 스크립트릿 -->
-	<%		
+	<%
 	DAO dao = new DAO();
 	String chal_cat1 = request.getParameter("chal_cat1");
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat(chal_cat1);
-	if (chall_personal == null){
+	if (chall_personal == null) {
 		System.out.println("null입니다.");
 	}
-	int lastIndex = chall_personal.size()-1;
-	
-	
+	int lastIndex = chall_personal.size() - 1;
 	%>
 
 	<!-- Preloader -->
@@ -255,55 +253,80 @@
 						<h2>챌린지</h2>
 					</div>
 					<div class="single-blog-area blog-style-2">
-						<%for(int i = 0 ; i < chall_personal.size(); i = i + 2) {%>
+						<%
+						for (int i = 0; i < chall_personal.size(); i = i + 2) {
+						%>
 						<table border=1 class="img-mini">
 							<tr>
 
-								<%for(int j = i; j < i+2; j++){ %>
-								<%if(j == chall_personal.size()){break;}
-								String password = chall_personal.get(j).getChalPw();
-								if(password == null){
-									password = "9999999z"; 
-								}
+								<%
+								for (int j = i; j < i + 2; j++) {
+								%>
+								<%
+								if (j == chall_personal.size()) {
+									break;
+								}					
+							
+								
 								%>
 								<td width="50%">
 
 									<div class="single-blog-thumbnail">
-										<a><img src="<%=chall_personal.get(j).getChalPic1()%>"
+										<img src="<%=chall_personal.get(j).getChalPic1()%>"
 											alt="img/challenge_sample/none.png"
 											onclick="password(<%=chall_personal.get(j).getChalPw()%>);">
-										</a>
+									
 										<div class="howMany">
 											<span><%=chall_personal.get(j).getChalCnt()%></span>
 										</div>
 									</div>
 								</td>
-								<%} %>
+								<%
+								}
+								%>
 							</tr>
 							<tr>
-								<%for (int j = i; j < i+2; j++){ %>
-								<%if(j == chall_personal.size()){break;} %>
+								<%
+								for (int j = i; j < i + 2; j++) {
+								%>
+								<%
+								if (j == chall_personal.size()) {
+									break;
+								}
+								%>
 								<td>
 									<!-- Blog Content -->
 									<div class="single-blog-content">
 										<a href="#" class="post-tag"><%=chall_personal.get(j).getChalCat2()%></a>
 									</div>
 								</td>
-								<%} %>
+								<%
+								}
+								%>
 							</tr>
 							<tr>
-								<%for (int j = i; j < i+2; j++){ %>
-								<%if(j == chall_personal.size()){break;} %>
+								<%
+								for (int j = i; j < i + 2; j++) {
+								%>
+								<%
+								if (j == chall_personal.size()) {
+									break;
+								}
+								%>
 								<td>
 									<h4>
 										<a href="#" class="post-headline"><%=chall_personal.get(j).getChalSubject()%></a>
 									</h4>
 								</td>
-								<%} %>
+								<%
+								}
+								%>
 							</tr>
 
 						</table>
-						<%} %>
+						<%
+						}
+						%>
 					</div>
 				</div>
 			</div>
@@ -423,25 +446,21 @@
 	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
-	<script>
+		<script>									
 	function password(pass) {
-		
-		if(typeof pass == "undefined" || pass == null){
-
-			
-			location.replace('shop.jsp');	
-		}
-		let password = prompt("비밀번호를 입력하세요.");
-		if(pass != password){
-			alert("비밀번호가 틀립니다.");
-			
-			console.log("2");
+		if(typeof pass == "undefined" || pass == null || pass == ""){		
+			location.replace('ChallengeSingledeep.jsp');	
+		}else{		
+			let password = prompt("비밀번호를 입력하세요.");
+			if(pass != password){
+				alert("비밀번호가 틀립니다.");
+					console.log("2");
 			}	
-		else{
-			console.log("1");
-			location.replace('temp.html');	
+			else{						
+				location.replace('temp.html');	
+			}
 		}
-		}
+	}
 	</script>
 
 </body>
