@@ -79,30 +79,21 @@ public class DAO {
 				int upoint = rs.getInt(12);
 				String uadminYn = rs.getString(13);
 
-<<<<<<< HEAD
 				vo = new MemberVo(uid, upw, uname, unick, uphon, uemail, ubirthday, ugender, ujob, uaddress, ujoinday,
 						upoint, uadminYn);
-=======
-				}
-				
-				sql = "SELECT TO_CHAR(m_birthdate, 'YYYY/MM/DD') FROM tbl_member where m_id=?";
 
-				psmt = conn.prepareStatement(sql);
+			}
 
-				psmt.setString(1, id);				
+			sql = "SELECT TO_CHAR(m_birthdate, 'YYYY/MM/DD') FROM tbl_member where m_id=?";
 
-				rs = psmt.executeQuery();
-				
-				if (rs.next()==true) {
-					vo.setBirthday(rs.getString(1));
-				}
-				
-			} catch (Exception e) {
+			psmt = conn.prepareStatement(sql);
 
-			} finally {
-				close();
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-7/DayForYou.git
+			psmt.setString(1, id);
 
+			rs = psmt.executeQuery();
+
+			if (rs.next() == true) {
+				vo.setBirthday(rs.getString(1));
 			}
 
 		} catch (Exception e) {
@@ -286,41 +277,38 @@ public class DAO {
 		}
 		return endDateChall;
 	}
-	
-	
+
 	/**
 	 * 챌린지 peroid 정제하는 메소드
 	 * 
-	 * @param 
+	 * @param
 	 */
-	public ArrayList<DayDAO> getChallengePeriod(){
+	public ArrayList<DayDAO> getChallengePeriod() {
 		ArrayList<DayDAO> periodDay = new ArrayList<>();
 		DayDAO ddao = null;
-		
-		//챌린지 마감날짜 불러오기.
+
+		// 챌린지 마감날짜 불러오기.
 		ArrayList<String> endDateChall = getEndDateChallenge();
 
-		//챌린지 기간 ~를 기점으로 마감날짜만 빼오는 배열
-		ArrayList<String> divide1 = new ArrayList<String>();	
+		// 챌린지 기간 ~를 기점으로 마감날짜만 빼오는 배열
+		ArrayList<String> divide1 = new ArrayList<String>();
 
-		for(int i = 0; i < endDateChall.size(); i++){			
+		for (int i = 0; i < endDateChall.size(); i++) {
 			String[] arr = new String[2];
 			arr = endDateChall.get(i).split("~");
 			divide1.add(arr[1]);
-		
+
 		}
-		
-		for(int i = 0 ; i < divide1.size(); i++){
-			String[] arr = divide1.get(i).split("/");			
-								
+
+		for (int i = 0; i < divide1.size(); i++) {
+			String[] arr = divide1.get(i).split("/");
+
 			ddao = new DayDAO(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
-			periodDay.add(ddao);		
-		}	
-		
-		return periodDay;		
+			periodDay.add(ddao);
+		}
+
+		return periodDay;
 	}
-	
-	
 
 	/**
 	 * 챌린지 누적 참가자 메소드
@@ -379,8 +367,6 @@ public class DAO {
 
 		return cnt;
 	}
-	
-	
 
 	public int ChallInsert(String chall_cat1, String chall_subject, String chall_cat2, String chall_Introduce,
 			String chall_pic1, String chall_start, String chall_period, String chall_Private, String chall_pic12,
@@ -656,102 +642,95 @@ public class DAO {
 			} catch (Exception e2) {
 
 			}
-<<<<<<< HEAD
-=======
-			public void ChallengeCntUp(int chal_seq) {
-				connection();
-				
-				try {
-					sql = "UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = ?;";
-					
-					psmt = conn.prepareStatement(sql);
-					psmt.setInt(1, chal_seq);
-					rs = psmt.executeQuery();
-					
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					close();
-				}
+		}
+		return cnt;
+	}
+
+	public void ChallengeCntUp(int chal_seq) {
+		connection();
+
+		try {
+			sql = "UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = ?;";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, chal_seq);
+			rs = psmt.executeQuery();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+	}
+
+	public MyChallengeVO MyVOChallengeinsert(int chal_seq) {
+		MyChallengeVO mvo = null;
+		connection();
+		try {
+			sql = "select * from tbl_challenge where chal_seq = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, chal_seq);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				int chal_seq1 = rs.getInt(1);
+				String chal_cat1 = rs.getString(2);
+				String chal_cat2 = rs.getString(3);
+				String chal_subject = rs.getString(4);
+				String chal_content = rs.getString(5);
+				String chal_start = rs.getString(6);
+				String chal_period = rs.getString(7);
+				int chal_time = rs.getInt(8);
+				int chal_point = rs.getInt(9);
+				String chal_pic1 = rs.getString(10);
+				String chal_pic2 = rs.getString(11);
+				String chal_pic3 = rs.getString(12);
+				String reg_date = rs.getString(13); // Date 자료형
+				String m_id = rs.getString(14);
+				int chal_cnt = rs.getInt(15);
+				String chal_pw = rs.getString(16);
+				String chal_public = rs.getString(17);
+				// 일단 추가할수 있으니 값 다 넣어준거임
+				mvo = new MyChallengeVO(chal_seq1, chal_start, chal_period, "null", "null", m_id);
 			}
 
-			public MyChallengeVO MyVOChallengeinsert(int chal_seq) {
-				MyChallengeVO mvo = null;
-				connection();
-				try {
-					sql = "select * from tbl_challenge where chal_seq = ?";
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return mvo;
+	}
 
-					psmt = conn.prepareStatement(sql);
-					psmt.setInt(1, chal_seq);
-					rs = psmt.executeQuery();
+	public int MyChallengeinsert(int chal_seq, String chal_s_date, String chal_e_date, String chal_time,
+			String my_chal_memo, String m_id) {
+		connection();
 
-					if (rs.next()) {
-						int chal_seq1 = rs.getInt(1);
-						String chal_cat1 = rs.getString(2);
-						String chal_cat2 = rs.getString(3);
-						String chal_subject = rs.getString(4);
-						 String chal_content= rs.getString(5);
-						 String chal_start =rs.getString(6);
-						 String chal_period =rs.getString(7);
-						int chal_time=rs.getInt(8);
-						int chal_point = rs.getInt(9);
-						String chal_pic1 =rs.getString(10);
-						String chal_pic2 = rs.getString(11);
-						String chal_pic3 =rs.getString(12);
-						String reg_date= rs.getString(13); //Date 자료형
-						String m_id=rs.getString(14);
-						int chal_cnt=rs.getInt(15);
-						String chal_pw = rs.getString(16);
-						String chal_public = rs.getString(17);
-						//일단 추가할수 있으니 값 다 넣어준거임
-						mvo = new MyChallengeVO(chal_seq1, chal_start, chal_period, "null", "null", m_id);
-					}
-						
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-				return mvo;
-			}
+		try {
 
-			public int MyChallengeinsert(int chal_seq, String chal_s_date, String chal_e_date, String chal_time,
-					String my_chal_memo, String m_id) {
-					connection();
+			// 3.sql문 준비
+			sql = "insert into tbl_my_challenge values(?,?,?,?,?,?)";
 
-				try {
+			psmt = conn.prepareStatement(sql);
 
-					// 3.sql문 준비
-					sql = "insert into tbl_my_challenge values(?,?,?,?,?,?)";
+			psmt.setInt(1, chal_seq);
+			psmt.setString(2, chal_s_date);
+			psmt.setString(3, chal_e_date);
+			psmt.setString(4, chal_time);
+			psmt.setString(5, my_chal_memo);
+			psmt.setString(6, m_id);
 
-					psmt = conn.prepareStatement(sql);
+			// 5. 실행!
+			// select ->executeQury()-->return Resultset
+			// insert,delete, update ->esecutUpdate()
+			// ->return int(몇 행이 성공했는지
 
-					psmt.setInt(1, chal_seq);
-					psmt.setString(2, chal_s_date);
-					psmt.setString(3, chal_e_date);
-					psmt.setString(4, chal_time);
-					psmt.setString(5, my_chal_memo);
-					psmt.setString(6, m_id);
+			cnt = psmt.executeUpdate();
 
-					// 5. 실행!
-					// select ->executeQury()-->return Resultset
-					// insert,delete, update ->esecutUpdate()
-					// ->return int(몇 행이 성공했는지
-
-					cnt = psmt.executeUpdate();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					// 6.연결닫아주기
-					close();
-				}
-
-				return cnt;
-			
-			}
-
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-7/DayForYou.git
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 6.연결닫아주기
+			close();
 		}
 
 		return cnt;
@@ -782,22 +761,6 @@ public class DAO {
 		return chal_seq;
 	}
 
-	public void ChallengeCntUp(int chal_seq) {
-		connection();
-
-		try {
-			sql = "UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = ?;";
-
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, chal_seq);
-			rs = psmt.executeQuery();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-	}
-
+	
 
 }
