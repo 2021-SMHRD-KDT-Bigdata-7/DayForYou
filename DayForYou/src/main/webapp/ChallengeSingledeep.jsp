@@ -70,6 +70,7 @@
 	challengeBoardVO zvo = (challengeBoardVO) request.getAttribute("zvo");
 	
 	DAO dao = new DAO();
+	int chal_Seq=327;
 	%>
 
 	<!-- Preloader -->
@@ -149,11 +150,7 @@
 
 				</div>
 				<!-- 글쓰기 버튼 -->
-				<div class="write-bar">
-					<a href="ChallengeCnt?chal_seq=327"><img
-						src="img/challenge-main/write_button.png"
-						style="position: fixed; bottom: 5%; left: 33%; right: 50%"></a>
-				</div>
+					<a id="challcheck" href="#" style="border: solid 1px gray; text-align:center; font-size:20px; color:#535c68; width:400px;height:40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px ; background-color: #f5f6fa;">오늘부터 챌린지 시작하기</a>
 
 				<!-- Navbar Toggler -->
 				<div class="classy-navbar-toggler">
@@ -432,7 +429,9 @@
 
 	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	Copyright &copy;<script>
+	
 		document.write(new Date().getFullYear());
+		
 	</script> All rights reserved | This template is made with <i
 		class="fa fa-heart-o" aria-hidden="true"></i> by <a
 		href="https://colorlib.com" target="_blank">Colorlib</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -441,7 +440,8 @@
 	<!-- ##### Footer Area End ##### -->
 
 	<!-- jQuery (Necessary for All JavaScript Plugins) -->
-	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+ 	<script src="js/jquery/jquery-2.2.4.min.js">
+	</script> 
 	<!-- Popper js -->
 	<script src="js/popper.min.js"></script>
 	<!-- Bootstrap js -->
@@ -450,6 +450,19 @@
 	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
+	 <script> 
+		 <%chal_Seq = dao.ChallengeCheck(327);%>
+		 document.getElementById("challcheck").onclick = function() {
+		 		if(<%=chal_Seq%> == 999999){
+						 alert('전송 실패');
+					}else{
+						<%dao.ChallengeCntUp(chal_Seq);%>
+						location.href ="MyChallengeinsert?chal_seq=<%=chal_Seq%>";
+			}
+		 }
+	 </script>
+
+	 
 
 </body>
 

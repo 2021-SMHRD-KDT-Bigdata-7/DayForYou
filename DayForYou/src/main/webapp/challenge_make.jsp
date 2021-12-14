@@ -535,8 +535,8 @@
 					var today = new Date();
 
 					$('#period').html(
-							" ~ " + year + "년도" + month + "월 " + day + "일 "
-									+ hours + "시" + minutes + "분 까지")
+							" ~ " + year + "/" + month + "/" + day
+									)
 					$('#period').css('display', 'block');
 				});
 
@@ -566,32 +566,32 @@
 
 					if (changed == 'today') {
 						$('.start1').css('display', 'inline').html(
-								eyear + "년도" + emonth + "월 " + eday + "일 "
-										+ ehours + "시" + eminutes + "분")
+								eyear + "/" + emonth + "/" + eday
+										)
 						$('.start2').css('display', 'none');
 						$('.start3').css('display', 'none');
 						$('.start4').css('display', 'none');
 					} else if (changed == '1_month') {
 						$('.start4').css('display', 'inline');
 						$('.start4').html(
-								eyear + "년도" + emonth + "월 " + eday + "일 "
-										+ ehours + "시" + eminutes + "분")
+								eyear + "/" + emonth + "/" + eday
+						)
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');
 						$('.start3').css('display', 'none');
 					} else if (changed == '1_week') {
 						$('.start2').css('display', 'inline');
 						$('.start2').html(
-								eyear + "년도" + emonth + "월 " + eday + "일 "
-										+ ehours + "시" + eminutes + "분")
+								eyear + "/" + emonth + "/" + eday
+						)
 						$('.start1').css('display', 'none');
 						$('.start3').css('display', 'none');
 						$('.start4').css('display', 'none');
 					} else {
 						$('.start3').css('display', 'inline');
 						$('.start3').html(
-								eyear + "년도" + emonth + "월 " + eday + "일 "
-										+ ehours + "시" + eminutes + "분")
+								eyear + "/" + emonth + "/" + eday
+						)
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');
 						$('.start4').css('display', 'none');

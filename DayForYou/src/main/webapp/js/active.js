@@ -128,6 +128,14 @@
             scrollText: 'top'
         });
     }
+    // :: ScrollUp Active Code
+    if ($.fn.scrollUp2) {
+        $.scrollUp2({
+            scrollSpeed: 1000,
+            easingType: 'easeInOutQuart',
+            scrollText: 'top'
+        });
+    }
 
     // :: PreventDefault a Click
     $("a[href='#']").on('click', function ($) {
