@@ -277,7 +277,7 @@ div {
 
 			},
 			
-			select : function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
+			select : function(arg) { // 캘린더에서 날짜 클릭으로 이벤트를 생성할 수 있다.
 
 				var title = prompt('Event Title:');
 
@@ -291,28 +291,13 @@ div {
 						allDay : arg.allDay,
 						color : 'green'
 					})
-//					$.ajax({
-//						type : "POST",
-//						url : "#",
-//						data : {
-//							'event-title-give' : title,
-//							'event_start_data-give' : dataFormat(arg.start),
-//							'event_end_data-give' : dataFormat(arg.end),
-//							'event_allday' : allDay,
-//							'event_color' : color
-//
-//						},
-//						success : function(response) {
-//							alert('일정이 추가되었습니다.');
-//						}
-//					})
 
 				}
 
 				calendar.unselect()
 			},
-		    //eventClick: function( eventClickInfo ) {
-	        //   var url = "eventClick.html";
+		    //select: function(arg) {
+	        //   var url = "testpopup.html";
 	        //                   var name = "remove test";
 	        //                   var option = "width = 500, height = 500, top = 100, left = 200, location = no"
 	        //                   var windowObj = window.open(url, name, option);
@@ -323,21 +308,7 @@ div {
 				let delcal = confirm(info.event.title + "일정을 삭제하시겠습니까?");
 				if (delcal == true) {
 					info.event.remove();
-//					$.ajax({
-//						type : "POST",
-//						url : "#",
-//						data : {
-//							'event-title-give' : title,
-//							'event_start_data-give' : dataFormat(arg.start),
-//							'event_end_data-give' : dataFormat(arg.end),
-//							'event_allday' : allDay,
-//							'event_color' : color
-//
-//						},
-//						success : function(response) {
-//							alert('일정이 삭제되었습니다.');
-//						}
-//					})
+
 				}
 			},
 
