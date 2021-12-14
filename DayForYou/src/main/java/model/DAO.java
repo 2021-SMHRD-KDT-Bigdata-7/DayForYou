@@ -650,7 +650,7 @@ public class DAO {
 		connection();
 
 		try {
-			sql = "UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = ?;";
+			sql = "UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = ?";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, chal_seq);
