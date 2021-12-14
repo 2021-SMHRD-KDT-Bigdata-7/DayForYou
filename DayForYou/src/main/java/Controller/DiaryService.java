@@ -61,7 +61,6 @@ public class DiaryService extends HttpServlet {
 				// 이미지 이름들
 				String image_name = multi.getParameter("images");
 				String[] images = image_name.split("/"); 
-				
 				String imageNames = "";
 				for(int i = 0; i < images.length; i++) {
 					// 하나하나 URL 인코딩
@@ -81,7 +80,7 @@ public class DiaryService extends HttpServlet {
 				
 				// DAO 메서드 사용해서 Diarylist 테이블에 저장
 				DAO dao = new DAO();			
-				int cnt = dao.diarylist(diary_subject, diary_date, diary_content, imageNames,diary_file2, m_id);
+				int cnt = dao.diarylist(diary_subject, diary_date, diary_content,imageNames,diary_file2, m_id);
 				
 				
 				if(cnt > 0) {

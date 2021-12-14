@@ -84,6 +84,17 @@ public class DAO {
 
 				}
 				
+				sql = "SELECT TO_CHAR(m_birthdate, 'YYYY/MM/DD') FROM tbl_member where m_id=?";
+
+				psmt = conn.prepareStatement(sql);
+
+				psmt.setString(1, id);				
+
+				rs = psmt.executeQuery();
+				
+				if (rs.next()==true) {
+					vo.setBirthday(rs.getString(1));
+				}
 				
 			} catch (Exception e) {
 

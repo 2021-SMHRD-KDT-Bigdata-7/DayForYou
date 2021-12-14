@@ -38,15 +38,18 @@ public class UpdateService extends HttpServlet {
 		String m_addr = request.getParameter("m_addr");
 		
 		UpdateDAO dao = new UpdateDAO();
-		
+
 
 		// 쿼리 실행 결과(executeUpdate) : int타입, 성공한 행의 수
 		int cnt = dao.mupdate(vo.getId(), m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr);
 		
+		
+		
 		if(cnt > 0) {
 			System.out.println("회원정보 수정 성공!");
-//			session.removeAttribute("vo");
 			vo = new MemberVo(m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr);
+			
+			session.removeAttribute("vo");
 			// 같은 이름으로 다른 데이터를 집어 넣으면 덮어쓰기 된다
 			session.setAttribute("vo", vo);
 	        
