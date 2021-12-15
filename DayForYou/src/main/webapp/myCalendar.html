@@ -266,6 +266,7 @@ div {
 			aspectRatio : 1.8, // 가로, 세로 비율
 			dayMaxEvents : false, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
 			locale : 'ko', // 한국어 설정
+			selectLongPressDelay: 1,
 			buttonText : {
 				month : '캘린더',
 				today : '오늘',
@@ -287,6 +288,13 @@ div {
 
 			},
 			
+			resourceAreaHeaderContent : '일정',
+			resources : [ { id : 'a', title : '공부', eventColor : "blue"	}, 
+				{ id : 'b',	title : '운동', eventColor : 'orange'	}, 
+				{ id : 'c', title : '취미', eventColor : 'green'	}, 
+				{ id : 'd', title : '중요일정', eventColor : 'red' }, 
+				{ id : 'e', title : '기타', eventColor : 'purple' }, ],
+						
 			select : function(arg) { // 캘린더에서 날짜 클릭으로 이벤트를 생성할 수 있다.
 
 				//var title = prompt('Event Title:');
@@ -299,19 +307,6 @@ div {
 				
 				$("#calendar").append("<iframe src='myCalModal.jsp' style='position:absolute; width:100%; height:100%;z-index:1'></iframe>")
 				
-				if (title) {
-
-					calendar.addEvent({
-
-						title : title,
-						start : sdate,
-						end : edate,
-						allDay : allday,
-						color : 'green'
-					})
-
-				}
-
 				calendar.unselect()
 			},
 /*		    select: function(arg) {
@@ -324,6 +319,7 @@ div {
 	           
 	           calendar.unselect()
 	          },*/
+	          
 			eventClick : function(info) { // 이벤트 클릭하면 발생하는 이벤트. 현재는 삭제
 				
 				$("#calendar").append("<iframe src='myCalUpdateModal.jsp' style='position:absolute; width:100%; height:100%;z-index:1'></iframe>")
@@ -335,13 +331,7 @@ div {
 				}*/
 			},
 
-			resourceAreaHeaderContent : '일정',
-			resources : [ { id : 'a', title : '공부', eventColor : "blue"	}, 
-				{ id : 'b',	title : '운동', eventColor : 'orange'	}, 
-				{ id : 'c', title : '취미', eventColor : 'green'	}, 
-				{ id : 'd', title : '중요일정', eventColor : 'red' }, 
-				{ id : 'e', title : '기타', eventColor : 'purple' }, ],
-			
+
 			events : [ {
 				id : '1',
 				resourceId : 'a',

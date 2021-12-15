@@ -23,7 +23,7 @@ public class CalendarDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			// 2. 연결 객체 생성
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
 			String dbid = "hr";
 			String dbpw = "hr";
 
@@ -58,33 +58,25 @@ public class CalendarDAO {
 		
 	}
 	
-	// 일정 삽입
-	
-	public int todo_Input(String todo_subject, String todo_cate, 
-						  String todo_sdate, String todo_edate, 
-						  String todo_content, String reg_date, String m_id,
-						  String todo_check) {
-
-		// try문
-		// JDBC 코드는 문법이 맞더라도 실행중 발생하는 오류처리 필요.
-		try {
-
-			connection();
+   // 일정삽입	
+	public int todo_Input(String todo_title, String todo_cate,String todo_sdate,String todo_edate,  
+			 String m_id, String todo_allday) {
+		connection();
+		try {	
 
 			// 3. sql문 준비
-			String sql = "insert into tbl_todo values (?,?,?,?,?,?,?,?)";
+			String sql = "insert into tbl_todo values (TBL_TODO_SEQ.nextval,?, ?, ?, ? ,sysdate,?,?)";
 
 			psmt = conn.prepareStatement(sql);
 
 			// 4. 바인드 변수 채우기
-			psmt.setString(1, todo_subject);//seq x
+			
+			psmt.setString(1, todo_title);//seq x
 			psmt.setString(2, todo_cate);
 			psmt.setString(3, todo_sdate);
 			psmt.setString(4, todo_edate);
-			psmt.setString(5, todo_content);
-			psmt.setString(6, reg_date);
-			psmt.setString(7, m_id);
-			psmt.setString(8, todo_check);
+			psmt.setString(5, m_id);	
+			psmt.setString(6, todo_allday);
 
 			// 5. 실행
 			cnt = psmt.executeUpdate();
@@ -98,6 +90,7 @@ public class CalendarDAO {
 		return cnt;
 	}
 	
+
 	// 일정 확인
 	
 	public ArrayList<CalendarVO> todo_select() {
@@ -126,15 +119,14 @@ public class CalendarDAO {
 				String u_todo_cate = rs.getString(3);
 				String u_todo_sdate = rs.getString(4);
 				String u_todo_edate = rs.getString(5);
-				String u_todo_content = rs.getString(6);
-				String u_reg_date = rs.getString(7);
-				String u_m_id = rs.getString(8);
-				String u_todo_check = rs.getString(9); //하루종일
+				String u_reg_date = rs.getString(6);
+				String u_m_id = rs.getString(7);
+				String u_todo_allday = rs.getString(8); //하루종일
 
 				// select문의 결과를 묶어서 VO객체로 만들기
 				cvo = new CalendarVO(u_todo_seq, u_todo_subject, u_todo_cate, 
-									u_todo_sdate, u_todo_edate,u_todo_content, 
-									u_reg_date, u_m_id, u_todo_check);
+									u_todo_sdate, u_todo_edate, 
+									u_reg_date, u_m_id, u_todo_allday);
 
 				todo.add(cvo);
 			}
@@ -151,10 +143,8 @@ public class CalendarDAO {
 	
 	// 일정 수정
 	
-	public int Todo_update(int todo_seq, String todo_subject, String todo_cate, 
-						   String todo_sdate, String todo_edate, 
-						   String todo_content, String reg_date, String m_id,
-						   String todo_check) {
+	public int Todo_update(int todo_seq, String todo_title, String todo_cate,String todo_sdate,String todo_edate,  
+			 String m_id, String todo_allday) {
 
 		// try문
 		// JDBC 코드는 문법이 맞더라도 실행중 발생하는 오류처리 필요.
@@ -163,23 +153,19 @@ public class CalendarDAO {
 			connection();
 
 			// 3. sql문 준비
-			String sql = "update tbl_todo set todo_subject =? , todo_cate = ?, \r\n"
-					+ "						  todo_sdate =?, todo_edate = ?, \r\n"
-					+ "						  todo_content = ?, reg_date = ?, m_id = ?,\r\n"
-					+ "						  todo_check = ? where todo_seq = ?";
+			String sql = "update tbl_todo set todo_title =? , todo_cate = ?, todo_sdate =?, todo_edate = ?, todo_allday = ? where todo_seq = ? and m_id = ?";
 
 			psmt = conn.prepareStatement(sql);
 
 			// 4. 바인드 변수 채우기
-			psmt.setString(1, todo_subject);//seq x
+			psmt.setString(1, todo_title);//seq x
 			psmt.setString(2, todo_cate);
 			psmt.setString(3, todo_sdate);
 			psmt.setString(4, todo_edate);
-			psmt.setString(5, todo_content);
-			psmt.setString(6, reg_date);
-			psmt.setString(7, m_id);
-			psmt.setString(8, todo_check);
-			psmt.setInt(9, todo_seq);
+			psmt.setString(5, todo_allday);
+			psmt.setInt(6, todo_seq);	
+			psmt.setString(7, m_id);	
+
 			// 5. 실행
 			cnt = psmt.executeUpdate();
 
@@ -220,4 +206,7 @@ public class CalendarDAO {
 		return cnt;
 	}
 
-}
+	
+
+	}
+

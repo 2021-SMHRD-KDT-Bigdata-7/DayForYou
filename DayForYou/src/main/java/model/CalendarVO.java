@@ -4,102 +4,93 @@ package model;
 
 public class CalendarVO {
 
-	private int todo_seq;
-	private String todo_subject; //제목
-	private String todo_cate; // 카테고리
-	private String todo_sdate; // 시작날짜
-	private String todo_edate; // 마감날짜
-	private String todo_content; // 내용
-	private String reg_date; // 등록날짜
-	private String m_id; // 등록 아이디
-	private String todo_check; // 하루종일
-//?	private boolean allDay = false;
-
+	private int Todo_seq;
+	private String Todo_title;
+	private String Todo_cate;
+	private String Todo_sdate;
+	private String Todo_edate;
+	private String Reg_date;
+	private String m_id;
+	private String Todo_allday;
+	
 //=====생성자.======
-
-	public CalendarVO(int todo_seq, String todo_subject, String todo_cate, String todo_sdate, String todo_edate,
-			String todo_content, String reg_date, String m_id, String todo_check) {
+	
+	public CalendarVO(int todo_seq, String todo_title, String todo_cate, String todo_sdate, String todo_edate,
+			String reg_date, String m_id, String todo_allday) {
 		super();
-		this.todo_seq = todo_seq;
-		this.todo_subject = todo_subject;
-		this.todo_cate = todo_cate;
-		this.todo_sdate = todo_sdate;
-		this.todo_edate = todo_edate;
-		this.todo_content = todo_content;
-		this.reg_date = reg_date;
+		Todo_seq = todo_seq;
+		Todo_title = todo_title;
+		Todo_cate = todo_cate;
+		Todo_sdate = todo_sdate;
+		Todo_edate = todo_edate;
+		Reg_date = reg_date;
 		this.m_id = m_id;
-		this.todo_check = todo_check;
+		Todo_allday = todo_allday;
 	}
+	
 
-	public CalendarVO(String todo_subject, String todo_cate, String todo_sdate, String todo_edate, String todo_content,
-			String reg_date, String m_id, String todo_check) {
-		super();
-		this.todo_subject = todo_subject;
-		this.todo_cate = todo_cate;
-		this.todo_sdate = todo_sdate;
-		this.todo_edate = todo_edate;
-		this.todo_content = todo_content;
-		this.reg_date = reg_date;
-		this.m_id = m_id;
-		this.todo_check = todo_check;
+public CalendarVO(String todo_title, String todo_allday, String todo_cate, String todo_sdate, String todo_edate) {
+	super();
+	Todo_title = todo_title;
+	Todo_cate = todo_cate; 
+	Todo_sdate = todo_sdate;
+	Todo_edate = todo_edate;
+	Todo_allday = todo_allday;
+}
+
+	public CalendarVO(String m_id, String todo_title, String todo_allday, String todo_cate, String todo_sdate,
+		String todo_edate) {
+	// TODO Auto-generated constructor stub
 	}
 
 //=====Getter/Setter===== 
-	
+
 	public int getTodo_seq() {
-		return todo_seq;
+		return Todo_seq;
 	}
 
 	public void setTodo_seq(int todo_seq) {
-		this.todo_seq = todo_seq;
+		Todo_seq = todo_seq;
 	}
 
-	public String getTodo_subject() {
-		return todo_subject;
+	public String getTodo_title() {
+		return Todo_title;
 	}
 
-	public void setTodo_subject(String todo_subject) {
-		this.todo_subject = todo_subject;
+	public void setTodo_title(String todo_title) {
+		Todo_title = todo_title;
 	}
 
 	public String getTodo_cate() {
-		return todo_cate;
+		return Todo_cate;
 	}
 
 	public void setTodo_cate(String todo_cate) {
-		this.todo_cate = todo_cate;
+		Todo_cate = todo_cate;
 	}
 
 	public String getTodo_sdate() {
-		return todo_sdate;
+		return Todo_sdate;
 	}
 
 	public void setTodo_sdate(String todo_sdate) {
-		this.todo_sdate = todo_sdate;
+		Todo_sdate = todo_sdate;
 	}
 
 	public String getTodo_edate() {
-		return todo_edate;
+		return Todo_edate;
 	}
 
 	public void setTodo_edate(String todo_edate) {
-		this.todo_edate = todo_edate;
-	}
-
-	public String getTodo_content() {
-		return todo_content;
-	}
-
-	public void setTodo_content(String todo_content) {
-		this.todo_content = todo_content;
+		Todo_edate = todo_edate;
 	}
 
 	public String getReg_date() {
-		return reg_date;
+		return Reg_date;
 	}
 
 	public void setReg_date(String reg_date) {
-		this.reg_date = reg_date;
+		Reg_date = reg_date;
 	}
 
 	public String getM_id() {
@@ -110,13 +101,20 @@ public class CalendarVO {
 		this.m_id = m_id;
 	}
 
-	public String getTodo_check() {
-		return todo_check;
+	public String getTodo_allday() {
+		return Todo_allday;
 	}
 
-	public void setTodo_check(String todo_check) {
-		this.todo_check = todo_check;
+	public void setTodo_allday(String todo_allday) {
+		Todo_allday = todo_allday;
 	}
+
+	
+	
+
+	
+
+
 
 
 //=======================
