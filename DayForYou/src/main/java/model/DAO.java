@@ -762,6 +762,77 @@ public class DAO {
 		return chal_seq;
 	}
 
+	//===================================shopinsert=============
 	
+	public int shop_insert(int shop_seq, String goods_name, String goods_category, String goods_point) {
+		
+		shopVO svo = new shopVO();
+		connection();
+		try {
+		sql="inser into tbl_shop values(?,?,?,?)";	
+		
+		psmt = conn.prepareStatement(sql);
+
+		psmt.setInt(1, shop_seq);
+		psmt.setString(2, goods_name);
+		psmt.setString(3, goods_category);
+		psmt.setString(4, goods_point);
+		
+		cnt = psmt.executeUpdate();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		
+		close();
+	}
+
+	return cnt;
 
 }
+	
+
+//======================shopupdate===========================
+
+public int shop_update(int shop_seq,String goods_name, String goods_category, String goods_point) {
+	shopVO svo = new shopVO();
+	connection();
+
+	try {
+		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=?";
+
+		psmt = conn.prepareStatement(sql);
+		psmt.setInt(1, shop_seq);
+		psmt.setString(2, goods_name);
+		psmt.setString(3, goods_category);
+		psmt.setString(4, goods_point);
+		rs = psmt.executeQuery();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return cnt;
+}
+//===================shop_delete=============
+public int shop_delete(int shop_seq) {
+	shopVO svo = new shopVO();
+	connection();
+	try {
+		sql = "DELETE FROM tbl_shop WHERE shop_seq=?";
+
+		psmt = conn.prepareStatement(sql);
+		psmt.setInt(1, shop_seq);
+	
+		rs = psmt.executeQuery();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return cnt;
+}
+}
+
