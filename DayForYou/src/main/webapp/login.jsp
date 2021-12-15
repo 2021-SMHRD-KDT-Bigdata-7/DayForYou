@@ -67,7 +67,7 @@
 			</form>
 			<br>
 			<div class="container-login100-form-btn">
-				<a href="main.html">
+				<a href="main.jsp">
 					<button class="login100-form-btn">B_login</button>
 				</a>
 			</div>

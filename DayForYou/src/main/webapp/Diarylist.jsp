@@ -145,23 +145,32 @@
 							</div>
 
 							<!-- Nav Start -->
-							<div class="classynav">
-								<button class="button4">Logout</button>
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="#">Calendar</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Calendar</a></li>
-											<li><a href="about-us.html">Diary</a></li>
-											<!--  <li><a href="single-post.html">Single Post</a></li>
+							 <div class="classynav">
+                            	 <div class="classynav">
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
+                                <ul>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
+                                        <ul class="dropdown">
+                                            <li><a href="myCalendar.html">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
+                                           <!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
-										</ul></li>
-									<li><a href="#">Challenge</a>
-										<ul class="dropdown">
-											<li><a href="#">All</a></li>
-											<li><a href="#">Group</a></li>
-											<li><a href="#">Individual</a> <!--  <ul class="dropdown">
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Challenge</a>
+                                        <ul class="dropdown">
+                                            <li><a href="challenge_main.jsp">All</a></li>
+                                            <li><a href="challenge_main.jsp">Group</a></li>
+                                            <li><a href="challenge_main.jsp">Individual</a>
+                                               <!--  <ul class="dropdown">
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a>
@@ -175,34 +184,68 @@
                                                     </li>
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a></li>
-                                                </ul> --></li>
-											<!--  <li><a href="#">Catagory 1</a></li>
+                                                </ul> -->
+                                            </li>
+                                           <!--  <li><a href="#">Catagory 1</a></li>
                                             <li><a href="#">Catagory 1</a></li> -->
-										</ul></li>
-									<li><a href="#">Portfolio</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Statics</a></li>
-											<li><a href="about-us.html">Sample</a></li>
-											<li><a href="about-us.html">Create</a></li>
-										</ul></li>
-									<li><a href="#">Board</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Community</a></li>
-											<li><a href="about-us.html">Notice</a></li>
-											<li><a href="about-us.html">Q&A</a></li>
-										</ul></li>
+                                        </ul>
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
+                              
+                                     <li><a href="#">Board</a>
+                                        <ul class="dropdown">
+                                            <li><a href="1_writeForm.jsp">Community</a></li>
+                                            <li><a>Notice</a></li>
+                                            <li><a>Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                                    
 
-									<li><a href="contact.html">About Us</a></li>
-								</ul>
+                                     <li><a href="mypage.html">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
+                                           <!--  <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 2</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 3</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 4</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul> -->
 
-								<!-- Nav End -->
-							</div>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
+                                <!-- Search Form  -->
+                                <div id="search-wrapper">
+                                    <form action="#">
+                                        <input type="text" id="search" placeholder="Search something...">
+                                        <div id="close-icon"></div>
+                                        <input class="d-none" type="submit" value="">
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 	<!-- ##### Header Area End ##### -->
 
 	<!-- ##### Breadcumb Area Start ##### -->

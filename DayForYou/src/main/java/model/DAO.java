@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-
 public class DAO {
 
 	String sql = "";
@@ -804,6 +803,30 @@ public class DAO {
 		return arr;
 	}
 	
+	public int shop_insert(int shop_seq, String goods_name, String goods_category, String goods_point) {
+		
+		shopVO svo = new shopVO();
+		connection();
+		try {
+		sql="inser into tbl_shop values(?,?,?,?)";	
+		
+		psmt = conn.prepareStatement(sql);
+
+		psmt.setInt(1, shop_seq);
+		psmt.setString(2, goods_name);
+		psmt.setString(3, goods_category);
+		psmt.setString(4, goods_point);
+		
+		cnt = psmt.executeUpdate();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		
+		close();
+	}
+
+	return cnt;
 
 }
 

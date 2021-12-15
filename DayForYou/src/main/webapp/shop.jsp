@@ -20,7 +20,17 @@
     </head>
    
     <body>
+    <%
+	MemberVo vo = (MemberVo)session.getAttribute("vo");
+	out.print(vo);
 
+	DAO dao = new DAO();
+	
+	shopVO svo = new shopVO();
+	
+	
+	
+%>
 
        <div align="left" withd="10px";margin"10px">
 		<a class="btn btn-outline-dark mt-auto" href="main.html"> <img
@@ -36,7 +46,11 @@
                 </div>
             </div>
         </header>
-        <!-- 버튼 모을꺼야 건들지마 -->
+        <% if(vo !=null){ %>
+	<% if(vo.getId().equals("admin_yesno")){ %>
+	<a class="btn btn-outline-dark mt-auto" href="shopadmin.jsp">관리자</a>
+	<% } }%>
+	<!-- 버튼 모을꺼야 건들지마 -->
         <div align ="center" margin"10px">
         <a class="btn btn-outline-dark mt-auto" href ="shop_chicken.jsp">치킨</a>
         <a class="btn btn-outline-dark mt-auto" href ="shop_movie.jsp">영화</a>

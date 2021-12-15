@@ -35,7 +35,7 @@ public class loginService extends HttpServlet {
 			session.removeAttribute("vo");
 			session.setAttribute("vo", vo);			
 			
-			response.sendRedirect("main.html");
+			response.sendRedirect("main.jsp");
 			
 		} else {
 			Cookie cookie = new Cookie("error_id", URLEncoder.encode(id,"UTF-8"));
