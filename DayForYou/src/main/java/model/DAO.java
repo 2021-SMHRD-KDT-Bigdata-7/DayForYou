@@ -661,11 +661,11 @@ public class DAO {
 		connection();
 		try {
 
-			sql = "update tbl_member set m_id=? ,m_point=?";
+			sql = "update tbl_member set m_point=? where m_id=?";
 
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setInt(2, point);
+			psmt.setInt(1, point);
+			psmt.setString(2, id);
 
 			cnt = psmt.executeUpdate();
 
@@ -850,7 +850,7 @@ public class DAO {
 		shopVO svo = new shopVO();
 		connection();
 		try {
-		sql="inser into tbl_shop values(shop_seq.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
+		sql="insert into tbl_shop values(shop_seq.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
 		
 		psmt = conn.prepareStatement(sql);
 

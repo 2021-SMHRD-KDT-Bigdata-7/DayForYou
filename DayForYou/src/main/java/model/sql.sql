@@ -1,4 +1,5 @@
-select * from tbl_member
+select * from tbl_member;
+
 select * from tbl_challenge;
 select * from tbl_my_challenge;
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id) VALUES (327, sysdate, sysdate, 'chal_time 1', 'my_chal_memo 1', 'b');
@@ -162,3 +163,4 @@ UPDATE tbl_shop SET shop_pic1 = './img/shop/h1.png' WHERE shop_seq = 22;
 UPDATE tbl_shop SET shop_pic1 = './img/shop/h2.png' WHERE shop_seq = 23;
 
 
+UPDATE tbl_member SET m_point = 20000 WHERE m_id = 'zzz';

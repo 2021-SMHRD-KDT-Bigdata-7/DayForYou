@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.shopVO"%>
 <%@page import="model.DAO"%>
 <%@page import="model.MemberVo"%>
@@ -28,7 +29,7 @@
 	out.print(vo);
 
 	DAO dao = new DAO();
-	
+	ArrayList<shopVO> goods = dao.selectAllGoods();
 	shopVO svo = new shopVO();
 	
 	
@@ -38,6 +39,8 @@
 <% if(vo==null){ %>
 <script> alert("로그인이 필요합니다")</script>
 <%} %>
+
+
 	<div align="left" withd="10px";margin"10px">
 		<a class="btn btn-outline-dark mt-auto" href="shop.jsp"> <img
 			src="./img/shop/icon1.png">
@@ -65,22 +68,28 @@
 							<div class="card-body p-4">
 								<div class="text-center">
 									<!-- Product name-->
-									<h5 class="fw-bolder"><%=vo.getPoint() %></h5>
+									<h5 class="fw-bolder"><%=vo.getPoint()%></h5>
 								</div>
 								<div class="card-body p-4">
 									<div class="text-center">
 										<!-- Product name-->
-										<h5 class="fw-bolder"><%=svo.getGoods_point() %></h5>
+										<h5 class="fw-bolder">
+										<!-- 아직 해결못함 -->
+										<%=goods.get(1).getGoods_point() %></h5>
+										
 									</div>
 								</div>
 								<!-- Product actions-->
 								<br>
+								<% if (vo.getPoint()>svo.getGoods_point()){ %>
+								<%} %>
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 									<div class="text-center"  >
 									<a name="point" class="btn btn-outline-dark mt-auto"href="shop.jsp">
 										BUY</a>	
 									</div>
 								</div>
+								
 						</div>
 						</div>
 					</div>
