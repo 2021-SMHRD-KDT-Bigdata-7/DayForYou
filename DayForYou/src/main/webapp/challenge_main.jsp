@@ -42,8 +42,8 @@
 
 <body>
 
+
 <%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
-<%System.out.println(vo.getId()); %>
 	<!-- 스크립트릿 --!>
 	<%
 	DAO dao = new DAO();
@@ -103,6 +103,9 @@
 		
 	%>
 	
+	<%
+	// 챌린지 캘린더 수정
+	%>
 
 
 	<!-- Preloader -->
