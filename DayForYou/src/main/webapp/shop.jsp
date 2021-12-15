@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.shopVO"%>
 <%@page import="model.DAO"%>
 <%@page import="model.MemberVo"%>
@@ -22,12 +23,12 @@
     <body>
     <%
 	MemberVo vo = (MemberVo)session.getAttribute("vo");
-	out.print(vo);
 
 	DAO dao = new DAO();
 	
-	shopVO svo = new shopVO();
+	ArrayList<shopVO> goods = dao.selectAllGoods();
 	
+	shopVO svo = new shopVO();	
 	
 	
 %>
@@ -38,11 +39,10 @@
 		</a>
 	</div>
         <!-- Header-->
-        <header class="bg-light py-5">
+        <header>
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-black">
-                    <h1 class="display-4 fw-bolder">day for you</h1>
-                 <p class="text-center"> point shop</p>
+                  <img src = "img/logo-img/shop.PNG">
                 </div>
             </div>
         </header>
@@ -52,187 +52,46 @@
 	<% } }%>
 	<!-- 버튼 모을꺼야 건들지마 -->
         <div align ="center" margin"10px">
-        <a class="btn btn-outline-dark mt-auto" href ="shop_chicken.jsp">치킨</a>
+<!--         <a class="btn btn-outline-dark mt-auto" href ="shop_chicken.jsp">치킨</a>
         <a class="btn btn-outline-dark mt-auto" href ="shop_movie.jsp">영화</a>
-        <a class="btn btn-outline-dark mt-auto" href ="shop_gift.jsp">상품권</a>
+        <a class="btn btn-outline-dark mt-auto" href ="shop_gift.jsp">상품권</a> -->
+        <a><img src= "img/logo-img/chicken.PNG" onclick="location.href = 'shop_chicken.jsp'"></a>
+        <a><img src= "img/logo-img/movie.PNG" onclick="location.href = 'shop_movie.jsp'"></a>
+        <a><img src= "img/logo-img/gift.PNG" onclick="location.href = 'shop_gift.jsp'"></a>
+        <a><img src= "img/logo-img/cafe.PNG" onclick="location.href = 'shop_coffe.jsp'"></a>
+        <a><img src= "img/logo-img/cosmetic.PNG" onclick="location.href = 'shop_cosmetics.jsp'"></a>
         <br>
-        
+<!--         
         <a class="btn btn-outline-dark mt-auto" href="shop_coffe.jsp">커피</a>
-        <a class="btn btn-outline-dark mt-auto" href="shop_cosmetics.jsp">화장품</a>
+        <a class="btn btn-outline-dark mt-auto" href="shop_cosmetics.jsp">화장품</a> -->
         </div>
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                
+                <%for(int i = 0; i < goods.size(); i++){ %>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c1.png" alt="..." />
+                            <img class="card-img-top" src="<%=goods.get(i).getGoods_pic1()%>" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">뿌링클</h5>
+                                    <h5 class="fw-bolder"><%=goods.get(i).getGoods_name()%></h5>
                                     <!-- Product price-->
-                                  p)18.000 
+                                  p)<%=goods.get(i).getGoods_point()%> 
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                            	<img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c2.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">교촌 허니 콤보</h5>                                    
-                                    <!-- Product price-->
-                                    p)18.000
-                                    
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c3.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">스타벅그 아메리카노</h5>
-                                    <!-- Product price-->
-                                    p)4.100
-                                    
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c4.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">CGV영화표</h5>                          
-                                    <!-- Product price-->
-                                    p)13.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                           
-                           
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c5.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">신세계 상품권</h5>
-                                    <!-- Product price-->
-                                    p)50.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c6.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">샤넬 립스틱</h5>
-                                    <!-- Product price-->
-                                    p)48.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c7.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">스타벅스 카페라떼</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        
-                                    </div>
-                                    <!-- Product price-->
-                                    p)4.600
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c8.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">이디야 토피넛라떼</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        
-                                    </div>
-                                    <!-- Product price-->
-                                    p)4.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <%} %>
+       
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">

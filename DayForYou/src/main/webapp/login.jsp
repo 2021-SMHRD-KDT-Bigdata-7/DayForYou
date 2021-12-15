@@ -42,37 +42,37 @@
 </head>
 <body>
 
-	<div class="container-login100">
-		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+	<div class="container-login100" >
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30" style = "box-shadow: 0px 0px 20px #d1febc;">
 			<form class="login100-form validate-form" action="loginService">
-				<span class="login100-form-title p-b-37"> day for you </span>
+				<img src = "img/main-img/logo3.png" style = "align: center; position: relative; right: 80px;">
 
 				<div class="wrap-input100 validate-input m-b-20"
 					data-validate="Enter id">
-					<input class="input100" type="text" name="id" placeholder="id">
+					<input class="input100" type="text" name="id" placeholder="id" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-25"
 					data-validate="Enter pw">
-					<input class="input100" type="password" name="pw" placeholder="pw">
+					<input class="input100" type="password" name="pw" placeholder="pw" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;;">
 					<span class="focus-input100"></span>
 				</div>
 
 				<br> <br>
 
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn" type="submit">login</button>
+					<button class="login100-form-btn" type="submit" style = "background-color: #a9da81; box-shadow: 0px 0px 20px #d1febc;">login</button>
 				</div>
 			</form>
 			<br>
 			<div class="container-login100-form-btn">
 				<a href="main.jsp">
-					<button class="login100-form-btn">B_login</button>
+					<button class="login100-form-btn" style = "background-color: #a9da81; box-shadow: 0px 0px 20px #d1febc;">B_login</button>
 				</a>
 			</div>
 			<br>
-			<div class="text-center">
+			<div class="text-center" >
 				<a href="join.jsp" class="txt2 hov1"> Sign Up </a>
 			</div>
 		</div>

@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -302,7 +302,7 @@
 							<div class="board_title">
 								<strong>공지사항</strong>
 								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
-								
+
 							</div>
 							<div class="board_list_wrap">
 								<div class="board_list">
@@ -330,58 +330,64 @@
 				}
 			%> 
 			 --%>
-		
-										
-                <div>
-                    <div class="num">5</div>
-                    <div class="title"><a href="Board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">4</div>
-                    <div class="title"><a href="Board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">3</div>
-                    <div class="title"><a href="Board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">2</div>
-                    <div class="title"><a href="Board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">1</div>
-                    <div class="title"><a href="Board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-            </div>
-            <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
-            </div>
-            <div class="bt_wrap">
-                <a href="Board_write.jsp" class="on">등록</a>
-                <!--<a href="#">수정</a>-->
+
+
+									<div>
+										<div class="num">5</div>
+										<div class="title">
+											<a href="Board_view.jsp">글 제목이 들어갑니다.</a>
+										</div>
+										<div class="writer">김이름</div>
+										<div class="date">2021.1.15</div>
+										<div class="count">33</div>
+									</div>
+									<div>
+										<div class="num">4</div>
+										<div class="title">
+											<a href="Board_view.jsp">글 제목이 들어갑니다.</a>
+										</div>
+										<div class="writer">김이름</div>
+										<div class="date">2021.1.15</div>
+										<div class="count">33</div>
+									</div>
+									<div>
+										<div class="num">3</div>
+										<div class="title">
+											<a href="Board_view.jsp">글 제목이 들어갑니다.</a>
+										</div>
+										<div class="writer">김이름</div>
+										<div class="date">2021.1.15</div>
+										<div class="count">33</div>
+									</div>
+									<div>
+										<div class="num">2</div>
+										<div class="title">
+											<a href="Board_view.jsp">글 제목이 들어갑니다.</a>
+										</div>
+										<div class="writer">김이름</div>
+										<div class="date">2021.1.15</div>
+										<div class="count">33</div>
+									</div>
+									<div>
+										<div class="num">1</div>
+										<div class="title">
+											<a href="Board_view.jsp">글 제목이 들어갑니다.</a>
+										</div>
+										<div class="writer">김이름</div>
+										<div class="date">2021.1.15</div>
+										<div class="count">33</div>
+									</div>
+								</div>
+								<div class="board_page">
+									<a href="#" class="bt first"><<</a> <a href="#" class="bt prev"><</a>
+									<a href="#" class="num on">1</a> <a href="#" class="num">2</a>
+									<a href="#" class="num">3</a> <a href="#" class="num">4</a> <a
+										href="#" class="num">5</a> <a href="#" class="bt next">></a> <a
+										href="#" class="bt last">>></a>
+								</div>
+								<div class="bt_wrap">
+									<a href="Board_write.jsp" class="on">등록</a>
+									<!--<a href="#">수정</a>-->
 								</div>
 							</div>
 						</div>

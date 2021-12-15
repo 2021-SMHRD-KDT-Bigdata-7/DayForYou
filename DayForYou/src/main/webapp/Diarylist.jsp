@@ -158,7 +158,7 @@
                                     <li><a href="main.jsp">Home</a></li>
                                     <li><a href="my.html">Calendar</a>
                                         <ul class="dropdown">
-                                            <li><a href="myCalendar.html">Calendar</a></li>
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
                                             <li><a href="Diarylist.jsp">Diary</a></li>
                                            <!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>

@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,9 +25,11 @@ public class shopbuyService extends HttpServlet {
 	      request.setCharacterEncoding("euc-kr");
 
 	     
-	      HttpSession session = request.getSession();
-	    MemberVo vo = (MemberVo)session.getAttribute("vo");
-	    System.out.println(vo);
+	      
+	    
+	      MemberVo vo = new MemberVo();
+	    
+	      
 	    
 	      String id =vo.getId();
 	      int point = Integer.parseInt(request.getParameter("point"));
@@ -36,21 +39,19 @@ public class shopbuyService extends HttpServlet {
 	      DAO dao = new DAO();
 	      shopVO  svo = new shopVO();
 	      
-	      int goodspoint=0;
+	     
 	      
-	      goodspoint=svo.getGoods_point();
-	      point =svo.getGoods_point();
+	      int cnt = dao.shopbuy(vo.getId(), vo.getPoint());
 	      
 	       
-	      
-	      if(point > goodspoint) {
-	    	  
-	    	  int cnt = dao.shopbuy(id, point);
-	         System.out.println("구입성공");
+	      if(cnt>0) {
+	    	 HttpSession session = request.getSession();
+	         
+	    	 System.out.println("구입성공");
+	         
+	         session.setAttribute("vo",new MemberVo(vo.getId(),vo.getPoint()));
+	         
 	         response.sendRedirect("main.jsp");
-	         
-	         session.setAttribute("vo",new MemberVo(id,point));
-	         
 	         
 	      }else {
 	         System.out.println("구입실패");

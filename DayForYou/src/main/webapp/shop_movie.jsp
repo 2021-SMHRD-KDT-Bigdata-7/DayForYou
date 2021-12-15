@@ -23,17 +23,18 @@
         </a>
         </div>
         <!-- Header-->
-        <header class="bg-light py-5">
+        <header>
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-black">
-                    <h1 class="display-4 fw-bolder">day for you</h1>
+                    <img src = "img/logo-img/shop.PNG">
                 
                 </div>
             </div>
         </header>
         <!-- 버튼 모을꺼야 건들지마 -->
         <div align ="center" margin"10px">
-        <a class="btn btn-outline-dark mt-auto">영화</a>
+        <br><br>
+        <a><img src= "img/logo-img/movie.PNG" onclick="location.href = 'shop_movie.jsp'"></a>
        
         
         
@@ -57,7 +58,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -78,7 +79,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -99,7 +100,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>

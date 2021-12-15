@@ -19,6 +19,7 @@ public class DAO {
 	ArrayList<challengeBoardVO> ch_boards = null;
 	challengeBoardVO cbv = null;
 	diaryVO dvo = null;
+	shopVO svo = null;
 
 	public void connection() {
 		try {
@@ -615,15 +616,56 @@ public class DAO {
 
 	// ===========================
 	// =================================shop===================
+	public ArrayList<shopVO> selectAllGoods() {
+		ArrayList<shopVO> goods = new ArrayList<>();
+
+		connection();
+
+		try {
+			sql = "select * from tbl_shop order by shop_seq desc";
+
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				int shop_seq = rs.getInt(1);
+				String goods_name = rs.getString(2);
+				String goods_category = rs.getString(3);
+				String shop_pic1 = rs.getString(4);
+				String shop_pic2 = rs.getString(5);
+				int goods_point = rs.getInt(6);
+				String buy_day = rs.getString(7);
+				String exp_day = rs.getString(8);
+				String m_id = rs.getString(9);
+
+				 svo = new shopVO(shop_seq, goods_name, goods_category, shop_pic1, shop_pic2, goods_point,
+						buy_day, exp_day, m_id);
+
+				goods.add(svo);
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return goods;
+	}
+
+
+
+
 	public int shopbuy(String id, int point) {
 		connection();
 		try {
 
-			sql = "update tbl_member set m_id=? ,m_point=?";
+			sql = "update tbl_member set m_point=? where m_id=?";
 
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setInt(2, point);
+			psmt.setInt(1, point);
+			psmt.setString(2, id);
 
 			cnt = psmt.executeUpdate();
 
@@ -663,8 +705,8 @@ public class DAO {
 		}
 	}
 
-	public MyChallengeVO MyVOChallengeinsert(int chal_seq) {
-		MyChallengeVO mvo = null;
+	public MySelectChallVO MySelectChall(int chal_seq) {
+		MySelectChallVO msvo = null;
 		connection();
 		try {
 			sql = "select * from tbl_challenge where chal_seq = ?";
@@ -692,33 +734,31 @@ public class DAO {
 				String chal_pw = rs.getString(16);
 				String chal_public = rs.getString(17);
 				// 일단 추가할수 있으니 값 다 넣어준거임
-				mvo = new MyChallengeVO(chal_seq1, chal_start, chal_period, "null", "null", m_id,chal_pic1);
+				msvo = new MySelectChallVO(chal_cat1, chal_cat2, chal_subject, chal_period, chal_pic1,chal_public);
 			}
 
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return mvo;
+		return msvo;
 	}
 
-	public int MyChallengeinsert(int chal_seq, String chal_s_date, String chal_e_date, String chal_time,
-			String my_chal_memo, String m_id, String chal_pic1) {
+	public int MyChallengeinsert(int chal_seq, String attend_id, String chal_time, String my_chal_memo,
+			int chal_num) {
 		connection();
 
 		try {
 
 			// 3.sql문 준비
-			sql = "insert into tbl_my_challenge values(?,?,?,?,?,?,?)";
+			sql = "insert into tbl_my_challenge values(tbl_my_challenge_seq.nextval,?,?,?,?,?)";
 
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setInt(1, chal_seq);
-			psmt.setString(2, chal_s_date);
-			psmt.setString(3, chal_e_date);
-			psmt.setString(4, chal_time);
-			psmt.setString(5, my_chal_memo);
-			psmt.setString(6, m_id);
-			psmt.setString(7, chal_pic1);
+			psmt.setString(2, attend_id);
+			psmt.setString(3, chal_time);
+			psmt.setString(4, my_chal_memo);
+			psmt.setInt(5, chal_num);
 
 			// 5. 실행!
 			// select ->executeQury()-->return Resultset
@@ -738,20 +778,22 @@ public class DAO {
 
 	}
 
-	public int ChallengeCheck(int chal_seq) {
+	public int ChallengeCheck(String m_id, int chal_seq) {
 		challengeBoardVO zvo = null;
 		connection();
+		int num=chal_seq;
 
 		try {
-			sql = "select * from tbl_my_challenge where chal_seq = ?";
+			sql = "select * from tbl_my_challenge where attend_id =? and chal_seq=?";
 
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, chal_seq);
+			psmt.setString(1,m_id);
+			psmt.setInt(2,chal_seq);
 			rs = psmt.executeQuery();
 
 			if (rs.next() == false) {
 			} else {
-				chal_seq = 999999;
+				num = 999999;
 			}
 
 		} catch (Exception e) {
@@ -759,31 +801,29 @@ public class DAO {
 		} finally {
 			close();
 		}
-		return chal_seq;
+		return num;
 	}
 
-	public ArrayList<MyChallengeVO> MychallengeSelectAll(String id) {
+
+	public ArrayList<MyChallengeVO> MychallengeSelectAll(String attend_id) {
 		ArrayList<MyChallengeVO> arr = new ArrayList<MyChallengeVO>();
 		connection();
 		try {
-			String sql = "select * from tbl_my_challenge where m_id=?";
+			String sql = "select * from tbl_my_challenge where attend_id = ?";
 
 			// 4. PreparedStatement 객체 준비
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			System.out.println(id);
+			psmt.setString(1, attend_id);
 			rs = psmt.executeQuery();
+			
 			while(rs.next() == true) {
-				int chal_seq=rs.getInt(1);
-				String chal_s_date = rs.getString(2);
-				String chal_e_date = rs.getString(3);
+				int my_chal_seq = rs.getInt(1);
+				int chal_seq = rs.getInt(2);
+				attend_id = rs.getString(3);
 				String chal_time = rs.getString(4);
 				String my_chal_memo = rs.getString(5);
-				String m_id = rs.getString(6);
-				String chal_pic1 = rs.getString(7);
-				//select문의 결과를 묶어서 vo객체로 만들기
-				MyChallengeVO mvo = new MyChallengeVO(chal_seq, chal_s_date,chal_e_date,chal_time,my_chal_memo, m_id, chal_pic1);
-				//rs로부터 가져온 한 행의 정보를 arraylist 추가
+				int chal_num = rs.getInt(6);
+				MyChallengeVO mvo = new MyChallengeVO(my_chal_seq, chal_seq,attend_id,chal_time,my_chal_memo,chal_num);
 				arr.add(mvo);
 			}
 
@@ -810,7 +850,7 @@ public class DAO {
 		shopVO svo = new shopVO();
 		connection();
 		try {
-		sql="inser into tbl_shop values(shop_seq.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
+		sql="insert into tbl_shop values(shop_seq.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
 		
 		psmt = conn.prepareStatement(sql);
 
@@ -840,7 +880,7 @@ public int shop_update(int shop_seq,String goods_name, String goods_category, St
 	connection();
 
 	try {
-		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where =shop.seq=?";
+		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where =shop_seq=?";
 
 		psmt = conn.prepareStatement(sql);
 		

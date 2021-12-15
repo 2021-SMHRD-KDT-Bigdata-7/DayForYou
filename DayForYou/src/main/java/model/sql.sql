@@ -1,4 +1,5 @@
-select * from tbl_member
+select * from tbl_member;
+
 select * from tbl_challenge;
 select * from tbl_my_challenge;
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id) VALUES (327, sysdate, sysdate, 'chal_time 1', 'my_chal_memo 1', 'b');
@@ -11,7 +12,7 @@ SELECT TO_NUMBER(NVL(MAX(Column), '0')) + 1 FROM TABLENAME
 UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = 326;
 ALTER TABLE tbl_challenge MODIFY (chal_period VARCHAR2(150));
 ALTER TABLE tbl_my_challenge add chal_cat2 VARCHAR2(20) NOT NULL;
-COMMIT;
+select * from tbl_my_challenge where ATTEND_ID = 'a';
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id,chal_pic1) VALUES (400, 'chal_s_date 1', 'chal_e_date 1', 'chal_time 1', 'my_chal_memo 1', 'b','asd');
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('a', 'm_pwd 01', 'm_name 01', 'm_nick 01', 'm_phone 01', 'm_email 01', sysdate, 'N', 'm_job 01', 'm_addr 01', sysdate, 01, 'N');
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('m_id 02', 'm_pwd 02', 'm_name 02', 'm_nick 02', 'm_phone 02', 'm_email 02', sysdate, 'N', 'm_job 02', 'm_addr 02', sysdate, 02, 'N');
@@ -138,5 +139,28 @@ INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m
 INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m_id, article_file1, article_file2, article_file3, article_file4, article_file5, article_count) VALUES ('article_kind 100', 'article_subject 100', 'article_content 100', sysdate, 'm_id 10', 'article_file1 100', 'article_file2 100', 'article_file3 100', 'article_file4 100', 'article_file5 100', 100);
 
 select * from tbl_member;
-INSERT INTO tbl_shop (shop_seq,goods_name, goods_category, shop_pic1, shop_pic2, goods_point, buy_day, exp_day, m_id) VALUES ('TBL_SHOP_SEQ.NEXTVAL','뿌링클', '치킨', 'null', 'null', 18000, sysdate, 2022/02/31, 'Y');
+INSERT INTO tbl_shop VALUES (TBL_SHOP_SEQ.NEXTVAL,'양념치킨', '치킨', 'null', 'null', 18000, sysdate, '2022/02/31', 'admin_yesno');
+select * from tbl_shop order by shop_seq desc;
 select * from tbl_shop;
+
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken3.png' WHERE shop_seq = 6;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken4.png' WHERE shop_seq = 7;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken5.png' WHERE shop_seq = 8;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken6.png' WHERE shop_seq = 9;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c4.png' WHERE shop_seq = 10;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/m2.png' WHERE shop_seq = 11;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/m3.png' WHERE shop_seq = 12;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c5.png' WHERE shop_seq = 13;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/g2.png' WHERE shop_seq = 14;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/g1.png' WHERE shop_seq = 15;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/g4.png' WHERE shop_seq = 16;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c3.png' WHERE shop_seq = 17;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/co1.png' WHERE shop_seq = 18;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c7.png' WHERE shop_seq = 19;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c8.png' WHERE shop_seq = 20;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c6.png' WHERE shop_seq = 21;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/h1.png' WHERE shop_seq = 22;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/h2.png' WHERE shop_seq = 23;
+
+
+UPDATE tbl_member SET m_point = 20000 WHERE m_id = 'zzz';

@@ -304,31 +304,20 @@
 								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
 
 							</div>
-							<form action="writerBoardService" method="post">
+							<h1>jsp5/deleteForm.jsp</h1>
+							<%
+							int article_seq = Integer.parseInt(request.getParameter("article_seq"));
+							%>
+							<form action="1_deletePro.jsp">
+								<input type="hidden" name="article_seq" value="<%=article_seq%>">
 								<table border="1">
-
-									<tr>
-										<td>글쓴이</td>
-										<td><input type="text" name="m_id"></td>
-									</tr>
 									<tr>
 										<td>비밀번호</td>
-										<td><input type="text" name="article_pwd"></td>
+										<td><input type="password" name="user_article_pwd"></td>
 									</tr>
 									<tr>
-										<td>제목</td>
-										<td><input type="text" name="article_subject"></td>
-									</tr>
-									<tr>
-										<td>카테고리</td>
-										<td><input type="text" name="article_kind"></td>
-									</tr>
-									<tr>
-										<td>내용</td>
-										<td><textarea rows="10" cols="20" name="article_content"></textarea></td>
-									</tr>
-									<tr>
-										<td colspan="2"><input type="submit" value="글쓰기"></td>
+										<td colspan="2"><input type="submit" value="글삭제">
+										</td>
 									</tr>
 								</table>
 							</form>

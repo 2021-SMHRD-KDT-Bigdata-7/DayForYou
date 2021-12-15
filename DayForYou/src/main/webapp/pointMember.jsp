@@ -143,7 +143,7 @@ table {
 									<li><a href="main.html">Home</a></li>
 									<li><a href="#">Calendar</a>
 										<ul class="dropdown">
-											<li><a href="index.html">Calendar</a></li>
+											<li><a href="index.jsp">Calendar</a></li>
 											<li><a href="Diarylist.jsp">Diary</a></li>
 
 										</ul></li>

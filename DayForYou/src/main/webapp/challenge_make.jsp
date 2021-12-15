@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
@@ -26,6 +27,18 @@
 </head>
 
 <body>
+	<%
+	MemberVo vo = (MemberVo)session.getAttribute("vo");
+	out.print(vo);
+
+	DAO dao = new DAO();
+	
+	
+%>
+<% if(vo==null){ %>
+<script> alert("로그인이 필요합니다")
+	location.href ="login.jsp";
+<%} %></script>
 	<!-- 스크립트릿 -->
 
 	<!-- Preloader -->

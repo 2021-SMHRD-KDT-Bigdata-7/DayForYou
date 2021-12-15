@@ -1,83 +1,58 @@
 package model;
 
 public class MyChallengeVO {
+	private int my_chal_seq;
 	private int chal_seq;
-	private String chal_s_date;
-	private String chal_e_date;
+	private String attend_id;
 	private String chal_time;
 	private String my_chal_memo;
-	private String m_id;
-	private String chal_pic1;
-	
-	public MyChallengeVO(int chal_seq, String chal_s_date, String chal_e_date, String chal_time, String my_chal_memo,
-			String m_id, String chal_pic1) {
+	private int chal_num;
+	public MyChallengeVO(int my_chal_seq, int chal_seq, String attend_id, String chal_time, String my_chal_memo,
+			int chal_num) {
 		super();
+		this.my_chal_seq = my_chal_seq;
 		this.chal_seq = chal_seq;
-		this.chal_s_date = chal_s_date;
-		this.chal_e_date = chal_e_date;
+		this.attend_id = attend_id;
 		this.chal_time = chal_time;
 		this.my_chal_memo = my_chal_memo;
-		this.m_id = m_id;
-		this.chal_pic1 = chal_pic1;
-		
+		this.chal_num = chal_num;
 	}
-	
-	public String getChal_pic1() {
-		return chal_pic1;
+	public int getMy_chal_seq() {
+		return my_chal_seq;
 	}
-
-	public void setChal_pic1(String chal_pic1) {
-		this.chal_pic1 = chal_pic1;
+	public void setMy_chal_seq(int my_chal_seq) {
+		this.my_chal_seq = my_chal_seq;
 	}
-
 	public int getChal_seq() {
 		return chal_seq;
 	}
-
 	public void setChal_seq(int chal_seq) {
 		this.chal_seq = chal_seq;
 	}
-
-	public String getChal_s_date() {
-		return chal_s_date;
+	public String getAttend_id() {
+		return attend_id;
 	}
-
-	public void setChal_s_date(String chal_s_date) {
-		this.chal_s_date = chal_s_date;
+	public void setAttend_id(String attend_id) {
+		this.attend_id = attend_id;
 	}
-
-	public String getChal_e_date() {
-		return chal_e_date;
-	}
-
-	public void setChal_e_date(String chal_e_date) {
-		this.chal_e_date = chal_e_date;
-	}
-
 	public String getChal_time() {
 		return chal_time;
 	}
-
 	public void setChal_time(String chal_time) {
 		this.chal_time = chal_time;
 	}
-
 	public String getMy_chal_memo() {
 		return my_chal_memo;
 	}
-
 	public void setMy_chal_memo(String my_chal_memo) {
 		this.my_chal_memo = my_chal_memo;
 	}
-
-	public String getM_id() {
-		return m_id;
+	public int getChal_num() {
+		return chal_num;
 	}
-
-	public void setM_id(String m_id) {
-		this.m_id = m_id;
+	public void setChal_num(int chal_num) {
+		this.chal_num = chal_num;
 	}
 	
 	
-
 }

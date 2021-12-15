@@ -304,34 +304,58 @@
 								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
 
 							</div>
-							<form action="writerBoardService" method="post">
-								<table border="1">
+							<%
+request.setCharacterEncoding("euc-kr");
+int article_seq = Integer.parseInt(request.getParameter("article_seq"));
+BoardDAO dao = new BoardDAO();
+BoardVO bvo = dao.getBoard(article_seq);
 
+%>
+
+							<form action="1_list.jsp" method="post">
+								<table border="1">
+									<tr>
+										<td>글번호</td>
+										<td><%=bvo.getArticle_seq()%></td>
+									</tr>
+									<tr>
+										<td>조회수</td>
+										<td><%=bvo.getArticle_count()%></td>
+									</tr>
 									<tr>
 										<td>글쓴이</td>
-										<td><input type="text" name="m_id"></td>
-									</tr>
-									<tr>
-										<td>비밀번호</td>
-										<td><input type="text" name="article_pwd"></td>
-									</tr>
-									<tr>
-										<td>제목</td>
-										<td><input type="text" name="article_subject"></td>
+										<td><%=bvo.getM_id()%></td>
 									</tr>
 									<tr>
 										<td>카테고리</td>
-										<td><input type="text" name="article_kind"></td>
+										<td><%=bvo.getArticle_kind()%></td>
 									</tr>
 									<tr>
-										<td>내용</td>
-										<td><textarea rows="10" cols="20" name="article_content"></textarea></td>
+										<td>작성일</td>
+										<td><%=bvo.getReg_date()%></td>
 									</tr>
 									<tr>
-										<td colspan="2"><input type="submit" value="글쓰기"></td>
+										<td>글제목</td>
+										<td><%=bvo.getArticle_subject()%></td>
 									</tr>
+									<tr>
+										<td>글내용</td>
+										<td><%=bvo.getArticle_content()%></td>
+									</tr>
+									<tr>
+										<td colspan="2"><input type="submit" value="글목록"></td>
+									</tr>
+
+
 								</table>
 							</form>
+							<button
+								onclick="location.href = 'updateBoardService?article_seq=<%=bvo.getArticle_seq()%>'">수정</button>
+							<button
+								onclick="location.href = '1_deleteForm.jsp?article_seq=<%=bvo.getArticle_seq()%>'">삭제</button>
+							<!--<button href="1_deleteForm.jsp?article_seq=<%//<%=rs.getInt("article_seq")%>">삭제</button>-->
+							<!-- <button onclick = "location.href = '1_deleteForm.jsp'">삭제</button> -->
+
 						</div>
 					</div>
 

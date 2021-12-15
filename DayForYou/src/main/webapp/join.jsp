@@ -40,44 +40,44 @@
 
 
 	<div class="container-login100">
-		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30" style = "box-shadow: 0px 0px 20px #d1febc;">
 			<form class="login100-form validate-form" action="joinService">
-				<span class="login100-form-title p-b-37"> sing up </span>
+			<img src = "img/main-img/logo3.png" style = "align: center; position: relative; right: 80px;">
+				<span class="login100-form-title p-b-37" style="color: black;"> sing up </span>
 
 				<div class="wrap-input100 validate-input m-b-20">
-					<input class="input100" type="text" name="id" placeholder="id">
+					<input class="input100" type="text" name="id" placeholder="id" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-25">
-					<input class="input100" type="password" name="pw" placeholder="pw">
+					<input class="input100" type="password" name="pw" placeholder="pw" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20">
 
-					<input class="input100" type="text" name="name" placeholder="name">
+					<input class="input100" type="text" name="name" placeholder="name" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20">
-					<input class="input100" type="text" name="nick" placeholder="nick">
+					<input class="input100" type="text" name="nick" placeholder="nick" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20">
 					<input class="input100" type="text" name="phone"
-						placeholder="phone"> <span class="focus-input100"></span>
+						placeholder="phone" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;"> <span class="focus-input100" ></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20">
 					<input class="input100" type="text" name="email"
-						placeholder="email"> <span class="focus-input100"></span>
+						placeholder="email" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;"> <span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-20">
-					<input class="input100" type="text" name="birthday"
-						placeholder="birthday"> <span class="focus-input100"></span>
+					<input class="input100" type="text" name="birthday"  placeholder="2001-01-01" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 				</div>
 				<div class="wrap-input100 " align="center">
 
@@ -87,16 +87,16 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input m-b-25" align="center">
+				<div class="wrap-input100 validate-input m-b-25" align="center" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<table>
 						<tr>
-							<th><input type="radio" id="man" value="M" name="gender">
+							<th><input type="radio" id="man" value="M" name="gender" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 							
-							<label for="man">MAN</label>
+							<label for="man" style="color: #006600">MAN</label>
 							</th>
 							<td style="padding: 29px;"></td>
-							<th><input type="radio" id="woman" value="W" name="gender"> <label
-								for="woman">WOMAN</label></th>
+							<th><input type="radio" id="woman" value="W" name="gender" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;"> 
+							<label for="woman" style="color: #006600" >WOMAN</label></th>
 							<span class="focus-input100"></span>
 						</tr>
 
@@ -108,10 +108,10 @@
 						<tr>
 
 							<th><input type="radio" id="student" name="job"
-								value="student"> <label for="student">student</label></th>
+								value="student"> <label for="student" style="color: #006600">student</label></th>
 							<td style="padding: 20px;"></td>
 							<th><input type="radio" id="worker" name="job"
-								value="worker"> <label for="worker">worker</label></th>
+								value="worker"> <label for="worker" style="color: #006600">worker</label></th>
 						</tr>
 
 					</table>
@@ -121,11 +121,11 @@
 
 				<div class="wrap-input100 validate-input m-b-25">
 					<input class="input100" type="text" name="address"
-						placeholder="address"> <span class="focus-input100"></span>
+						placeholder="address" style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;"> <span class="focus-input100"></span>
 				</div>
 				<br> <br>
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn" type="submit">submit</button>
+					<button class="login100-form-btn" type="submit" style = "background-color: #a9da81; box-shadow: 0px 0px 20px #d1febc;">submit</button>
 				</div>
 
 

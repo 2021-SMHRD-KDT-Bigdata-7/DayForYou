@@ -23,9 +23,6 @@ public class Mychallengepage extends HttpServlet {
 			throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		제목이랑 참가아이디 넣기
-		
-		
 		MemberVo vo = (MemberVo) session.getAttribute("vo");
 		DAO dao = new DAO();
 		// SelectAll()은 ArrayList<MemberVO>리턴
@@ -33,6 +30,7 @@ public class Mychallengepage extends HttpServlet {
 		ArrayList<MyChallengeVO> mvo = dao.MychallengeSelectAll(vo.getId());
 
 		if (mvo != null) {
+			System.out.println("mychallengepage.servlet에 있는"+vo.getId());
 			System.out.println("조회 성공");
 			// request영역에 attribute 추가
 			request.setAttribute("mvo", mvo);

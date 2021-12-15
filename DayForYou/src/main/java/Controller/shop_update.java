@@ -12,13 +12,13 @@ import model.DAO;
 import model.MemberVo;
 import model.shopVO;
 
-@WebServlet("/shop_insert")
-public class shop_insert extends HttpServlet {
+@WebServlet("/shop_update")
+public class shop_update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("euc-kr");
+
+request.setCharacterEncoding("euc-kr");
 		
 		HttpSession session = request.getSession();
 		MemberVo vo = (MemberVo) session.getAttribute("vo");
@@ -34,23 +34,21 @@ public class shop_insert extends HttpServlet {
 		
 		DAO dao = new DAO();
 		
-		int cnt = dao.shop_insert(shop_seq, goods_name, goods_category, goods_point, m_id);
+		int cnt = dao.shop_update(shop_seq, goods_name, goods_category, goods_point);
 		
 		
 		if(cnt > 0) {
-			System.out.println("추가 성공");
+			System.out.println("수정성공");
 		
 	        
 		}else {
-			System.out.println("추가 실패");
+			System.out.println("수정실패");
 		}
 		
 		// 페이지 이동
 		response.sendRedirect("shopadmin.jsp");
 	}
-		
-			
-		
 	
+	}
 
-}
+

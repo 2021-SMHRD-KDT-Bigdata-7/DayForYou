@@ -8,16 +8,13 @@ public class shopVO {
 	private String goods_pic1;
 	private String goods_pic2;
 	private int goods_point;
-	private int buy_day;
-	private int exp_day;
+	private String buy_day;
+	private String exp_day;
 	private String m_id;
 	
-	
-	
-	
-	
+	public shopVO() {}
 	public shopVO(int shop_seq, String goods_name, String goods_category, String goods_pic1, String goods_pic2,
-			int goods_point, int buy_day, int exp_day, String m_id) {
+			int goods_point, String buy_day, String exp_day, String m_id) {
 		super();
 		this.shop_seq = shop_seq;
 		this.goods_name = goods_name;
@@ -28,9 +25,6 @@ public class shopVO {
 		this.buy_day = buy_day;
 		this.exp_day = exp_day;
 		this.m_id = m_id;
-	}
-	public shopVO() {
-		
 	}
 	public int getShop_seq() {
 		return shop_seq;
@@ -68,16 +62,16 @@ public class shopVO {
 	public void setGoods_point(int goods_point) {
 		this.goods_point = goods_point;
 	}
-	public int getBuy_day() {
+	public String getBuy_day() {
 		return buy_day;
 	}
-	public void setBuy_day(int buy_day) {
+	public void setBuy_day(String buy_day) {
 		this.buy_day = buy_day;
 	}
-	public int getExp_day() {
+	public String getExp_day() {
 		return exp_day;
 	}
-	public void setExp_day(int exp_day) {
+	public void setExp_day(String exp_day) {
 		this.exp_day = exp_day;
 	}
 	public String getM_id() {
@@ -86,9 +80,6 @@ public class shopVO {
 	public void setM_id(String m_id) {
 		this.m_id = m_id;
 	}
-	
-	
-	
 	
 	
 	

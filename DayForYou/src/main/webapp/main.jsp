@@ -95,7 +95,7 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
-                        <a href="index.html" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                                     <li><a href="main.jsp">Home</a></li>
                                     <li><a href="my.html">Calendar</a>
                                         <ul class="dropdown">
-                                            <li><a href="myCalendar.html">Calendar</a></li>
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
                                             <li><a href="Diarylist.jsp">Diary</a></li>
                                            <!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
@@ -183,7 +183,7 @@
                                     <!-- <li><a href="about-us.html">Portfolio</a></li> -->
                                     
 
-                                     <li><a href="mypage.html">MyPage</a></li>
+                                     <li><a href="mypage.jsp">MyPage</a></li>
                                      <li><a href="shop.jsp">Point shop</a></li>
                                            <!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
@@ -333,7 +333,7 @@
                         <img src="img/main-img/dd.jpg" alt="">
                         <!-- Catagory Title -->
                         <div class="catagory-title">
-                            <a href="#">Check Schedule!</a>
+                            <a href="myCalendar.jsp">Check Schedule!</a>
                         </div>
                     </div>
                 </div>

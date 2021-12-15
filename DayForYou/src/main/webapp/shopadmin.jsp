@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.shopVO"%>
 <%@page import="model.DAO"%>
 <%@page import="model.MemberVo"%>
@@ -17,7 +18,7 @@
 	DAO dao = new DAO();
 	
 	shopVO svo = new shopVO();
-	
+	ArrayList<shopVO> goods = dao.selectAllGoods();
 	
 	
 %>
@@ -27,92 +28,16 @@
 		<th>카테고리</th>
 		<th>제품이름</th>
 		<th>상품포인트</th>
-		<th><a class="btn btn-outline-dark mt-auto" href="#">추가</a></th>
-		<th><a class="btn btn-outline-dark mt-auto" href="#">수정</a></th>
-		<th><a class="btn btn-outline-dark mt-auto" href="#">삭제</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="shop_insert">추가</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="#none">수정</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="#none">삭제</a></th>
+		<%for(int i =0; i<goods.size(); i++){ %>
 		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
+			<td><%=goods.get(i).getGoods_category() %></td>
+			<td><%=goods.get(i).getGoods_name()%></td>
+			<td><%=goods.get(i).getGoods_point() %></td>
 		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<td><%=svo.getGoods_category() %></td>
-		<td><%=svo.getGoods_name() %></td>
-		<td><%=svo.getGoods_point() %></td>
-		</tr>
-		
-		<tr>
-			
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<td><%=svo.getGoods_category() %></td>
-		<td><%=svo.getGoods_name() %></td>
-		<td><%=svo.getGoods_point() %></td>
-		</tr>
-		
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<tr>
-			<td><%=svo.getGoods_category() %></td>
-			<td><%=svo.getGoods_name() %></td>
-			<td><%=svo.getGoods_point() %></td>
-		</tr>
-		<td><%=svo.getGoods_category() %></td>
-		<td><%=svo.getGoods_name() %></td>
-		<td><%=svo.getGoods_point() %></td>
-		</tr>
-		
-
+		<%} %>
 	</table>
 	<tr><tr>
 	<div align="center"margin"10px">
