@@ -28,7 +28,7 @@
 		<th>카테고리</th>
 		<th>제품이름</th>
 		<th>상품포인트</th>
-		<th><a class="btn btn-outline-dark mt-auto" href="shop_insert">추가</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="#none">추가</a></th>
 		<th><a class="btn btn-outline-dark mt-auto" href="#none">수정</a></th>
 		<th><a class="btn btn-outline-dark mt-auto" href="#none">삭제</a></th>
 		<%for(int i =0; i<goods.size(); i++){ %>

@@ -26,6 +26,12 @@ public class shopVO {
 		this.exp_day = exp_day;
 		this.m_id = m_id;
 	}
+	public shopVO(String ca, String gn, int gp) {
+		this.goods_name = goods_name;
+		this.goods_category = goods_category;
+		this.goods_point = goods_point;
+		
+	}
 	public int getShop_seq() {
 		return shop_seq;
 	}
