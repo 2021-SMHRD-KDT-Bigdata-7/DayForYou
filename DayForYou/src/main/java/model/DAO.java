@@ -840,7 +840,7 @@ public int shop_update(int shop_seq,String goods_name, String goods_category, St
 	connection();
 
 	try {
-		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where =shop.seq=?";
+		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where =shop_seq=?";
 
 		psmt = conn.prepareStatement(sql);
 		
