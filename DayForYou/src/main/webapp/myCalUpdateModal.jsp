@@ -143,7 +143,7 @@
 	        modalOff()
 	        // 원래 기능이 다시 작동하게 만드는 방법은?
 	        top.window.location.reload(true);
-	       	window.opener.parent.location.reload(); // 부모창 새로고침 
+	      	window.opener.parent.location.reload(); // 부모창 새로고침 
 			window.self.close(); // 현재 팝업 닫기
 
 
@@ -154,7 +154,7 @@
 	        if(evTarget.classList.contains("modal-overlay")) {
 	            modalOff()
 			    top.window.location.reload(true);
-		       	window.opener.parent.location.reload(); // 부모창 새로고침 
+			    window.opener.parent.location.reload(); // 부모창 새로고침 
 				window.self.close(); // 현재 팝업 닫기
 
 	    	}
