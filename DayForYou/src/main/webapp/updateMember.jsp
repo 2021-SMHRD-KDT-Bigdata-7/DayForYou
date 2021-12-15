@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+
+
     <!-- Title -->
     <title>Developer Sample 2</title>
 
@@ -51,6 +53,8 @@
 			out.print(vo);
 
 		%>
+		
+		
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
@@ -306,37 +310,25 @@
      		<td>
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
-	                     <a>성별/직종</a>
+						<a>성별(W/M)</a>
 	                     	<br><br>
-	                    <table>
-		                        <tr class = "iu">
-		                        	<%if(vo.getGender().equals("M")){ %>
-		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
-		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
-		                        	<%}else{ %>
-		                        		<td>man<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
-		             					<td>woman<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getGender()%>" name="m_gender" id="name" required></td>
-		                        	<%} %>
-	                        	</tr>
-	                          	 <tr>
-	     
-		                        	<%if(vo.getJob().equals("student")){ %>
-		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
-		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
-		                        	<%}else{ %>
-		                        		<td>학생<input type="radio" style = "width:15px; height:15px; border:1px; font-size:50px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
-		             					<td>직장인<input type="radio" style = "width:15px; height:15px; border:1px;" value = "<%=vo.getJob()%>" name="m_job" id="name" required></td>
-		                        	<%} %>
-	                        	</tr>
-	                        </table>
-	                        <span class="highlight"></span>
-	                        <span class="bar"></span>
-	                         
+	        
+	                  <input type = "text" value=<%=vo.getGender()%> name = "m_gender" id = "gender" required style = "font-size: 15px;">
+ 
 	            	 </div>
 	              </div>
-	     
-	          
-     		
+	              
+	              <div class="col-12 col-md-6">
+	                  <div class="group">
+	                     <a>직종(student/worker)</a>
+	                     	<br><br>
+	             
+	               			<input type = "text" value=<%=vo.getJob()%> name = "m_job" id = "job" required style = "font-size: 15px;">
+	               		
+ 
+	            	 </div>
+	              </div>
+
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>주소</a>
@@ -350,7 +342,7 @@
 
      	</table>
      	<div style= "position: relative; left: 300px;">
-     	<input type = "submit" value = "수정하기" style="width: 100px; height:50px; background-color:smokewhite;">
+     	<input type = "submit" value = "수정하기" style="width: 100px; height:40px; background-color:smokewhite; font-size: 15px;">
      	</div>
      	</form>
      	
