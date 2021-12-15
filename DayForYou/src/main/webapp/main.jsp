@@ -183,7 +183,7 @@
                                     <!-- <li><a href="about-us.html">Portfolio</a></li> -->
                                     
 
-                                     <li><a href="mypage.html">MyPage</a></li>
+                                     <li><a href="mypage.jsp">MyPage</a></li>
                                      <li><a href="shop.jsp">Point shop</a></li>
                                            <!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
