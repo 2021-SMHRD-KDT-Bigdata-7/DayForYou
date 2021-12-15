@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.shopVO"%>
 <%@page import="model.DAO"%>
 <%@page import="model.MemberVo"%>
@@ -25,8 +26,9 @@
 
 	DAO dao = new DAO();
 	
-	shopVO svo = new shopVO();
+	ArrayList<shopVO> goods = dao.selectAllGoods();
 	
+	shopVO svo = new shopVO();	
 	
 	
 %>
@@ -67,17 +69,19 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                
+                <%for(int i = 0; i < goods.size(); i++){ %>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c1.png" alt="..." />
+                            <img class="card-img-top" src="<%=goods.get(i).getGoods_pic1()%>" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">»Ñ¸µÅ¬</h5>
+                                    <h5 class="fw-bolder"><%=goods.get(i).getGoods_name()%></h5>
                                     <!-- Product price-->
-                                  p)18.000 
+                                  p)<%=goods.get(i).getGoods_point()%> 
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -86,156 +90,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c2.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">±³ÃÌ Çã´Ï ÄÞº¸</h5>                                    
-                                    <!-- Product price-->
-                                    p)18.000
-                                    
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c3.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">½ºÅ¸¹÷½º ¾Æ¸Þ¸®Ä«³ë</h5>
-                                    <!-- Product price-->
-                                    p)4.100
-                                    
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                               <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c4.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">CGV¿µÈ­Ç¥</h5>                          
-                                    <!-- Product price-->
-                                    p)13.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                               <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                           
-                           
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c5.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">½Å¼¼°è »óÇ°±Ç</h5>
-                                    <!-- Product price-->
-                                    p)50.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                               <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c6.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">»þ³Ú ¸³½ºÆ½</h5>
-                                    <!-- Product price-->
-                                    p)48.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c7.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">½ºÅ¸¹÷½º Ä«Æä¶ó¶¼</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        
-                                    </div>
-                                    <!-- Product price-->
-                                    p)4.600
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./img/shop/c8.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ÀÌµð¾ß ÅäÇÇ³Ó¶ó¶¼</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        
-                                    </div>
-                                    <!-- Product price-->
-                                    p)4.000
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <%} %>
+       
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">

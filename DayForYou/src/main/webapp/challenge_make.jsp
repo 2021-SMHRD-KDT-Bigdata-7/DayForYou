@@ -36,8 +36,9 @@
 	
 %>
 <% if(vo==null){ %>
-<script> alert("로그인이 필요합니다")</script>
-<%} %>
+<script> alert("로그인이 필요합니다")
+	location.href ="login.jsp";
+<%} %></script>
 	<!-- 스크립트릿 -->
 
 	<!-- Preloader -->

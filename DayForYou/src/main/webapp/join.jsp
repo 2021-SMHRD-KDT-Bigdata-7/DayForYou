@@ -77,7 +77,7 @@
 
 				<div class="wrap-input100 validate-input m-b-20">
 					<input class="input100" type="text" name="birthday"
-						placeholder="birthday"> <span class="focus-input100"></span>
+						placeholder="2000-01-01"> <span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 " align="center">
 

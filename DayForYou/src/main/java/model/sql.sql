@@ -139,4 +139,26 @@ INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m
 
 select * from tbl_member;
 INSERT INTO tbl_shop VALUES (TBL_SHOP_SEQ.NEXTVAL,'양념치킨', '치킨', 'null', 'null', 18000, sysdate, '2022/02/31', 'admin_yesno');
+select * from tbl_shop order by shop_seq desc;
 select * from tbl_shop;
+
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken3.png' WHERE shop_seq = 6;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken4.png' WHERE shop_seq = 7;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken5.png' WHERE shop_seq = 8;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/chicken6.png' WHERE shop_seq = 9;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c4.png' WHERE shop_seq = 10;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/m2.png' WHERE shop_seq = 11;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/m3.png' WHERE shop_seq = 12;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c5.png' WHERE shop_seq = 13;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/g2.png' WHERE shop_seq = 14;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/g1.png' WHERE shop_seq = 15;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/g4.png' WHERE shop_seq = 16;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c3.png' WHERE shop_seq = 17;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/co1.png' WHERE shop_seq = 18;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c7.png' WHERE shop_seq = 19;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c8.png' WHERE shop_seq = 20;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/c6.png' WHERE shop_seq = 21;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/h1.png' WHERE shop_seq = 22;
+UPDATE tbl_shop SET shop_pic1 = './img/shop/h2.png' WHERE shop_seq = 23;
+
+
