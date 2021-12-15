@@ -342,10 +342,10 @@
 
      	</table>
      	<div style= "position: relative; left: 300px;">
-     	<input type = "submit" value = "수정하기" style="width: 100px; height:40px; background-color:smokewhite; font-size: 15px;">
+     	<input type = "submit" value = "수정하기" style="width: 70px; height:30px; background-color:smokewhite; font-size: 12px;">
      	</div>
      	</form>
-     	
+     	<button onclick="history.back()" style="width: 70px; height:30px; background-color:smokewhite; font-size: 12px; position: relative; left: 220px; bottom: 30px;">취소</button>
      	</div>
      	<br><br>
      	<hr>
