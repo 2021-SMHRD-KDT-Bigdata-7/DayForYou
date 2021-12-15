@@ -803,21 +803,23 @@ public class DAO {
 		return arr;
 	}
 	
-	public int shop_insert(int shop_seq, String goods_name, String goods_category, String goods_point) {
+	//===================================shopinsert=============
+	
+	public int shop_insert(int shop_seq, String goods_name, String goods_category, String goods_point,String m_id) {
 		
 		shopVO svo = new shopVO();
 		connection();
 		try {
-		sql="inser into tbl_shop values(?,?,?,?)";	
+		sql="inser into tbl_shop values(shop_seq.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
 		
 		psmt = conn.prepareStatement(sql);
 
-		psmt.setInt(1, shop_seq);
-		psmt.setString(2, goods_name);
-		psmt.setString(3, goods_category);
-		psmt.setString(4, goods_point);
 		
-		cnt = psmt.executeUpdate();
+		psmt.setString(1, goods_name);
+		psmt.setString(2, goods_category);
+		psmt.setString(3, goods_point);
+		psmt.setString(4, m_id);
+		
 		
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -828,5 +830,55 @@ public class DAO {
 
 	return cnt;
 
+}
+	
+
+//======================shopupdate===========================
+
+public int shop_update(int shop_seq,String goods_name, String goods_category, String goods_point) {
+	shopVO svo = new shopVO();
+	connection();
+
+	try {
+		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where =shop.seq=?";
+
+		psmt = conn.prepareStatement(sql);
+		
+		psmt.setString(1, goods_name);
+		psmt.setString(2, goods_category);
+		psmt.setString(3, goods_point);
+		psmt.setInt(4, shop_seq);
+		
+		cnt = psmt.executeUpdate();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return cnt;
+}
+//===================shop_delete=============
+public int shop_delete(int shop_seq) {
+	shopVO svo = new shopVO();
+	connection();
+	try {
+		sql = "DELETE FROM tbl_shop WHERE shop_seq=?";
+
+		psmt = conn.prepareStatement(sql);
+		psmt.setInt(1, shop_seq);
+	
+		cnt = psmt.executeUpdate();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return cnt;
+}
+
+
+	
 }
 
