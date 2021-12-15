@@ -41,7 +41,9 @@
 </head>
 
 <body>
+
 <%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
+<%System.out.println(vo.getId()); %>
 	<!-- 스크립트릿 --!>
 	<%
 	DAO dao = new DAO();

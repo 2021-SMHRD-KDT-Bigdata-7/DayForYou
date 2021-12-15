@@ -33,7 +33,6 @@ public class ChallengeSingleService extends HttpServlet {
 		if(zvo != null) {
 			System.out.println("성공");
 		// 페이지 이동
-			System.out.println(zvo.getChalSeq());
 			request.setAttribute("zvo", zvo);
 			
 			// request영역에 데이터를 저장해서 이동하려면 >> forward 

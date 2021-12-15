@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
@@ -68,6 +69,7 @@
 	<!-- 스크립트릿 -->
 	<%
 	challengeBoardVO zvo = (challengeBoardVO) request.getAttribute("zvo");
+	MemberVo vo = (MemberVo)session.getAttribute("vo");
 	
 	DAO dao = new DAO();
 	%>
@@ -416,6 +418,7 @@
 					<a href="#"
 						class="d-flex align-items-center justify-content-center"><i
 						class="fa fa-instagram"></i></a>
+							 <%System.out.println(vo.getId());%>
 				</div>
 			</div>
 		</div>
@@ -450,15 +453,17 @@
 	<!-- Active js -->
 	<script src="js/active.js"></script>
 	 <script> 
-		 <%int chal_Seq = dao.ChallengeCheck(zvo.getChalSeq());%>
+		 <%int num = dao.ChallengeCheck(vo.getId(),zvo.getChalSeq());%> 
+	 <%System.out.println("number"+num);%>
+	 <%System.out.println(zvo.getChalSeq());%>
 		 document.getElementById("challcheck").onclick = function() {
-		 		if(<%=chal_Seq%> == 999999){
-						 alert('전송 실패');
+		 		if(<%=num%> == 999999){
+						 alert('현재 챌린지 참가중 입니다.');
 					}else{
-						<%dao.ChallengeCntUp(chal_Seq);%>
-						location.href ="MyChallengeinsert?chal_seq=<%=chal_Seq%>";
+						<%dao.ChallengeCntUp(zvo.getChalSeq());%>
+						location.href ="MyChallengeinsert?chal_seq=<%=zvo.getChalSeq()%>";
 			}
-		 }
+		 } 
 	 </script>
 
 	 

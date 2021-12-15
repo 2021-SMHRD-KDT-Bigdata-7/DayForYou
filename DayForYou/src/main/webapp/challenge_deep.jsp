@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
@@ -28,6 +29,8 @@
 <body>
 	<!-- 스크립트릿 -->
 	<%
+	MemberVo vo = (MemberVo) session.getAttribute("vo");
+	
 	DAO dao = new DAO();
 	String chal_cat1 = request.getParameter("chal_cat1");
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat(chal_cat1);
