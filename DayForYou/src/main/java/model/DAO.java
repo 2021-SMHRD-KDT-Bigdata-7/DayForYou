@@ -847,7 +847,7 @@ public class DAO {
 	
 	//===================================shopinsert=============
 	
-	public int shop_insert(String ca, String gn, int gp, String m_id) {
+	public int shop_insert(String goods_name, String goods_category, int goods_point, String m_id) {
 		
 		shopVO svo = new shopVO();
 		connection();
@@ -857,19 +857,14 @@ public class DAO {
 		psmt = conn.prepareStatement(sql);
 
 		
-		psmt.setString(1, gn);
-		psmt.setString(2, ca);
-		psmt.setInt(3, gp);
+		psmt.setString(1, goods_name);
+		psmt.setString(2, goods_category);
+		psmt.setInt(3, goods_point);
 		psmt.setString(4, m_id);
 		
 		cnt = psmt.executeUpdate(); 
 		
-		if(cnt>0) {
-			ArrayList<shopVO> goods = new ArrayList<>();
-			goods.add(svo);
-			System.out.println("추가 성공");
-			
-		}
+		
 	} catch (Exception e) {
 		e.printStackTrace();
 	} finally {

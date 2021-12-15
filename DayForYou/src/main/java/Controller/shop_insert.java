@@ -1,8 +1,6 @@
 package Controller;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,35 +21,32 @@ public class shop_insert extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 		
 		HttpSession session = request.getSession();
-		
+		MemberVo vo = (MemberVo) session.getAttribute("vo");
 
+		shopVO svo = new shopVO();
 		
-		String ca = request.getParameter("ca");
-		String gn = request.getParameter("gn");
-		int gp = Integer.parseInt( request.getParameter("gp"));
+		String m_id = vo.getId();
 		
-		
+		int shop_seq = Integer.parseInt(request.getParameter("shop_seq"));
+		String goods_name = request.getParameter("goods_name");
+		String goods_category = request.getParameter("goods_category");
+		int goods_point = Integer.parseInt(request.getParameter("goods_point"));
 		
 		DAO dao = new DAO();
-		MemberVo vo = new MemberVo();
 		
-		int cnt = dao.shop_insert(ca, gn, gp, vo.getId());
+		int cnt = dao.shop_insert(goods_name, goods_category, goods_point, m_id);
 		
 		
 		if(cnt > 0) {
-			request.setAttribute("shvo",new shopVO(gn,ca,gp));
-			
-			RequestDispatcher rd = request.getRequestDispatcher("shopadd.jsp");
-	        rd.forward(request, response);
 			System.out.println("추가 성공");
-			
+		
 	        
 		}else {
 			System.out.println("추가 실패");
-			response.sendRedirect("shopadmin.jsp");
 		}
 		
 		// 페이지 이동
+		response.sendRedirect("shopadmin.jsp");
 	}
 		
 			

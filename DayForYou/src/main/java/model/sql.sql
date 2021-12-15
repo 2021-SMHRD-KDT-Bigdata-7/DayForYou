@@ -139,7 +139,7 @@ INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m
 INSERT INTO tbl_nea (article_kind, article_subject, article_content, reg_date, m_id, article_file1, article_file2, article_file3, article_file4, article_file5, article_count) VALUES ('article_kind 100', 'article_subject 100', 'article_content 100', sysdate, 'm_id 10', 'article_file1 100', 'article_file2 100', 'article_file3 100', 'article_file4 100', 'article_file5 100', 100);
 
 select * from tbl_member;
-INSERT INTO tbl_shop VALUES (TBL_SHOP_SEQ.NEXTVAL,'양념치킨', '치킨', 'null', 'null', 18000, sysdate, '2022-02-31', 'admin_yesno');
+INSERT INTO tbl_shop VALUES (TBL_SHOP_SEQ.NEXTVAL,'양념치킨', '치킨', 'null', 'null', 18000, sysdate, sysdate, 'admin_yesno');
 select * from tbl_shop order by shop_seq desc;
 select * from tbl_shop;
 
