@@ -7,9 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="1_writePro.jsp" method ="post">
-	<table boder="1">
+	<form action="writerBoardService" method ="post">
+	<table border="1">
+	
 		<tr><td>글쓴이 </td><td><input type = "text" name="m_id"></td></tr>
+		<tr><td>비밀번호 </td><td><input type = "text" name="article_pwd"></td></tr>
 		<tr><td>제목 </td><td><input type = "text" name="article_subject"></td></tr>
 		<tr><td>카테고리 </td><td><input type = "text" name="article_kind"></td></tr>
 		<tr><td>내용 </td>

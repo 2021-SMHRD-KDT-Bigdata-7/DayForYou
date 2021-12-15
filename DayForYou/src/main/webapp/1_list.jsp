@@ -1,3 +1,6 @@
+<%@page import="model.BoardVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.BoardDAO"%>
 <%@page import="java.sql.Timestamp"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -13,35 +16,30 @@
 </head>
 <body>
 <%
-Class.forName("oracle.jdbc.driver.OracleDriver");
+BoardDAO dao = new BoardDAO();
+ArrayList<BoardVO> boards = dao.getAllBoard();
 
-String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
-String dbid = "hr";
-String dbpw = "hr";
-Connection con = DriverManager.getConnection(url, dbid, dbpw);
-
-
-String sql = "select * from tbl_nea";
-PreparedStatement psmt = con.prepareStatement(sql);
-ResultSet rs = psmt.executeQuery();
 
 %>
 <h1>jsp5/list.jsp</h1>
 
 <table border= "1">
-<tr><td>글 번호</td><td>제목</td><td>카테고리</<td>작성자</td><td>날짜</td><td>조회수</td></tr>
+<tr><td>글 번호</td><td>제목</td><td>카테고리</td><td>작성자</td><td>날짜</td><td>조회수</td></tr>
 
 <%
-while(rs.next()){
+
+for(int i = 0; i < boards.size(); i++){
 %>
-<tr><td> <%=rs.getInt("article_seq") %></td>
-<td><%=rs.getString("article_subject") %></td>
-<td><%=rs.getString("article_kind") %></td>
-<td><%=rs.getString("m_id") %></td>
-<td><%=rs.getTimestamp("reg_date") %></td>
-<td><%= rs.getInt("article_count") %></td></tr>
+<tr><td> <%=boards.get(i).getArticle_seq()%></td>
+<td><a href="1_content.jsp?article_seq=<%=boards.get(i).getArticle_seq()%>"><%=boards.get(i).getArticle_subject() %></a></td>
+<td><%=boards.get(i).getArticle_kind() %></td>
+<td><%=boards.get(i).getM_id() %></td>
+<td><%=boards.get(i).getReg_date() %></td>
+<td><%=boards.get(i).getArticle_count() %></td></tr>
 <%} %>
 
 </table>
+<button onclick = "location.href = '1_writeForm.jsp'">글작성</button>
+
 </body>
 </html>
