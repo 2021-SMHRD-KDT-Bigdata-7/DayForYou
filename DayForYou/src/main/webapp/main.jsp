@@ -1,3 +1,6 @@
+<%@page import="model.MemberVo"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +23,12 @@
 </head>
 
 <body>
-    <!-- Preloader -->
+
+		
+			<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
+		
+			
+	<!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
             <div id="original-load"></div>
@@ -34,7 +42,7 @@
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="modal-body">
-                        <h5 class="title">ê²Œì‹œê¸€ ê²€ìƒ‰</h5>
+                        <h5 class="title">°Ô½Ã±Û °Ë»ö</h5>
                         <form action="#" class="newsletterForm" method="post">
                             <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
                             <button type="submit" class="btn original-btn">Subscribe</button>
@@ -57,11 +65,11 @@
                         <div class="breaking-news-area">
                             <div id="breakingNewsTicker" class="ticker">
                                 <ul>
-                                    <li><a href="#">12ì›” ì£¼ìš” ê³µì§€ì‚¬í•­ í™•ì¸í•˜ê¸°</a></li>
-                                    <li><a href="#">ì§€ê¸ˆ ê°€ìž¥ ì¸ê¸°ìžˆëŠ” ì±Œë¦°ì§€ ë‘˜ëŸ¬ë³´ê¸°</a></li>
-                                    <li><a href="#">í™ˆ í™”ë©´ì—ì„œ ì´ ë‹¬ì˜ ì´ë²¤íŠ¸ë¥¼ í™•ì¸í•˜ì„¸ìš”!</a></li>
-                                    <li><a href="#">ë°ì´í¬ìœ ë¡œ ê°„ë‹¨í•˜ê²Œ ì¼ì •ê´€ë¦¬ë¥¼ í•´ë³´ì„¸ìš”</a></li>
-                                    <li><a href="#">ì¶”ì²œ íƒ­ì—ì„œ ë‚˜ì—ê²Œ ë§žëŠ” ì±Œë¦°ì§€ ì•Œì•„ë³´ê¸°!</a></li>
+                                    <li><a href="#">12¿ù ÁÖ¿ä °øÁö»çÇ× È®ÀÎÇÏ±â</a></li>
+                                    <li><a href="#">Áö±Ý °¡Àå ÀÎ±âÀÖ´Â Ã§¸°Áö µÑ·¯º¸±â</a></li>
+                                    <li><a href="#">È¨ È­¸é¿¡¼­ ÀÌ ´ÞÀÇ ÀÌº¥Æ®¸¦ È®ÀÎÇÏ¼¼¿ä!</a></li>
+                                    <li><a href="#">µ¥ÀÌÆ÷À¯·Î °£´ÜÇÏ°Ô ÀÏÁ¤°ü¸®¸¦ ÇØº¸¼¼¿ä</a></li>
+                                    <li><a href="#">ÃßÃµ ÅÇ¿¡¼­ ³ª¿¡°Ô ¸Â´Â Ã§¸°Áö ¾Ë¾Æº¸±â!</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -102,7 +110,7 @@
 
                         <!-- Subscribe btn -->
                      <!--    <div class="subscribe-btn tag">
-                            <input type = "text" name = "text" placeholder = "íƒœê·¸ ê²€ìƒ‰"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
+                            <input type = "text" name = "text" placeholder = "ÅÂ±× °Ë»ö"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
                         </div> -->
 
                         <!-- Navbar Toggler -->
@@ -119,9 +127,14 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                            	<button class="button4">Logout</button>
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+										<%}else{ %>
+												<form action="loginService" method="post"></form>
+												<button class="button4" onclick = "location.href = 'login'">Login</button>
+										<%} %>
                                 <ul>
-                                    <li><a href="main.html">Home</a></li>
+                                    <li><a href="main.jsp">Home</a></li>
                                     <li><a href="my.html">Calendar</a>
                                         <ul class="dropdown">
                                             <li><a href="myCalendar.html">Calendar</a></li>
@@ -227,7 +240,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">Check Event</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2021 ì—°ë§ ì±Œë¦°ì§€ ë„ì „í•˜ê³  íŠ¹ë³„ í˜œíƒë°›ê¸°!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2021 ¿¬¸» Ã§¸°Áö µµÀüÇÏ°í Æ¯º° ÇýÅÃ¹Þ±â!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -257,7 +270,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">2022 Diary</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2022 ë‹¤ì´ì–´ë¦¬ë„ ë°ì´í¬ìœ ì™€ í•¨ê»˜</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2022 ´ÙÀÌ¾î¸®µµ µ¥ÀÌÆ÷À¯¿Í ÇÔ²²</a></h2>
                             </div>
                         </div>
                     </div>
@@ -278,8 +291,8 @@
                         <div class="single-blog-content">
                             <div class="line"></div>
                             <a href="#" class="post-tag">Notice</a>
-                            <h4><a href="#" class="post-headline">12ì›” 11ì¼ ì—…ë°ì´íŠ¸ ê´€ë ¨ ê³µì§€ì‚¬í•­</a></h4>
-                            <p>ì•ˆë…•í•˜ì„¸ìš” ì—¬ëŸ¬ë¶„ :) 12ì›” 11ì¼ ì—…ë°ì´íŠ¸ ê´€ë ¨ ê³µì§€ì‚¬í•­ìž…ë‹ˆë‹¤. ì—°ë§ì„ ë§žì´í•˜ì—¬ ë°ì´í¬ìœ ê°€ ë‹¤ì–‘í•œ ì´ë²¤íŠ¸ë“¤ì„ ì¤€ë¹„í–ˆì–´ìš”:) ì‹ ê·œ ì´ë²¤íŠ¸ê°€ ë§Žì´ ì—…ë°ì´íŠ¸ ë˜ì—ˆìœ¼ë‹ˆ ì´ë²¤íŠ¸ëž€ í™•ì¸í•´ì£¼ì„¸ìš”! ì¶”ê°€ë¡œ ê¸°ëŠ¥ê³¼ í•´ì‹œíƒœê·¸ê°€ ì—…ë°ì´íŠ¸...</p>
+                            <h4><a href="#" class="post-headline">12¿ù 11ÀÏ ¾÷µ¥ÀÌÆ® °ü·Ã °øÁö»çÇ×</a></h4>
+                            <p>¾È³çÇÏ¼¼¿ä ¿©·¯ºÐ :) 12¿ù 11ÀÏ ¾÷µ¥ÀÌÆ® °ü·Ã °øÁö»çÇ×ÀÔ´Ï´Ù. ¿¬¸»À» ¸ÂÀÌÇÏ¿© µ¥ÀÌÆ÷À¯°¡ ´Ù¾çÇÑ ÀÌº¥Æ®µéÀ» ÁØºñÇß¾î¿ä:) ½Å±Ô ÀÌº¥Æ®°¡ ¸¹ÀÌ ¾÷µ¥ÀÌÆ® µÇ¾úÀ¸´Ï ÀÌº¥Æ®¶õ È®ÀÎÇØÁÖ¼¼¿ä! Ãß°¡·Î ±â´É°ú ÇØ½ÃÅÂ±×°¡ ¾÷µ¥ÀÌÆ®...</p>
                             <a href="#" class="btn original-btn">Read More</a>
                         </div>
                     </div>
@@ -294,9 +307,9 @@
                         <div class="single-blog-content">
                             <div class="line"></div>
                             <a href="#" class="post-tag">Hot Contents</a>
-                            <h4><a href="#" class="post-headline">12ì›” 13ì¼ ì¸ê¸° ê²Œì‹œê¸€ í™•ì¸í•˜ê¸°</a></h4>
-                            <p>1ìœ„ ê¸€ ) ë‹‰ë„¤ìž„ 'ë™ë™ì´' ë‹˜ 'ë‚˜ì—ê² ë„ˆë¬´ íž˜ë“¤ì—ˆë˜ ì˜¤ëŠ˜ í•˜ë£¨'                
-                            2ìœ„ ê¸€) ë‹‰ë„¤ìž„ 'ë‹¬íŒ½ì´' ë‹˜ 'ë‚˜ëŠ” ì½”ë”©ì˜ ì œì™• í•˜í•˜í•˜'...</p> 
+                            <h4><a href="#" class="post-headline">12¿ù 13ÀÏ ÀÎ±â °Ô½Ã±Û È®ÀÎÇÏ±â</a></h4>
+                            <p>1À§ ±Û ) ´Ð³×ÀÓ 'µ¿µ¿ÀÌ' ´Ô '³ª¿¡°Õ ³Ê¹« Èûµé¾ú´ø ¿À´Ã ÇÏ·ç'                
+                            2À§ ±Û) ´Ð³×ÀÓ '´ÞÆØÀÌ' ´Ô '³ª´Â ÄÚµùÀÇ Á¦¿Õ ÇÏÇÏÇÏ'...</p> 
                          
                             <a href="#" class="btn original-btn">Read More</a>
                         </div>
@@ -345,9 +358,9 @@
                                 <!-- Blog Content -->
                                 <div class="single-blog-content">
                                     <div class="line"></div>
-                                    <a href="#" class="post-tag">ë°ì´í¬ìœ  ì¶”ì²œ ì±Œë¦°ì§€</a>
-                                    <h4><a href="#" class="post-headline">12ì›”, ì—°ë§ì„ ë§žì´í•˜ëŠ” ìš°ë¦¬</a></h4>
-                                    <p>í™˜ê²½ê¹Œì§€ ë°°ë ¤í•œ ê°€ì¹˜ìžˆëŠ” ì„ ë¬¼! ë‹¤ê°€ì˜¤ëŠ” ì—°ë§ì„ ë§žì•„ ì˜¤ê³ ê°€ëŠ” ì„ ë¬¼ì˜ ì´ë©´, ê³¼ëŒ€í¬ìž¥ìœ¼ë¡œ ì¸í•œ ì“°ë ˆê¸° ë°œìƒë¬¸ì œë¥¼ ì¤„ì´ê¸° íœ˜í•œ 'ê°€ì¹˜ìžˆëŠ” ì„ ë¬¼' ì±Œë¦°ì§€! í•¨ê»˜ í•  ìˆ˜ë¡ ë”°ëœ»í•´ì§€ëŠ” ë°ì´í¬ìœ ì˜ ì±Œë¦°ì§€ ì§€ê¸ˆ ë°”ë¡œ ê°€ê¸°!</p>
+                                    <a href="#" class="post-tag">µ¥ÀÌÆ÷À¯ ÃßÃµ Ã§¸°Áö</a>
+                                    <h4><a href="#" class="post-headline">12¿ù, ¿¬¸»À» ¸ÂÀÌÇÏ´Â ¿ì¸®</a></h4>
+                                    <p>È¯°æ±îÁö ¹è·ÁÇÑ °¡Ä¡ÀÖ´Â ¼±¹°! ´Ù°¡¿À´Â ¿¬¸»À» ¸Â¾Æ ¿À°í°¡´Â ¼±¹°ÀÇ ÀÌ¸é, °ú´ëÆ÷ÀåÀ¸·Î ÀÎÇÑ ¾²·¹±â ¹ß»ý¹®Á¦¸¦ ÁÙÀÌ±â ÈÖÇÑ '°¡Ä¡ÀÖ´Â ¼±¹°' Ã§¸°Áö! ÇÔ²² ÇÒ ¼ö·Ï µû¶æÇØÁö´Â µ¥ÀÌÆ÷À¯ÀÇ Ã§¸°Áö Áö±Ý ¹Ù·Î °¡±â!</p>
                                     <div class="post-meta">
                                         <p>By <a href="#">DayforYou team</a></p>
                                         <p>110 comments</p>
@@ -372,9 +385,9 @@
                                 <!-- Blog Content -->
                                 <div class="single-blog-content">
                                     <div class="line"></div>
-                                    <a href="#" class="post-tag">ì‹¤ì‹œê°„ ì¸ê¸° ì±Œë¦°ì§€</a>
-                                    <h4><a href="#" class="post-headline">í•˜ë£¨ 15ë¶„ í•¨ê»˜ ê±¸ì–´ìš”!</a></h4>
-                                    <p>í•˜ë£¨ ì¢…ì¼ ì±…ìƒ ì•žì— ì•‰ì•„ ëª¨ë‹ˆí„°ë§Œ ë“¤ì—¬ë‹¤ ë³´ì§„ ì•Šì•˜ë‚˜ìš”? ë°ì´í¬ìœ  ì‹¤ì‹œê°„ ì¸ê¸° ì±Œë¦°ì§€ 'í•˜ë£¨ 15ë¶„ ê±·ê¸°' ì–´ë•Œìš”? </p>
+                                    <a href="#" class="post-tag">½Ç½Ã°£ ÀÎ±â Ã§¸°Áö</a>
+                                    <h4><a href="#" class="post-headline">ÇÏ·ç 15ºÐ ÇÔ²² °É¾î¿ä!</a></h4>
+                                    <p>ÇÏ·ç Á¾ÀÏ Ã¥»ó ¾Õ¿¡ ¾É¾Æ ¸ð´ÏÅÍ¸¸ µé¿©´Ù º¸Áø ¾Ê¾Ò³ª¿ä? µ¥ÀÌÆ÷À¯ ½Ç½Ã°£ ÀÎ±â Ã§¸°Áö 'ÇÏ·ç 15ºÐ °È±â' ¾î¶§¿ä? </p>
                                     <div class="post-meta">
                                         <p>By <a href="#">dayforyou team - JT </a></p>
                                         <p>203 comments</p>
@@ -399,9 +412,9 @@
                                 <!-- Blog Content -->
                                 <div class="single-blog-content mt-50">
                                     <div class="line"></div>
-                                    <a href="#" class="post-tag">ì´ëŸ° ì±Œë¦°ì§€ë„ ìžˆì–´ìš”!</a>
-                                    <h4><a href="#" class="post-headline">í•¨ê»˜ ë´‰ì‚¬í•˜ì‹¤ 10ë¶„ì„ ëª¨ì‹­ë‹ˆë‹¤:)</a></h4>
-                                    <p>ì´ë²ˆ ì£¼ë§ ëœ»ì„ ëª¨ì•„ í•¨ê»˜ í™˜ê²½ì§€í‚´ì´ ë´‰ì‚¬í™œë™ì„ í•˜ì‹¤ ë¶„ë“¤ì„ ëª¨ì§‘í•©ë‹ˆë‹¤. ìž¥ì†ŒëŠ” 00ì‹œ 00êµ¬ ì´ë©° ì§‘í•© ì‹œê°„ì€ ì˜¤ì „ 10ì‹œ ìž…ë‹ˆë‹¤!</p>
+                                    <a href="#" class="post-tag">ÀÌ·± Ã§¸°Áöµµ ÀÖ¾î¿ä!</a>
+                                    <h4><a href="#" class="post-headline">ÇÔ²² ºÀ»çÇÏ½Ç 10ºÐÀ» ¸ð½Ê´Ï´Ù:)</a></h4>
+                                    <p>ÀÌ¹ø ÁÖ¸» ¶æÀ» ¸ð¾Æ ÇÔ²² È¯°æÁöÅ´ÀÌ ºÀ»çÈ°µ¿À» ÇÏ½Ç ºÐµéÀ» ¸ðÁýÇÕ´Ï´Ù. Àå¼Ò´Â 00½Ã 00±¸ ÀÌ¸ç ÁýÇÕ ½Ã°£Àº ¿ÀÀü 10½Ã ÀÔ´Ï´Ù!</p>
                                     <div class="post-meta">
                                         <p>By <a href="#">Volunteer</a></p>
                                         <p>13 comments</p>
@@ -515,7 +528,7 @@
                                     <!-- Post Content -->
                                     <div class="post-content">
                                         <a href="#" class="post-tag">Exercise</a>
-                                        <h4><a href="#" class="post-headline">3ëŒ€ 500ì˜ ê¿ˆì„ ì´ë£¬ ë‚˜</a></h4>
+                                        <h4><a href="#" class="post-headline">3´ë 500ÀÇ ²ÞÀ» ÀÌ·é ³ª</a></h4>
                                         <div class="post-meta">
                                             <p><a href="#">12 December</a></p>
                                         </div>
@@ -531,7 +544,7 @@
                                     <!-- Post Content -->
                                     <div class="post-content">
                                         <a href="#" class="post-tag">Health</a>
-                                        <h4><a href="#" class="post-headline">ë§¤ì¼ ì˜ì–‘ì œ ì±™ê²¨ë¨¹ì—ˆë”ë‹ˆ</a></h4>
+                                        <h4><a href="#" class="post-headline">¸ÅÀÏ ¿µ¾çÁ¦ Ã¬°Ü¸Ô¾ú´õ´Ï</a></h4>
                                         <div class="post-meta">
                                             <p><a href="#">12 December</a></p>
                                         </div>
@@ -547,7 +560,7 @@
                                     <!-- Post Content -->
                                     <div class="post-content">
                                         <a href="#" class="post-tag">Hobby</a>
-                                        <h4><a href="#" class="post-headline">ê·€ì—¬ìš´ ìš°ë¦¬ ë©ë©ì´ë¥¼ ì†Œê°œí•©ë‹ˆë‹¤!</a></h4>
+                                        <h4><a href="#" class="post-headline">±Í¿©¿î ¿ì¸® ¸Û¸ÛÀÌ¸¦ ¼Ò°³ÇÕ´Ï´Ù!</a></h4>
                                         <div class="post-meta">
                                             <p><a href="#">12 December</a></p>
                                         </div>
@@ -563,7 +576,7 @@
                                     <!-- Post Content -->
                                     <div class="post-content">
                                         <a href="#" class="post-tag">Daily</a>
-                                        <h4><a href="#" class="post-headline">ì§„íƒê³¼ í•¨ê»˜í–ˆë˜ ì§€ë‚œ ì¼ìš”ì¼</a></h4>
+                                        <h4><a href="#" class="post-headline">ÁøÅÃ°ú ÇÔ²²Çß´ø Áö³­ ÀÏ¿äÀÏ</a></h4>
                                         <div class="post-meta">
                                             <p><a href="#">12 December</a></p>
                                         </div>
@@ -722,7 +735,7 @@
         </div>
 
    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<script>document.write(new Date().getFullYear());</script> ì´ìš©ì•½ê´€ | ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨  <a href="https://colorlib.com" target="_blank">000-0000-0000</a>
+<script>document.write(new Date().getFullYear());</script> ÀÌ¿ë¾à°ü | °³ÀÎÁ¤º¸Ã³¸®¹æÄ§  <a href="https://colorlib.com" target="_blank">000-0000-0000</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
     </footer>
