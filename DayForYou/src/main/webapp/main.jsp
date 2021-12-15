@@ -129,9 +129,10 @@
                             <div class="classynav">
 		                           		<%if(vo != null) { %>
                             					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
-										<%}else{ %>
-												<form action="loginService" method="post"></form>
-												<button class="button4" onclick = "location.href = 'login'">Login</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
 										<%} %>
                                 <ul>
                                     <li><a href="main.jsp">Home</a></li>
