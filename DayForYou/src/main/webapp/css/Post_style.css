@@ -110,6 +110,9 @@ a {
 .board_list .date {
     width: 10%;
 }
+.board_list .cate {
+    width: 10%;
+}
 
 .board_list .count {
     width: 10%;

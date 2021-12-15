@@ -300,7 +300,7 @@
 				<div class="col-12 col-lg-4">
 					<div class="single-blog-area clearfix mb-100">
 						<!-- Blog Content -->
-						<div class="board_wrap">
+						<div class="col-12 col-lg-4">
 							<div class="board_title">
 								<strong>공지사항</strong>
 								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
@@ -365,41 +365,43 @@
 								   }
 								
 								%>
-							<table border="1">
-								<tr id="head_tr" class="cm_tr">
-									<td class="cm_td">번호</td>
-									<td class="cm_td">제목</td>
-									<td class="cm_td">카테고리</td>
-									<td class="cm_td">작성자</td>
-									<td class="cm_td">시간</td>
-									<td class="cm_td">조회수</td>
+								
+							<table border="1" class="#">
+								<tr id="head_tr" class="#">
+									<td class="#">번호</td>
+									<td class="#">제목</td>
+									<td class="#">카테고리</td>
+									<td class="#">작성자</td>
+									<td class="#">시간</td>
+									<td class="#">조회수</td>
 								</tr>
 
 								<%if(boards.size()>(pageno)*5){%>
 
 								<%for(int i=0;i<5;i++){%>
 
-								<tr class="main_tr">
-									<%String result = boards.get(i+(pageno-1)*5).getReg_date().substring(5,11);%>
-									<td class="main_td"><%=boards.get(i+(pageno-1)*5).getArticle_seq()%></td>
-									<td class="main_td"><a class="main_a"
+								<tr class="#">
+									<%//String result = boards.get(i+(pageno-1)*5).getReg_date().substring(5,11);%>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_seq()%></td>
+									<td class="#"><a class="main_a"
 										href="1_content.jsp?article_seq=<%=boards.get(i+(pageno-1)*5).getArticle_seq()%>"><%=boards.get(i+(pageno-1)*5).getArticle_subject()%></a></td>
-									<td class="main_td"><%=boards.get(i+(pageno-1)*5).getArticle_kind()%></td>
-									<td class="main_td"><%=boards.get(i+(pageno-1)*5).getM_id()%></td>
-									<td class="main_td"><%=result%></td>
-									<td class="main_td"><%=boards.get(i+(pageno-1)*5).getArticle_count()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_kind()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getM_id()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getReg_date()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_count()%></td>
 								</tr>
 								<%}%>
 								<%}else if(boards.size()<(pageno)*5) {%>
 								<%for(int i=0;i<(pageno)*5-boards.size();i++){%>
-								<tr class="main_tr">
-									<%String result = boards.get(i+(pageno-1)*5).getReg_date().substring(5,11);%>
-									<td class="main_td"><%=boards.get(i+(pageno-1)*5).getArticle_seq()%></td>
-									<td class="main_td"><a class="main_a"
+								<tr class="#">
+									<%//String result = boards.get(i+(pageno-1)*5).getReg_date().substring(5,11);%>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_seq()%></td>
+									<td class="#"><a class="main_a"
 										href="1_content.jsp?article_seq=<%=boards.get(i+(pageno-1)*5).getArticle_seq()%>"><%=boards.get(i+(pageno-1)*5).getArticle_subject()%></a></td>
-									<td class="main_td"><%=boards.get(i+(pageno-1)*5).getM_id()%></td>
-									<td class="main_td"><%=result%></td>
-									<td class="main_td"><%=boards.get(i+(pageno-1)*5).getArticle_count()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_kind()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getM_id()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getReg_date()%></td>
+									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_count()%></td>
 								</tr>
 								<%}%>
 								<%}else{%>
@@ -408,17 +410,18 @@
 
 
 							</table>
-							<button onclick="location.href = '1_writeForm.jsp'">글작성</button>
-
-							<div id="board1">
+							<div class = "bt_wrap">
+							<a href = '1_writeForm.jsp'" class= "on">글작성</a>
+							</div>	
+							<div class="board_page">
 
 								<%-- <a href="c_Community.jsp?pageno=1">[맨앞으로]</a>
 								<a href="c_Community.jsp?pageno=<%=prev_pageno%>">[이전]</a>  --%>
-								<a href="1_list.jsp?pageno=<%=prev_pageno%>">≪ 이전</a>
+								<a class = "bt first" href="1_list.jsp?pageno=<%=prev_pageno%>">≪ </a><a href="#" class="bt prev">이전</a>
 								<%
 							   for (int i = page_sno; i <= page_eno; i++) {
 							   %>
-								<a href="1_list.jsp?pageno=<%=i%>"> <%
+								<a class = "num" href="1_list.jsp?pageno=<%=i%>"> <%
 									 if (pageno == i) {
 									 %> <span id="cho" align="center"><%=i%></span> <%
 									 } else {
@@ -435,24 +438,16 @@
 								<%
 								   }
 								   %>
-								<a href="1_list.jsp?pageno=<%=next_pageno%>">다음 ≫</a>
+								<a href="1_list.jsp?pageno=<%=prev_pageno%>" class="bt next">다음</a> <a href="#" class="bt last">>></a>
+										
 
 
 								<%-- <a href="c_Community.jsp?pageno=<%=next_pageno%>" >[다음]</a>
 								<a href="c_Community.jsp?pageno=<%=total_page %>">[맨뒤로]</a> --%>
 
 							</div>
-							<div class="board_page">
-								<a href="#" class="bt first"><<</a> <a href="#" class="bt prev"><</a>
-								<a href="#" class="num on">1</a> <a href="#" class="num">2</a> <a
-									href="#" class="num">3</a> <a href="#" class="num">4</a> <a
-									href="#" class="num">5</a> <a href="#" class="bt next">></a> <a
-									href="#" class="bt last">>></a>
-							</div>
-							<div class="bt_wrap">
-								<a href="Board_write.jsp" class="on">등록</a>
-								<!--<a href="#">수정</a>-->
-							</div>
+							
+							
 						</div>
 					</div>
 
