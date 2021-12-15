@@ -11,7 +11,7 @@ SELECT TO_NUMBER(NVL(MAX(Column), '0')) + 1 FROM TABLENAME
 UPDATE tbl_challenge SET chal_cnt=chal_cnt+1 WHERE chal_seq = 326;
 ALTER TABLE tbl_challenge MODIFY (chal_period VARCHAR2(150));
 ALTER TABLE tbl_my_challenge add chal_cat2 VARCHAR2(20) NOT NULL;
-COMMIT;
+select * from tbl_my_challenge where ATTEND_ID = 'a';
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id,chal_pic1) VALUES (400, 'chal_s_date 1', 'chal_e_date 1', 'chal_time 1', 'my_chal_memo 1', 'b','asd');
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('a', 'm_pwd 01', 'm_name 01', 'm_nick 01', 'm_phone 01', 'm_email 01', sysdate, 'N', 'm_job 01', 'm_addr 01', sysdate, 01, 'N');
 INSERT INTO tbl_member (m_id, m_pwd, m_name, m_nick, m_phone, m_email, m_birthdate, m_gender, m_job, m_addr, m_joindate, m_point, admin_yesno) VALUES ('m_id 02', 'm_pwd 02', 'm_name 02', 'm_nick 02', 'm_phone 02', 'm_email 02', sysdate, 'N', 'm_job 02', 'm_addr 02', sysdate, 02, 'N');

@@ -1,3 +1,4 @@
+<%@page import="model.MySelectChallVO"%>
 <%@page import="model.MyChallengeVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.shopVO"%>
@@ -45,20 +46,24 @@ table {
 
 	DAO dao = new DAO();
 	ArrayList<MyChallengeVO> mvo= (ArrayList<MyChallengeVO>)request.getAttribute("mvo");
+	MySelectChallVO msvo = null;
+	
 %>
 			
-					<table>
 					<% for(int i =0; i<mvo.size();i++){%>
-						<td><%= mvo.get(i).getMy_chal_seq()%></td>
-						<td><%= mvo.get(i).getChal_seq() %></td>
-						<td><%= mvo.get(i).getAttend_id() %></td>
-						<td><%= mvo.get(i).getChal_time() %></td>
-						<td><%= mvo.get(i).getMy_chal_memo() %></td>
-						<td><%= mvo.get(i).getChal_num() %></td>
-					</tr>
+						<%= mvo.get(i).getMy_chal_seq()%>
+						<%msvo=dao.MySelectChall(mvo.get(i).getChal_seq()); %>
+						<%=msvo.getChal_subject() %>
+						<%= mvo.get(i).getChal_seq()%>
+						<%= mvo.get(i).getAttend_id()%>
+						<%= mvo.get(i).getChal_time()%>
+						<%= mvo.get(i).getMy_chal_memo()%>
+						<%= mvo.get(i).getChal_num() %>
 					<%} %>
+					<%// 챌린지 제목, 챌린지 사진,챌린지 기한, 챌린지 카테고리1,2%>
+					
+					</tr>
 					</table>
-	%>
 	<!-- Preloader -->
 	<div id="preloader">
 		<div class="preload-content">

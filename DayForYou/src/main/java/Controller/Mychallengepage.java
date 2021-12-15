@@ -30,6 +30,7 @@ public class Mychallengepage extends HttpServlet {
 		ArrayList<MyChallengeVO> mvo = dao.MychallengeSelectAll(vo.getId());
 
 		if (mvo != null) {
+			System.out.println("mychallengepage.servlet에 있는"+vo.getId());
 			System.out.println("조회 성공");
 			// request영역에 attribute 추가
 			request.setAttribute("mvo", mvo);

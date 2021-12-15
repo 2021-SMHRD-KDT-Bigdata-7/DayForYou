@@ -236,12 +236,11 @@
 <body>
    <%
    MemberVo vo = (MemberVo)session.getAttribute("vo");
-   out.print(vo);
+   System.out.print("아이디넘어온다"+vo.getId());
 
    DAO dao = new DAO();
-   
-   
-%>
+	%>
+
 <% if(vo==null){ %>
 <script> alert("로그인이 필요합니다")
    location.href ="login.jsp";

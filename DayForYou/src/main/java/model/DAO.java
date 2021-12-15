@@ -704,51 +704,44 @@ public class DAO {
 			close();
 		}
 	}
-//잠시대기
-//================================================================
-//================================================================
-//================================================================
-//	public MyChallengeVO MyVOChallengeinsert(int chal_seq) {
-//		MyChallengeVO mvo = null;
-//		connection();
-//		try {
-//			sql = "select * from tbl_challenge where chal_seq = ?";
-//
-//			psmt = conn.prepareStatement(sql);
-//			psmt.setInt(1, chal_seq);
-//			rs = psmt.executeQuery();
-//
-//			if (rs.next()) {
-//				int chal_seq1 = rs.getInt(1);
-//				String chal_cat1 = rs.getString(2);
-//				String chal_cat2 = rs.getString(3);
-//				String chal_subject = rs.getString(4);
-//				String chal_content = rs.getString(5);
-//				String chal_start = rs.getString(6);
-//				String chal_period = rs.getString(7);
-//				int chal_time = rs.getInt(8);
-//				int chal_point = rs.getInt(9);
-//				String chal_pic1 = rs.getString(10);
-//				String chal_pic2 = rs.getString(11);
-//				String chal_pic3 = rs.getString(12);
-//				String reg_date = rs.getString(13); // Date 자료형
-//				String m_id = rs.getString(14);
-//				int chal_cnt = rs.getInt(15);
-//				String chal_pw = rs.getString(16);
-//				String chal_public = rs.getString(17);
-//				// 일단 추가할수 있으니 값 다 넣어준거임
-//				mvo = new MyChallengeVO(chal_seq1, "null", "null", "null", "null");
-//			}
-//
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
-//		return mvo;
-//	}
-//잠시대기
-//================================================================
-//================================================================
-//================================================================
+
+	public MySelectChallVO MySelectChall(int chal_seq) {
+		MySelectChallVO msvo = null;
+		connection();
+		try {
+			sql = "select * from tbl_challenge where chal_seq = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, chal_seq);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				int chal_seq1 = rs.getInt(1);
+				String chal_cat1 = rs.getString(2);
+				String chal_cat2 = rs.getString(3);
+				String chal_subject = rs.getString(4);
+				String chal_content = rs.getString(5);
+				String chal_start = rs.getString(6);
+				String chal_period = rs.getString(7);
+				int chal_time = rs.getInt(8);
+				int chal_point = rs.getInt(9);
+				String chal_pic1 = rs.getString(10);
+				String chal_pic2 = rs.getString(11);
+				String chal_pic3 = rs.getString(12);
+				String reg_date = rs.getString(13); // Date 자료형
+				String m_id = rs.getString(14);
+				int chal_cnt = rs.getInt(15);
+				String chal_pw = rs.getString(16);
+				String chal_public = rs.getString(17);
+				// 일단 추가할수 있으니 값 다 넣어준거임
+				msvo = new MySelectChallVO(chal_cat1, chal_cat2, chal_subject, chal_period, chal_pic1,chal_public);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return msvo;
+	}
 
 	public int MyChallengeinsert(int chal_seq, String attend_id, String chal_time, String my_chal_memo,
 			int chal_num) {
@@ -816,7 +809,7 @@ public class DAO {
 		ArrayList<MyChallengeVO> arr = new ArrayList<MyChallengeVO>();
 		connection();
 		try {
-			String sql = "select * from tbl_challenge where attend_id = ?";
+			String sql = "select * from tbl_my_challenge where attend_id = ?";
 
 			// 4. PreparedStatement 객체 준비
 			psmt = conn.prepareStatement(sql);
@@ -830,7 +823,7 @@ public class DAO {
 				String chal_time = rs.getString(4);
 				String my_chal_memo = rs.getString(5);
 				int chal_num = rs.getInt(6);
-				MyChallengeVO mvo = new MyChallengeVO(my_chal_seq, chal_seq, attend_id, chal_time, my_chal_memo,chal_num);
+				MyChallengeVO mvo = new MyChallengeVO(my_chal_seq, chal_seq,attend_id,chal_time,my_chal_memo,chal_num);
 				arr.add(mvo);
 			}
 
