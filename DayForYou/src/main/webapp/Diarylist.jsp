@@ -146,9 +146,16 @@
 
 							<!-- Nav Start -->
 							 <div class="classynav">
-                            	<button class="button4">Logout</button>
+                            	 <div class="classynav">
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
                                 <ul>
-                                    <li><a href="main.html">Home</a></li>
+                                    <li><a href="main.jsp">Home</a></li>
                                     <li><a href="my.html">Calendar</a>
                                         <ul class="dropdown">
                                             <li><a href="myCalendar.html">Calendar</a></li>
