@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class CalenderDAO {
+public class CalendarDAO {
 	
-	CalenderVO cvo = null;
+	CalendarVO cvo = null;
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
@@ -100,9 +100,9 @@ public class CalenderDAO {
 	
 	// 일정 확인
 	
-	public ArrayList<CalenderVO> todo_select() {
+	public ArrayList<CalendarVO> todo_select() {
 
-		ArrayList<CalenderVO> todo = new ArrayList<CalenderVO>();
+		ArrayList<CalendarVO> todo = new ArrayList<CalendarVO>();
 		
 		try {
 
@@ -132,7 +132,7 @@ public class CalenderDAO {
 				String u_todo_check = rs.getString(9); //하루종일
 
 				// select문의 결과를 묶어서 VO객체로 만들기
-				cvo = new CalenderVO(u_todo_seq, u_todo_subject, u_todo_cate, 
+				cvo = new CalendarVO(u_todo_seq, u_todo_subject, u_todo_cate, 
 									u_todo_sdate, u_todo_edate,u_todo_content, 
 									u_reg_date, u_m_id, u_todo_check);
 

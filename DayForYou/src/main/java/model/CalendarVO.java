@@ -2,7 +2,7 @@ package model;
 
 //import java.util.Date;
 
-public class CalenderVO {
+public class CalendarVO {
 
 	private int todo_seq;
 	private String todo_subject; //力格
@@ -17,7 +17,7 @@ public class CalenderVO {
 
 //=====积己磊.======
 
-	public CalenderVO(int todo_seq, String todo_subject, String todo_cate, String todo_sdate, String todo_edate,
+	public CalendarVO(int todo_seq, String todo_subject, String todo_cate, String todo_sdate, String todo_edate,
 			String todo_content, String reg_date, String m_id, String todo_check) {
 		super();
 		this.todo_seq = todo_seq;
@@ -31,7 +31,7 @@ public class CalenderVO {
 		this.todo_check = todo_check;
 	}
 
-	public CalenderVO(String todo_subject, String todo_cate, String todo_sdate, String todo_edate, String todo_content,
+	public CalendarVO(String todo_subject, String todo_cate, String todo_sdate, String todo_edate, String todo_content,
 			String reg_date, String m_id, String todo_check) {
 		super();
 		this.todo_subject = todo_subject;
