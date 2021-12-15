@@ -19,6 +19,7 @@ public class DAO {
 	ArrayList<challengeBoardVO> ch_boards = null;
 	challengeBoardVO cbv = null;
 	diaryVO dvo = null;
+	shopVO svo = null;
 
 	public void connection() {
 		try {
@@ -615,6 +616,47 @@ public class DAO {
 
 	// ===========================
 	// =================================shop===================
+	public ArrayList<shopVO> selectAllGoods() {
+		ArrayList<shopVO> goods = new ArrayList<>();
+
+		connection();
+
+		try {
+			sql = "select * from tbl_shop order by shop_seq desc";
+
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				int shop_seq = rs.getInt(1);
+				String goods_name = rs.getString(2);
+				String goods_category = rs.getString(3);
+				String shop_pic1 = rs.getString(4);
+				String shop_pic2 = rs.getString(5);
+				int goods_point = rs.getInt(6);
+				String buy_day = rs.getString(7);
+				String exp_day = rs.getString(8);
+				String m_id = rs.getString(9);
+
+				 svo = new shopVO(shop_seq, goods_name, goods_category, shop_pic1, shop_pic2, goods_point,
+						buy_day, exp_day, m_id);
+
+				goods.add(svo);
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return goods;
+	}
+
+
+
+
 	public int shopbuy(String id, int point) {
 		connection();
 		try {

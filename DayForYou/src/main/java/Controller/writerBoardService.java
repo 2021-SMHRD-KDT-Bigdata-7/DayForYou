@@ -17,14 +17,13 @@ import model.BoardDAO;
 import model.BoardVO;
 import model.MemberVo;
 
-
-
-
 @WebServlet("/writerBoardService")
 public class writerBoardService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		request.setCharacterEncoding("euc-kr");
 		String m_id = request.getParameter("m_id");
 		String article_pwd = request.getParameter("article_pwd");
@@ -37,17 +36,17 @@ public class writerBoardService extends HttpServlet {
 		String article_file4 = null;
 		String article_file5 = null;
 		int article_count = 0;
-		
+
 		BoardDAO dao = new BoardDAO();
-		
-  int cnt = dao.write(article_kind, article_subject, article_content, m_id, article_file1, article_file2, article_file3, article_file4, article_file5, article_pwd, article_count);
-	      
-	     
-	      if(cnt > 0) {
-	         System.out.println("게시판 작성 성공");
-	         response.sendRedirect("1_list.jsp");
-	      }else {
-	         System.out.println("게시판 작성 실패");
-	      }
+
+		int cnt = dao.write(article_kind, article_subject, article_content, m_id, article_file1, article_file2,
+				article_file3, article_file4, article_file5, article_pwd, article_count);
+
+		if (cnt > 0) {
+			System.out.println("게시판 작성 성공");
+			response.sendRedirect("1_list.jsp");
+		} else {
+			System.out.println("게시판 작성 실패");
+		}
 	}
 }
