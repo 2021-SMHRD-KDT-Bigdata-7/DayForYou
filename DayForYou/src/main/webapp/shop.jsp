@@ -22,7 +22,6 @@
     <body>
     <%
 	MemberVo vo = (MemberVo)session.getAttribute("vo");
-	out.print(vo);
 
 	DAO dao = new DAO();
 	
@@ -38,11 +37,10 @@
 		</a>
 	</div>
         <!-- Header-->
-        <header class="bg-light py-5">
+        <header>
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-black">
-                    <h1 class="display-4 fw-bolder">day for you</h1>
-                 <p class="text-center"> point shop</p>
+                  <img src = "img/logo-img/shop.PNG">
                 </div>
             </div>
         </header>
@@ -52,13 +50,18 @@
 	<% } }%>
 	<!-- 버튼 모을꺼야 건들지마 -->
         <div align ="center" margin"10px">
-        <a class="btn btn-outline-dark mt-auto" href ="shop_chicken.jsp">치킨</a>
+<!--         <a class="btn btn-outline-dark mt-auto" href ="shop_chicken.jsp">치킨</a>
         <a class="btn btn-outline-dark mt-auto" href ="shop_movie.jsp">영화</a>
-        <a class="btn btn-outline-dark mt-auto" href ="shop_gift.jsp">상품권</a>
+        <a class="btn btn-outline-dark mt-auto" href ="shop_gift.jsp">상품권</a> -->
+        <a><img src= "img/logo-img/chicken.PNG" onclick="location.href = 'shop_chicken.jsp'"></a>
+        <a><img src= "img/logo-img/movie.PNG" onclick="location.href = 'shop_movie.jsp'"></a>
+        <a><img src= "img/logo-img/gift.PNG" onclick="location.href = 'shop_gift.jsp'"></a>
+        <a><img src= "img/logo-img/cafe.PNG" onclick="location.href = 'shop_coffe.jsp'"></a>
+        <a><img src= "img/logo-img/cosmetic.PNG" onclick="location.href = 'shop_cosmetics.jsp'"></a>
         <br>
-        
+<!--         
         <a class="btn btn-outline-dark mt-auto" href="shop_coffe.jsp">커피</a>
-        <a class="btn btn-outline-dark mt-auto" href="shop_cosmetics.jsp">화장품</a>
+        <a class="btn btn-outline-dark mt-auto" href="shop_cosmetics.jsp">화장품</a> -->
         </div>
         <!-- Section-->
         <section class="py-5">
@@ -79,7 +82,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                            	<img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -100,7 +103,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -113,7 +116,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">스타벅그 아메리카노</h5>
+                                    <h5 class="fw-bolder">스타벅스 아메리카노</h5>
                                     <!-- Product price-->
                                     p)4.100
                                     
@@ -121,7 +124,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                               <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -140,7 +143,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                               <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -161,7 +164,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                               <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -180,7 +183,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -204,7 +207,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
                             </div>
                         </div>
                     </div>
@@ -227,7 +230,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop_buy.jsp">BUY</a></div>
+                                <div class="text-center"><img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'"></div>
                             </div>
                         </div>
                     </div>
