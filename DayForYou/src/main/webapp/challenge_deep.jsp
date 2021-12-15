@@ -232,7 +232,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>챌린지</h2>
+						<h2><%=chal_cat1 %> 챌린지</h2>
 					</div>
 				</div>
 			</div>
