@@ -49,13 +49,12 @@ table {
 			
 					<table>
 					<% for(int i =0; i<mvo.size();i++){%>
+						<td><%= mvo.get(i).getMy_chal_seq()%></td>
 						<td><%= mvo.get(i).getChal_seq() %></td>
-						<td><%= mvo.get(i).getChal_s_date() %></td>
-						<td><%= mvo.get(i).getChal_e_date() %></td>
+						<td><%= mvo.get(i).getAttend_id() %></td>
 						<td><%= mvo.get(i).getChal_time() %></td>
 						<td><%= mvo.get(i).getMy_chal_memo() %></td>
-						<td><%= mvo.get(i).getM_id() %></td>
-						<td><%= mvo.get(i).getChal_pic1() %></td>
+						<td><%= mvo.get(i).getChal_num() %></td>
 					</tr>
 					<%} %>
 					</table>

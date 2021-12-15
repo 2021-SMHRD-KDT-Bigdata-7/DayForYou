@@ -768,47 +768,45 @@ public class DAO {
 		}
 		return num;
 	}
-//잠시대기
-//	public ArrayList<MyChallengeVO> MychallengeSelectAll(String id) {
-//		ArrayList<MyChallengeVO> arr = new ArrayList<MyChallengeVO>();
-//		connection();
-//		try {
-//			String sql = "select * from tbl_my_challenge where m_id=?";
-//
-//			// 4. PreparedStatement 객체 준비
-//			psmt = conn.prepareStatement(sql);
-//			psmt.setString(1, id);
-//			System.out.println(id);
-//			rs = psmt.executeQuery();
-//			while(rs.next() == true) {
-//				int chal_seq=rs.getInt(1);
-//				String chal_s_date = rs.getString(2);
-//				String chal_e_date = rs.getString(3);
-//				String chal_time = rs.getString(4);
-//				String my_chal_memo = rs.getString(5);
-//				String m_id = rs.getString(6);
-//				String chal_pic1 = rs.getString(7);
-//				//select문의 결과를 묶어서 vo객체로 만들기
-//				MyChallengeVO mvo = new MyChallengeVO(chal_seq, chal_s_date,chal_e_date,chal_time,my_chal_memo, m_id, chal_pic1);
-//				//rs로부터 가져온 한 행의 정보를 arraylist 추가
-//				arr.add(mvo);
-//			}
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				if(psmt != null){
-//					psmt.close();
-//				}
-//				if(conn != null) {
-//					conn.close();
-//				}
-//			}catch (Exception e2) {
-//			}
-//		}
-//		return arr;
-//	}
+
+
+	public ArrayList<MyChallengeVO> MychallengeSelectAll(String attend_id) {
+		ArrayList<MyChallengeVO> arr = new ArrayList<MyChallengeVO>();
+		connection();
+		try {
+			String sql = "select * from tbl_challenge where attend_id = ?";
+
+			// 4. PreparedStatement 객체 준비
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, attend_id);
+			rs = psmt.executeQuery();
+			
+			while(rs.next() == true) {
+				int my_chal_seq = rs.getInt(1);
+				int chal_seq = rs.getInt(2);
+				attend_id = rs.getString(3);
+				String chal_time = rs.getString(4);
+				String my_chal_memo = rs.getString(5);
+				int chal_num = rs.getInt(6);
+				MyChallengeVO mvo = new MyChallengeVO(my_chal_seq, chal_seq, attend_id, chal_time, my_chal_memo,chal_num);
+				arr.add(mvo);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(psmt != null){
+					psmt.close();
+				}
+				if(conn != null) {
+					conn.close();
+				}
+			}catch (Exception e2) {
+			}
+		}
+		return arr;
+	}
 	
 	//===================================shopinsert=============
 	
