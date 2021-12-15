@@ -23,7 +23,7 @@ public class Mychallengepage extends HttpServlet {
 			throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		제목이랑 참가아이디 넣기
+		//제목이랑 참가아이디 넣기
 		
 		
 		MemberVo vo = (MemberVo) session.getAttribute("vo");

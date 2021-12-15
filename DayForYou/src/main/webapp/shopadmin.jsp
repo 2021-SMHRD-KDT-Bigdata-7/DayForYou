@@ -27,7 +27,7 @@
 		<th>카테고리</th>
 		<th>제품이름</th>
 		<th>상품포인트</th>
-		<th><a class="btn btn-outline-dark mt-auto" href="#">추가</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="z">추가</a></th>
 		<th><a class="btn btn-outline-dark mt-auto" href="#">수정</a></th>
 		<th><a class="btn btn-outline-dark mt-auto" href="#">삭제</a></th>
 		<tr>
