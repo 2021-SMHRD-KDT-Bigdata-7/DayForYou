@@ -1,3 +1,5 @@
+<%@page import="model.MyChallengeVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.shopVO"%>
 <%@page import="model.DAO"%>
 <%@page import="model.MemberVo"%>
@@ -40,12 +42,23 @@ table {
 
 <body>
 	<%
-	MemberVo vo = (MemberVo) session.getAttribute("vo");
-	out.print(vo);
 
 	DAO dao = new DAO();
-
-	shopVO svo = new shopVO();
+	ArrayList<MyChallengeVO> mvo= (ArrayList<MyChallengeVO>)request.getAttribute("mvo");
+%>
+			
+					<table>
+					<% for(int i =0; i<mvo.size();i++){%>
+						<td><%= mvo.get(i).getChal_seq() %></td>
+						<td><%= mvo.get(i).getChal_s_date() %></td>
+						<td><%= mvo.get(i).getChal_e_date() %></td>
+						<td><%= mvo.get(i).getChal_time() %></td>
+						<td><%= mvo.get(i).getMy_chal_memo() %></td>
+						<td><%= mvo.get(i).getM_id() %></td>
+						<td><%= mvo.get(i).getChal_pic1() %></td>
+					</tr>
+					<%} %>
+					</table>
 	%>
 	<!-- Preloader -->
 	<div id="preloader">
@@ -220,8 +233,7 @@ table {
 												<div class="col-12 col-md-6">
 													<div class="group">
 														<h4>
-															포인트
-															<%=vo.getPoint()%></h4>
+															추천
 														<span class="highlight"></span> <span class="bar"></span>
 													</div>
 												</div>
@@ -234,7 +246,6 @@ table {
 													<div class="group">
 														<h4>구매내역</h4>
 
-														<span><%=svo.getGoods_name()%><%=svo.getGoods_point()%></span>
 														<span class="highlight"></span> <span class="bar"></span>
 													</div>
 												</div>

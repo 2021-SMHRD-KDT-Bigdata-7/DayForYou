@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+
 public class DAO {
 
 	String sql = "";
@@ -762,6 +763,47 @@ public class DAO {
 		return chal_seq;
 	}
 
+	public ArrayList<MyChallengeVO> MychallengeSelectAll(String id) {
+		ArrayList<MyChallengeVO> arr = new ArrayList<MyChallengeVO>();
+		connection();
+		try {
+			String sql = "select * from tbl_my_challenge where m_id=?";
+
+			// 4. PreparedStatement 객체 준비
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			System.out.println(id);
+			rs = psmt.executeQuery();
+			while(rs.next() == true) {
+				int chal_seq=rs.getInt(1);
+				String chal_s_date = rs.getString(2);
+				String chal_e_date = rs.getString(3);
+				String chal_time = rs.getString(4);
+				String my_chal_memo = rs.getString(5);
+				String m_id = rs.getString(6);
+				String chal_pic1 = rs.getString(7);
+				//select문의 결과를 묶어서 vo객체로 만들기
+				MyChallengeVO mvo = new MyChallengeVO(chal_seq, chal_s_date,chal_e_date,chal_time,my_chal_memo, m_id, chal_pic1);
+				//rs로부터 가져온 한 행의 정보를 arraylist 추가
+				arr.add(mvo);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(psmt != null){
+					psmt.close();
+				}
+				if(conn != null) {
+					conn.close();
+				}
+			}catch (Exception e2) {
+			}
+		}
+		return arr;
+	}
 	
 
 }
+
