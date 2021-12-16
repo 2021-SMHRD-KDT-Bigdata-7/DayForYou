@@ -277,26 +277,35 @@
 					<div class="single-blog-area blog-style-2">
 						<%
 						for (int i = 0; i < chall_personal.size(); i = i + 2) {
-						%>
+						%>					
 						<div class="single-blog-thumbnail">
+						<p style="font-size: 16px; color: black; font-weight: bold;">
+						<%=chall_personal.get(i).getChalCat2()%>
+						</p>
 							<img class = "product-img" src="<%=chall_personal.get(i).getChalPic1()%>"
 								alt="img/challenge_sample/none.png"
-								onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">
-							<div class="post-date">
-								<a href="#"><%= chall_personal.get(i).getChalCnt() %>
-								<span>count</span> </a>
-							</div>
+								onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">							
 						</div>
 
 						<!-- Blog Content -->
 						<div class="single-blog-content">
-						<div  data-text-content="true" style="width: 50px; border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 12px; box-shadow: none; background-color: rgb(100, 188, 156);"><%=chall_personal.get(i).getChalCat2()%></div>
-						<div  data-text-content="true" style="font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);"></div>
-						
-						</div>
-						<h4>
-							<a href="#" class="post-headline"><%=chall_personal.get(i).getChalSubject()%></a>
-						</h4>
+						<div style="padding-top: 5px; padding-bottom: 5px;">
+                                 <div
+                                    style="display: inline-block; width: 70px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
+                                    <%=chall_personal.get(i).getChalPublic()%>
+                                 </div>
+                                 <div style="display: inline-block;">
+                                    <a href="ChallengeSingleService?chal_seq=<%=chall_personal.get(i).getChalSeq() %>" style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=chall_personal.get(i).getChalSubject()%></a>
+                                 </div>
+                              </div>
+                              <div
+                                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
+                                 <%=chall_personal.get(i).getChalPeriod()%>
+                              </div>					
+							<div style="margin: 2px; font-size: 16px; color: black; font-weight: bold">
+								<h4>ÀÎ¿ø ¼ö: <%= chall_personal.get(i).getChalCnt() %>
+								</h4>
+							</div>
 						<hr style="border: solid 1px gray;">
 						<%
 						}

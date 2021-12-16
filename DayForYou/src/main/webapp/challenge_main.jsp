@@ -2,7 +2,6 @@
 <%@page import="model.MyChallengeVO"%>
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.DAO"%>
 <%@page import="model.DayDAO"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
@@ -85,6 +84,9 @@
 	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("추천");
 	int last_chall_suggestion = chall_suggestion.size()-1;
 	
+	
+		
+	
 	//누적 챌린지 수
 	int allChallengeCount = dao.CountAllChallenge();	
 	//현재 진행중인 챌런지 수
@@ -94,25 +96,41 @@
 	//현재 진행중인 참가자 수
 	int nowChallengeCountCnt = 0;
 	
+	//////////////////////일정///////////////////
+	
+	//내가 참가하고있는 챌린지에서 시작날짜 담아주는 arraylist
+	ArrayList<String> challengeStartDate = null;
+	//내가 참가하고있는 챌린지에서 마지막날짜 담아주는 arraylist
+	ArrayList<String> challengeEndDate = null;
+	//myChallengesSeq: 내가 참가하고있는 챌린지 순번
+	ArrayList<Integer> myChallengesSeq = null;
+	//myChallengeCat2: 내가 참가하고있는 챌린지의 카테고리2
+	ArrayList<String> myChallengeCat2 = null;
+	//myChallengeTitle: 내가 참가하고있는 챌린지의 제목
+	ArrayList<String> myChallengeTitle = null;
+	//칼라 배열
+	String[] arr = {"blue","indigo","purple","pink","red","orange","green","teal","gray"};
+	
+	
 	
 	
 	//현재 챌린지를 진행하는 수들 
 	ArrayList<Integer> nowCnt = dao.getNowCnt();
 		
-	ArrayList<DayDAO> challengePeriod = null;
-	challengePeriod = dao.getChallengeEndPeriod();
-	
+	//챌린지 끝나는날짜 부르기
+	ArrayList<DayDAO> challengeStartPeriod = null;
+	challengeStartPeriod = dao.getChallengePeriod(1);
 	
 	LocalDate now = LocalDate.now();
 	int nowYear = now.getYear();
 	int nowMonth  = now.getMonthValue();
 	int nowDate = now.getDayOfMonth();
 	
-	
-	for(int i = 0; i < challengePeriod.size(); i++){	
-		if(challengePeriod.get(i).getYear() <=nowYear){			
-			if(challengePeriod.get(i).getMonth() <= nowMonth){				
-				if(challengePeriod.get(i).getDate() <= nowDate ){
+
+	for(int i = 0; i < challengeStartPeriod.size(); i++){	
+		if(challengeStartPeriod.get(i).getYear() <=nowYear){			
+			if(challengeStartPeriod.get(i).getMonth() <= nowMonth){				
+				if(challengeStartPeriod.get(i).getDate() <= nowDate ){
 					nowChallengeCount++;
 					nowChallengeCountCnt = nowChallengeCountCnt + nowCnt.get(i);
 				
@@ -126,19 +144,52 @@
 	%>
 	
 	<%
+	
 	// 챌린지 캘린더 수정
 	String m_id = "a";
 	ArrayList<MyChallengeVO> myChallenges = dao.MychallengeSelectAll(m_id);
-	int size = myChallenges.size();
-	int myChallengesSeq[] = new int[size];
 	
-	for(int i = 0 ; i < size; i++){
-		myChallengesSeq[i] = myChallenges.get(i).getMy_chal_seq();
+	//myChallengesSeq: 내가 참가하고있는 챌린지 순번
+	myChallengesSeq = new ArrayList<>();	
+	for(int i = 0 ; i < myChallenges.size(); i++){
+		myChallengesSeq.add(myChallenges.get(i).getChal_seq());	
+	
+	}	
+	
+	//myChallengesInfo: 내가 참가하고있는 챌린지 정보를 담아주는 arraylist
+	ArrayList<challengeBoardVO> myChallengesInfo = new ArrayList<>();
+	
+	//챌린지정보 담아주기.
+	for(int i = 0 ; i < myChallengesSeq.size(); i++){
+		myChallengesInfo.add(dao.ChallengeSingleService(myChallengesSeq.get(i)));			
 	}
 	
 	
+	//내가 참가하고있는 챌린지에서 날짜를 담아주는 arraylist
+	ArrayList<String> challengeDate = new ArrayList<>();
 	
-	
+	//내가 참가하고있는 챌린지에서 날짜를 담아주는 arraylist
+	myChallengeTitle = new ArrayList<>();
+	//myChallengeCat2: 내가 참가하고있는 챌린지의 카테고리2
+	myChallengeCat2 = new ArrayList<>();
+	for(int i = 0; i < myChallengesInfo.size(); i++){
+		challengeDate.add(myChallengesInfo.get(i).getChalPeriod());
+		myChallengeTitle.add(myChallengesInfo.get(i).getChalSubject());
+		myChallengeCat2.add(myChallengesInfo.get(i).getChalCat2());				
+	}
+		
+	//내가 참가하고있는 챌린지에서 시작날짜 담아주는 arraylist
+	challengeStartDate = new ArrayList<>();
+	for(int i = 0; i < myChallengesInfo.size(); i++){
+		challengeStartDate.add(dao.changeSasunToMagde(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),0)));		
+	}
+
+	//내가 참가하고있는 챌린지에서 마지막날짜 담아주는 arraylist
+	challengeEndDate = new ArrayList<>();	
+	for(int i = 0; i < myChallengesInfo.size(); i++){
+		challengeEndDate.add(dao.changeSasunToMagde(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),1)));		
+	}
+		
 	%>
 	
 	
@@ -448,10 +499,7 @@
 							<a
 								href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
 								src="<%= chall_personal.get(0).getChalPic1()%>"
-								alt="img/logo.png" class = "product-img"> </a>
-							<div class="post-date">
-								<a href="#"><%= chall_suggestion.get(0).getChalCnt() %></a>
-							</div>
+								alt="img/logo.png" class = "product-img"> </a>						
 						</div>
 						<!-- Blog Content -->
 						<div class="single-blog-content" style="margin: 10 0 0 0">
@@ -481,9 +529,7 @@
 						<a href="ChallengeSingleService?chal_seq=327"><img class = "product-img"
 							src="<%=chall_suggestion.get(0).getChalPic1() %>"
 							alt="img/logo.png"> </a>
-						<div class="post-date">
-							<a href="#"><%= chall_suggestion.get(0).getChalCnt() %></a>
-						</div>
+						
 					</div>
 					<!-- Blog Content -->
 					<div class="single-blog-content">
@@ -497,7 +543,7 @@
 				<div align="right">
 					<a
 						href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
-						<% System.out.println(chall_suggestion.get(0).getChalCat1()); %>
+						
 				</div>
 			</div>
 			<hr style="border: solid 1px gray;">
@@ -514,9 +560,7 @@
 					<a href="temp.html"><img class = "product-img"
 						src="<%=chall_popularity.get(0).getChalPic1() %>"
 						alt="img/logo.png"> </a>
-					<div class="post-date">
-						<a href="#"><%=chall_popularity.get(0).getChalCnt() %> </a>
-					</div>
+					
 				</div>
 				<!-- Blog Content -->
 				<div class="single-blog-content">
@@ -543,9 +587,7 @@
 
 			<div class="single-blog-thumbnail">
 				<img class = "product-img" src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
-				<div class="post-date">
-					<a href="#"><%= chall_group.get(0).getChalCnt() %></a>
-				</div>
+				
 			</div>
 			<!-- Blog Content -->
 			<div class="single-blog-content">
@@ -738,12 +780,14 @@
 
         resourceAreaHeaderContent: '일정',
         resources: [
-          { id: 'a', title: '공부', eventColor: "blue" },
-          { id: 'b', title: '운동', eventColor: 'orange' },
-          { id: 'c', title: '취미', eventColor: 'green' },
-          { id: 'e', title: '기타', eventColor: 'purple' },
+          { id: 'a', title: '공부', eventColor: "dark" },
+          { id: 'b', title: '운동', eventColor: 'gray' },
+          { id: 'c', title: '취미', eventColor: 'red' },
+          { id: 'e', title: '기타', eventColor: 'primary' },
         ],
         events: [
+        	
+        	
           {id: '1', resourceId: 'a', start: '2021-12-06T14:00:00', end: '2021-12-06T18:00:00', title: 'UX/UI' },
           { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
           { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },

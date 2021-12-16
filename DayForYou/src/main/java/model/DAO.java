@@ -280,45 +280,14 @@ public class DAO {
 		}
 		return endDateChall;
 	}
-	/**
-	 * 챌린지 peroid 정제하는 메소드
-	 * 
-	 * @param
-	 */
-	public ArrayList<DayDAO> getChallengeStartPeriod() {
-		ArrayList<DayDAO> periodDay = new ArrayList<>();
-		DayDAO ddao = null;
-
-		// 챌린지 마감날짜 불러오기.
-		ArrayList<String> endDateChall = getEndDateChallenge();
-
-		// 챌린지 기간 ~를 기점으로 마감날짜만 빼오는 배열
-		ArrayList<String> divide1 = new ArrayList<String>();
-
-		for (int i = 0; i < endDateChall.size(); i++) {
-			String[] arr = new String[2];
-			arr = endDateChall.get(i).split("~");
-			divide1.add(arr[1]);
-
-		}
-
-		for (int i = 0; i < divide1.size(); i++) {
-			String[] arr = divide1.get(i).split("/");
-
-			ddao = new DayDAO(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
-			periodDay.add(ddao);
-		}
-
-		return periodDay;
-	}
-
+	
 	/**
 	 * 챌린지 peroid 정제하는 메소드.
 	 * 
-	 * @return 챌린지 마지막 날짜 출력
-	 * @param
+	 * @return 모든 챌린지 마지막 날짜 출력
+	 * @param 0이면, 시작날짜, 1이면 마지막 날짜 출력. 0과 1만 넣어야함.
 	 */
-	public ArrayList<DayDAO> getChallengeEndPeriod() {
+	public ArrayList<DayDAO> getChallengePeriod(int input) {
 		ArrayList<DayDAO> periodDay = new ArrayList<>();
 		DayDAO ddao = null;
 
@@ -328,16 +297,16 @@ public class DAO {
 		// 챌린지 기간 ~를 기점으로 마감날짜만 빼오는 배열
 		ArrayList<String> divide1 = new ArrayList<String>();
 
-		for (int i = 0; i < endDateChall.size(); i++) {
-			String[] arr = new String[2];
-			arr = endDateChall.get(i).split("~");
-			divide1.add(arr[1]);
+		for (int i = 0; i < endDateChall.size(); i++) {	
+			
+			//String[] arr = new String[2];
+			//arr = endDateChall.get(i).split("~");
+			divide1.add(dividePeriodWave(endDateChall.get(i),input));
 
 		}
 
 		for (int i = 0; i < divide1.size(); i++) {
 			String[] arr = divide1.get(i).split("/");
-
 			ddao = new DayDAO(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
 			periodDay.add(ddao);
 		}
@@ -345,8 +314,26 @@ public class DAO {
 		return periodDay;
 	}
 	
-	
+	/**
+	 * @param 
+	 * data 나눌데이터
+	 * input 0이면, 시작날짜, 1이면 마지막날짜
+	 * */
+	public String dividePeriodWave(String data, int input) {
+		String[] arr = data.split("~");
+		
+		return arr[input];				
+	}
 
+	/**
+	 * 
+	 * */
+	public String changeSasunToMagde(String data) {
+		String[] arr = data.split("/");
+		String result = arr[0] + "-" + arr[1]+ "-" +arr[2];
+		return result;
+	}
+	
 	/**
 	 * 챌린지 누적 참가자 메소드
 	 * 
@@ -646,7 +633,6 @@ public class DAO {
 		} finally {
 			close();
 		}
-		System.out.println(zvo);
 		return zvo;
 	}
 
