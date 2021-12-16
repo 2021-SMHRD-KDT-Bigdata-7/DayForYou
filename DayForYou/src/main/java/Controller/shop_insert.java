@@ -37,13 +37,15 @@ public class shop_insert extends HttpServlet {
 		if(cnt > 0) {
 			System.out.println("추가 성공");
 		
-	        
+	        response.sendRedirect("shopadmin.jsp");
 		}else {
 			System.out.println("추가 실패");
+			
+			response.sendRedirect("goodsadd.jsp");
 		}
 		
-		// 페이지 이동
-		response.sendRedirect("shopadmin.jsp");
+	
+		
 	}
 		
 			

@@ -17,14 +17,18 @@
 	ArrayList<shopVO> goods = dao.selectAllGoods();
 	shopVO svo = new shopVO();
 	%>
+	
+	<form action ="shop_delete">
 	<table>
 		<td>½ÃÄö½º°ª</td>
 		<td></td>
 		<tr>
-			<td><input type="text"><%=svo.getShop_seq()%></td>
+			<td><input type="text" name="shop_seq"></td>
 			<td></td>
 	</table>
-	<div align="center"margin"10px">
-		<a class="btn btn-outline-dark mt-auto" href="shop_delete">delet</a>
+	<div align="center"margin="10px">
+	<button type = "submit" class="btn btn-outline-dark mt-auto" >delet</button>
+	</div>
+	</form>
 </body>
 </html>
