@@ -321,18 +321,18 @@
 									</tr>
 									<tr>
 										<td>작성일</td>
-										<td><%=bvo.getReg_date()%></td>
+										<td colspan = "3"><%=bvo.getReg_date()%></td>
 									</tr>
 									<tr>
 										<td>글제목</td>
-										<td><%=bvo.getArticle_subject()%></td>
+										<td colspan = "3"><%=bvo.getArticle_subject()%></td>
 									</tr>
 									<tr>
 										<td>글내용</td>
-										<td><%=bvo.getArticle_content()%></td>
+										<td colspan = "3"><%=bvo.getArticle_content()%></td>
 									</tr>
 									<tr>
-										<td colspan="2"><input type="submit" value="글목록"></td>
+										<td colspan="4"><input type="submit" value="글목록"></td>
 									</tr>
 
 
