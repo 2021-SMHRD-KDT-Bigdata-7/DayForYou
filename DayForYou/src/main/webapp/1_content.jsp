@@ -18,7 +18,7 @@
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
-<title>DreamForest - records daily, start challenge</title>
+<title>DayForYou - BoardView</title>
 
 <!-- Favicon -->
 <link rel="icon" href="img/core-img/favicon.ico">
@@ -54,7 +54,7 @@
 						<form action="#" class="newsletterForm" method="post">
 							<input type="email" name="email" id="subscribesForm2"
 								placeholder="Your e-mail here">
-							<button type="submit" class="btn original-btn">Subscribe</button>
+						
 						</form>
 					</div>
 				</div>
@@ -73,13 +73,13 @@
 					<div class="col-12 col-sm-8">
 						<div class="breaking-news-area">
 							<div id="breakingNewsTicker" class="ticker">
-								<ul>
-									<li><a href="#">Day for you :)</a></li>
-									<li><a href="#">Check challenge of this month!</a></li>
-									<li><a href="#">Daily as records, records as Challenge</a></li>
-									<li><a href="#">Check your schedules</a></li>
-									<li><a href="#">Have a good day:)</a></li>
-								</ul>
+							 	<ul>
+                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
+                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -93,7 +93,7 @@
 				<div class="row h-100 align-items-center">
 					<div class="col-12">
 						<a href="index.html" class="original-logo"><img
-							src="img/logo-img/logo22.png" alt=""></a>
+							src="img/main-img/logo3.png" alt=""></a>
 					</div>
 				</div>
 			</div>
@@ -106,11 +106,7 @@
 					<!-- Classy Menu -->
 					<nav class="classy-navbar justify-content-between">
 
-						<!-- Subscribe btn -->
-						<div class="subscribe-btn">
-							<a href="#" class="btn subscribe-btn" data-toggle="modal"
-								data-target="#subsModal">Subscribe</a>
-						</div>
+						
 
 						<!-- Navbar Toggler -->
 						<div class="classy-navbar-toggler">
@@ -129,21 +125,23 @@
 
 							<!-- Nav Start -->
 							<div class="classynav">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="#">Calendar</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Calendar</a></li>
-											<li><a href="about-us.html">Diary</a></li>
-											<!--  <li><a href="single-post.html">Single Post</a></li>
+							  <ul>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
+                                        <ul class="dropdown">
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
+                                           <!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
-										</ul></li>
-									<li><a href="#">Challenge</a>
-										<ul class="dropdown">
-											<li><a href="#">All</a></li>
-											<li><a href="#">Group</a></li>
-											<li><a href="#">Individual</a> <!--  <ul class="dropdown">
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Challenge</a>
+                                        <ul class="dropdown">
+                                            <li><a href="challenge_main.jsp">All</a></li>
+                                            <li><a href="challenge_main.jsp">Group</a></li>
+                                            <li><a href="challenge_main.jsp">Individual</a>
+                                               <!--  <ul class="dropdown">
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a>
@@ -157,68 +155,51 @@
                                                     </li>
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a></li>
-                                                </ul> --></li>
-											<!--  <li><a href="#">Catagory 1</a></li>
+                                                </ul> -->
+                                            </li>
+                                           <!--  <li><a href="#">Catagory 1</a></li>
                                             <li><a href="#">Catagory 1</a></li> -->
-										</ul></li>
-									<li><a href="#">Portfolio</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Statics</a></li>
-											<li><a href="about-us.html">Sample</a></li>
-											<li><a href="about-us.html">Create</a></li>
-										</ul></li>
+                                        </ul>
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
-									<!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                              
+                                     <li><a href="#">Board</a>
+                                        <ul class="dropdown">
+                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a>Notice</a></li>
+                                            <li><a>Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                                    
 
-
-									<li><a href="#">Board</a>
-										<div class="megamenu">
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 1</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 2</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 3</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 4</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-										</div></li>
-									<li><a href="contact.html">About Us</a></li>
-								</ul>
-
-								<!-- Search Form  -->
-								<div id="search-wrapper">
-									<form action="#">
-										<input type="text" id="search"
-											placeholder="Search something...">
-										<div id="close-icon"></div>
-										<input class="d-none" type="submit" value="">
-									</form>
-								</div>
-							</div>
+                                     <li><a href="mypage.jsp">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
+                                           <!--  <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 2</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 3</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 4</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul> -->
 							<!-- Nav End -->
 						</div>
 					</nav>
@@ -233,64 +214,52 @@
 		<!-- Hero Slides Area -->
 		<div class="hero-slides owl-carousel">
 			<!-- Single Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/b2.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="slide-content text-center">
-								<div class="post-tag">
-									<a href="#" data-animation="fadeInUp">lifestyle</a>
-								</div>
-								<h2 data-animation="fadeInUp" data-delay="250ms">
-									<a href="single-post.html">Take a look at last night’s
-										party!</a>
-								</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Single Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/b1.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="slide-content text-center">
-								<div class="post-tag">
-									<a href="#" data-animation="fadeInUp">lifestyle</a>
-								</div>
-								<h2 data-animation="fadeInUp" data-delay="250ms">
-									<a href="single-post.html">Take a look at last night’s
-										party!</a>
-								</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Single Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/b3.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="slide-content text-center">
-								<div class="post-tag">
-									<a href="#" data-animation="fadeInUp">lifestyle</a>
-								</div>
-								<h2 data-animation="fadeInUp" data-delay="250ms">
-									<a href="single-post.html">Take a look at last night’s
-										party!</a>
-								</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+			 <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/mainbanner1.png);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">Check Event</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2021 연말 챌린지 도전하고 특별 혜택받기!</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/banner2.png);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">Hot Challenge</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Check variable challenge</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/diaryimg.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">2022 Diary</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2022 다이어리도 데이포유와 함께</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- ##### Hero Area End ##### -->
 
 	<!-- ##### Blog Wrapper Start ##### -->
@@ -303,8 +272,8 @@
 						<!-- Blog Content -->
 						<div class="board_wrap">
 							<div class="board_title">
-								<strong>공지사항</strong>
-								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+								<strong style="position:relative; bottom:100px;">자유게시판</strong>
+								<hr>
 
 							</div>
 							<%
@@ -325,7 +294,7 @@
 									ArrayList<CommentVO> comments = cdao.getAllComment(article_seq);
 									  MemberVo vo = (MemberVo)session.getAttribute("vo");
 									%>
-							<h1>자유게시판</h1>
+
 
 							<%
 								//CommentVO cvo = null;
@@ -340,18 +309,15 @@
 									<tr>
 										<td>글번호</td>
 										<td><%=bvo.getArticle_seq()%></td>
-									</tr>
-									<tr>
 										<td>조회수</td>
 										<td><%=bvo.getArticle_count()%></td>
-									</tr>
+									</tr>				
 									<tr>
 										<td>글쓴이</td>
 										<td><%=bvo.getM_id()%></td>
-									</tr>
-									<tr>
 										<td>카테고리</td>
 										<td><%=bvo.getArticle_kind()%></td>
+										<td colspan = "4"></td>
 									</tr>
 									<tr>
 										<td>작성일</td>
