@@ -1,4 +1,5 @@
 <%@page import="model.MemberVo"%>
+<%@page import="model.MyChallengeVO"%>
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
@@ -46,6 +47,7 @@
 <%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
 	<!-- 스크립트릿 --!>
 	<%
+		
 	DAO dao = new DAO();
 	
 	//각 종류별로 게시글 불러오기.
@@ -99,13 +101,19 @@
 			}
 		}
 	}
-		
+	
+
 		
 	%>
 	
 	<%
 	// 챌린지 캘린더 수정
+	String m_id = "a";
+	ArrayList<MyChallengeVO> mychallenges = dao.MychallengeSelectAll(m_id);
+	
 	%>
+	
+	
 
 
 	<!-- Preloader -->
@@ -412,7 +420,7 @@
 
 						<div class="single-blog-thumbnail">
 
-							<a href="temp.html"><img
+							<a href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
 								src="<%= chall_personal.get(0).getChalPic1()%>"
 								alt="img/logo.png"> </a>
 							<div class="post-date">

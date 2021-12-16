@@ -235,7 +235,9 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2><%=chal_cat1 %> 챌린지</h2>
+						<h2><%=chal_cat1 %>
+							챌린지
+						</h2>
 					</div>
 				</div>
 			</div>
@@ -259,74 +261,21 @@
 						<%
 						for (int i = 0; i < chall_personal.size(); i = i + 2) {
 						%>
-						<table border=1 class="img-mini">
-							<tr>
+						<div class="single-blog-thumbnail">
+							<img src="<%=chall_personal.get(i).getChalPic1()%>"
+								alt="img/challenge_sample/none.png"
+								onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">
+							<span><%=chall_personal.get(i).getChalCnt()%></span>
+						</div>
 
-								<%
-								for (int j = i; j < i + 2; j++) {
-								%>
-								<%
-								if (j == chall_personal.size()) {
-									break;
-								}					
-							
-								
-								%>
-								<td width="50%">
+						<!-- Blog Content -->
+						<div class="single-blog-content">
+							<a href="#" class="post-tag"><%=chall_personal.get(i).getChalCat2()%></a>
+						</div>
+						<h4>
+							<a href="#" class="post-headline"><%=chall_personal.get(i).getChalSubject()%></a>
+						</h4>
 
-									<div class="single-blog-thumbnail">
-										<img src="<%=chall_personal.get(j).getChalPic1()%>"
-											alt="img/challenge_sample/none.png"
-											onclick="password(<%=chall_personal.get(j).getChalPw()%>, <%=chall_personal.get(j).getChalSeq()%>);">
-									
-										<div class="howMany">
-											<span><%=chall_personal.get(j).getChalCnt()%></span>
-										</div>
-									</div>
-								</td>
-								<%
-								}
-								%>
-							</tr>
-							<tr>
-								<%
-								for (int j = i; j < i + 2; j++) {
-								%>
-								<%
-								if (j == chall_personal.size()) {
-									break;
-								}
-								%>
-								<td>
-									<!-- Blog Content -->
-									<div class="single-blog-content">
-										<a href="#" class="post-tag"><%=chall_personal.get(j).getChalCat2()%></a>
-									</div>
-								</td>
-								<%
-								}
-								%>
-							</tr>
-							<tr>
-								<%
-								for (int j = i; j < i + 2; j++) {
-								%>
-								<%
-								if (j == chall_personal.size()) {
-									break;
-								}
-								%>
-								<td>
-									<h4>
-										<a href="#" class="post-headline"><%=chall_personal.get(j).getChalSubject()%></a>
-									</h4>
-								</td>
-								<%
-								}
-								%>
-							</tr>
-
-						</table>
 						<%
 						}
 						%>
@@ -449,7 +398,7 @@
 	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
-		<script>									
+	<script>									
 	function password(pass, seq) {
 		let link = 'ChallengeSingleService?chal_seq=' + seq;
 		if(typeof pass == "undefined" || pass == null || pass == ""){		
