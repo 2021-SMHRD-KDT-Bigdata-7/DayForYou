@@ -65,7 +65,7 @@
 	<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
 	<!-- 스크립트릿 --!>
 	<%
-		
+	String m_id = "a";
 	DAO dao = new DAO();
 	
 	//각 종류별로 게시글 불러오기.
@@ -103,16 +103,18 @@
 	//내가 참가하고있는 챌린지에서 마지막날짜 담아주는 arraylist
 	ArrayList<String> challengeEndDate = null;
 	//myChallengesSeq: 내가 참가하고있는 챌린지 순번
-	ArrayList<Integer> myChallengesSeq = null;
+	ArrayList<Integer> ChallengesSeq = null;
 	//myChallengeCat2: 내가 참가하고있는 챌린지의 카테고리2
 	ArrayList<String> myChallengeCat2 = null;
 	//myChallengeTitle: 내가 참가하고있는 챌린지의 제목
 	ArrayList<String> myChallengeTitle = null;
+	//mychallengesSeq: 내 챌린지 순번
+	ArrayList<String> myChallengesSeq = null;
+	//카테고리2 중복없이 부르기.
+	ArrayList<String> myChallengesCat2NoDuple = dao.challengeCategoryNoDuple(m_id);
 	//칼라 배열
 	String[] arr = {"blue","indigo","purple","pink","red","orange","green","teal","gray"};
-	
-	
-	
+		
 	
 	//현재 챌린지를 진행하는 수들 
 	ArrayList<Integer> nowCnt = dao.getNowCnt();
@@ -145,23 +147,24 @@
 	
 	<%
 	
-	// 챌린지 캘린더 수정
-	String m_id = "a";
+	// 챌린지 캘린더 수정	
 	ArrayList<MyChallengeVO> myChallenges = dao.MychallengeSelectAll(m_id);
 	
-	//myChallengesSeq: 내가 참가하고있는 챌린지 순번
-	myChallengesSeq = new ArrayList<>();	
+	//ChallengesSeq: 내가 참가하고있는 챌린지들의 순번
+	ChallengesSeq = new ArrayList<>();	
+	//myChallengesSeq: 내가 참가하고있는 챌린지 목록의 순번
+	myChallengesSeq = new ArrayList<>();
 	for(int i = 0 ; i < myChallenges.size(); i++){
-		myChallengesSeq.add(myChallenges.get(i).getChal_seq());	
-	
+		ChallengesSeq.add(myChallenges.get(i).getChal_seq());	
+		myChallengesSeq.add(Integer.toString(myChallenges.get(i).getMy_chal_seq()));
 	}	
 	
 	//myChallengesInfo: 내가 참가하고있는 챌린지 정보를 담아주는 arraylist
 	ArrayList<challengeBoardVO> myChallengesInfo = new ArrayList<>();
 	
 	//챌린지정보 담아주기.
-	for(int i = 0 ; i < myChallengesSeq.size(); i++){
-		myChallengesInfo.add(dao.ChallengeSingleService(myChallengesSeq.get(i)));			
+	for(int i = 0 ; i < ChallengesSeq.size(); i++){
+		myChallengesInfo.add(dao.ChallengeSingleService(ChallengesSeq.get(i)));			
 	}
 	
 	
@@ -192,10 +195,11 @@
 		
 	%>
 	
+		
+
+
 	
-
-
-	<!-- Preloader -->
+	
 	<div id="preloader">
 		<div class="preload-content">
 			<div id="original-load"></div>
@@ -526,7 +530,7 @@
 
 					<div class="single-blog-thumbnail">
 						<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
-						<a href="ChallengeSingleService?chal_seq=327"><img class = "product-img"
+						<a href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>"><img class = "product-img"
 							src="<%=chall_suggestion.get(0).getChalPic1() %>"
 							alt="img/logo.png"> </a>
 						
@@ -557,7 +561,7 @@
 			<div class="single-blog-area blog-style-2">
 
 				<div class="single-blog-thumbnail">
-					<a href="temp.html"><img class = "product-img"
+					<a href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>"><img class = "product-img"
 						src="<%=chall_popularity.get(0).getChalPic1() %>"
 						alt="img/logo.png"> </a>
 					
@@ -586,19 +590,16 @@
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
-				<img class = "product-img" src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
-				
+				<a href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>"><img class = "product-img" src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
+				</a>
 			</div>
 			<!-- Blog Content -->
 			<div class="single-blog-content">
 				<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
-				<h4>
-					<a
-						href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
-				</h4>
+				
 			</div>
 			<div align="right">
-				<a href="#">더보기</a>
+				<a href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
 			</div>
 		</div>
 		<hr style="border: solid 1px gray;">
@@ -612,10 +613,8 @@
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
-				<img class = "product-img" src="<%=chall_all.get(0).getChalPic1() %>" alt="img/logo.png">
-				<div class="post-date">
-					<a href="#"><%= chall_all.get(0).getChalCnt() %></a>
-				</div>
+				<a href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>"><img class = "product-img" src="<%=chall_all.get(0).getChalPic1() %>" alt="img/logo.png"></a>
+				
 			</div>
 			<!-- Blog Content -->
 			<div class="single-blog-content">
@@ -745,6 +744,9 @@
 	<!-- Active js -->
 	<script src="js/active.js"></script>
 
+
+	<!-- Preloader -->
+	
 	<script>
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -779,17 +781,25 @@
         },
 
         resourceAreaHeaderContent: '일정',
-        resources: [
-          { id: 'a', title: '공부', eventColor: "dark" },
-          { id: 'b', title: '운동', eventColor: 'gray' },
-          { id: 'c', title: '취미', eventColor: 'red' },
-          { id: 'e', title: '기타', eventColor: 'primary' },
+        resources: [           	
+        {id: 'a', title: '공부', eventColor: "purple"  }
+       
+          ,{id: 'b', title: '운동', eventColor: "green"  }
+          ,{id: 'c', title: '학원', eventColor: "blue"  }
+          ,{id: 'd', title: '사람', eventColor: "red"  }
+                
         ],
-        events: [
-        	
-        	
-          {id: '1', resourceId: 'a', start: '2021-12-06T14:00:00', end: '2021-12-06T18:00:00', title: 'UX/UI' },
-          { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
+        events: [        	
+        	 { id: '1', resourceId: 'a', start: '<%=challengeStartDate.get(0)%>', end: '<%=challengeEndDate.get(0)%>', title: '<%=myChallengeTitle.get(0)%>' },
+        	 { id: '2', resourceId: 'a', start: '<%=challengeStartDate.get(1)%>', end: '<%=challengeEndDate.get(1)%>', title: '<%=myChallengeTitle.get(1)%>' },
+        	 { id: '3', resourceId: 'b', start: '<%=challengeStartDate.get(2)%>', end: '<%=challengeEndDate.get(2)%>', title: '<%=myChallengeTitle.get(2)%>' },
+        	 { id: '4', resourceId: 'b', start: '<%=challengeStartDate.get(3)%>', end: '<%=challengeEndDate.get(3)%>', title: '<%=myChallengeTitle.get(3)%>' },
+        	 { id: '5', resourceId: 'd', start: '<%=challengeStartDate.get(4)%>', end: '<%=challengeEndDate.get(4)%>', title: '<%=myChallengeTitle.get(4)%>' },
+        	 { id: '6', resourceId: 'c', start: '<%=challengeStartDate.get(5)%>', end: '<%=challengeEndDate.get(5)%>', title: '<%=myChallengeTitle.get(5)%>' },
+        	 { id: '7', resourceId: 'c', start: '<%=challengeStartDate.get(6)%>', end: '<%=challengeEndDate.get(6)%>', title: '<%=myChallengeTitle.get(6)%>' }
+        
+          
+       /*   { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
           { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },
           { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '생일' },
           { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: '프로젝트' },
@@ -802,7 +812,7 @@
           { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '영화' },
           { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: '크리스마스 파티' },
           { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: '도서 구매' },
-          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }
+          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }*/
         ]
       });
 
@@ -812,6 +822,8 @@
 
 
   </script>
+  
+
 
 </body>
 

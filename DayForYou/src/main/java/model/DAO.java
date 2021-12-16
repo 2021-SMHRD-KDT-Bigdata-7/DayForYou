@@ -333,7 +333,25 @@ public class DAO {
 		String result = arr[0] + "-" + arr[1]+ "-" +arr[2];
 		return result;
 	}
-	
+	public ArrayList<String> challengeCategoryNoDuple(String user_id) {
+		ArrayList<String> cat2 = new ArrayList<>();
+		connection();
+		try {
+			sql = "select distinct a.chal_cat2 from tbl_challenge a, tbl_my_challenge b where b.attend_id = ? and a.chal_seq = b.chal_seq";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_id);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				cat2.add(rs.getString(1));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cat2;
+	}
 	/**
 	 * 챌린지 누적 참가자 메소드
 	 * 
