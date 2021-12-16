@@ -41,7 +41,7 @@
 	</table>
 	<tr><tr>
 	<div align="center"margin"10px">
-		<a class="btn btn-outline-dark mt-auto" href="main.html">확인하기</a>
+		<a class="btn btn-outline-dark mt-auto" href="main.jsp">확인하기</a>
 	</div>
 </body>
 </html>

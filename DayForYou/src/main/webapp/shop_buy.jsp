@@ -25,6 +25,7 @@
 
 <body>
 <%
+	String goods_point = request.getParameter("goods_point");
 	MemberVo vo = (MemberVo)session.getAttribute("vo");
 	out.print(vo);
 
@@ -74,8 +75,9 @@
 									<div class="text-center">
 										<!-- Product name-->
 										<h5 class="fw-bolder">
-										<!-- 아직 해결못함 -->
-										<%=goods.get(1).getGoods_point() %></h5>
+										<!-- 아직 해결못함 -->										
+										<%=goods_point %></h5>
+										
 										
 									</div>
 								</div>
