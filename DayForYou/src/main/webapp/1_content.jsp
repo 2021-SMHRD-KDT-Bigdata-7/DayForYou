@@ -1,3 +1,6 @@
+<%@page import="model.MemberVo"%>
+<%@page import="model.CommentVO"%>
+<%@page import="model.CommentDAO"%>
 <%@page import="model.BoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.BoardDAO"%>
@@ -305,12 +308,32 @@
 
 							</div>
 							<%
-request.setCharacterEncoding("euc-kr");
-int article_seq = Integer.parseInt(request.getParameter("article_seq"));
-BoardDAO dao = new BoardDAO();
-BoardVO bvo = dao.getBoard(article_seq);
+								request.setCharacterEncoding("euc-kr");
+								String article_string =request.getParameter("article_seq"); 
+								
+				 
+								
+								if(article_string == null){
+									article_string = (String)request.getAttribute("article_seq");									
+								}
+								int article_seq = Integer.parseInt(article_string);
+								BoardDAO dao = new BoardDAO();
+								BoardVO bvo = dao.getBoard(article_seq);
+							%>
+							<%
+									CommentDAO cdao = new CommentDAO();
+									ArrayList<CommentVO> comments = cdao.getAllComment(article_seq);
+									  MemberVo vo = (MemberVo)session.getAttribute("vo");
+									%>
+							<h1>자유게시판</h1>
 
-%>
+							<%
+								//CommentVO cvo = null;
+							//	if(session.getAttribute("cvo") !=null){
+								   CommentVO cvo = (CommentVO)session.getAttribute("cvo");
+								//}
+								
+								%>
 
 							<form action="1_list.jsp" method="post">
 								<table border="1">
@@ -349,15 +372,53 @@ BoardVO bvo = dao.getBoard(article_seq);
 
 								</table>
 							</form>
-							<button
-								onclick="location.href = 'updateBoardService?article_seq=<%=bvo.getArticle_seq()%>'">수정</button>
-							<button
-								onclick="location.href = '1_deleteForm.jsp?article_seq=<%=bvo.getArticle_seq()%>'">삭제</button>
+							<table border="1" class="#">
+								<tr id="head_tr" class="#">
+									<td class="#">댓글 번호</td>
+									<td class="#">댓글 작성자</td>
+									<td class="#">댓글 작성일</td>
+									<td class="#">댓글 내용</td>
+								</tr>
+								<%for(int i=0; i<comments.size(); i++){ %>
+								<tr class="#">
+									
+									<td class="#"><%=comments.get(i).getComment_num()%></td>
+									<td class="#"><%=comments.get(i).getM_id()%></td>
+									<td class="#"><%=comments.get(i).getComment_date()%></td>
+									<td class="#"><%=comments.get(i).getComment_content()%></td>
+									
+								</tr>
+								<%} %>
+								</table>
+					<form action="writerCommentService?article_seq=<%=bvo.getArticle_seq()%>" method="post">
+								<table border="1">
+
+		
+									<tr>
+										<td>댓글 내용</td>
+										<td><textarea rows="10" cols="20" name="comment_content"></textarea></td>
+									</tr>
+									<tr>
+										<td colspan="2"><input type="submit" value="댓글쓰기"></td>
+									</tr>
+									<input type="hidden" name="m_id"
+										value="<%=vo.getId()%>">
+									</div>
+								</table>
+							</form>
+					
+							<button onclick="location.href = 'updateBoardService?article_seq=<%=bvo.getArticle_seq()%>'">수정</button>
+							<button onclick="location.href = '1_deleteForm.jsp?article_seq=<%=bvo.getArticle_seq()%>'">삭제</button>
 							<!--<button href="1_deleteForm.jsp?article_seq=<%//<%=rs.getInt("article_seq")%>">삭제</button>-->
 							<!-- <button onclick = "location.href = '1_deleteForm.jsp'">삭제</button> -->
 
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+					
 
 
 					<!-- ##### Instagram Feed Area End ##### -->

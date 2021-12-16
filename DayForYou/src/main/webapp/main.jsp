@@ -174,7 +174,7 @@
                               
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
-                                            <li><a href="1_writeForm.jsp">Community</a></li>
+                                            <li><a href="1_list.jsp">Community</a></li>
                                             <li><a>Notice</a></li>
                                             <li><a>Q&A</a></li>
                                         </ul>

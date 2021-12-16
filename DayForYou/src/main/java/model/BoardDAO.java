@@ -222,6 +222,11 @@ public class BoardDAO {
 			bvo = new BoardVO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
 					rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8),
 					rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getInt(13));
+	        String sql2 = "update tbl_nea set article_count = article_count +1  where article_seq=?";
+	        psmt = conn.prepareStatement(sql2); 
+	        psmt.setInt(1, article_seq);
+	        int tt = psmt.executeUpdate();
+	       
 		}
 		
 		}catch(Exception e) {
@@ -250,9 +255,12 @@ public class BoardDAO {
 	
 			vo = new BoardVO(rs.getInt("article_seq"),
 					rs.getString("article_kind"), 
-					rs.getString("article_subject"),rs.getString("article_content"),
-					rs.getString("reg_date"), rs.getString("m_id"),
-					rs.getString("article_file1"), rs.getString("article_file2"),
+					rs.getString("article_subject"),
+					rs.getString("article_content"),
+					rs.getString("reg_date"),
+					rs.getString("m_id"),
+					rs.getString("article_file1"),
+					rs.getString("article_file2"),
 					rs.getString("article_file3"),
 					rs.getString("article_file4"),
 					rs.getString("article_file5"),
