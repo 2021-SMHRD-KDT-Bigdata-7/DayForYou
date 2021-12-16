@@ -8,6 +8,25 @@
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
+<style type="text/css">
+.product-title {
+	text-align: center;
+	display: table;
+	border: 1px solid #cecece;
+	width: 350px;
+	height: 250px;
+}
+
+.product-img-div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.product-img {
+	max-width: 350px;
+	max-height: 250px;
+}
+</style>
 <head>
 <meta charset="EUC-KR">
 <meta name="description" content="">
@@ -17,7 +36,7 @@
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
-<title>my_point</title>
+<title>my_challenge</title>
 
 <!-- Favicon -->
 <link rel="icon" href="img/core-img/favicon.ico">
@@ -43,27 +62,12 @@ table {
 
 <body>
 	<%
-
 	DAO dao = new DAO();
-	ArrayList<MyChallengeVO> mvo= (ArrayList<MyChallengeVO>)request.getAttribute("mvo");
+	ArrayList<MyChallengeVO> mvo = (ArrayList<MyChallengeVO>) request.getAttribute("mvo");
 	MySelectChallVO msvo = null;
-	
-%>
-			
-					<% for(int i =0; i<mvo.size();i++){%>
-						<%= mvo.get(i).getMy_chal_seq()%>
-						<%msvo=dao.MySelectChall(mvo.get(i).getChal_seq()); %>
-						<%=msvo.getChal_subject() %>
-						<%= mvo.get(i).getChal_seq()%>
-						<%= mvo.get(i).getAttend_id()%>
-						<%= mvo.get(i).getChal_time()%>
-						<%= mvo.get(i).getMy_chal_memo()%>
-						<%= mvo.get(i).getChal_num() %>
-					<%} %>
-					<%// 챌린지 제목, 챌린지 사진,챌린지 기한, 챌린지 카테고리1,2%>
-					
-					</tr>
-					</table>
+	%>
+
+
 	<!-- Preloader -->
 	<div id="preloader">
 		<div class="preload-content">
@@ -229,68 +233,107 @@ table {
 								</div>
 								<hr>
 
-								<br> <br>
+
+								<!-- 시작~!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+								<!-- 시작~!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+								<!-- 시작~!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+								<!-- 시작~!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+								<!-- 시작~!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 								<div>
-									<table style="border: none;">
-										<tr>
-											<td>
-												<div class="col-12 col-md-6">
-													<div class="group">
-														<h4>
-															추천
-														<span class="highlight"></span> <span class="bar"></span>
-													</div>
-												</div>
-											</td>
-											<td></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="col-12 col-md-6">
-													<div class="group">
-														<h4>구매내역</h4>
+									<div class="group">
 
-														<span class="highlight"></span> <span class="bar"></span>
-													</div>
-												</div>
-											</td>
-											<td></td>
-										</tr>
-										<tr>
-											<td>
-												</div> <!-- Footer Social Area -->
-												<div class="footer-social-area mt-30">
-													<a href="#" data-toggle="tooltip" data-placement="top"
-														title="Pinterest"><i class="fa fa-pinterest"
-														aria-hidden="true"></i></a> <a href="#" data-toggle="tooltip"
-														data-placement="top" title="Facebook"><i
-														class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"
-														data-toggle="tooltip" data-placement="top" title="Twitter"><i
-														class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-														data-toggle="tooltip" data-placement="top"
-														title="Dribbble"><i class="fa fa-dribbble"
-														aria-hidden="true"></i></a> <a href="#" data-toggle="tooltip"
-														data-placement="top" title="Behance"><i
-														class="fa fa-behance" aria-hidden="true"></i></a> <a href="#"
-														data-toggle="tooltip" data-placement="top"
-														title="Linkedin"><i class="fa fa-linkedin"
-														aria-hidden="true"></i></a>
-												</div>
-												</div>
-												</div>
-												</div> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-												<script>
-													document.write(new Date()
-															.getFullYear());
-												</script> 이용약관 | 개인정보처리방침 <a href="https://colorlib.com" target="_blank">000-0000-0000</a>
-												<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+										<hr style="border: solid 1px gray;">
 
-												</footer> <!-- ##### Footer Area End ##### --> <!-- jQuery (Necessary for All JavaScript Plugins) -->
-												<script src="js/jquery/jquery-2.2.4.min.js"></script> <!-- Popper js -->
-												<script src="js/popper.min.js"></script> <!-- Bootstrap js -->
-												<script src="js/bootstrap.min.js"></script> <!-- Plugins js -->
-												<script src="js/plugins.js"></script> <!-- Active js --> <script
-													src="js/active.js"></script>
+										<%
+										for (int i = 0; i < mvo.size(); i++) {
+										%>
+										<%
+										msvo = dao.MySelectChall(mvo.get(i).getChal_seq());
+										%>
+										<br>
+										<h4><%=msvo.getChal_cat2()%></h4>
+										<div class="product-title">
+											<div class="product-img-div">
+												<img class="product-img" src="<%=msvo.getChal_pic1()%>"
+													alt="img/logo.jpg">
+											</div>
+										</div>
+										<div>
+											<div
+												style="display:inline-block; width: 70px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
+												<%=msvo.getChal_public()%>
+											</div>
+											<div style="display:inline-block; margin-top: 1px">
+											<a href="#" style="text-align: center; font-size:20px; color:black; font-weight: bold"><%=msvo.getChal_subject()%></a>
+											</div>
+										</div>
+										<div
+											style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 12px; box-shadow: none; background-color: rgb(26, 188, 156);">
+											<%=msvo.getChal_period()%>
+										</div>
+										<h4>
+											시간 :
+											<%=mvo.get(i).getChal_time()%>
+											hours
+										</h4>
+										<h4>
+											횟수 :
+											<%=mvo.get(i).getChal_num()%>
+											times
+										</h4>
+										<br>
+										<hr style="border: solid 1px gray;">
+
+
+										<%
+										}
+										%>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Social Area -->
+				<div class="footer-social-area mt-30">
+					<a href="#" data-toggle="tooltip" data-placement="top"
+						title="Pinterest"><i class="fa fa-pinterest"
+						aria-hidden="true"></i></a> <a href="#" data-toggle="tooltip"
+						data-placement="top" title="Facebook"><i
+						class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"
+						data-toggle="tooltip" data-placement="top" title="Twitter"><i
+						class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
+						data-toggle="tooltip" data-placement="top" title="Dribbble"><i
+						class="fa fa-dribbble" aria-hidden="true"></i></a> <a href="#"
+						data-toggle="tooltip" data-placement="top" title="Behance"><i
+						class="fa fa-behance" aria-hidden="true"></i></a> <a href="#"
+						data-toggle="tooltip" data-placement="top" title="Linkedin"><i
+						class="fa fa-linkedin" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	<script>
+		document.write(new Date().getFullYear());
+	</script>
+	이용약관 | 개인정보처리방침
+	<a href="https://colorlib.com" target="_blank">000-0000-0000</a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+	</footer>
+	<!-- ##### Footer Area End ##### -->
+	<!-- jQuery (Necessary for All JavaScript Plugins) -->
+	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<!-- Popper js -->
+	<script src="js/popper.min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Plugins js -->
+	<script src="js/plugins.js"></script>
+	<!-- Active js -->
+	<script src="js/active.js"></script>
 </body>
 
 </html>
