@@ -2,13 +2,13 @@
 <%@page import="model.challengeBoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.DAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -47,15 +47,17 @@
 </head>
 
 <body>
-	<!-- ìŠ¤í¬ë¦½íŠ¸ë¦¿ -->
+
 	<%
 	MemberVo vo = (MemberVo) session.getAttribute("vo");
 	
 	DAO dao = new DAO();
+	request.setCharacterEncoding("EUC-KR");
 	String chal_cat1 = request.getParameter("chal_cat1");
+	System.out.println(chal_cat1);
 	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat(chal_cat1);
 	if (chall_personal == null) {
-		System.out.println("nullìž…ë‹ˆë‹¤.");
+		System.out.println("nullÀÔ´Ï´Ù.");
 	}
 	int lastIndex = chall_personal.size() - 1;
 	%>
@@ -136,7 +138,7 @@
 					<input type="text" id="search" placeholder="Search something...">
 
 				</div>
-				<!-- ê¸€ì“°ê¸° ë²„íŠ¼ -->
+				<!-- ±Û¾²±â ¹öÆ° -->
 				<div class="write-bar">
 					<a href="chall.jsp"><img
 						src="img/challenge-main/write_button.png"
@@ -256,7 +258,7 @@
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
 						<h2><%=chal_cat1 %>
-							ì±Œë¦°ì§€Â€
+							Ã§¸°Áö
 						</h2>
 					</div>
 				</div>
@@ -271,8 +273,6 @@
 		<div class="container">
 			<div class="row">
 
-				<!-- ì±Œë¦°ì§€ ì˜ì—­  -->
-
 				<div class="col-12 col-md-6 col-lg-4">				
 					<div class="single-blog-area blog-style-2">
 						<%
@@ -284,7 +284,7 @@
 								onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">
 							<div class="post-date">
 								<a href="#"><%= chall_personal.get(i).getChalCnt() %>
-								<span>ì°¸ì—¬ìˆ˜</span> </a>
+								<span>count</span> </a>
 							</div>
 						</div>
 
@@ -426,9 +426,9 @@
 		if(typeof pass == "undefined" || pass == null || pass == ""){		
 			location.replace(link);	
 		}else{		
-			let password = prompt("ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
+			let password = prompt("ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
 			if(pass != password){
-				alert("ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.");					
+				alert("ºñ¹Ð¹øÈ£°¡ Æ²·È½À´Ï´Ù.");					
 			}	
 			else{						
 				location.replace(link);	

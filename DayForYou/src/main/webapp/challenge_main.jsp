@@ -7,13 +7,13 @@
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="model.DAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -33,7 +33,7 @@
 <link href='./fullcalender/lib/main.min.css' rel='stylesheet' />
 <script src='./fullcalender/lib/main.min.js'></script>
 
-<!-- í™”ë©´ í•´ìƒë„ì— ë”°ë¼ ê¸€ì í¬ê¸° ëŒ€ì‘(ëª¨ë°”ì¼ ëŒ€ì‘) -->
+<!-- È­¸é ÇØ»óµµ¿¡ µû¶ó ±ÛÀÚ Å©±â ´ëÀÀ(¸ğ¹ÙÀÏ ´ëÀÀ) -->
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
@@ -64,43 +64,43 @@
 
 
 	<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
-	<!-- ìŠ¤í¬ë¦½íŠ¸ë¦¿ --!>
+	<!-- ½ºÅ©¸³Æ®¸´ --!>
 	<%
 		
 	DAO dao = new DAO();
 	
-	//ê° ì¢…ë¥˜ë³„ë¡œ ê²Œì‹œê¸€ ë¶ˆëŸ¬ì˜¤ê¸°.
-	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("ê°œì¸");
+	//°¢ Á¾·ùº°·Î °Ô½Ã±Û ºÒ·¯¿À±â.
+	ArrayList<challengeBoardVO> chall_personal = dao.SelectChallengeBoard_cat("°³ÀÎ");
 	int last_chall_personal = chall_personal.size()-1;
 		
-	ArrayList<challengeBoardVO> chall_group = dao.SelectChallengeBoard_cat("ê·¸ë£¹");
+	ArrayList<challengeBoardVO> chall_group = dao.SelectChallengeBoard_cat("±×·ì");
 	int last_chall_group = chall_group.size()-1;
 	
-	ArrayList<challengeBoardVO> chall_all= dao.SelectChallengeBoard_cat("ì „ì²´");
+	ArrayList<challengeBoardVO> chall_all= dao.SelectChallengeBoard_cat("ÀüÃ¼");
 	int last_chall_all = chall_all.size()-1;
 	
-	ArrayList<challengeBoardVO> chall_popularity = dao.SelectChallengeBoard_cat("ì¸ê¸°");
+	ArrayList<challengeBoardVO> chall_popularity = dao.SelectChallengeBoard_cat("ÀÎ±â");
 	int last_chall_popularity = chall_popularity.size()-1;
 	
-	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("ì¶”ì²œ");
+	ArrayList<challengeBoardVO> chall_suggestion =  dao.SelectChallengeBoard_cat("ÃßÃµ");
 	int last_chall_suggestion = chall_suggestion.size()-1;
 	
-	//ëˆ„ì  ì±Œë¦°ì§€ ìˆ˜
+	//´©Àû Ã§¸°Áö ¼ö
 	int allChallengeCount = dao.CountAllChallenge();	
-	//í˜„ì¬ ì§„í–‰ì¤‘ì¸ ì±ŒëŸ°ì§€ ìˆ˜
+	//ÇöÀç ÁøÇàÁßÀÎ Ã§·±Áö ¼ö
 	int nowChallengeCount = 0;
-	//ëˆ„ì  ì°¸ê°€ì ìˆ˜
+	//´©Àû Âü°¡ÀÚ ¼ö
 	int allChallengeCountCnt = dao.countChallCnt();
-	//í˜„ì¬ ì§„í–‰ì¤‘ì¸ ì°¸ê°€ì ìˆ˜
+	//ÇöÀç ÁøÇàÁßÀÎ Âü°¡ÀÚ ¼ö
 	int nowChallengeCountCnt = 0;
 	
 	
 	
-	//í˜„ì¬ ì±Œë¦°ì§€ë¥¼ ì§„í–‰í•˜ëŠ” ìˆ˜ë“¤ 
+	//ÇöÀç Ã§¸°Áö¸¦ ÁøÇàÇÏ´Â ¼öµé 
 	ArrayList<Integer> nowCnt = dao.getNowCnt();
 		
 	ArrayList<DayDAO> challengePeriod = null;
-	challengePeriod = dao.getChallengePeriod();
+	challengePeriod = dao.getChallengeEndPeriod();
 	
 	
 	LocalDate now = LocalDate.now();
@@ -126,9 +126,18 @@
 	%>
 	
 	<%
-	// ì±Œë¦°ì§€ ìº˜ë¦°ë” ìˆ˜ì •
+	// Ã§¸°Áö Ä¶¸°´õ ¼öÁ¤
 	String m_id = "a";
-	ArrayList<MyChallengeVO> mychallenges = dao.MychallengeSelectAll(m_id);
+	ArrayList<MyChallengeVO> myChallenges = dao.MychallengeSelectAll(m_id);
+	int size = myChallenges.size();
+	int myChallengesSeq[] = new int[size];
+	
+	for(int i = 0 ; i < size; i++){
+		myChallengesSeq[i] = myChallenges.get(i).getMy_chal_seq();
+	}
+	
+	
+	
 	
 	%>
 	
@@ -211,7 +220,7 @@
 					<input type="text" id="search" placeholder="Search something...">
 
 				</div>
-				<!-- ê¸€ì“°ê¸° ë²„íŠ¼ -->
+				<!-- ±Û¾²±â ¹öÆ° -->
 				<div class="write-bar">
 					<a href="challenge_make.jsp"><img
 						src="img/challenge-main/write_button.png"
@@ -236,10 +245,10 @@
 					<div class="classynav">
 						<%if(vo != null) { %>
 						<button class="button4" onclick="location.href = 'LogoutService'">Logout</button>
-						<%System.out.println("ë¡œê·¸ì¸ ì„±ê³µ");%>
+						<%System.out.println("·Î±×ÀÎ ¼º°ø");%>
 						<%}else{ %>
 						<a href="login.jsp" class="button4">login</a>
-						<%System.out.println("ë¡œê·¸ì•„ì›ƒ ì„±ê³µ");%>
+						<%System.out.println("·Î±×¾Æ¿ô ¼º°ø");%>
 						<%} %>
 						<ul>
 							<li><a href="main.jsp">Home</a></li>
@@ -339,7 +348,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>ì±Œë¦°ì§€</h2>
+						<h2>Ã§¸°Áö</h2>
 					</div>
 				</div>
 			</div>
@@ -358,11 +367,11 @@
 						<!-- Blog Content -->
 						<div class="single-blog-content">
 							<div class="line"></div>
-							<a href="#" class="post-tag">ê³µ ì§€ ì‚¬ í•­</a>
+							<a href="#" class="post-tag">°ø Áö »ç Ç×</a>
 							<h4>
-								<a href="#" class="post-headline">ì±Œë¦°ì§€ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!</a>
+								<a href="#" class="post-headline">Ã§¸°Áö¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù!</a>
 							</h4>
-							<p>ì´ê³³ì€ Day For Youì…ë‹ˆë‹¤. ëª¨ë‘ í•¨ê»˜ ì±Œë¦°ì§€ì— ë„ì „í•´ë³´ì„¸ìš”!!</p>
+							<p>ÀÌ°÷Àº Day For YouÀÔ´Ï´Ù. ¸ğµÎ ÇÔ²² Ã§¸°Áö¿¡ µµÀüÇØº¸¼¼¿ä!!</p>
 						</div>
 					</div>
 				</div>
@@ -386,8 +395,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td><p>ëˆ„ì  ì±Œë¦°ì§€ ìˆ˜</p></td>
-								<td><p>ì§„í–‰ì¤‘ì¸ ì±Œë¦°ì§€ ìˆ˜</p></td>
+								<td><p>´©Àû Ã§¸°Áö ¼ö</p></td>
+								<td><p>ÁøÇàÁßÀÎ Ã§¸°Áö ¼ö</p></td>
 							</tr>
 
 							<tr>
@@ -404,9 +413,9 @@
 								</td>
 							</tr>
 							<tr>
-								<td><p>ëˆ„ì  ì°¸ê°€ì ìˆ˜</p></td>
+								<td><p>´©Àû Âü°¡ÀÚ ¼ö</p></td>
 
-								<td><p>ì§„í–‰ì¤‘ì¸ ì°¸ê°€ì ìˆ˜</p></td>
+								<td><p>ÁøÇàÁßÀÎ Âü°¡ÀÚ ¼ö</p></td>
 							</tr>
 						</table>
 					</div>
@@ -425,11 +434,11 @@
 		<div class="container">
 			<div class="row">
 
-				<!-- My ì±Œë¦°ì§€ ì˜ì—­  -->
+				<!-- My Ã§¸°Áö ¿µ¿ª  -->
 
 				<div class="col-12 col-md-6 col-lg-4">
 					<div>
-						<h2>My ì±Œë¦°ì§€</h2>
+						<h2>My Ã§¸°Áö</h2>
 					</div>
 
 					<div class="single-blog-area blog-style-2" style="margin: 10 0 0 0">
@@ -455,15 +464,15 @@
 					</div>
 					<div align="right">
 						<a
-							href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">ë”ë³´ê¸°</a>
+							href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">´õº¸±â</a>
 					</div>
 				</div>
 			</div>
 			<hr style="border: solid 1px gray;">
-			<!-- ì¶”ì²œ ì±Œë¦°ì§€ ì˜ì—­  -->
+			<!-- ÃßÃµ Ã§¸°Áö ¿µ¿ª  -->
 			<div class="col-12 col-md-6 col-lg-4">
 				<div>
-					<h2>ì¶”ì²œ ì±Œë¦°ì§€</h2>
+					<h2>ÃßÃµ Ã§¸°Áö</h2>
 				</div>
 				<div class="single-blog-area blog-style-2">
 
@@ -487,16 +496,17 @@
 				</div>
 				<div align="right">
 					<a
-						href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">ë”ë³´ê¸°</a>
+						href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">´õº¸±â</a>
+						<% System.out.println(chall_suggestion.get(0).getChalCat1()); %>
 				</div>
 			</div>
 			<hr style="border: solid 1px gray;">
 		</div>
 
-		<!-- ì¸ê¸° ì±Œë¦°ì§€ ì˜ì—­  -->
+		<!-- ÀÎ±â Ã§¸°Áö ¿µ¿ª  -->
 		<div class="col-12 col-md-6 col-lg-4">
 			<div>
-				<h2>ì¸ê¸° ì±Œë¦°ì§€</h2>
+				<h2>ÀÎ±â Ã§¸°Áö</h2>
 			</div>
 			<div class="single-blog-area blog-style-2">
 
@@ -518,16 +528,16 @@
 			</div>
 			<div align="right">
 				<a
-					href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">ë”ë³´ê¸°</a>
+					href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">´õº¸±â</a>
 			</div>
 			<hr style="border: solid 1px gray;">
 		</div>
 	</div>
 
-	<!-- ê·¸ë£¹ ì±Œë¦°ì§€ ì˜ì—­  -->
+	<!-- ±×·ì Ã§¸°Áö ¿µ¿ª  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
-			<h2>ê·¸ë£¹ ì±Œë¦°ì§€</h2>
+			<h2>±×·ì Ã§¸°Áö</h2>
 		</div>
 		<div class="single-blog-area blog-style-2">
 
@@ -542,20 +552,20 @@
 				<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
 				<h4>
 					<a
-						href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">ë”ë³´ê¸°</a>
+						href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">´õº¸±â</a>
 				</h4>
 			</div>
 			<div align="right">
-				<a href="#">ë”ë³´ê¸°</a>
+				<a href="#">´õº¸±â</a>
 			</div>
 		</div>
 		<hr style="border: solid 1px gray;">
 	</div>
 
-	<!-- ì „ì²´ ì±Œë¦°ì§€ ì˜ì—­  -->
+	<!-- ÀüÃ¼ Ã§¸°Áö ¿µ¿ª  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
-			<h2>ì „ì²´ ì±Œë¦°ì§€</h2>
+			<h2>ÀüÃ¼ Ã§¸°Áö</h2>
 		</div>
 		<div class="single-blog-area blog-style-2">
 
@@ -575,7 +585,7 @@
 		</div>
 		<div align="right">
 			<a
-				href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">ë”ë³´ê¸°</a>
+				href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">´õº¸±â</a>
 		</div>
 	</div>
 
@@ -700,21 +710,21 @@
 
       var calendar = new FullCalendar.Calendar(calendarEl, {
         schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-        //now: '2020-09-07', // ì´ê±° ë¹„í™œì„±í™”í•˜ë©´ ì˜¤ëŠ˜ ë‚ ì§œë¡œ ë‚˜ì˜´
+        //now: '2020-09-07', // ÀÌ°Å ºñÈ°¼ºÈ­ÇÏ¸é ¿À´Ã ³¯Â¥·Î ³ª¿È
         scrollTime: '00:00', // undo default 6am scrollTime
-        height: '500px', // ìº˜ë¦°ë” ë†’ì´
-        expendRows: true, // í™”ë©´ì— ë§ê²Œ ë†’ì´ ì„¤ì •
-        editable: true, // ë‹¬ë ¥ì— ìƒì„±ëœ ì´ë²¤íŠ¸ë¥¼ ìˆ˜ì •í• ìˆ˜ ìˆëŠ”ì§€
-        selectable: true, // ë‹¬ë ¥ì— í‘œì‹œëœ ì´ë²¤íŠ¸ ë“œë˜ê·¸ ì„¤ì •ê°€ëŠ¥.
-        aspectRatio: 1.8, // ê°€ë¡œ, ì„¸ë¡œ ë¹„ìœ¨
-        dayMaxEvents: false, // ì´ë²¤íŠ¸ê°€ ì˜¤ë²„ë˜ë©´ ë†’ì´ ì œí•œ (+ ëª‡ ê°œì‹ìœ¼ë¡œ í‘œí˜„)
-        locale: 'ko', // í•œêµ­ì–´ ì„¤ì •
+        height: '500px', // Ä¶¸°´õ ³ôÀÌ
+        expendRows: true, // È­¸é¿¡ ¸Â°Ô ³ôÀÌ ¼³Á¤
+        editable: true, // ´Ş·Â¿¡ »ı¼ºµÈ ÀÌº¥Æ®¸¦ ¼öÁ¤ÇÒ¼ö ÀÖ´ÂÁö
+        selectable: true, // ´Ş·Â¿¡ Ç¥½ÃµÈ ÀÌº¥Æ® µå·¡±× ¼³Á¤°¡´É.
+        aspectRatio: 1.8, // °¡·Î, ¼¼·Î ºñÀ²
+        dayMaxEvents: false, // ÀÌº¥Æ®°¡ ¿À¹öµÇ¸é ³ôÀÌ Á¦ÇÑ (+ ¸î °³½ÄÀ¸·Î Ç¥Çö)
+        locale: 'ko', // ÇÑ±¹¾î ¼³Á¤
         buttonText: {
-          month: 'ìº˜ë¦°ë”',
-          today: 'ì˜¤ëŠ˜',
-          list: 'ì¼ì •'
+          month: 'Ä¶¸°´õ',
+          today: '¿À´Ã',
+          list: 'ÀÏÁ¤'
         },
-        headerToolbar: { //ìº˜ë¦°ë” ìƒë‹¨ íˆ´ë°” ë¶€ë¶„ ë²„íŠ¼ ìˆœì„œ
+        headerToolbar: { //Ä¶¸°´õ »ó´Ü Åø¹Ù ºÎºĞ ¹öÆ° ¼ø¼­
           right: 'dayGridMonth,today,listDay',
           center: 'prev,next',
           left: 'title'
@@ -726,29 +736,29 @@
           }
         },
 
-        resourceAreaHeaderContent: 'ì¼ì •',
+        resourceAreaHeaderContent: 'ÀÏÁ¤',
         resources: [
-          { id: 'a', title: 'ê³µë¶€', eventColor: "blue" },
-          { id: 'b', title: 'ìš´ë™', eventColor: 'orange' },
-          { id: 'c', title: 'ì·¨ë¯¸', eventColor: 'green' },
-          { id: 'e', title: 'ê¸°íƒ€', eventColor: 'purple' },
+          { id: 'a', title: '°øºÎ', eventColor: "blue" },
+          { id: 'b', title: '¿îµ¿', eventColor: 'orange' },
+          { id: 'c', title: 'Ãë¹Ì', eventColor: 'green' },
+          { id: 'e', title: '±âÅ¸', eventColor: 'purple' },
         ],
         events: [
           {id: '1', resourceId: 'a', start: '2021-12-06T14:00:00', end: '2021-12-06T18:00:00', title: 'UX/UI' },
-          { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: 'í”„ë¡œì íŠ¸' },
-          { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: 'ì¹´ë“œê°’ ê²°ì œì¼' },
-          { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: 'ìƒì¼' },
-          { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: 'í”„ë¡œì íŠ¸' },
-          { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: 'í”„ë¡œì íŠ¸' },
-          { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: 'ë°œí‘œ' },
-          { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: 'ë°°ë“œë¯¼í„´' },
-          { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: 'ë°°ë“œë¯¼í„´' },
-          { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: 'ì¸¡êµ¬' },
-          { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: 'ì›”ê¸‰' },
-          { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: 'ì˜í™”' },
-          { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: 'í¬ë¦¬ìŠ¤ë§ˆìŠ¤ íŒŒí‹°' },
-          { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: 'ë„ì„œ êµ¬ë§¤' },
-          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: 'ê¸°íƒ€ ì—°ìŠµ' }
+          { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: 'ÇÁ·ÎÁ§Æ®' },
+          { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: 'Ä«µå°ª °áÁ¦ÀÏ' },
+          { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '»ıÀÏ' },
+          { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: 'ÇÁ·ÎÁ§Æ®' },
+          { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: 'ÇÁ·ÎÁ§Æ®' },
+          { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: '¹ßÇ¥' },
+          { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: '¹èµå¹ÎÅÏ' },
+          { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: '¹èµå¹ÎÅÏ' },
+          { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: 'Ãø±¸' },
+          { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: '¿ù±Ş' },
+          { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '¿µÈ­' },
+          { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: 'Å©¸®½º¸¶½º ÆÄÆ¼' },
+          { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: 'µµ¼­ ±¸¸Å' },
+          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '±âÅ¸ ¿¬½À' }
         ]
       });
 

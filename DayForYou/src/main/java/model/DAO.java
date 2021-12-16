@@ -280,13 +280,12 @@ public class DAO {
 		}
 		return endDateChall;
 	}
-
 	/**
 	 * 챌린지 peroid 정제하는 메소드
 	 * 
 	 * @param
 	 */
-	public ArrayList<DayDAO> getChallengePeriod() {
+	public ArrayList<DayDAO> getChallengeStartPeriod() {
 		ArrayList<DayDAO> periodDay = new ArrayList<>();
 		DayDAO ddao = null;
 
@@ -312,6 +311,41 @@ public class DAO {
 
 		return periodDay;
 	}
+
+	/**
+	 * 챌린지 peroid 정제하는 메소드.
+	 * 
+	 * @return 챌린지 마지막 날짜 출력
+	 * @param
+	 */
+	public ArrayList<DayDAO> getChallengeEndPeriod() {
+		ArrayList<DayDAO> periodDay = new ArrayList<>();
+		DayDAO ddao = null;
+
+		// 챌린지 마감날짜 불러오기.
+		ArrayList<String> endDateChall = getEndDateChallenge();
+
+		// 챌린지 기간 ~를 기점으로 마감날짜만 빼오는 배열
+		ArrayList<String> divide1 = new ArrayList<String>();
+
+		for (int i = 0; i < endDateChall.size(); i++) {
+			String[] arr = new String[2];
+			arr = endDateChall.get(i).split("~");
+			divide1.add(arr[1]);
+
+		}
+
+		for (int i = 0; i < divide1.size(); i++) {
+			String[] arr = divide1.get(i).split("/");
+
+			ddao = new DayDAO(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
+			periodDay.add(ddao);
+		}
+
+		return periodDay;
+	}
+	
+	
 
 	/**
 	 * 챌린지 누적 참가자 메소드
