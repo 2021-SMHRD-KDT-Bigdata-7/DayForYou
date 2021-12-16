@@ -22,14 +22,11 @@ public class shop_insert extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		MemberVo vo = (MemberVo) session.getAttribute("vo");
-
-		shopVO svo = new shopVO();
-		
+	
 		String m_id = vo.getId();
-		
-		int shop_seq = Integer.parseInt(request.getParameter("shop_seq"));
+				
 		String goods_name = request.getParameter("goods_name");
-		String goods_category = request.getParameter("goods_category");
+		String goods_category = request.getParameter("goods_catagory");
 		int goods_point = Integer.parseInt(request.getParameter("goods_point"));
 		
 		DAO dao = new DAO();

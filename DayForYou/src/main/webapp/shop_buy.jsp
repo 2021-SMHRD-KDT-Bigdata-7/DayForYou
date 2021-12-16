@@ -32,7 +32,8 @@
 	DAO dao = new DAO();
 	ArrayList<shopVO> goods = dao.selectAllGoods();
 	shopVO svo = new shopVO();
-	
+	int my_point= vo.getPoint();
+	int good_point = svo.getGoods_point();
 	
 	
 %>
@@ -83,12 +84,23 @@
 								</div>
 								<!-- Product actions-->
 								<br>
-								<% if (vo.getPoint()>svo.getGoods_point()){ %>
-								<%} %>
+								
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 									<div class="text-center"  >
+									<%if(vo.getPoint() >svo.getGoods_point()){ %>
+									
+									<a name="point" class="btn btn-outline-dark mt-auto"href="shopbuyService">
+									<p onClick="alert('구입성공')">BUY</p></a>
+											
+									<%}else{%>
+									
 									<a name="point" class="btn btn-outline-dark mt-auto"href="shop.jsp">
-										BUY</a>	
+									<p onClick="alert('구입실패')"> BUY</p></a>	
+									
+									<%}%>
+									
+									
+									
 									</div>
 								</div>
 								

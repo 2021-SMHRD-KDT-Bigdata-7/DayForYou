@@ -23,12 +23,9 @@ public class shopbuyService extends HttpServlet {
 	
 	
 	      request.setCharacterEncoding("euc-kr");
-
-	     
-	      
-	    
 	      MemberVo vo = new MemberVo();
-	    
+	      DAO dao = new DAO();
+	      shopVO  svo = new shopVO();
 	      
 	    
 	      String id =vo.getId();
@@ -36,15 +33,14 @@ public class shopbuyService extends HttpServlet {
 	      
 
 	   
-	      DAO dao = new DAO();
-	      shopVO  svo = new shopVO();
+	    int cnt = dao.shopbuy(vo.getId(), vo.getPoint());
 	      
 	     
 	      
-	      int cnt = dao.shopbuy(vo.getId(), vo.getPoint());
+	      
 	      
 	       
-	      if(cnt>0) {
+	      if(cnt>svo.getGoods_point()) {
 	    	 HttpSession session = request.getSession();
 	         
 	    	 System.out.println("구입성공");

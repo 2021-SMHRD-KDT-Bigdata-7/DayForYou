@@ -39,14 +39,14 @@ request.setCharacterEncoding("euc-kr");
 		
 		if(cnt > 0) {
 			System.out.println("수정성공");
-		
+			response.sendRedirect("shopadmin.jsp");
 	        
 		}else {
 			System.out.println("수정실패");
+			response.sendRedirect("goodsupdate.jsp");
 		}
 		
-		// 페이지 이동
-		response.sendRedirect("shopadmin.jsp");
+		
 	}
 	
 	}

@@ -882,15 +882,11 @@ public class DAO {
 	//===================================shopinsert=============
 	
 	public int shop_insert(String goods_name, String goods_category, int goods_point, String m_id) {
-		
-		shopVO svo = new shopVO();
 		connection();
 		try {
-		sql="insert into tbl_shop values(shop_seq.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
+		sql="insert into tbl_shop values(TBL_SHOP_SEQ.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
 		
-		psmt = conn.prepareStatement(sql);
-
-		
+		psmt = conn.prepareStatement(sql);		
 		psmt.setString(1, goods_name);
 		psmt.setString(2, goods_category);
 		psmt.setInt(3, goods_point);

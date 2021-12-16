@@ -28,9 +28,9 @@
 		<th>카테고리</th>
 		<th>제품이름</th>
 		<th>상품포인트</th>
-		<th><a class="btn btn-outline-dark mt-auto" href="#none">추가</a></th>
-		<th><a class="btn btn-outline-dark mt-auto" href="#none">수정</a></th>
-		<th><a class="btn btn-outline-dark mt-auto" href="#none">삭제</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="goodsadd.jsp">추가</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="goodsupdate.jsp">수정</a></th>
+		<th><a class="btn btn-outline-dark mt-auto" href="goodsdel.jsp">삭제</a></th>
 		<%for(int i =0; i<goods.size(); i++){ %>
 		<tr>
 			<td><%=goods.get(i).getGoods_category() %></td>

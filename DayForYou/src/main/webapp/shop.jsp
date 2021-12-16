@@ -36,6 +36,11 @@
 	
 %>
 
+<% if(vo==null){ %>
+<script> alert("로그인이 필요합니다")
+	location.href ="login.jsp";
+<%} %></script>
+
 	<div align="left" withd="10px";margin"10px">
 		<a class="btn btn-outline-dark mt-auto" href="main.jsp"> <img
 			src="./img/shop/menu.png">
