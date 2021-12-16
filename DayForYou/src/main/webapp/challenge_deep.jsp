@@ -24,6 +24,26 @@
 <!-- Style CSS -->
 <link rel="stylesheet" href="style.css">
 
+<style type="text/css">
+.product-title {
+   text-align: center;
+   display: table;
+   border: 1px solid #cecece;
+   width: 350px;
+   height: 250px;
+}
+
+.product-img-div {
+   display: table-cell;
+   vertical-align: middle;
+}
+
+.product-img {
+   max-width: 350px;
+   max-height: 250px;
+}
+</style>
+
 </head>
 
 <body>
@@ -251,35 +271,37 @@
 		<div class="container">
 			<div class="row">
 
-				<!-- My 챌린지 영역  -->
+				<!-- 챌린지 영역  -->
 
-				<div class="col-12 col-md-6 col-lg-4">
-					<div>
-						<h2>챌린지</h2>
-					</div>
+				<div class="col-12 col-md-6 col-lg-4">				
 					<div class="single-blog-area blog-style-2">
 						<%
 						for (int i = 0; i < chall_personal.size(); i = i + 2) {
 						%>
 						<div class="single-blog-thumbnail">
-							<img src="<%=chall_personal.get(i).getChalPic1()%>"
+							<img class = "product-img" src="<%=chall_personal.get(i).getChalPic1()%>"
 								alt="img/challenge_sample/none.png"
 								onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">
-							<span><%=chall_personal.get(i).getChalCnt()%></span>
+							<div class="post-date">
+								<a href="#"><%= chall_personal.get(i).getChalCnt() %>
+								<span>참여수</span> </a>
+							</div>
 						</div>
 
 						<!-- Blog Content -->
 						<div class="single-blog-content">
-							<a href="#" class="post-tag"><%=chall_personal.get(i).getChalCat2()%></a>
+						<div  data-text-content="true" style="width: 50px; border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 12px; box-shadow: none; background-color: rgb(100, 188, 156);"><%=chall_personal.get(i).getChalCat2()%></div>
+						<div  data-text-content="true" style="font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);"></div>
+						
 						</div>
 						<h4>
 							<a href="#" class="post-headline"><%=chall_personal.get(i).getChalSubject()%></a>
 						</h4>
-
+						<hr style="border: solid 1px gray;">
 						<%
 						}
 						%>
-					</div>
+					</div>					
 				</div>
 			</div>
 		</div>

@@ -1625,23 +1625,3 @@ textarea:focus ~ .highlight {
 /* The End */
 
 /*# sourceMappingURL=style.css.map */
-/*
-.img-mini {
-	 height: auto;
-    width: 100px;
-  object-fit: fill;
-}
-
- .howMany {
-      position: absolute;
-      z-index: 10;
-      left: 15px;
-      top: 15px;
-      border: 1px solid #787878;
-      background-color: #ffffff;
-      padding: 3px 3px;
-      text-align: center; }
-
-
-
-*/

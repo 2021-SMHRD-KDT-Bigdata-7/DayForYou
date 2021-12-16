@@ -29,22 +29,41 @@
 <!-- Style CSS -->
 <link rel="stylesheet" href="style.css">
 
- <!--fullcaleder-->
-  <link href='./fullcalender/lib/main.min.css' rel='stylesheet' />
-  <script src='./fullcalender/lib/main.min.js'></script>
+<!--fullcaleder-->
+<link href='./fullcalender/lib/main.min.css' rel='stylesheet' />
+<script src='./fullcalender/lib/main.min.js'></script>
 
-  <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
-  <meta name="viewport"
-    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
- 
+<style type="text/css">
+.product-title {
+	text-align: center;
+	display: table;
+	border: 1px solid #cecece;
+	width: 350px;
+	height: 250px;
+}
+
+.product-img-div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.product-img {
+	max-width: 350px;
+	max-height: 250px;
+}
+</style>
+
 
 </head>
 
 <body>
 
 
-<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
+	<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
 	<!-- 스크립트릿 --!>
 	<%
 		
@@ -214,31 +233,29 @@
 					</div>
 
 					<!-- Nav Start -->
-					  <div class="classynav">
-		                           		<%if(vo != null) { %>
-                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
-                            					<%System.out.println("로그인 성공");%>										
-                            			<%}else{ %>
-												<a href = "login.jsp" class="button4">login</a>
-												<%System.out.println("로그아웃 성공");%>		
-										<%} %>
-                                <ul>
-                                    <li><a href="main.jsp">Home</a></li>
-                                    <li><a href="my.html">Calendar</a>
-                                        <ul class="dropdown">
-                                            <li><a href="myCalendar.html">Calendar</a></li>
-                                            <li><a href="Diarylist.jsp">Diary</a></li>
-                                           <!--  <li><a href="single-post.html">Single Post</a></li>
+					<div class="classynav">
+						<%if(vo != null) { %>
+						<button class="button4" onclick="location.href = 'LogoutService'">Logout</button>
+						<%System.out.println("로그인 성공");%>
+						<%}else{ %>
+						<a href="login.jsp" class="button4">login</a>
+						<%System.out.println("로그아웃 성공");%>
+						<%} %>
+						<ul>
+							<li><a href="main.jsp">Home</a></li>
+							<li><a href="my.html">Calendar</a>
+								<ul class="dropdown">
+									<li><a href="myCalendar.html">Calendar</a></li>
+									<li><a href="Diarylist.jsp">Diary</a></li>
+									<!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Challenge</a>
-                                        <ul class="dropdown">
-                                            <li><a href="challenge_main.jsp">All</a></li>
-                                            <li><a href="challenge_main.jsp">Group</a></li>
-                                            <li><a href="challenge_main.jsp">Individual</a>
-                                               <!--  <ul class="dropdown">
+								</ul></li>
+							<li><a href="#">Challenge</a>
+								<ul class="dropdown">
+									<li><a href="challenge_main.jsp">All</a></li>
+									<li><a href="challenge_main.jsp">Group</a></li>
+									<li><a href="challenge_main.jsp">Individual</a> <!--  <ul class="dropdown">
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a>
@@ -252,28 +269,26 @@
                                                     </li>
                                                     <li><a href="#">Catagory 2</a></li>
                                                     <li><a href="#">Catagory 2</a></li>
-                                                </ul> -->
-                                            </li>
-                                           <!--  <li><a href="#">Catagory 1</a></li>
+                                                </ul> --></li>
+									<!--  <li><a href="#">Catagory 1</a></li>
                                             <li><a href="#">Catagory 1</a></li> -->
-                                        </ul>
-                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
+								</ul>
+							<li><a href="portfolioMain.jsp">Portfolio</a></li>
 
-                              
-                                     <li><a href="#">Board</a>
-                                        <ul class="dropdown">
-                                            <li><a href="1_writeForm.jsp">Community</a></li>
-                                            <li><a>Notice</a></li>
-                                            <li><a>Q&A</a></li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
-                                    
 
-                                     <li><a href="mypage.html">MyPage</a></li>
-                                     <li><a href="shop.jsp">Point shop</a></li>
-                                           <!--  <ul class="single-mega cn-col-4">
+							<li><a href="#">Board</a>
+								<ul class="dropdown">
+									<li><a href="1_writeForm.jsp">Community</a></li>
+									<li><a>Notice</a></li>
+									<li><a>Q&A</a></li>
+								</ul></li>
+
+							<!-- <li><a href="about-us.html">Portfolio</a></li> -->
+
+
+							<li><a href="mypage.html">MyPage</a></li>
+							<li><a href="shop.jsp">Point shop</a></li>
+							<!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
                                                 <li><a href="#">Mega Menu Item 1</a></li>
                                                 <li><a href="#">Mega Menu Item 2</a></li>
@@ -298,22 +313,23 @@
                                                 <li><a href="#">Mega Menu Item 5</a></li>
                                             </ul> -->
 
-                                <!-- Search Form  -->
-                                <div id="search-wrapper">
-                                    <form action="#">
-                                        <input type="text" id="search" placeholder="Search something...">
-                                        <div id="close-icon"></div>
-                                        <input class="d-none" type="submit" value="">
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+							<!-- Search Form  -->
+							<div id="search-wrapper">
+								<form action="#">
+									<input type="text" id="search"
+										placeholder="Search something...">
+									<div id="close-icon"></div>
+									<input class="d-none" type="submit" value="">
+								</form>
+							</div>
+					</div>
+					<!-- Nav End -->
+				</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	</header>
 	<!-- ##### Header Area End ##### -->
 
 	<!-- ##### Breadcumb Area Start ##### -->
@@ -323,7 +339,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>챌린지</h2>						
+						<h2>챌린지</h2>
 					</div>
 				</div>
 			</div>
@@ -356,13 +372,13 @@
 				<!-- Single Cool Facts Area -->
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="single-cool-facts-area text-center mb-100">
-						<table style = "margin-left:auto; margin-right:auto;">
+						<table style="margin-left: auto; margin-right: auto;">
 							<tr>
 								<td>
 									<h2>
 										<span class="counter"><%=allChallengeCount %></span>
 									</h2>
-								</td>								
+								</td>
 								<td>
 									<h2>
 										<span class="counter"><%=nowChallengeCount %></span>
@@ -373,14 +389,14 @@
 								<td><p>누적 챌린지 수</p></td>
 								<td><p>진행중인 챌린지 수</p></td>
 							</tr>
-						
+
 							<tr>
 								<td>
 									<h2>
 										<span class="counter"><%=allChallengeCountCnt %></span>
 									</h2>
 								</td>
-							
+
 								<td>
 									<h2>
 										<span class="counter"><%=nowChallengeCountCnt %></span>
@@ -389,7 +405,7 @@
 							</tr>
 							<tr>
 								<td><p>누적 참가자 수</p></td>
-								
+
 								<td><p>진행중인 참가자 수</p></td>
 							</tr>
 						</table>
@@ -400,9 +416,9 @@
 	</div>
 
 
-  <!-- ##### Calendar Area Start #####-->
+	<!-- ##### Calendar Area Start #####-->
 
-  <div id='calendar'></div>
+	<div id='calendar'></div>
 
 	<!-- ##### Blog Wrapper Start ##### -->
 	<div class="blog-wrapper section-padding-100-0 clearfix">
@@ -420,11 +436,12 @@
 
 						<div class="single-blog-thumbnail">
 
-							<a href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
+							<a
+								href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
 								src="<%= chall_personal.get(0).getChalPic1()%>"
-								alt="img/logo.png"> </a>
+								alt="img/logo.png" class = "product-img"> </a>
 							<div class="post-date">
-								<a href="#"><%= chall_personal.get(0).getChalCnt() %> </a>
+								<a href="#"><%= chall_suggestion.get(0).getChalCnt() %></a>
 							</div>
 						</div>
 						<!-- Blog Content -->
@@ -437,11 +454,12 @@
 						</div>
 					</div>
 					<div align="right">
-						<a href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
+						<a
+							href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
 					</div>
 				</div>
 			</div>
-			<hr>
+			<hr style="border: solid 1px gray;">
 			<!-- 추천 챌린지 영역  -->
 			<div class="col-12 col-md-6 col-lg-4">
 				<div>
@@ -450,8 +468,8 @@
 				<div class="single-blog-area blog-style-2">
 
 					<div class="single-blog-thumbnail">
-<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
-						<a href="ChallengeSingleService?chal_seq=327"><img
+						<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
+						<a href="ChallengeSingleService?chal_seq=327"><img class = "product-img"
 							src="<%=chall_suggestion.get(0).getChalPic1() %>"
 							alt="img/logo.png"> </a>
 						<div class="post-date">
@@ -459,7 +477,7 @@
 						</div>
 					</div>
 					<!-- Blog Content -->
-					<div class="single-blog-content">						
+					<div class="single-blog-content">
 						<a href="#" class="post-tag"><%=chall_suggestion.get(0).getChalCat2() %></a>
 						<h4>
 							<a href="#" class="post-headline"><%=chall_suggestion.get(0).getChalSubject()%></a>
@@ -468,12 +486,13 @@
 
 				</div>
 				<div align="right">
-						<a href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
+					<a
+						href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
 				</div>
 			</div>
-			<hr>
+			<hr style="border: solid 1px gray;">
 		</div>
-		
+
 		<!-- 인기 챌린지 영역  -->
 		<div class="col-12 col-md-6 col-lg-4">
 			<div>
@@ -482,7 +501,7 @@
 			<div class="single-blog-area blog-style-2">
 
 				<div class="single-blog-thumbnail">
-					<a href="temp.html"><img
+					<a href="temp.html"><img class = "product-img"
 						src="<%=chall_popularity.get(0).getChalPic1() %>"
 						alt="img/logo.png"> </a>
 					<div class="post-date">
@@ -490,7 +509,7 @@
 					</div>
 				</div>
 				<!-- Blog Content -->
-				<div class="single-blog-content">					
+				<div class="single-blog-content">
 					<a href="#" class="post-tag"><%=chall_popularity.get(0).getChalCat2() %></a>
 					<h4>
 						<a href="#" class="post-headline"><%=chall_popularity.get(0).getChalSubject()%></a>
@@ -498,12 +517,13 @@
 				</div>
 			</div>
 			<div align="right">
-					<a href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
+				<a
+					href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
 			</div>
-			<hr>
-		</div>		
+			<hr style="border: solid 1px gray;">
+		</div>
 	</div>
-	
+
 	<!-- 그룹 챌린지 영역  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
@@ -512,25 +532,26 @@
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
-				<img src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
+				<img class = "product-img" src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
 				<div class="post-date">
 					<a href="#"><%= chall_group.get(0).getChalCnt() %></a>
 				</div>
 			</div>
 			<!-- Blog Content -->
-			<div class="single-blog-content">				
+			<div class="single-blog-content">
 				<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
 				<h4>
-					<a href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
+					<a
+						href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
 				</h4>
 			</div>
 			<div align="right">
 				<a href="#">더보기</a>
 			</div>
 		</div>
-	<hr>
+		<hr style="border: solid 1px gray;">
 	</div>
-	
+
 	<!-- 전체 챌린지 영역  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
@@ -539,13 +560,13 @@
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
-				<img src="<%=chall_all.get(0).getChalPic1() %>" alt="img/logo.png">
+				<img class = "product-img" src="<%=chall_all.get(0).getChalPic1() %>" alt="img/logo.png">
 				<div class="post-date">
 					<a href="#"><%= chall_all.get(0).getChalCnt() %></a>
 				</div>
 			</div>
 			<!-- Blog Content -->
-			<div class="single-blog-content">				
+			<div class="single-blog-content">
 				<a href="#" class="post-tag"><%=chall_all.get(0).getChalCat2() %></a>
 				<h4>
 					<a href="#" class="post-headline"><%=chall_all.get(0).getChalSubject()%></a>
@@ -553,7 +574,8 @@
 			</div>
 		</div>
 		<div align="right">
-				<a href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
+			<a
+				href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
 		</div>
 	</div>
 
@@ -670,8 +692,8 @@
 	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
-	
-	 <script>
+
+	<script>
 
     document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
@@ -736,7 +758,7 @@
 
 
   </script>
-	
+
 </body>
 
 </html>
