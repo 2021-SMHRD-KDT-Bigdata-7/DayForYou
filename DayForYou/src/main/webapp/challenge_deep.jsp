@@ -477,15 +477,7 @@
 			}
 		}
 	}
-    let teg = `
-    				
-		
-    `;
-     
     	
-    
-
-		
 		
     $(window).ready(function(){
     //胶农费 惯积 捞亥飘 贸府
