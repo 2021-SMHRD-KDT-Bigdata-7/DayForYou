@@ -241,13 +241,13 @@
 				<div class="col-12 col-sm-8">
 					<div class="breaking-news-area">
 						<div id="breakingNewsTicker" class="ticker">
-							<ul>
-								<li><a href="#">Hello World!</a></li>
-								<li><a href="#">Hello Universe!</a></li>
-								<li><a href="#">Hello Original!</a></li>
-								<li><a href="#">Hello Earth!</a></li>
-								<li><a href="#">Hello Colorlib!</a></li>
-							</ul>
+						  <ul>
+                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
+                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+                                </ul>
 						</div>
 					</div>
 				</div>
@@ -401,12 +401,12 @@
 
 	<!-- ##### Breadcumb Area Start ##### -->
 	<div class="breadcumb-area bg-img"
-		style="background-image: url(img/bg-img/b1.jpg);">
+		style="background-image: url(img/main-img/chal.jpg);">
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>챌린지</h2>
+						<h2>Challenge</h2>
 					</div>
 				</div>
 			</div>
@@ -417,7 +417,7 @@
 	<!-- ##### Cool Facts Area Start ##### -->
 	<div
 		class="cool-facts-area section-padding-100-0 bg-img background-overlay"
-		style="background-image: url(img/bg-img/b4.jpg);">
+		style="background-image: url(img/main-img/fuck.jpg);">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -425,11 +425,12 @@
 						<!-- Blog Content -->
 						<div class="single-blog-content">
 							<div class="line"></div>
-							<a href="#" class="post-tag">공 지 사 항</a>
+							<a href="#" class="post-tag">W E L C O M E !</a>
 							<h4>
-								<a href="#" class="post-headline">챌린지에 오신 것을 환영합니다!</a>
+								<a href="#" class="post-headline" >챌린지에 오신 것을</a>
+								<a href="#" class="post-headline" style="position:relative; bottom:15px;">환영합니다.</a>
 							</h4>
-							<p>이곳은 Day For You입니다. 모두 함께 챌린지에 도전해보세요!!</p>
+							<p>DayForYou에서 다양한 챌린지에 도전하세요!</p>
 						</div>
 					</div>
 				</div>
@@ -452,9 +453,9 @@
 									</h2>
 								</td>
 							</tr>
-							<tr>
-								<td><p>누적 챌린지 수</p></td>
-								<td><p>진행중인 챌린지 수</p></td>
+							<tr width="50px">
+								<td><p>누적 챌린지</p></td>
+								<td><p>진행중인 챌린지</p></td>
 							</tr>
 
 							<tr>
@@ -471,9 +472,9 @@
 								</td>
 							</tr>
 							<tr>
-								<td><p>누적 참가자 수</p></td>
+								<td><p>누적 참가자</p></td>
 
-								<td><p>진행중인 참가자 수</p></td>
+								<td><p>진행중인 참가자</p></td>
 							</tr>
 						</table>
 					</div>
@@ -482,9 +483,12 @@
 		</div>
 	</div>
 
-
+	<br><br><br>
 	<!-- ##### Calendar Area Start #####-->
-
+	<div align= "center">
+		<img src = "img/main-img/chacal.PNG" style="width: 170px; height: 30px; ">
+	</div>
+	<br><br>
 	<div id='calendar'></div>
 
 	<!-- ##### Blog Wrapper Start ##### -->
@@ -496,8 +500,9 @@
 
 				<div class="col-12 col-md-6 col-lg-4">
 					<div>
-						<h2>My 챌린지</h2>
+						<h2 style="color: #7F7171;">나의 챌린지</h2>
 					</div>
+					<hr>
 
 					<div class="single-blog-area blog-style-2" style="margin: 10 0 0 0">
 
@@ -508,6 +513,7 @@
 								src="<%= chall_personal.get(0).getChalPic1()%>"
 								alt="img/logo.png" class = "product-img"> </a>						
 						</div>
+						<br><br><br>
 						<!-- Blog Content -->
 						<div class="single-blog-content" style="margin: 10 0 0 0">
 
@@ -523,14 +529,16 @@
 					</div>
 				</div>
 			</div>
-			<hr style="border: solid 1px gray;">
+			<br><br>
 			<!-- 추천 챌린지 영역  -->
 			<div class="col-12 col-md-6 col-lg-4">
-				<div>
-					<h2>추천 챌린지</h2>
+				<div style="position:relative; right:12px;">
+					<h2 style="color:#7F7171;">추천 챌린지</h2>
+					<hr>
+					<br>
 				</div>
 				<div class="single-blog-area blog-style-2">
-
+					<div style="position:relative; right:10px;">
 					<div class="single-blog-thumbnail">
 						<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
 						<a href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>"><img class = "product-img"
@@ -538,6 +546,7 @@
 							alt="img/logo.png"> </a>
 						
 					</div>
+					<br><br><br>
 					<!-- Blog Content -->
 					<div class="single-blog-content">
 						<a href="#" class="post-tag"><%=chall_suggestion.get(0).getChalCat2() %></a>
@@ -547,19 +556,22 @@
 					</div>
 
 				</div>
+				</div>
 				<div align="right">
 					<a
 						href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
 						
 				</div>
 			</div>
-			<hr style="border: solid 1px gray;">
+			
 		</div>
-
+		<br><br><br>
 		<!-- 인기 챌린지 영역  -->
 		<div class="col-12 col-md-6 col-lg-4">
 			<div>
-				<h2>인기 챌린지</h2>
+				<h2 style="color:#7F7171;">인기 챌린지</h2>
+				<hr>
+				<br>
 			</div>
 			<div class="single-blog-area blog-style-2">
 
@@ -569,6 +581,7 @@
 						alt="img/logo.png"> </a>
 					
 				</div>
+				<br><br><br>
 				<!-- Blog Content -->
 				<div class="single-blog-content">
 					<a href="#" class="post-tag"><%=chall_popularity.get(0).getChalCat2() %></a>
@@ -580,15 +593,17 @@
 			<div align="right">
 				<a
 					href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
+					<br><br>
 			</div>
-			<hr style="border: solid 1px gray;">
+			
 		</div>
 	</div>
-
+	<br><br><br>
 	<!-- 그룹 챌린지 영역  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
-			<h2>그룹 챌린지</h2>
+			<h2 style="color:#7F7171;">그룹 챌린지</h2>
+			<hr>
 		</div>
 		<div class="single-blog-area blog-style-2">
 
@@ -603,15 +618,18 @@
 			</div>
 			<div align="right">
 				<a href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
+				<br><br>
 			</div>
 		</div>
-		<hr style="border: solid 1px gray;">
+		<br><br>
 	</div>
-
+	<br>
 	<!-- 전체 챌린지 영역  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
-			<h2>전체 챌린지</h2>
+			<h2 style="color:#736C6B;">전체 챌린지</h2>
+			<hr>
+			<br>
 		</div>
 		<div class="single-blog-area blog-style-2">
 
@@ -621,6 +639,7 @@
 			</div>
 			<!-- Blog Content -->
 			<div class="single-blog-content">
+				<br><br>
 				<a href="#" class="post-tag"><%=chall_all.get(0).getChalCat2() %></a>
 				<h4>
 					<a href="#" class="post-headline"><%=chall_all.get(0).getChalSubject()%></a>
@@ -628,8 +647,8 @@
 			</div>
 		</div>
 		<div align="right">
-			<a
-				href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
+			<a href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
+			<br><br>
 		</div>
 	</div>
 
