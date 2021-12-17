@@ -17,7 +17,7 @@
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
-<title>DreamForest - records daily, start challenge</title>
+<title>DayForYou - BoardList</title>
 
 <!-- Favicon -->
 <link rel="icon" href="img/core-img/favicon.ico">
@@ -280,11 +280,16 @@
 						<!-- Blog Content -->
 						<div class="row align-items-end">
 							<div class="board_title">
-								<div style="position:relative; left: 50px;">
-								<strong>자유게시판</strong>
-								<p>DayForYou 회원님들과 소통할 수 있는 공간입니다 :)</p>
-
+								<div style="position:relative; left: 30px;">
+								
+								<strong>자유게시판</strong> 
+								<hr>
+	<br>
+								<p>DayForYou 회원님들과 소통할 수 있는 공간입니다 : )</p>
+								
+<br><br>
 							</div>
+							
 							<%
 									BoardDAO dao = new BoardDAO();
 									ArrayList<BoardVO> boards = dao.getAllBoard();
@@ -346,11 +351,11 @@
 								
 								%>
 								
-							<table border="1" class="#" style="position: ">
-								<tr id="head_tr" class="#">
+							<table class="#" style="position: relative; left: 30px; width: 430px; height: 300px; align:center;">
+								<tr id="head_tr" class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 									<td class="#">번호</td>
 									<td class="#">제목</td>
-									<td class="#">카테고리</td>
+									<td class="#">분류</td>
 									<td class="#">작성자</td>
 									<td class="#">시간</td>
 									<td class="#">조회수</td>
@@ -360,7 +365,7 @@
 
 								<%for(int i=0;i<5;i++){%>
 
-								<tr class="#">
+								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									<%//String result = boards.get(i+(pageno-1)*5).getReg_date().substring(5,11);%>
 									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_seq()%></td>
 									<td class="#"><a class="main_a"
@@ -373,7 +378,7 @@
 								<%}%>
 								<%}else if(boards.size()<(pageno)*5) {%>
 								<%for(int i=0;i<(pageno)*5-boards.size();i++){%>
-								<tr class="#">
+								<tr class="#" align="center" style="height: 25px; border:0 solid; border-bottom: 1px; font-size: 10px;">
 									<%//String result = boards.get(i+(pageno-1)*5).getReg_date().substring(5,11);%>
 									<td class="#"><%=boards.get(i+(pageno-1)*5).getArticle_seq()%></td>
 									<td class="#"><a class="main_a"
@@ -391,13 +396,13 @@
 
 							</table>
 							<div class = "bt_wrap">
-							<a href = '1_writeForm.jsp'" class= "on">글작성</a>
+							<a href = '1_writeForm.jsp'" class= "on" style="position:relative; left:200px;">글작성</a>
 							</div>	
-							<div class="board_page">
+							<div class="board_page" style="position:relative; left:30px;">
 
 								<%-- <a href="c_Community.jsp?pageno=1">[맨앞으로]</a>
 								<a href="c_Community.jsp?pageno=<%=prev_pageno%>">[이전]</a>  --%>
-								<a class = "bt first" href="1_list.jsp?pageno=<%=prev_pageno%>">≪ </a><a href="#" class="bt prev">이전</a>
+								<a class = "bt first" href="1_list.jsp?pageno=<%=prev_pageno%>">≪ </a><a href="#" class="bt prev" >이전</a>
 								<%
 							   for (int i = page_sno; i <= page_eno; i++) {
 							   %>
@@ -431,7 +436,7 @@
 						</div>
 					</div>
 
-
+<!-- 멋쟁이 진기현 -->
 					<!-- ##### Instagram Feed Area End ##### -->
 
 					<!-- ##### Footer Area Start ##### -->

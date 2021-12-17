@@ -298,15 +298,13 @@ public class DAO {
 		ArrayList<String> divide1 = new ArrayList<String>();
 
 		for (int i = 0; i < endDateChall.size(); i++) {	
-			
-			//String[] arr = new String[2];
-			//arr = endDateChall.get(i).split("~");
+		
 			divide1.add(dividePeriodWave(endDateChall.get(i),input));
 
 		}
 
 		for (int i = 0; i < divide1.size(); i++) {
-			String[] arr = divide1.get(i).split("/");
+			String[] arr = divide1.get(i).split("-");
 			ddao = new DayDAO(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
 			periodDay.add(ddao);
 		}
@@ -328,12 +326,26 @@ public class DAO {
 	/**
 	 * 
 	 * */
-	public String changeSasunToMagde(String data) {
-		String[] arr = data.split("/");
-		String result = arr[0] + "-" + arr[1]+ "-" +arr[2];
-		return result;
+
+	public ArrayList<String> challengeCategoryNoDuple(String user_id) {
+		ArrayList<String> cat2 = new ArrayList<>();
+		connection();
+		try {
+			sql = "select distinct a.chal_cat2 from tbl_challenge a, tbl_my_challenge b where b.attend_id = ? and a.chal_seq = b.chal_seq";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_id);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				cat2.add(rs.getString(1));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cat2;
 	}
-	
 	/**
 	 * 챌린지 누적 참가자 메소드
 	 * 
@@ -900,7 +912,7 @@ public int shop_update(int shop_seq,String goods_name, String goods_category, St
 	connection();
 
 	try {
-		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where =shop_seq=?";
+		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where TBL_SHOP_SEQ=?";
 
 		psmt = conn.prepareStatement(sql);
 		

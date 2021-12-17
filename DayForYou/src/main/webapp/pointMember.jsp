@@ -219,7 +219,7 @@ table {
 										<td>
 											<div class="col-12 col-md-6">
 												<div class="group">
-													<h4>포인트  <%=vo.getPoint() %></h4>
+													<h4>포인트   <%=vo.getPoint() %></h4>
 													<span class="highlight"></span> <span class="bar"></span>
 												</div>
 											</div>
@@ -230,7 +230,7 @@ table {
 										<td>
 											<div class="col-12 col-md-6">
 												<div class="group">
-													<h4>구매내역</h4>
+													<h4>구매목록 </h4>
 													
 													<span><%=svo.getGoods_name() %><%=svo.getGoods_point() %></span>
 													<span class="highlight"></span> <span class="bar"></span>

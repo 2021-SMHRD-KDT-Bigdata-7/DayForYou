@@ -81,6 +81,7 @@
    
 
     <script>
+    	let h, m, s;
 
         var time = 0;
         var running = 0;
@@ -116,7 +117,8 @@
                 if(sec<10){
                     sec = '0'+sec;
                 }
-                document.getElementById('stopTime').innerHTML= "정지시간  "+nowMonth+"/"+nowDate+" "+hour+":"+min+":"+sec;
+                document.getElementById('stopTime').innerHTML= "정지시간  "+nowMonth+"/"+nowDate+" "+h+":"+m+":"+s;
+             
                 document.getElementById("start").innerHTML = "continue";
                 document.getElementById("startPause").style.backgroundColor = "#3fac21";
                 /* document.getElementById("startPause").style.borderColor = "#3fac21"; */
@@ -152,7 +154,9 @@
                     }
                     document.getElementById("output").innerHTML = "<b>"+hours + ":" + mins + ":" + secs+"</b>";
                     increment();
-                  
+                  	h = hours;
+                  	m = mins;
+                  	s = secs;
                 }, 1000)
             }
         }

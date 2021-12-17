@@ -86,7 +86,7 @@ m_id = vo.getId();
                 <div class="row justify-content-center">
                     <!-- Contact Form Area -->
                     <div class="col-12 col-md-10 col-lg-9">
-                        <div class="contact-form">
+                        <div class="contact-form" style="position:relative; left: 50px;">
                             <h5>Write here :)</h5>
                             <!-- Contact Form -->
                             <form action="DiaryService?m_id=<%=m_id %>" method="post" enctype="multipart/form-data">
@@ -158,9 +158,11 @@ m_id = vo.getId();
                                   
                                     <!--  	<button class = "button7" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">ì·¨ì</button>
                                         <button class = "button6" type="submit" class="btn original-btn" onclick = "location.href='Diarylist.jsp'">ì ì¥</button> -->
-                                        <span><a href = "Diarylist.jsp"><img src = "img/main-img/diaryn.PNG" align = "right"></a></span>                                      
-                                        <a><button type = "submit" style = "border: 0;"><img src = "img/main-img/diaryoo.PNG" alt = ""></button></a>
                                     </div>
+                                    <div style="position:relative; left:15px;">
+                                        <span><a href = "Diarylist.jsp"><img src = "img/main-img/diaryn.PNG" style="position:relative; left:30px;"></a></span>                                      
+                                        <a><button type = "submit" style = "border: 0; position:relative; left:30px;"><img src = "img/main-img/diaryoo.PNG" alt = ""></button></a>
+                                	</div>
                                 </div>
                             </form>
                         </div>

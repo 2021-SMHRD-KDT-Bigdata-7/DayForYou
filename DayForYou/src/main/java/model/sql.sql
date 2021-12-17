@@ -166,3 +166,5 @@ UPDATE tbl_shop SET shop_pic1 = './img/shop/h2.png' WHERE shop_seq = 23;
 UPDATE tbl_member SET m_point = 20000 WHERE m_id = 'zzz';
 INSERT INTO tbl_shop VALUES (TBL_SHOP_SEQ.NEXTVAL,'양념치킨', '치킨', 'null', 'null', 18000, sysdate, '2022-02-20', 'admin_yesno')
 
+
+UPDATE tbl_member SET m_point = 200000 WHERE m_id = 'admin_yesno'
