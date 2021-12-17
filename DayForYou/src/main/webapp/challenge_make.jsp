@@ -29,7 +29,6 @@
 <body>
 	<%
 	MemberVo vo = (MemberVo)session.getAttribute("vo");
-	out.print(vo);
 
 	DAO dao = new DAO();
 	
@@ -82,13 +81,13 @@
 				<div class="col-12 col-sm-8">
 					<div class="breaking-news-area">
 						<div id="breakingNewsTicker" class="ticker">
-							<ul>
-								<li><a href="#">Hello World!</a></li>
-								<li><a href="#">Hello Universe!</a></li>
-								<li><a href="#">Hello Original!</a></li>
-								<li><a href="#">Hello Earth!</a></li>
-								<li><a href="#">Hello Colorlib!</a></li>
-							</ul>
+							  <ul>
+                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
+                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+                                </ul>
 						</div>
 					</div>
 				</div>
@@ -103,7 +102,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<a href="index.html" class="original-logo"><img
-						src="img/logo-img/logo22.png" alt=""></a>
+						src="img/main-img/logo3.png" alt=""></a>
 				</div>
 			</div>
 		</div>
@@ -135,77 +134,65 @@
 					</div>
 
 					<!-- Nav Start -->
-					<div class="classynav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#">Pages</a>
-								<ul class="dropdown">
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about-us.html">About Us</a></li>
-									<li><a href="single-post.html">Single Post</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="coming-soon.html">Coming Soon</a></li>
-								</ul></li>
-							<li><a href="#">Catagory</a>
-								<ul class="dropdown">
-									<li><a href="#">Catagory 1</a></li>
-									<li><a href="#">Catagory 1</a></li>
-									<li><a href="#">Catagory 1</a>
-										<ul class="dropdown">
-											<li><a href="#">Catagory 2</a></li>
-											<li><a href="#">Catagory 2</a></li>
-											<li><a href="#">Catagory 2</a>
-												<ul class="dropdown">
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-												</ul></li>
-											<li><a href="#">Catagory 2</a></li>
-											<li><a href="#">Catagory 2</a></li>
-										</ul></li>
-									<li><a href="#">Catagory 1</a></li>
-									<li><a href="#">Catagory 1</a></li>
-								</ul></li>
-							<li><a href="about-us.html">About Us</a></li>
-							<li><a href="#">Megamenu</a>
-								<div class="megamenu">
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 1</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 2</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 3</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 4</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-								</div></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
+					 <div class="classynav">
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
+                                <ul>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
+                                        <ul class="dropdown">
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
+                                           <!--  <li><a href="single-post.html">Single Post</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="coming-soon.html">Coming Soon</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Challenge</a>
+                                        <ul class="dropdown">
+                                            <li><a href="challenge_main.jsp">All</a></li>
+                                            <li><a href="challenge_main.jsp">Group</a></li>
+                                            <li><a href="challenge_main.jsp">Individual</a>
+                                               <!--  <ul class="dropdown">
+                                                    <li><a href="#">Catagory 2</a></li>
+                                                    <li><a href="#">Catagory 2</a></li>
+                                                    <li><a href="#">Catagory 2</a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">Catagory 3</a></li>
+                                                            <li><a href="#">Catagory 3</a></li>
+                                                            <li><a href="#">Catagory 3</a></li>
+                                                            <li><a href="#">Catagory 3</a></li>
+                                                            <li><a href="#">Catagory 3</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Catagory 2</a></li>
+                                                    <li><a href="#">Catagory 2</a></li>
+                                                </ul> -->
+                                            </li>
+                                           <!--  <li><a href="#">Catagory 1</a></li>
+                                            <li><a href="#">Catagory 1</a></li> -->
+                                        </ul>
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
+
+                              
+                                     <li><a href="#">Board</a>
+                                        <ul class="dropdown">
+                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a>Notice</a></li>
+                                            <li><a>Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                                    
+
+                                     <li><a href="mypage.jsp">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
 
 						<!-- Search Form  -->
 						<div id="search-wrapper">
@@ -227,12 +214,12 @@
 
 	<!-- ##### Breadcumb Area Start ##### -->
 	<div class="breadcumb-area bg-img"
-		style="background-image: url(img/bg-img/b1.jpg);">
+		style="background-image: url(img/main-img/chal.jpg);">
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>챌린지</h2>
+						<h2>Challenge</h2>
 					</div>
 				</div>
 			</div>
@@ -243,11 +230,11 @@
 		<form action="ChallService" method="post"
 			enctype="multipart/form-data">
 
-			<hr style="border: solid 1px gray;">
+			
 				<tr height="35px" bgcolor="whitesmoke">
-					<td align="right">챌린지 분류</td>
+					<td align="right" style="font-size:30px;">챌린지 분류</td>
 					<td align="left">
-					<select name="chall_cat1">
+					<select name="chall_cat1" style="width:50px; height:20px; font-size:12px;">
 							<option value="개인">개인</option>
 							<option value="그룹">그룹</option>
 							<option value="전체">전체</option>
@@ -255,9 +242,10 @@
 							<option value="추천">추천</option>
 					</select></td>
 				</tr>
-			<hr style="border: solid 1px gray;">
-
+			
+			<br><br><br>
 			<h5 align="center">어떤 주제와 관련이 있나요?</h5>
+			<hr>
 			<br>
 
 			<ul>
@@ -297,22 +285,22 @@
 				</span></li>
 			</ul>
 			<br> <br> <br>
-			<hr style="border: solid 1px gray;">
 			<br>
 			<h5 align="center">챌린지 제목을 입력해주세요.</h5>
+			<hr>
 			<br>
 			<!-- 밑 사이즈 작게 -->
-			<p class="mb-15">타인에게 불쾌감을 주는 단어를 사용할 경우 계정이 영구정지 될 수 있습니다</p>
+			<p class="mb-15" style="font-size:12px;">타인에게 불쾌감을 주는 단어를 사용할 경우 계정이 영구정지 될 수 있습니다</p>
+			<br>
 			<div align="center">
-				<input type="text" name="chall_subject" style="width: 300px" required><br>
+				<input type="text" name="chall_subject" placeholder = "ex)오늘부터 매일 영어공부 두 시간!" style="width: 200px" required><br>
 			</div>
-			<br>
-			<hr style="border: solid 1px gray;">
-			<br>
+			<br><br><br><br>
 
 			<!--===========================================================  -->
 			<br>
 			<h5 align="center">챌린지를 소개하세요.</h5>
+			<hr>
 			<br>
 			<!-- 밑 사이즈 작게 -->
 			<div align="center">
@@ -321,11 +309,12 @@
 					placeholder="추가 글로 챌린지를 자세히 소개해보세요." required></textarea>
 			</div>
 			<!-- 글자수 체크해주는 것 넣어야함 -->
-			<br> <br>
-			<hr style="border: solid 1px gray;">
+			<br> <br> <br> <br>
 			<input type="file" id="chooseFile1" name="chall_pic1"
 				accept="image/*" onchange="loadFile(this)">
 			<h5 align="center">챌린지 대표 이미지를 등록하세요.</h5>
+			<hr>
+			<br>
 			<!-- ================================================================== -->
 			<div align="center">
 				<div class="single-image-1">
@@ -342,47 +331,47 @@
 			</div>
 
 			<!-- ================================================================== -->
-			<br> <br>
-
-			<hr style="border: solid 1px gray;">
+			<br> <br><br>
 
 			<!--===========================================================  -->
 			<h5 align="center">챌린지 시작일</h5>
+			<hr>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
 						type="radio" id="view_all2" name="chall_start" value="today">
 						<label for="view_all2"><span class="round"></span> <span
-							class="selectDate">오늘??</span> </label>
+							class="selectDate">오늘</span> </label>
 						<p class="start1" style="display: none;"></p>
 
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_liv1" name="chall_start" value="1_week">
 						<label for="view_liv1"> <span class="round"></span> <span
-							class="selectDate">아냐.. 담주?</span>
+							class="selectDate">아냐..일주일 뒤</span>
 					</label>
 						<p class="start2" style="display: none;"></p>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_liv2" name="chall_start" value="2_weeks">
 						<label for="view_liv2"> <span class="round"></span> <span
-							class="selectDate">역시 2주 정도?</span>
+							class="selectDate">역시 2주 뒤?</span>
 					</label>
 						<p class="start3" style="display: none;"></p>
 				</span></li>
 				<li><span class="radio" id="lend_list"> <input
 						type="radio" id="view_liv3" name="chall_start" value="1_month">
 						<label for="view_liv3"> <span class="round"></span> <span
-							class="selectDate">담달에 할까?</span>
+							class="selectDate">다음 달에 할까?</span>
 					</label>
 						<p class="start4" style="display: none;"></p>
 				</span></li>
 			</ul>
 			<br> <br>
-			<hr style="border: solid 1px gray;">
+			
 			<br>
 			<h5 align="center">챌린지 기간</h5>
+			<hr>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
@@ -419,9 +408,9 @@
 			<p id="period" style="display: none;"></p>
 
 			<!-- 챌린지 예상 종료일 보여주는 부분 있으면 좋을듯-->
-			<hr style="border: solid 1px gray;">
 			<br>
 			<h5 align="center">모집 방식을 선택해주세요.</h5>
+			<hr>
 			<br>
 			<ul>
 				<li><span class="radio" id="all_list"> <input
@@ -436,7 +425,7 @@
 					</label> <!-- 비밀번호 설정 창이 나와야함 (참가코드설정)-->
 				</span></li>
 			</ul>
-			<br>
+			<br><br>
 			<div align="center">
 				<input type="text" name="chall_pw" size="30" disabled
 					placeholder="비밀번호를 입력해 주세요" required>
@@ -459,8 +448,9 @@
 			<!--=========================================================================  -->
 			<input type="file" id="chooseFile2" name="chall_pic2" accept="image/*"
 						onchange="loadFile(this)">
-			<div class="image-box">
+			<div class="image-box"   align="center">
 				<h5>좋은 인증샷 예시</h5>
+				<br>
 				<div class="single-image-1">
 					<label class="single-label" for="chooseFile2"> 
 						<div class="labelbox">
@@ -469,11 +459,12 @@
 					</label>
 				</div>
 			</div>
-			<div class="image-box">
+			<div class="image-box" style="position:relative; bottom:40px;">
 				<img class="image-thumbnail" id="image2" /> <br>
 			</div>
-			<div class="image-box">
+			<div class="image-box" align="center">
 				<h5>나쁜 인증샷 예시</h5>
+				<br>
 				<div class="single-image-1">
 					<label class="single-label" for="chooseFile3"> <input
 						type="file" id="chooseFile3" name="chall_pic3" accept="image/*"
@@ -486,20 +477,22 @@
 
 				</div>
 			</div>
-			<div class="image-box">
+			<div class="image-box" style="position:relative; bottom:40px;">
 				<img class="image-thumbnail" id="image3" /> <br>
 			</div>
 			<!--=========================================================================  -->
 			<!--=========================================================================  -->
 			<!--=========================================================================  -->
 			<!--=========================================================================  -->
-			<hr style="border: solid 1px gray;">
+			<br><br>
 			<br>
+			
 			<!-- 마지막 제출을 누를시 모든것을 보여주는 창이있으면 좋겠음 -->
 			<div align="center">
 			<input type="submit"
-				style="width: 300px; background-color: ##caffbf; "
-				value="챌린지 개설하기">
+				style="width: 200px; height: 40px; border:none; border-radius: 50px; font-size: 13px; background-color: ##caffbf; "
+				value="Start Challenge >>">
+				<br><br>
 			</div>
 		</form>
 	</div>
