@@ -415,7 +415,8 @@
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
-			<div class="single-insta-feed">
+			<div class="single-ins
+			ta-feed">
 				<img src="img/instagram-img/6.png" alt="">
 				<!-- Hover Effects -->
 				<div class="hover-effects">

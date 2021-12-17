@@ -65,7 +65,7 @@
 	<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
 	<!-- 스크립트릿 --!>
 	<%
-	String m_id = "a";
+	String m_id = vo.getId();
 	DAO dao = new DAO();
 	
 	//각 종류별로 게시글 불러오기.
