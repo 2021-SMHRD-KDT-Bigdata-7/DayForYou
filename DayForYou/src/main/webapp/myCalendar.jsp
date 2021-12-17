@@ -697,7 +697,7 @@ body {
 			dayMaxEvents : false, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
 			locale : 'ko', // 한국어 설정
 			selectLongPressDelay: 1,
-			nextDayThreshold: '09:00:00',
+			nextDayThreshold: '23:59:59',
 			buttonText : {
 				month : '캘린더',
 				today : '오늘',
@@ -749,7 +749,7 @@ body {
 			    	  	
 			    	  	if(res != null){
 			    	  	
-			    	  	$.each(res, function(index, element){
+			    	  	$.each(res, function(index, element){ 
 			    	  		
 			    	  		let allday = element.Todo_allday;
 			    	  		let cate = element.Todo_cate;

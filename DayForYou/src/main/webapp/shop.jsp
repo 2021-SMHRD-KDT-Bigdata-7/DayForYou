@@ -41,16 +41,16 @@
 	location.href ="login.jsp";
 <%} %></script>
 
-	<div align="left" withd="10px";margin"10px">
-		<a class="btn btn-outline-dark mt-auto" href="main.jsp"> <img
-			src="./img/shop/menu.png">
+	<div>
+		<a href="main.jsp"> 
+		<img src="./img/shop/home.PNG" style="width:40px; height:40px; position:relative; left:10px; top:15px;">
 		</a>
 	</div>
 	<!-- Header-->
 	<header>
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-black">
-				<img src="img/logo-img/shop.PNG">
+				<img src="img/logo-img/shop.PNG" style="position: relative; right:42px;">
 			</div>
 		</div>
 	</header>
@@ -95,15 +95,16 @@
 						<div class="card-body p-4">
 							<div class="text-center">
 								<!-- Product name-->
-								<h5 class="fw-bolder"><%=goods.get(i).getGoods_name()%></h5>
+								<h7 class="fw-bolder"><%=goods.get(i).getGoods_name()%></h7>
+								<br><br>
 								<!-- Product price-->
 								p)<%=goods.get(i).getGoods_point()%>
 							</div>
 						</div>
 						<!-- Product actions-->
-						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
 							<img src="img/logo-img/buy.PNG"
-								onclick="location.href = 'shop_buy.jsp?goods_point=<%=goods.get(i).getGoods_point()%>'">
+								onclick="location.href = 'shop_buy.jsp?goods_point=<%=goods.get(i).getGoods_point()%>'" style="width:100px; height:40px;">
 						</div>
 					</div>
 				</div>

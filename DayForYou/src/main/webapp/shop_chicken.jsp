@@ -18,15 +18,15 @@
    
     <body>
        <div align ="left" margin"10px">
-        <a class="btn btn-outline-dark mt-auto" href ="shop.jsp">
-        <img src="./img/shop/icon1.png">
+        <a href ="shop.jsp">
+         <img src="./img/shop/back.PNG" style="width:45px;height:45px; position:relative; left:10px; top:15px;">
         </a>
         </div>
         <!-- Header-->
         <header>
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-black">
-                    <img src = "img/logo-img/shop.PNG">
+                    <img src="img/logo-img/shop.PNG" style="position: relative; right:42px;">
                 
                 </div>
             </div>
@@ -50,14 +50,15 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">뿌링클</h5>
+                                    <h7 class="fw-bolder">뿌링클</h7>
+                                    <br>
                                     <!-- Product price-->
                                   p)18.000 
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -70,15 +71,16 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">교촌 허니 콤보</h5>                                    
+                                    <h7 class="fw-bolder">교촌 허니 콤보</h7>    
+                                    <br>                                
                                     <!-- Product price-->
                                     p)18.000
                                     
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -91,15 +93,16 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">교촌 레드 콤보</h5>
+                                    <h7 class="fw-bolder">교촌 레드 콤보</h7>
+                                    <br>
                                     <!-- Product price-->
                                     p)20.000
                                     
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -111,14 +114,15 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">BHC 포테킹</h5>                          
+                                    <h7 class="fw-bolder">BHC 포테킹</h7> 
+                                    <br>                         
                                     <!-- Product price-->
                                     p)18.000
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -132,14 +136,15 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">BBQ 황금올리브 치킨</h5>
+                                    <h7 class="fw-bolder">BBQ 황금올리브 치킨</h7>
+                                    <br>
                                     <!-- Product price-->
                                     p)20.000
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -151,14 +156,15 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">BBQ 자메이카 통다리 치킨</h5>
+                                    <h7 class="fw-bolder">BBQ 자메이카 통다리 치킨</h7>
+                                    <br>
                                     <!-- Product price-->
                                     p)19.500
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>

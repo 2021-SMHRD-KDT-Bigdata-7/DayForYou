@@ -235,8 +235,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- 차트 링크 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2"></script>
+    <!-- 제이쿼리 링크 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -469,12 +470,25 @@
         <!-- 챌린지별 bar 차트 -->
         <script> 
             var ctx = document.getElementById('barChart'); 
-            var myChart = new Chart(ctx, { type: 'bar', 
-                data: { labels: ['개인', '그룹', '전체'], 
-                datasets: [{ label: '차트 접기', data: [22, 19, 23], 
-                backgroundColor: ['rgb(255, 178, 102)', 'rgb(102, 178, 255)', 'rgb(178, 255, 102)'], 
-                borderColor: [ 'rgb(255, 178, 102)', 'rgb(102, 178, 255)', 'rgb(178, 255, 102)'], 
-                borderWidth: 1 }] }, options: { scales: { yAxes: [{ ticks: { beginAtZero: true } }] } } }); 
+            var myChart = new Chart(ctx, 
+            		{ type: 'bar', 
+                		data:
+                			{ labels: ['개인', '그룹', '전체'], 
+                				datasets: 
+                				[{ label: '차트 접기', data: [22, 19, 23], 
+                				backgroundColor: ['rgb(255, 178, 102)', 'rgb(102, 178, 255)', 'rgb(178, 255, 102)'], 
+                				borderColor: [ 'rgb(255, 178, 102)', 'rgb(102, 178, 255)', 'rgb(178, 255, 102)'], 
+                				borderWidth: 1 }] }, 
+                				options: 
+                				{ scales: 
+                				{ yAxes: 
+                					[{ ticks: 
+                					{ beginAtZero: true 
+                						} 
+                					}] 
+                				} 
+                				} 
+                			}); 
         </script>
        
             

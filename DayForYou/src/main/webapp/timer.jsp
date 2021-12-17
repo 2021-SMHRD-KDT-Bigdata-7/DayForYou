@@ -36,6 +36,8 @@
             border-radius: 50px;
             font-weight: normal;
             color: white;
+            position: relative;
+            right: 53px;
         }
 
         #output {
@@ -63,8 +65,10 @@
             margin: auto;
             margin-top: 30px;
             margin-bottom: 20px;
-            width: 400px;
+            width: 300px;
             height: 150px;
+            position: relative;
+            right: 5px;
         }
 
         #controls {
@@ -400,7 +404,7 @@
 								            <button onclick="reset()" id="reset"><b id="reset">RESET</b></button>
 								        </div>
 								    </div>
-								    <div><p>■ 내 챌린지 선택</p></div>
+								   
 								    <div>
 								        <h3 id=stopTime align="center" style="color:gray;"></h3>
 								        <h1 id="breaktime"></h1>
@@ -444,16 +448,13 @@
         init();
         
 
-        
+       
         </script>
         
         <% Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         DateFormat df = new SimpleDateFormat("HH:mm:ss");%>
-        
-
-        <button id="start">시작시작</button>
-        <button id="end">종료</button>
+    
         
         <script>
         <%Date start;%>
@@ -468,7 +469,7 @@
         }
         
         
-        </script>
+        </script> 
 								    
 							
 							

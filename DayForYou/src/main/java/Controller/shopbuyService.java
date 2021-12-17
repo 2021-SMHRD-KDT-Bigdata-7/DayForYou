@@ -23,24 +23,34 @@ public class shopbuyService extends HttpServlet {
 	
 	
 	      request.setCharacterEncoding("euc-kr");
-	      MemberVo vo = new MemberVo();
+	      HttpSession session = request.getSession();
+	      MemberVo mv = (MemberVo)session.getAttribute("vo");
 	      DAO dao = new DAO();
 	      shopVO  svo = new shopVO();
 	      
+	      
 	    
-	      String id =vo.getId();
-	      int point = Integer.parseInt(request.getParameter("point"));
+	      String id =mv.getId();
 	      
-
-	   
-	    int cnt = dao.shopbuy(vo.getId(), vo.getPoint());
+	      int cnt = 0;
+	      int user_point = mv.getPoint();
+	      int goods_point = Integer.parseInt(request.getParameter("goods_point"));
 	      
-	     
-	      
-	      
-	      
+	      if(user_point >= goods_point) {
+	    	  user_point =- goods_point;
+	    	  cnt = dao.shopbuy(id, user_point);	
+	    	  if(cnt >0) {
+	    		  System.out.println("DB변경 성공");
+	    	  }else {
+	    		  System.out.println("DB변경 실패");
+	    	  }
+	    	  
+	      }else {
+	    	  System.out.println("잔액부족");		      
+	      }
+	      response.sendRedirect("shop.jsp");
 	       
-	      if(cnt>svo.getGoods_point()) {
+	     /* if(cnt>svo.getGoods_point()) {
 	    	 HttpSession session = request.getSession();
 	         
 	    	 System.out.println("구입성공");
@@ -53,7 +63,7 @@ public class shopbuyService extends HttpServlet {
 	         System.out.println("구입실패");
 	         response.sendRedirect("shop.jsp");
 	      }
-		
+		*/
 		
 		
 	}
