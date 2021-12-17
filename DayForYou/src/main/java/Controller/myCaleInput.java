@@ -26,15 +26,22 @@ public class myCaleInput extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR");
 		
 		String todo_title = request.getParameter("title");
-		String[] todo_allday = request.getParameterValues("allday");
+		String todo_allday_temp = request.getParameter("allday");
 		String todo_cate = request.getParameter("cate");
 		String todo_sdate = request.getParameter("sdate");
 		String todo_edate = request.getParameter("edate");
 		//String m_id = request.getParameter("vo");
 		String m_id = "a";
+
+		// 체크 되어 있으면 value 속성 값이 넘어옴
+		// 체크가 안되어있으면 빈문자열
+		int	todo_allday = 0;
+		if(todo_allday_temp != null) {
+			todo_allday = 1;
+		}
 		
 		System.out.println(todo_title);
-		System.out.println(todo_allday[0]);
+		System.out.println(todo_allday);
 		System.out.println(todo_cate);
 		System.out.println(todo_sdate);
 		System.out.println(todo_edate);
@@ -42,10 +49,10 @@ public class myCaleInput extends HttpServlet {
 				
 		CalendarDAO cdao = new CalendarDAO();
 
-		int cnt = cdao.todo_Input(todo_title, todo_cate, todo_sdate, todo_edate, m_id, todo_allday[0]);
+		int cnt = cdao.todo_Input(todo_title, todo_cate, todo_sdate, todo_edate, m_id, todo_allday);
 
 		if (cnt > 0) {
-			request.setAttribute("cvo", new CalendarVO(todo_title, todo_allday[0], todo_cate, todo_sdate, todo_edate));
+			request.setAttribute("cvo", new CalendarVO(todo_title, todo_allday, todo_cate, todo_sdate, todo_edate));
 			RequestDispatcher rd = request.getRequestDispatcher("myCalendar.jsp");
 			rd.forward(request, response);
 		}

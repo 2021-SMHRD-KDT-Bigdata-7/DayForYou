@@ -1,6 +1,6 @@
 package model;
 
-//import java.util.Date;
+import java.util.ArrayList;
 
 public class CalendarVO {
 
@@ -11,12 +11,12 @@ public class CalendarVO {
 	private String Todo_edate;
 	private String Reg_date;
 	private String m_id;
-	private String Todo_allday;
+	private int Todo_allday;
 	
 //=====»ý¼ºÀÚ.======
 	
 	public CalendarVO(int todo_seq, String todo_title, String todo_cate, String todo_sdate, String todo_edate,
-			String reg_date, String m_id, String todo_allday) {
+			String reg_date, String m_id, int todo_allday) {
 		super();
 		Todo_seq = todo_seq;
 		Todo_title = todo_title;
@@ -29,7 +29,7 @@ public class CalendarVO {
 	}
 	
 
-public CalendarVO(String todo_title, String todo_allday, String todo_cate, String todo_sdate, String todo_edate) {
+public CalendarVO(String todo_title, int todo_allday, String todo_cate, String todo_sdate, String todo_edate) {
 	super();
 	Todo_title = todo_title;
 	Todo_cate = todo_cate; 
@@ -101,11 +101,11 @@ public CalendarVO(String todo_title, String todo_allday, String todo_cate, Strin
 		this.m_id = m_id;
 	}
 
-	public String getTodo_allday() {
+	public int getTodo_allday() {
 		return Todo_allday;
 	}
 
-	public void setTodo_allday(String todo_allday) {
+	public void setTodo_allday(int todo_allday) {
 		Todo_allday = todo_allday;
 	}
 

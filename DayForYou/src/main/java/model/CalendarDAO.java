@@ -60,7 +60,7 @@ public class CalendarDAO {
 	
    // 일정삽입	
 	public int todo_Input(String todo_title, String todo_cate,String todo_sdate,String todo_edate,  
-			 String m_id, String todo_allday) {
+			 String m_id, int todo_allday) {
 		connection();
 		try {	
 
@@ -76,7 +76,7 @@ public class CalendarDAO {
 			psmt.setString(3, todo_sdate);
 			psmt.setString(4, todo_edate);
 			psmt.setString(5, m_id);	
-			psmt.setString(6, todo_allday);
+			psmt.setInt(6, todo_allday);
 
 			// 5. 실행
 			cnt = psmt.executeUpdate();
@@ -112,19 +112,19 @@ public class CalendarDAO {
 			// 5. 실행
 			rs = psmt.executeQuery();
 
-			if (rs.next() == true) {
+			while (rs.next() == true) {
 
 				int u_todo_seq = rs.getInt(1);
-				String u_todo_subject = rs.getString(2);
+				String u_todo_title = rs.getString(2);
 				String u_todo_cate = rs.getString(3);
 				String u_todo_sdate = rs.getString(4);
 				String u_todo_edate = rs.getString(5);
 				String u_reg_date = rs.getString(6);
 				String u_m_id = rs.getString(7);
-				String u_todo_allday = rs.getString(8); //하루종일
+				int u_todo_allday = rs.getInt(8); //하루종일
 
 				// select문의 결과를 묶어서 VO객체로 만들기
-				cvo = new CalendarVO(u_todo_seq, u_todo_subject, u_todo_cate, 
+				cvo = new CalendarVO(u_todo_seq, u_todo_title, u_todo_cate, 
 									u_todo_sdate, u_todo_edate, 
 									u_reg_date, u_m_id, u_todo_allday);
 
@@ -144,7 +144,7 @@ public class CalendarDAO {
 	// 일정 수정
 	
 	public int Todo_update(int todo_seq, String todo_title, String todo_cate,String todo_sdate,String todo_edate,  
-			 String m_id, String todo_allday) {
+			 String m_id, int todo_allday) {
 
 		// try문
 		// JDBC 코드는 문법이 맞더라도 실행중 발생하는 오류처리 필요.
@@ -162,9 +162,9 @@ public class CalendarDAO {
 			psmt.setString(2, todo_cate);
 			psmt.setString(3, todo_sdate);
 			psmt.setString(4, todo_edate);
-			psmt.setString(5, todo_allday);
+			psmt.setInt(5, todo_allday);
 			psmt.setInt(6, todo_seq);	
-			psmt.setString(7, m_id);	
+			psmt.setString(7, m_id);
 
 			// 5. 실행
 			cnt = psmt.executeUpdate();

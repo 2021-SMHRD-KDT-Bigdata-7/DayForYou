@@ -72,6 +72,7 @@
 </head>
 
 <body>
+<% request.setCharacterEncoding("euc-kr"); %>
 <form action="myCaleUpdate">
 <div id="modal" class="modal-overlay">
         <div class="modal-window">
@@ -150,10 +151,12 @@
 		
 		$("input:checkbox[id='allday']").prop("checked",true);
 	
-		// value값 = 체크박스에 체크 되었을때  y 해제되었을때 n넣어주기.
-		if($("input:checkbox[id='allday']").is("checked")){
+		// value값 = 체크박스에 체크 되었을때 1 해제되었을때 0 넣어주기.
+		
+		if($("input:checkbox[id='allday']").is("checked") == true){
 			$('#allday').val(1);
-		} else {
+		} 
+		if($("input:checkbox[id='allday']").is("checked") == false){
 			$('#allday').val(0);
 		}
 
