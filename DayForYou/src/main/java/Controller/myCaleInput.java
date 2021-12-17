@@ -30,8 +30,8 @@ public class myCaleInput extends HttpServlet {
 		String todo_cate = request.getParameter("cate");
 		String todo_sdate = request.getParameter("sdate");
 		String todo_edate = request.getParameter("edate");
-		//String m_id = request.getParameter("vo");
-		String m_id = "a";
+		MemberVo vo = (MemberVo) session.getAttribute("vo");
+		
 
 		// 체크 되어 있으면 value 속성 값이 넘어옴
 		// 체크가 안되어있으면 빈문자열
@@ -45,11 +45,11 @@ public class myCaleInput extends HttpServlet {
 		System.out.println(todo_cate);
 		System.out.println(todo_sdate);
 		System.out.println(todo_edate);
-		System.out.println(m_id);
+		System.out.println(vo.getId());
 				
 		CalendarDAO cdao = new CalendarDAO();
 
-		int cnt = cdao.todo_Input(todo_title, todo_cate, todo_sdate, todo_edate, m_id, todo_allday);
+		int cnt = cdao.todo_Input(todo_title, todo_cate, todo_sdate, todo_edate, vo.getId(), todo_allday);
 
 		if (cnt > 0) {
 			request.setAttribute("cvo", new CalendarVO(todo_title, todo_allday, todo_cate, todo_sdate, todo_edate));

@@ -93,7 +93,7 @@ public class CalendarDAO {
 
 	// 일정 확인
 	
-	public ArrayList<CalendarVO> todo_select() {
+	public ArrayList<CalendarVO> todo_select(String m_id) {
 
 		ArrayList<CalendarVO> todo = new ArrayList<CalendarVO>();
 		
@@ -102,12 +102,12 @@ public class CalendarDAO {
 			connection();
 
 			// 3. sql문 준비
-			String sql = "select * from tbl_todo";
+			String sql = "select * from tbl_todo where m_id = ?";
 
 			psmt = conn.prepareStatement(sql);
 
 			// 4. 바인드 변수 채우기
-			
+			psmt.setString(1, m_id);
 
 			// 5. 실행
 			rs = psmt.executeQuery();
