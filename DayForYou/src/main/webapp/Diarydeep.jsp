@@ -1,4 +1,5 @@
 
+<%@page import="java.net.URLDecoder"%>
 <%@page import="model.diaryVO"%>
 <%@page import="java.util.ArrayList"%>
 
@@ -149,7 +150,7 @@
 											<%for(int i = 0; i < images.length; i++) {
                                         		if(i > 0){
                                         	%>
-											<img src="./img/<%=images[i]%>">
+											<img src="./boardImg/<%=images[i]%>">
 											<%} %>
 											<%} %>
 											<span class="highlight"></span> <span class="bar"></span>
@@ -160,12 +161,11 @@
 							</form>
 							<div style = "padding: 0px">
 								<!-- <a href="Diarylist.jsp">
-								<input type = "button" value = "格废" ></a> -->
+								<input type = "button" value = "格废" ></a> -->							
+								
+									<button onclick = "location.href='Diarylist.jsp'" style="width: 50px; height:30px; background-color:gray; font-size: 12px; border: none; position: relative; left: 240px; color: white;">格废</button>	
+									<a href = "diaryDelete?diary_seq=<%=dvo.getDiary_seq()%>" style="position:relative; right: 50px;">昏力<img src = "img/delete.PNG" style="width: 30px; height:30px;"></a>
 									
-									
-									<button class="button7"
-							class="btn original-btn" onclick = "location.href='Diarylist.jsp'">格废</button>	
-															
 							</div>
 						</div>
 					

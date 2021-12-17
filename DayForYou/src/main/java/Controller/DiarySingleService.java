@@ -34,6 +34,7 @@ public class DiarySingleService extends HttpServlet {
 					
 					request.setAttribute("dv", dv);
 					
+					
 					// request영역에 데이터를 저장해서 이동하려면 >> forward 
 					RequestDispatcher rd = request.getRequestDispatcher("Diarydeep.jsp");
 					rd.forward(request, response);		

@@ -86,10 +86,10 @@ m_id = vo.getId();
                 <div class="row justify-content-center">
                     <!-- Contact Form Area -->
                     <div class="col-12 col-md-10 col-lg-9">
-                        <div class="contact-form" style="position:relative; left: 50px;">
+                        <div class="contact-form" style="position:relative; left: 20px;">
                             <h5>Write here :)</h5>
                             <!-- Contact Form -->
-                            <form action="DiaryService?m_id=<%=m_id %>" method="post" enctype="multipart/form-data">
+                            <form action="DiaryService" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-12 col-md-6">
                                         <div class="group">
@@ -102,6 +102,7 @@ m_id = vo.getId();
 
                                     <div class="col-12 col-md-6">
                                         <div class="group">
+                                        	<input type="text" style="display : none;" name="m_id" value="<%=m_id %>">
                                             <input type="date" name="diary_date" id="date" required>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
@@ -114,27 +115,28 @@ m_id = vo.getId();
                                         <div class="group">
                                         	<!-- ì´ë¯¸ì§ ì´ë¦ì´ ë¤ì´ê° input -->
                                         	<input type="text" style="display : none;" name="images" id="image_arr">
-                                            <input multiple = "multiple" type = "file" name="diary_file1[]" accept="image/*" onchange="setThumbnail(event);" multiple/>
+                                            <input id="multiImg" multiple = "multiple" type = "file" name="diary_file1[]" accept="image/*" onchange="setThumbnail(event);" multiple/>
                                             <div id="image_container"></div>
 									<script> 
 												let img_names='';
 												function setThumbnail(event) {
-												for (var image of event.target.files) { 
-												var reader = new FileReader(); 
-												reader.onload = function(event) { 
-												var img = document.createElement("img"); 
-												img.setAttribute("src", event.target.result); 
-												document.querySelector("div#image_container").appendChild(img); }; 
-												console.log(image); 
-												reader.readAsDataURL(image); 
-												
-												// inputì ì´ë¯¸ë¤ ì´ë¦ ì´ì´ë¶ì¬ì¤ / ë¡ êµ¬ë¶íëë¡
-												img_names +=("/"+ image.name);
-												
-												} 
-												// ë¶ì¬ì§ ì´ë¦ì inputíê·¸ ìì ê°ì¼ë¡ ë£ì´ì¤
-												document.querySelector("#image_arr").setAttribute("value", img_names);											
-												console.log(document.querySelector("#image_arr").value);
+													for (var image of event.target.files) { 
+														var reader = new FileReader(); 
+														reader.onload = function(event) { 
+															var img = document.createElement("img"); 
+															img.setAttribute("src", event.target.result); 
+															document.querySelector("div#image_container").appendChild(img); 
+														}; 
+														console.log(image); 
+														reader.readAsDataURL(image); 
+														
+														// inputì ì´ë¯¸ë¤ ì´ë¦ ì´ì´ë¶ì¬ì¤ / ë¡ êµ¬ë¶íëë¡
+														img_names +=("/"+ image.name);
+													} 
+													
+													// ë¶ì¬ì§ ì´ë¦ì inputíê·¸ ìì ê°ì¼ë¡ ë£ì´ì¤
+													document.querySelector("#image_arr").setAttribute("value", img_names);											
+													console.log(document.querySelector("#image_arr").value);
 												} 
 												
 									</script>

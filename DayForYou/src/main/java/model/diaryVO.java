@@ -45,6 +45,9 @@ public class diaryVO {
 		this.diary_file1 = diary_file1;
 	}
 
+	
+	
+
 	public int getDiary_seq() {
 		return diary_seq;
 	}

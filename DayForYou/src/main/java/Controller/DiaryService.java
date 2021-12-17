@@ -28,10 +28,10 @@ public class DiaryService extends HttpServlet {
 		//request.getServletContext();
 				// work space > 아파치톰캣 업로드(폴더의 위치들이 바뀜)
 				// 저장할 경로 
-				String savePath = request.getServletContext().getRealPath("img");
-				
+				String savePath = request.getServletContext().getRealPath("boardImg");
+				System.out.println(savePath);
 				// 최대 파일크기(단위 : byte) : 5Mb
-				int maxSize = 5*1024*1024;
+				int maxSize = 20*1024*1024;
 				
 				// 인코딩 타입
 				String encoding = "utf-8";
