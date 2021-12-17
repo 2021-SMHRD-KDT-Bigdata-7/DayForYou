@@ -184,14 +184,17 @@
 	//내가 참가하고있는 챌린지에서 시작날짜 담아주는 arraylist
 	challengeStartDate = new ArrayList<>();
 	for(int i = 0; i < myChallengesInfo.size(); i++){
-		challengeStartDate.add(dao.changeSasunToMagde(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),0)));		
+		challengeStartDate.add(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),0));
+	
 	}
 
 	//내가 참가하고있는 챌린지에서 마지막날짜 담아주는 arraylist
 	challengeEndDate = new ArrayList<>();	
 	for(int i = 0; i < myChallengesInfo.size(); i++){
-		challengeEndDate.add(dao.changeSasunToMagde(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),1)));		
+		challengeEndDate.add(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),1));
+		
 	}
+	
 		
 	%>
 	
@@ -782,37 +785,20 @@
 
         resourceAreaHeaderContent: '일정',
         resources: [           	
-        {id: 'a', title: '공부', eventColor: "purple"  }
-       
-          ,{id: 'b', title: '운동', eventColor: "green"  }
-          ,{id: 'c', title: '학원', eventColor: "blue"  }
-          ,{id: 'd', title: '사람', eventColor: "red"  }
-                
+        {id: '<%=myChallengesCat2NoDuple.get(0)%>', title: '<%=myChallengesCat2NoDuple.get(0)%>', eventColor: '<%=arr[0]%>'  }
+        <%for(int i = 1 ; i < myChallengesCat2NoDuple.size(); i++){%>
+          ,{id: '<%=myChallengesCat2NoDuple.get(i)%>', title: '<%=myChallengesCat2NoDuple.get(i)%>', eventColor: '<%=arr[i]%>'  }
+          <%    
+          }%>         
         ],
         events: [        	
-        	 { id: '1', resourceId: 'a', start: '<%=challengeStartDate.get(0)%>', end: '<%=challengeEndDate.get(0)%>', title: '<%=myChallengeTitle.get(0)%>' },
-        	 { id: '2', resourceId: 'a', start: '<%=challengeStartDate.get(1)%>', end: '<%=challengeEndDate.get(1)%>', title: '<%=myChallengeTitle.get(1)%>' },
-        	 { id: '3', resourceId: 'b', start: '<%=challengeStartDate.get(2)%>', end: '<%=challengeEndDate.get(2)%>', title: '<%=myChallengeTitle.get(2)%>' },
-        	 { id: '4', resourceId: 'b', start: '<%=challengeStartDate.get(3)%>', end: '<%=challengeEndDate.get(3)%>', title: '<%=myChallengeTitle.get(3)%>' },
-        	 { id: '5', resourceId: 'd', start: '<%=challengeStartDate.get(4)%>', end: '<%=challengeEndDate.get(4)%>', title: '<%=myChallengeTitle.get(4)%>' },
-        	 { id: '6', resourceId: 'c', start: '<%=challengeStartDate.get(5)%>', end: '<%=challengeEndDate.get(5)%>', title: '<%=myChallengeTitle.get(5)%>' },
-        	 { id: '7', resourceId: 'c', start: '<%=challengeStartDate.get(6)%>', end: '<%=challengeEndDate.get(6)%>', title: '<%=myChallengeTitle.get(6)%>' }
-        
+        	 { id: '<%=myChallengesSeq.get(0)%>', resourceId: '<%=myChallengeCat2.get(0)%>', start: '<%=challengeStartDate.get(0)%>', end: '<%=challengeEndDate.get(0)%>', title: '<%=myChallengeTitle.get(0)%>' }
+        	<% for(int i = 1 ; i <challengeStartDate.size(); i++){ %>
+          ,{ id: '<%=myChallengesSeq.get(i)%>', resourceId: '<%=myChallengeCat2.get(i)%>', start: '<%=challengeStartDate.get(i)%>', end: '<%=challengeEndDate.get(i)%>', title: '<%=myChallengeTitle.get(i)%>' }
+          <%    
+        	}%>
           
-       /*   { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
-          { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },
-          { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '생일' },
-          { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: '프로젝트' },
-          { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: '프로젝트' },
-          { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: '발표' },
-          { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: '배드민턴' },
-          { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: '배드민턴' },
-          { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: '측구' },
-          { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: '월급' },
-          { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '영화' },
-          { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: '크리스마스 파티' },
-          { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: '도서 구매' },
-          { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }*/
+   
         ]
       });
 
@@ -820,8 +806,36 @@
     });
 
 
+    /*   { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
+    { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },
+    { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '생일' },
+    { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: '프로젝트' },
+    { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: '프로젝트' },
+    { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: '발표' },
+    { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: '배드민턴' },
+    { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: '배드민턴' },
+    { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: '측구' },
+    { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: '월급' },
+    { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '영화' },
+    { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: '크리스마스 파티' },
+    { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: '도서 구매' },
+    { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }*/
+    
+    let teg = `
+    	<!-- Single Insta Feed -->
+		<div class="single-insta-feed">
+			<img src="` + 123 + `" alt="">
+			<!-- Hover Effects -->
+			<div class="hover-effects">
+				<a href="#"
+					class="d-flex align-items-center justify-content-center"><i
+					class="fa fa-instagram"></i></a>
+			</div>
+		</div>
+    `;
 
-  </script>
+    
+    </script>
   
 
 

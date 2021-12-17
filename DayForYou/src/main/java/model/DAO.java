@@ -298,15 +298,13 @@ public class DAO {
 		ArrayList<String> divide1 = new ArrayList<String>();
 
 		for (int i = 0; i < endDateChall.size(); i++) {	
-			
-			//String[] arr = new String[2];
-			//arr = endDateChall.get(i).split("~");
+		
 			divide1.add(dividePeriodWave(endDateChall.get(i),input));
 
 		}
 
 		for (int i = 0; i < divide1.size(); i++) {
-			String[] arr = divide1.get(i).split("/");
+			String[] arr = divide1.get(i).split("-");
 			ddao = new DayDAO(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
 			periodDay.add(ddao);
 		}
@@ -328,11 +326,7 @@ public class DAO {
 	/**
 	 * 
 	 * */
-	public String changeSasunToMagde(String data) {
-		String[] arr = data.split("/");
-		String result = arr[0] + "-" + arr[1]+ "-" +arr[2];
-		return result;
-	}
+
 	public ArrayList<String> challengeCategoryNoDuple(String user_id) {
 		ArrayList<String> cat2 = new ArrayList<>();
 		connection();
