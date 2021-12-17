@@ -26,24 +26,24 @@
 
 <style type="text/css">
 .product-title {
-   text-align: center;
-   display: table;
-   border: 1px solid #cecece;
-   width: 350px;
-   height: 250px;
+	text-align: center;
+	display: table;
+	border: 1px solid #cecece;
+	width: 350px;
+	height: 250px;
 }
 
 .product-img-div {
-   display: table-cell;
-   vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .product-img {
-   max-width: 350px;
-   max-height: 250px;
+	max-width: 400px;
+	max-height: 300px;
 }
 </style>
-
+<script src="http://code.jquery.com/jquery-1.12.1.js"></script>
 </head>
 
 <body>
@@ -271,46 +271,79 @@
 	<!-- ##### Blog Wrapper Start ##### -->
 	<div class="blog-wrapper section-padding-50-0 clearfix">
 		<div class="container">
-			<div class="row">
-
-				<div class="col-12 col-md-6 col-lg-4">				
-					<div class="single-blog-area blog-style-2">
-						<%
-						for (int i = 0; i < chall_personal.size(); i = i + 2) {
-						%>					
+			<div class="row" id="contentStart">
+				<div class="col-12 col-md-6 col-lg-4" >
+					<div class="single-blog-area blog-style-2" id="divContent">
 						<div class="single-blog-thumbnail">
-						<p style="font-size: 16px; color: black; font-weight: bold;">
-						<%=chall_personal.get(i).getChalCat2()%>
-						</p>
-							<img class = "product-img" src="<%=chall_personal.get(i).getChalPic1()%>"
-								alt="img/challenge_sample/none.png"
-								onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">							
-						</div>
+		<p style="font-size: 16px; color: black; font-weight: bold;">
+		<%=chall_personal.get(0).getChalCat2()%>
+		</p>
+			<img class = "product-img" src="<%=chall_personal.get(0).getChalPic1()%>"
+				alt="img/challenge_sample/none.png"
+				onclick="password(<%=chall_personal.get(0).getChalPw()%>, <%=chall_personal.get(0).getChalSeq()%>);">							
+		</div>
 
-						<!-- Blog Content -->
-						<div class="single-blog-content">
-						<div style="padding-top: 5px; padding-bottom: 5px;">
-                                 <div
-                                    style="display: inline-block; width: 70px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
-                                    <%=chall_personal.get(i).getChalPublic()%>
-                                 </div>
-                                 <div style="display: inline-block;">
-                                    <a href="ChallengeSingleService?chal_seq=<%=chall_personal.get(i).getChalSeq() %>" style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=chall_personal.get(i).getChalSubject()%></a>
-                                 </div>
-                              </div>
-                              <div
-                                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
-                                 <%=chall_personal.get(i).getChalPeriod()%>
-                              </div>					
-							<div style="margin: 2px; font-size: 16px; color: black; font-weight: bold">
-								<h4>인원 수: <%= chall_personal.get(i).getChalCnt() %>
-								</h4>
-							</div>
-						<hr style="border: solid 1px gray;">
-						<%
-						}
-						%>
-					</div>					
+		<!-- Blog Content -->
+		<div class="single-blog-content">
+		<div style="padding-top: 5px; padding-bottom: 5px;">
+                 <div
+                    style="display: inline-block; width: 80px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
+                    <%=chall_personal.get(0).getChalPublic()%>
+                 </div>
+                 <div style="display: inline-block;">
+                    <a href="ChallengeSingleService?chal_seq=<%=chall_personal.get(0).getChalSeq() %>" style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=chall_personal.get(0).getChalSubject()%></a>
+                 </div>
+              </div>
+              <div
+                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
+                 <%=chall_personal.get(0).getChalPeriod()%>
+              </div>					
+			<div style="margin: 2px; font-size: 16px; color: black; font-weight: bold">
+				<h4>인원 수: <%= chall_personal.get(0).getChalCnt() %>
+				</h4>
+			</div>
+		<hr style="border: solid 1px gray;">
+			</div>	
+	<%
+		for (int i = 1; i < chall_personal.size(); i++) {
+		%>					
+  
+		<div class="single-blog-thumbnail">
+		<p style="font-size: 16px; color: black; font-weight: bold;">
+		<%=chall_personal.get(i).getChalCat2()%>
+		</p>
+			<img class = "product-img" src="<%=chall_personal.get(i).getChalPic1()%>"
+				alt="img/challenge_sample/none.png"
+				onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">							
+		</div>
+
+		<!-- Blog Content -->
+		<div class="single-blog-content">
+		<div style="padding-top: 5px; padding-bottom: 5px;">
+                 <div
+                    style="display: inline-block; width: 80px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
+                    <%=chall_personal.get(i).getChalPublic()%>
+                 </div>
+                 <div style="display: inline-block;">
+                    <a href="ChallengeSingleService?chal_seq=<%=chall_personal.get(i).getChalSeq() %>" style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=chall_personal.get(i).getChalSubject()%></a>
+                 </div>
+              </div>
+              <div
+                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
+                 <%=chall_personal.get(i).getChalPeriod()%>
+              </div>					
+			<div style="margin: 2px; font-size: 16px; color: black; font-weight: bold">
+				<h4>인원 수: <%= chall_personal.get(i).getChalCnt() %>
+				</h4>
+			</div>
+		<hr style="border: solid 1px gray;">
+			</div>	
+    
+		<%
+		}
+		%>
+
+					</div>
 				</div>
 			</div>
 		</div>
@@ -444,6 +477,36 @@
 			}
 		}
 	}
+    let teg = `
+    				
+		
+    `;
+     
+    	
+    
+
+		
+		
+    $(window).ready(function(){
+    //스크롤 발생 이벤트 처리
+    $('body').scroll(function(){
+        var scrollT = $(this).scrollTop(); //스크롤바의 상단위치
+        var scrollH = $(this).height(); //스크롤바를 갖는 div의 높이
+        var contentH = $('body').height(); //문서 전체 내용을 갖는 div의 높이
+         // 스크롤바가 아래 쪽에 위치할 때
+           
+        
+            if($(window).scrollTop() == ($(document).height() - $(window).height())){
+            	 $('body').append(tag);
+            	console.log('끝');
+            	$('footer').before(div);
+            }
+        }
+    });
+});
+
+
+
 	</script>
 
 </body>

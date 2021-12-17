@@ -799,42 +799,12 @@
           ,{ id: '<%=myChallengesSeq.get(i)%>', resourceId: '<%=myChallengeCat2.get(i)%>', start: '<%=challengeStartDate.get(i)%>', end: '<%=challengeEndDate.get(i)%>', title: '<%=myChallengeTitle.get(i)%>' }
           <%    
         	}%>
-          
-   
-        ]
+             ]
       });
 
       calendar.render();
     });
 
-
-    /*   { id: '2', resourceId: 'a', start: '2021-12-07', end: '2021-12-12', title: '프로젝트' },
-    { id: '3', resourceId: 'e', start: '2021-12-10', end: '2021-12-10', title: '카드값 결제일' },
-    { id: '4', resourceId: 'd', start: '2021-12-11', end: '2021-12-11', title: '생일' },
-    { id: '5', resourceId: 'a', start: '2021-12-13', end: '2021-12-19', title: '프로젝트' },
-    { id: '6', resourceId: 'a', start: '2021-12-20', end: '2021-12-22', title: '프로젝트' },
-    { id: '7', resourceId: 'd', start: '2021-12-21', end: '2021-12-22', title: '발표' },
-    { id: '8', resourceId: 'b', start: '2021-12-08', end: '2021-12-08', title: '배드민턴' },
-    { id: '9', resourceId: 'b', start: '2021-12-15', end: '2021-12-15', title: '배드민턴' },
-    { id: '10', resourceId: 'b', start: '2021-12-18', end: '2021-12-18', title: '측구' },
-    { id: '11', resourceId: 'e', start: '2021-12-15', end: '2021-12-15', title: '월급' },
-    { id: '12', resourceId: 'c', start: '2021-12-17', end: '2021-12-17', title: '영화' },
-    { id: '13', resourceId: 'd', start: '2021-12-24', end: '2021-12-25T23:59:59', title: '크리스마스 파티' },
-    { id: '14', resourceId: 'c', start: '2021-12-06', end: '2021-12-06', title: '도서 구매' },
-    { id: '14', resourceId: 'c', start: '2021-12-21', end: '2021-12-21', title: '기타 연습' }*/
-    
-    let teg = `
-    	<!-- Single Insta Feed -->
-		<div class="single-insta-feed">
-			<img src="` + 123 + `" alt="">
-			<!-- Hover Effects -->
-			<div class="hover-effects">
-				<a href="#"
-					class="d-flex align-items-center justify-content-center"><i
-					class="fa fa-instagram"></i></a>
-			</div>
-		</div>
-    `;
 
     
     </script>
