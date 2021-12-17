@@ -548,7 +548,7 @@
 					var today = new Date();
 
 					$('#period').html(
-							" ~ " + year + "/" + month + "/" + day
+							" ~ " + year + "-" + month + "-" + day
 									)
 					$('#period').css('display', 'block');
 				});
@@ -579,7 +579,7 @@
 
 					if (changed == 'today') {
 						$('.start1').css('display', 'inline').html(
-								eyear + "/" + emonth + "/" + eday
+								eyear + "-" + emonth + "-" + eday
 										)
 						$('.start2').css('display', 'none');
 						$('.start3').css('display', 'none');
@@ -587,7 +587,7 @@
 					} else if (changed == '1_month') {
 						$('.start4').css('display', 'inline');
 						$('.start4').html(
-								eyear + "/" + emonth + "/" + eday
+								eyear + "-" + emonth + "-" + eday
 						)
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');
@@ -595,7 +595,7 @@
 					} else if (changed == '1_week') {
 						$('.start2').css('display', 'inline');
 						$('.start2').html(
-								eyear + "/" + emonth + "/" + eday
+								eyear + "-" + emonth + "-" + eday
 						)
 						$('.start1').css('display', 'none');
 						$('.start3').css('display', 'none');
@@ -603,7 +603,7 @@
 					} else {
 						$('.start3').css('display', 'inline');
 						$('.start3').html(
-								eyear + "/" + emonth + "/" + eday
+								eyear + "-" + emonth + "-" + eday
 						)
 						$('.start1').css('display', 'none');
 						$('.start2').css('display', 'none');

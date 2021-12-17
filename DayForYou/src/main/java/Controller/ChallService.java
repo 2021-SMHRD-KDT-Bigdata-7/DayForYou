@@ -59,7 +59,7 @@ public class ChallService extends HttpServlet {
 		String chall_pw = multi.getParameter("chall_pw");
 		Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
        
         if(chall_start.equals("today")) {
         	chall_start =df.format(cal.getTime());

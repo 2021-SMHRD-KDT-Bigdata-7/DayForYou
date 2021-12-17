@@ -939,6 +939,66 @@ public int shop_delete(int shop_seq) {
 }
 
 
+public myDailyVO myDailyChallengeCheck(String attend_id, int chal_seq) {
+	myDailyVO mdvo = null;
+	connection();
+
+	try {
+		sql = "select * from tbl_my_challenge where attend_id =? and chal_seq=?";
+
+		psmt = conn.prepareStatement(sql);
+		psmt.setString(1,attend_id);
+		psmt.setInt(2,chal_seq);
+		rs = psmt.executeQuery();
+
+		if (rs.next() == true) {
+			String chal_time = rs.getString(4);
+			int chal_num=rs.getInt(6);
+			mdvo=new myDailyVO(chal_seq, attend_id, chal_time, chal_num);
+		}
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}
+	return mdvo;
+}
+public int MyDailyChallengeinsert(int chal_seq, String attend_id,String daily_pic,int point, String daily_chal_done) 
+{
+	connection();
+
+	try {
+
+		// 3.sql문 준비
+		sql = "insert into tbl_my_challenge values(tbl_daily_challenge_seq.nextval,?,?,?,?,?,sysdate)";
+
+		psmt = conn.prepareStatement(sql);
+
+		psmt.setInt(1, chal_seq);
+		psmt.setString(2, attend_id);
+		psmt.setString(3, daily_pic);
+		psmt.setInt(4, point);
+		psmt.setString(5, daily_chal_done);
+
+		// 5. 실행!
+		// select ->executeQury()-->return Resultset
+		// insert,delete, update ->esecutUpdate()
+		// ->return int(몇 행이 성공했는지
+
+		cnt = psmt.executeUpdate();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		// 6.연결닫아주기
+		close();
+	}
+
+	return cnt;
+
+}
+
 	
 }
 
