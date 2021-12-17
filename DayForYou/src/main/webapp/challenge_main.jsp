@@ -786,8 +786,10 @@
         resourceAreaHeaderContent: '¿œ¡§',
         resources: [           	
         {id: '<%=myChallengesCat2NoDuple.get(0)%>', title: '<%=myChallengesCat2NoDuple.get(0)%>', eventColor: '<%=arr[0]%>'  }
-        <%for(int i = 1 ; i < myChallengesCat2NoDuple.size(); i++){%>
-          ,{id: '<%=myChallengesCat2NoDuple.get(i)%>', title: '<%=myChallengesCat2NoDuple.get(i)%>', eventColor: '<%=arr[i]%>'  }
+        <%for(int i = 1 ; i < myChallengesCat2NoDuple.size(); i++){
+        int j = i;
+        	if(i > 8){ j = j%9;}%>
+          ,{id: '<%=myChallengesCat2NoDuple.get(i)%>', title: '<%=myChallengesCat2NoDuple.get(i)%>', eventColor: '<%=arr[j]%>'  }
           <%    
           }%>         
         ],
