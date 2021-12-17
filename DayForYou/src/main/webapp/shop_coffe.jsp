@@ -18,15 +18,15 @@
    
     <body>
        <div align ="left"  margin"10px">
-        <a class="btn btn-outline-dark mt-auto" href ="shop.jsp">
-        <img src="./img/shop/icon1.png">
+        <a href ="shop.jsp">
+        <img src="./img/shop/back.PNG" style="width:45px;height:45px; position:relative; left:10px; top:15px;">
         </a>
         </div>
         <!-- Header-->
         <header>
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-black">
-                  <img src = "img/logo-img/shop.PNG">
+                  <img src="img/logo-img/shop.PNG" style="position: relative; right:42px;">
                 </div>
             </div>
         </header>
@@ -49,14 +49,14 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">스타벅그 아메리카노</h5>
+                                    <h7 class="fw-bolder">스타벅스 아메리카노</h7>
                                     <!-- Product price-->
                                     p)4.100    
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -71,14 +71,14 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">스타벅스 자바칩프라푸치노</h5>
+                                    <h7 class="fw-bolder">스타벅스 자바칩프라푸치노</h7>
                                     <!-- Product price-->
                                     p)6.100
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">스타벅스 카페라떼</h5>
+                                    <h7 class="fw-bolder">스타벅스 카페라떼</h7>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         
@@ -102,8 +102,8 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">이디야 토피넛라떼</h5>
+                                    <h7 class="fw-bolder">이디야 토피넛라떼</h7>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         
@@ -125,8 +125,8 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'">
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="position:relative; right: 13px;">
+                                <img src = "img/logo-img/buy.PNG" onclick = "location.href = 'shop_buy.jsp'" style="width:100px; height:40px;">
                             </div>
                         </div>
                     </div>
