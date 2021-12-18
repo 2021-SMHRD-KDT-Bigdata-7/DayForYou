@@ -58,7 +58,7 @@ public class UpdateService extends HttpServlet {
 		}
 		
 		// 페이지 이동
-		response.sendRedirect("mypage.html");
+		response.sendRedirect("mypage.jsp");
 	}
 
 }
