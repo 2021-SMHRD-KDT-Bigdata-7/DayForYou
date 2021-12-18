@@ -71,7 +71,6 @@
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
-
         <!-- Top Header Area -->
         <div class="top-header">
             <div class="container h-100">
@@ -90,17 +89,28 @@
                             </div>
                         </div>
                     </div>
-            
+                    <!-- Top Social Area -->
+                   <!--  <div class="col-12 col-sm-4">
+                        <div class="top-social-area">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
 
+                        
         <!-- Logo Area -->
         <div class="logo-area text-center">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
-                        <a href="index.html" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -113,6 +123,10 @@
                     <!-- Classy Menu -->
                     <nav class="classy-navbar justify-content-between">
 
+                        <!-- Subscribe btn -->
+                     <!--    <div class="subscribe-btn tag">
+                            <input type = "text" name = "text" placeholder = "태그 검색"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
+                        </div> -->
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -146,36 +160,13 @@
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
                                         </ul>
                                     </li>
-                                    <li><a href="#">Challenge</a>
-                                        <ul class="dropdown">
-                                            <li><a href="challenge_main.jsp">All</a></li>
-                                            <li><a href="challenge_main.jsp">Group</a></li>
-                                            <li><a href="challenge_main.jsp">Individual</a>
-                                               <!--  <ul class="dropdown">
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                </ul> -->
-                                            </li>
-                                           <!--  <li><a href="#">Catagory 1</a></li>
-                                            <li><a href="#">Catagory 1</a></li> -->
-                                        </ul>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
                                     <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
                               
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
-                                            <li><a href="1_writeForm.jsp">Community</a></li>
+                                            <li><a href="1_list.jsp">Community</a></li>
                                             <li><a>Notice</a></li>
                                             <li><a>Q&A</a></li>
                                         </ul>
@@ -184,7 +175,7 @@
                                     <!-- <li><a href="about-us.html">Portfolio</a></li> -->
                                     
 
-                                     <li><a href="mypage.html">MyPage</a></li>
+                                     <li><a href="mypage.jsp">MyPage</a></li>
                                      <li><a href="shop.jsp">Point shop</a></li>
                                            <!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
@@ -362,6 +353,8 @@
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="./jquery-3.6.0.min.js"></script>
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="js/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -371,7 +364,7 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     
-   <!-- Fullcalender Area-->
+ 
    <script>
 		var calendarEl = document.getElementById('calendar');
 
