@@ -278,7 +278,7 @@
 						<!-- Blog Content -->
 						<div class="row align-items-end">
 							<div class="board_title">
-								<div style="position:relative; left: 30px; width: 100%;">
+								<div style="position:relative; left: 20px; width: 260px;;">
 								
 								<strong>FAQ</strong> 
 								<hr>
@@ -290,7 +290,7 @@
 							
 			
 								
-							<table class="#" style="position: relative; left: 15px; width: 100%; height: 300px; align:center;">
+							<table class="#" style="position: relative; left: 15px; width: 280px; height: 300px; align:center;">
 								<tr id="head_tr" class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 									
 									
@@ -299,43 +299,43 @@
 
 								<tr class="#" align="center" style="height: 25px;  border:0; border-bottom:1px solid #e8e8e7;">
 									
-									<td class="#"><a>Q</a></td>
-									<td class="#" style="font-weight:bold; font-size: 13px;">윤상운은 윤상운이에요?</td>
+									<td class="#" style="background-color:#e7e7e3;"><a>Q</a></td>
+									<td class="#" style="font-weight:bold; font-size: 11px;">개인 챌린지를 다른 사람들에게 공개하고 싶지 않아요!</td>
 									
 									
 								</tr>
 								
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
-									<td class="#"><a>A</a></td>
-									<td class="#" >아니요.</td>
+									<td class="#" style="background-color:#8e8e8e;"><a>A</a></td>
+									<td class="#" >개인 챌린지 생성 시 공개, 비공개 여부를 설정할 수 있어요.</td>
 									
 								</tr>
 								
 								<tr class="#" align="center" style="height: 25px;  border:0; border-bottom:1px solid #e8e8e7;">
 									
-									<td class="#"><a>Q</a></td>
-									<td class="#" style="font-weight:bold; font-size: 13px;">윤상운은 그럼 공상??이에요?</td>
+									<td class="#" style="background-color:#e7e7e3;"><a>Q</a></td>
+									<td class="#" style="font-weight:bold; font-size: 13px;"style="bgcolor:#e7e7e3;" >윤상운은 그럼 공상??이에요?</td>
 									
 								</tr>
 								
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
-									<td class="#"><a>A</a></td>
+									<td class="#" style="background-color:#8e8e8e;"><a>A</a></td>
 									<td class="#">네.</td>
 									
 								</tr>
 								
 								<tr class="#" align="center" style="height: 25px;  border:0; border-bottom:1px solid #e8e8e7;">
 									
-									<td class="#"><a>Q</a></td>
+									<td class="#" style="background-color:#e7e7e3;" ><a>Q</a></td>
 									<td class="#" style="font-weight:bold; font-size: 13px;">윤상운?</td>
 									
 								</tr>
 	
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
-									<td class="#"><a>A</a></td>
+									<td class="#" style="background-color:#8e8e8e;"><a>A</a></td>
 									<td class="#">?</td>
 									
 								</tr>

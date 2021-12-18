@@ -278,9 +278,9 @@
 						<!-- Blog Content -->
 						<div class="row align-items-end">
 							<div class="board_title">
-								<div style="position:relative; left: 30px; width: 100%;">
+								<div style="position:relative; left: 15px; width: 280px;">
 								
-								<strong>공지사항</strong> 
+								<h2>NOTICE</h2> 
 								<hr>
 	<br>
 								<p>DayForYou 회원님들이 공지사항을 확인할 수 있는 공간입니다 : )</p>
