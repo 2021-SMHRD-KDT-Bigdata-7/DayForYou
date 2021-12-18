@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@page import="model.BoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.BoardDAO"%>
@@ -70,13 +71,13 @@
 					<div class="col-12 col-sm-8">
 						<div class="breaking-news-area">
 							<div id="breakingNewsTicker" class="ticker">
-								<ul>
-									<li><a href="#">Day for you :)</a></li>
-									<li><a href="#">Check challenge of this month!</a></li>
-									<li><a href="#">Daily as records, records as Challenge</a></li>
-									<li><a href="#">Check your schedules</a></li>
-									<li><a href="#">Have a good day:)</a></li>
-								</ul>
+							 <ul>
+                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
+                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+                                </ul>
 							</div>
 						</div>
 					</div>
@@ -90,7 +91,7 @@
 				<div class="row h-100 align-items-center">
 					<div class="col-12">
 						<a href="index.html" class="original-logo"><img
-							src="img/logo-img/logo22.png" alt=""></a>
+							src="img/main-img/logo3.png" alt=""></a>
 					</div>
 				</div>
 			</div>
@@ -103,12 +104,7 @@
 					<!-- Classy Menu -->
 					<nav class="classy-navbar justify-content-between">
 
-						<!-- Subscribe btn -->
-						<div class="subscribe-btn">
-							<a href="#" class="btn subscribe-btn" data-toggle="modal"
-								data-target="#subsModal">Subscribe</a>
-						</div>
-
+				
 						<!-- Navbar Toggler -->
 						<div class="classy-navbar-toggler">
 							<span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -125,87 +121,44 @@
 							</div>
 
 							<!-- Nav Start -->
-							<div class="classynav">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="#">Calendar</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Calendar</a></li>
-											<li><a href="about-us.html">Diary</a></li>
-											<!--  <li><a href="single-post.html">Single Post</a></li>
+							 <div class="classynav">
+							 
+										<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
+                                <ul>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
+                                        <ul class="dropdown">
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
+                                           <!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
-										</ul></li>
-									<li><a href="#">Challenge</a>
-										<ul class="dropdown">
-											<li><a href="#">All</a></li>
-											<li><a href="#">Group</a></li>
-											<li><a href="#">Individual</a> <!--  <ul class="dropdown">
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                </ul> --></li>
-											<!--  <li><a href="#">Catagory 1</a></li>
-                                            <li><a href="#">Catagory 1</a></li> -->
-										</ul></li>
-									<li><a href="#">Portfolio</a>
-										<ul class="dropdown">
-											<li><a href="index.html">Statics</a></li>
-											<li><a href="about-us.html">Sample</a></li>
-											<li><a href="about-us.html">Create</a></li>
-										</ul></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
-									<!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                              
+                                     <li><a href="#">Board</a>
+                                        <ul class="dropdown">
+                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a href="2_Notice.jsp">Notice</a></li>
+                                            <li><a href="2_FAQ.jsp">Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                                    
 
-
-									<li><a href="#">Board</a>
-										<div class="megamenu">
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 1</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 2</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 3</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-											<ul class="single-mega cn-col-4">
-												<li class="title">Headline 4</li>
-												<li><a href="#">Mega Menu Item 1</a></li>
-												<li><a href="#">Mega Menu Item 2</a></li>
-												<li><a href="#">Mega Menu Item 3</a></li>
-												<li><a href="#">Mega Menu Item 4</a></li>
-												<li><a href="#">Mega Menu Item 5</a></li>
-											</ul>
-										</div></li>
-									<li><a href="contact.html">About Us</a></li>
-								</ul>
-
+                                     <li><a href="mypage.jsp">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
 								<!-- Search Form  -->
 								<div id="search-wrapper">
 									<form action="#">
@@ -230,64 +183,52 @@
 		<!-- Hero Slides Area -->
 		<div class="hero-slides owl-carousel">
 			<!-- Single Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/b2.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="slide-content text-center">
-								<div class="post-tag">
-									<a href="#" data-animation="fadeInUp">lifestyle</a>
-								</div>
-								<h2 data-animation="fadeInUp" data-delay="250ms">
-									<a href="single-post.html">Take a look at last night’s
-										party!</a>
-								</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Single Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/b1.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="slide-content text-center">
-								<div class="post-tag">
-									<a href="#" data-animation="fadeInUp">lifestyle</a>
-								</div>
-								<h2 data-animation="fadeInUp" data-delay="250ms">
-									<a href="single-post.html">Take a look at last night’s
-										party!</a>
-								</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Single Slide -->
-			<div class="single-hero-slide bg-img"
-				style="background-image: url(img/bg-img/b3.jpg);">
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12">
-							<div class="slide-content text-center">
-								<div class="post-tag">
-									<a href="#" data-animation="fadeInUp">lifestyle</a>
-								</div>
-								<h2 data-animation="fadeInUp" data-delay="250ms">
-									<a href="single-post.html">Take a look at last night’s
-										party!</a>
-								</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+			 <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/mainbanner1.png);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">Check Event</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2021 연말 챌린지 도전하고 특별 혜택받기!</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/banner2.png);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">Hot Challenge</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Check variable challenge</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/diaryimg.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">2022 Diary</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2022 다이어리도 데이포유와 함께</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- ##### Hero Area End ##### -->
 
 	<!-- ##### Blog Wrapper Start ##### -->
@@ -299,52 +240,52 @@
 					<div class="single-blog-area clearfix mb-100">
 						<!-- Blog Content -->
 						<div class="board_wrap">
-							<div class="board_title">
-								<strong>공지사항</strong>
-								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
-
+							<div class="board_title" style="position:relative; bottom:100px; right:20px;">
+								<h1>자유게시판</h1>
+								<hr>
+								<br><br>
+							<h3>게시글 수정</h3>
 							</div>
 							<%
 							BoardVO bvo = (BoardVO) request.getAttribute("bvo");
 							%>
-							<h1>updateForm.jsp</h1>
 
 
 							<form
 								action="1_updatePro.jsp?article_seq=<%=bvo.getArticle_seq()%>"
-								method="post">
+								method="post" style="position:relative; bottom:100px; right: 20px;">
 								<input type="hidden" name="article_seq"
 									value="<%=bvo.getArticle_seq()%>">
-								<table border="1">
-									<tr>
+								<table style="border:none; width: 270px;">
+									<tr  style="border-bottom:1px solid #e7e7e3; height:25px;">
 										<td>글쓴이</td>
 										<td><input type="text" name="m_id"
-											value="<%=bvo.getM_id()%>"></td>
+											value="<%=bvo.getM_id()%>" style="outline:none; border:none;"></td>
 									</tr>
-									<tr>
+									<tr style="border-bottom:1px solid #e7e7e3; height:25px;">
 										<td>비밀번호</td>
-										<td><input type="password" name="user_article_pwd"></td>
+										<td><input type="password" name="user_article_pwd" style="outline:none; border:none;"></td>
 									</tr>
-									<tr>
+									<tr style="border-bottom:1px solid #e7e7e3; height:25px;">
 										<td>글쓴이</td>
 										<td><input type="text" name="article_subject"
-											value="<%=bvo.getArticle_subject()%>"></td>
+											value="<%=bvo.getArticle_subject()%>" style="outline:none; border:none;"></td>
 									</tr>
-									<tr>
-										<td>카테고리</td>
+									<tr style="border-bottom:1px solid #e7e7e3; height:25px;">
+										<td>분류</td>
 										<td><input type="text" name="article_kind"
-											value="<%=bvo.getArticle_kind()%>"></td>
+											value="<%=bvo.getArticle_kind()%>" style="outline:none; border:none;"></td>
 									</tr>
-									<tr>
+									<tr style="height: 200px;">
 										<td>내용</td>
-										<td><textarea rows="10" cols="20" name="article_content"><%=bvo.getArticle_content()%></textarea></td>
+										<td><textarea rows="10" cols="30" name="article_content"><%=bvo.getArticle_content()%></textarea></td>
 									</tr>
 									<input type="hidden" name="article_pwd"
 										value="<%=bvo.getArticle_pwd()%>">
 									</div>
 
 									<tr>
-										<td colspan="2"><input type="submit" value="글수정"></td>
+										<td colspan="2"><input type="submit" value="글수정" style="outline:none; border:none; width:45px; height:30px; position:relative; left:220px;"></td>
 									</tr>
 								</table>
 							</form>

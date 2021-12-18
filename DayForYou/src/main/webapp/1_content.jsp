@@ -314,20 +314,20 @@
 								
 								<br><br>
 								<table class="#" style="position: relative; right:10px; width: 280px; height: 300px; align:center;">
-									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #e7e7e3; border-top:1px solid #a0a0a0; padding:15px;">
+									<tr class="#" align="center" style="height: 10px; font-size: 13px; border:0; border-bottom:1px solid #e7e7e3; border-top:1px solid #a0a0a0; padding:15px;">
 										<td>번호</td>
 										<td><%=bvo.getArticle_seq()%></td>
 										<td>조회수</td>
 										<td><%=bvo.getArticle_count()%></td>
 									</tr>				
-									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #e7e7e3; padding:15px;">
+									<tr class="#" align="center" style="height: 10px; font-size: 13px; border:0; border-bottom:1px solid #e7e7e3; padding:15px;">
 										<td>글쓴이</td>
 										<td><%=bvo.getM_id()%></td>
 										<td>분류</td>
 										<td><%=bvo.getArticle_kind()%></td>
 										<td colspan = "4"></td>
 									</tr>
-									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
+									<tr class="#" align="center" style="height: 10px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>작성일</td>
 										<td colspan = "3"><%=bvo.getReg_date()%></td>
 									</tr>
@@ -363,8 +363,8 @@
 									</div>
 								</table>
 							</form>
-							<table class="#" style="position: relative; right: 10px; width: 280px; height: 300px; align:center; bottom: 95px;">
-								<tr id="head_tr" class="#" align="center" bgcolor= "#e7e7e3" style="height: 14px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
+							<table class="#" style="position: relative; right: 10px; width: 280px; align:center; bottom: 95px; table-layout:fixed;">
+								<tr id="head_tr" class="#" align="center" bgcolor= "#e7e7e3" style="height: 30px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px; ">
 									
 									<td class="#">작성자</td>
 									<td class="#">내용</td>
