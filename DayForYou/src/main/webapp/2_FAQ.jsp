@@ -64,7 +64,7 @@
 	</div>
 
  <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+  <header class="header-area">
 
         <!-- Top Header Area -->
         <div class="top-header">
