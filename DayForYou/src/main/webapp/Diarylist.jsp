@@ -27,16 +27,19 @@
 </head>
 
 <body>
-	<%
+	<%	
+	
+	DAO dao = new DAO();
 	
 	HttpSession session1 = request.getSession();
 	MemberVo vo = (MemberVo) session1.getAttribute("vo");
-	String m_id = "a";
-	if(vo != null){
-	m_id = vo.getId();
-	//String m_id ="m_id 01"; 
-	}
-	DAO dao = new DAO();
+	String m_id = "";
+	if(vo == null){%>
+	   <script> alert("로그인이 필요합니다")
+		location.href ="login.jsp";
+	</script>
+  <% }else{
+	m_id = vo.getId();}
 	ArrayList<diaryVO> diarys = dao.SelectDiary(m_id);
 	
 	%>

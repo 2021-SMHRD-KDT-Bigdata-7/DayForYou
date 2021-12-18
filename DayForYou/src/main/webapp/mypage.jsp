@@ -236,16 +236,17 @@
 <body>
    <%
    MemberVo vo = (MemberVo)session.getAttribute("vo");
-   System.out.print("아이디넘어온다"+vo.getId());
+     
 
    DAO dao = new DAO();
-	%>
 
-<% if(vo==null){ %>
-<script> alert("로그인이 필요합니다")
-   location.href ="login.jsp";
-</script>
-<%} %>
+   if(vo == null){%>
+	   <script> alert("로그인이 필요합니다")
+		location.href ="login.jsp";
+	</script>
+  <% }%>
+
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">

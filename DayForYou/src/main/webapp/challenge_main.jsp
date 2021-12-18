@@ -62,10 +62,18 @@
 <body>
 
 
-	<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
-	<!-- 스크립트릿 --!>
-	<%
-	String m_id = vo.getId();
+	<%MemberVo vo = (MemberVo)session.getAttribute("vo");
+	
+	String m_id = "";
+	if(vo == null){%>
+	<!---->
+	<script> alert("로그인이 필요합니다")
+		location.href ="login.jsp";
+	</script>
+	<% }else{
+	
+	m_id = vo.getId();
+}
 	DAO dao = new DAO();
 	
 	//각 종류별로 게시글 불러오기.
@@ -145,7 +153,7 @@
 
 		
 	%>
-	
+
 	<%
 	
 	// 챌린지 캘린더 수정	
@@ -198,12 +206,12 @@
 	
 		
 	%>
-	
-		
 
 
-	
-	
+
+
+
+
 	<div id="preloader">
 		<div class="preload-content">
 			<div id="original-load"></div>
@@ -234,28 +242,26 @@
 	</div>
 
 	<!-- ##### Header Area Start ##### -->
-	 <header class="header-area">
-
-        <!-- Top Header Area -->
-        <div class="top-header">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <!-- Breaking News Area -->
-                    <div class="col-12 col-sm-8">
-                        <div class="breaking-news-area">
-                            <div id="breakingNewsTicker" class="ticker">
-                                <ul>
-                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
-                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
-                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
-                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
-                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Top Social Area -->
-                   <!--  <div class="col-12 col-sm-4">
+	<header class="header-area"> <!-- Top Header Area -->
+	<div class="top-header">
+		<div class="container h-100">
+			<div class="row h-100 align-items-center">
+				<!-- Breaking News Area -->
+				<div class="col-12 col-sm-8">
+					<div class="breaking-news-area">
+						<div id="breakingNewsTicker" class="ticker">
+							<ul>
+								<li><a href="#">12월 주요 공지사항 확인하기</a></li>
+								<li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+								<li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+								<li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+								<li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Top Social Area -->
+				<!--  <div class="col-12 col-sm-4">
                         <div class="top-social-area">
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -265,73 +271,71 @@
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div> -->
-                </div>
-            </div>
-        </div>
+			</div>
+		</div>
+	</div>
 
-                        
-        <!-- Logo Area -->
-        <div class="logo-area text-center">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Nav Area -->
-        <div class="original-nav-area" id="stickyNav">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Classy Menu -->
-                    <nav class="classy-navbar justify-content-between">
+	<!-- Logo Area -->
+	<div class="logo-area text-center">
+		<div class="container h-100">
+			<div class="row h-100 align-items-center">
+				<div class="col-12">
+					<a href="main.jsp" class="original-logo"><img
+						src="img/main-img/logo3.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                        <!-- Subscribe btn -->
-                     <!--    <div class="subscribe-btn tag">
+	<!-- Nav Area -->
+	<div class="original-nav-area" id="stickyNav">
+		<div class="classy-nav-container breakpoint-off">
+			<div class="container">
+				<!-- Classy Menu -->
+				<nav class="classy-navbar justify-content-between"> <!-- Subscribe btn -->
+				<!--    <div class="subscribe-btn tag">
                             <input type = "text" name = "text" placeholder = "태그 검색"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
-                        </div> -->
+                        </div> --> <!-- Navbar Toggler -->
+				<div class="classy-navbar-toggler">
+					<span class="navbarToggler"><span></span><span></span><span></span></span>
+				</div>
 
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
+				<!-- Menu -->
+				<div class="classy-menu" id="originalNav">
+					<!-- close btn -->
+					<div class="classycloseIcon">
+						<div class="cross-wrap">
+							<span class="top"></span><span class="bottom"></span>
+						</div>
+					</div>
 
-                        <!-- Menu -->
-                        <div class="classy-menu" id="originalNav">
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-		                           		<%if(vo != null) { %>
-                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
-                            					<%System.out.println("로그인 성공");%>										
-                            			<%}else{ %>
-												<a href = "login.jsp" class="button4">login</a>
-												<%System.out.println("로그아웃 성공");%>		
-										<%} %>
-                                <ul>
-                                    <li><a href="main.jsp">Home</a></li>
-                                    <li><a href="my.html">Calendar</a>
-                                        <ul class="dropdown">
-                                            <li><a href="myCalendar.jsp">Calendar</a></li>
-                                            <li><a href="Diarylist.jsp">Diary</a></li>
-                                           <!--  <li><a href="single-post.html">Single Post</a></li>
+					<!-- Nav Start -->
+					<div class="classynav">
+						<%if(vo != null) { %>
+						<button class="button4" onclick="location.href = 'LogoutService'">Logout</button>
+						<%System.out.println("로그인 성공");%>
+						<%}else{ %>
+						<a href="login.jsp" class="button4">login</a>
+						<%System.out.println("로그아웃 성공");%>
+						<%} %>
+						<ul>
+							<li><a href="main.jsp">Home</a></li>
+							<li><a href="my.html">Calendar</a>
+								<ul class="dropdown">
+									<li><a href="myCalendar.jsp">Calendar</a></li>
+									<li><a href="Diarylist.jsp">Diary</a></li>
+									<!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
-                                        </ul>
-                                    </li>
-                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
-                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
+								</ul></li>
+							<li><a href="challenge_main.jsp">Challenge</a> <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
                               
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
-                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a
+										href="1_list.jsp">Community</a></li>
                                             <li><a>Notice</a></li>
                                             <li><a>Q&A</a></li>
                                         </ul>
@@ -370,12 +374,15 @@
                                 <!-- Search Form  -->
                                 <div id="search-wrapper">
                                     <form action="#">
-                                        <input type="text" id="search" placeholder="Search something...">
+                                        <input type="text" id="search"
+										placeholder="Search something...">
                                         <div id="close-icon"></div>
-                                        <input class="d-none" type="submit" value="">
+                                        <input class="d-none"
+										type="submit" value="">
                                     </form>
                                 </div>
-                            </div>
+                            
+					</div>
                             <!-- Nav End -->
                         </div>
                     </nav>
@@ -383,11 +390,11 @@
             </div>
         </div>
     </header>
-	<!-- ##### Header Area End ##### -->
+<!-- ##### Header Area End ##### -->
 
-	<!-- ##### Breadcumb Area Start ##### -->
+								<!-- ##### Breadcumb Area Start ##### -->
 	<div class="breadcumb-area bg-img"
-		style="background-image: url(img/main-img/chal.jpg);">
+									style="background-image: url(img/main-img/chal.jpg);">
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
@@ -402,8 +409,8 @@
 
 	<!-- ##### Cool Facts Area Start ##### -->
 	<div
-		class="cool-facts-area section-padding-100-0 bg-img background-overlay"
-		style="background-image: url(img/main-img/fuck.jpg);">
+									class="cool-facts-area section-padding-100-0 bg-img background-overlay"
+									style="background-image: url(img/main-img/fuck.jpg);">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -413,8 +420,9 @@
 							<div class="line"></div>
 							<a href="#" class="post-tag">W E L C O M E !</a>
 							<h4>
-								<a href="#" class="post-headline" >챌린지에 오신 것을</a>
-								<a href="#" class="post-headline" style="position:relative; bottom:15px;">환영합니다.</a>
+								<a href="#" class="post-headline">챌린지에 오신 것을</a>
+								<a href="#" class="post-headline"
+																style="position:relative; bottom:15px;">환영합니다.</a>
 							</h4>
 							<p>DayForYou에서 다양한 챌린지에 도전하세요!</p>
 						</div>
@@ -471,8 +479,9 @@
 
 	<br><br><br>
 	<!-- ##### Calendar Area Start #####-->
-	<div align= "center">
-		<img src = "img/main-img/chacal.PNG" style="width: 170px; height: 30px; ">
+	<div align="center">
+		<img src="img/main-img/chacal.PNG"
+										style="width: 170px; height: 30px; ">
 	</div>
 	<br><br>
 	<div id='calendar'></div>
@@ -495,9 +504,9 @@
 						<div class="single-blog-thumbnail">
 
 							<a
-								href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
-								src="<%= chall_personal.get(0).getChalPic1()%>"
-								alt="img/logo.png" class = "product-img"> </a>						
+															href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
+															src="<%= chall_personal.get(0).getChalPic1()%>"
+															alt="img/logo.png" class="product-img"> </a>						
 						</div>
 						<br><br><br>
 						<!-- Blog Content -->
@@ -511,7 +520,7 @@
 					</div>
 					<div align="right">
 						<a
-							href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
+														href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
 					</div>
 				</div>
 			</div>
@@ -527,9 +536,11 @@
 					<div style="position:relative; right:10px;">
 					<div class="single-blog-thumbnail">
 						<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
-						<a href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>"><img class = "product-img"
-							src="<%=chall_suggestion.get(0).getChalPic1() %>"
-							alt="img/logo.png"> </a>
+						<a
+															href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>"><img
+															class="product-img"
+															src="<%=chall_suggestion.get(0).getChalPic1() %>"
+															alt="img/logo.png"> </a>
 						
 					</div>
 					<br><br><br>
@@ -545,7 +556,7 @@
 				</div>
 				<div align="right">
 					<a
-						href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
+													href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
 						
 				</div>
 			</div>
@@ -562,9 +573,11 @@
 			<div class="single-blog-area blog-style-2">
 
 				<div class="single-blog-thumbnail">
-					<a href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>"><img class = "product-img"
-						src="<%=chall_popularity.get(0).getChalPic1() %>"
-						alt="img/logo.png"> </a>
+					<a
+													href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>"><img
+													class="product-img"
+													src="<%=chall_popularity.get(0).getChalPic1() %>"
+													alt="img/logo.png"> </a>
 					
 				</div>
 				<br><br><br>
@@ -578,7 +591,7 @@
 			</div>
 			<div align="right">
 				<a
-					href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
+												href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
 					<br><br>
 			</div>
 			
@@ -594,7 +607,11 @@
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
-				<a href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>"><img class = "product-img" src="<%=chall_group.get(0).getChalPic1() %>" alt="img/logo.png">
+				<a
+												href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>"><img
+												class="product-img"
+												src="<%=chall_group.get(0).getChalPic1() %>"
+												alt="img/logo.png">
 				</a>
 			</div>
 			<!-- Blog Content -->
@@ -603,7 +620,8 @@
 				
 			</div>
 			<div align="right">
-				<a href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
+				<a
+												href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
 				<br><br>
 			</div>
 		</div>
@@ -620,7 +638,11 @@
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
-				<a href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>"><img class = "product-img" src="<%=chall_all.get(0).getChalPic1() %>" alt="img/logo.png"></a>
+				<a
+												href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>"><img
+												class="product-img"
+												src="<%=chall_all.get(0).getChalPic1() %>"
+												alt="img/logo.png"></a>
 				
 			</div>
 			<!-- Blog Content -->
@@ -633,7 +655,8 @@
 			</div>
 		</div>
 		<div align="right">
-			<a href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
+			<a
+											href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
 			<br><br>
 		</div>
 	</div>
@@ -659,8 +682,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-						class="d-flex align-items-center justify-content-center"><i
-						class="fa fa-instagram"></i></a>
+													class="d-flex align-items-center justify-content-center"><i
+													class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -669,8 +692,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-						class="d-flex align-items-center justify-content-center"><i
-						class="fa fa-instagram"></i></a>
+													class="d-flex align-items-center justify-content-center"><i
+													class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -679,8 +702,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-						class="d-flex align-items-center justify-content-center"><i
-						class="fa fa-instagram"></i></a>
+													class="d-flex align-items-center justify-content-center"><i
+													class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -689,8 +712,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-						class="d-flex align-items-center justify-content-center"><i
-						class="fa fa-instagram"></i></a>
+													class="d-flex align-items-center justify-content-center"><i
+													class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -699,8 +722,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-						class="d-flex align-items-center justify-content-center"><i
-						class="fa fa-instagram"></i></a>
+													class="d-flex align-items-center justify-content-center"><i
+													class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -709,8 +732,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-						class="d-flex align-items-center justify-content-center"><i
-						class="fa fa-instagram"></i></a>
+													class="d-flex align-items-center justify-content-center"><i
+													class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -719,8 +742,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-						class="d-flex align-items-center justify-content-center"><i
-						class="fa fa-instagram"></i></a>
+													class="d-flex align-items-center justify-content-center"><i
+													class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 		</div>
@@ -735,8 +758,8 @@
 	Copyright &copy;<script>
 		document.write(new Date().getFullYear());
 	</script> All rights reserved | This template is made with <i
-		class="fa fa-heart-o" aria-hidden="true"></i> by <a
-		href="https://colorlib.com" target="_blank">Colorlib</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+									class="fa fa-heart-o" aria-hidden="true"></i> by <a
+									href="https://colorlib.com" target="_blank">Colorlib</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 	</footer>
 	<!-- ##### Footer Area End ##### -->
@@ -817,6 +840,7 @@
     <%}%>
 
 
-</body>
+
+							</body>
 
 </html>
