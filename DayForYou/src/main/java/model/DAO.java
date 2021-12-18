@@ -656,7 +656,7 @@ public class DAO {
 		connection();
 
 		try {
-			sql = "select * from tbl_shop order by shop_seq desc";
+			sql = "select * from tbl_shop order by goods_seq desc";
 
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();

@@ -93,6 +93,7 @@
 	</div>
 
 	<!-- ##### Header Area Start ##### -->
+<<<<<<< HEAD
 	<header class="header-area"> <!-- Top Header Area -->
 	<div class="top-header">
 	<!-- 글쓰기 버튼 -->
@@ -122,47 +123,137 @@
 			</div>
 		</div>
 	</div>
+=======
+	 <header class="header-area">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-7/DayForYou.git
 
-	<!-- Logo Area -->
-	<div class="logo-area text-center">
-		<div class="container h-100">
-			<div class="row h-100 align-items-center">
-				<div class="col-12">
-					<a href="index.html" class="original-logo"><img
-						src="img/logo-img/logo22.png" alt=""></a>
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-sm-8">
+                        <div class="breaking-news-area">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
+                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top Social Area -->
+                   <!--  <div class="col-12 col-sm-4">
+                        <div class="top-social-area">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+                        
+        <!-- Logo Area -->
+        <div class="logo-area text-center">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<<<<<<< HEAD
 				</div>
+				
+=======
+        <!-- Nav Area -->
+        <div class="original-nav-area" id="stickyNav">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-7/DayForYou.git
+
+                        <!-- Subscribe btn -->
+                     <!--    <div class="subscribe-btn tag">
+                            <input type = "text" name = "text" placeholder = "태그 검색"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
+                        </div> -->
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+<<<<<<< HEAD
+					<!-- Nav Start -->
+					  <div class="classynav">
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
+                                <ul>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
+                                        <ul class="dropdown">
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
+                                           <!--  <li><a href="single-post.html">Single Post</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="coming-soon.html">Coming Soon</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
+=======
+                        <!-- Menu -->
+                        <div class="classy-menu" id="originalNav">
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-7/DayForYou.git
+
+<<<<<<< HEAD
+                              
+                                     <li><a href="#">Board</a>
+                                        <ul class="dropdown">
+                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a href="2_Notice.jsp">Notice</a></li>
+                                            <li><a href="2_FAQ.jsp">Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                                    
+
+                                     <li><a href="mypage.jsp">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
+                   
+					
+					</div>
+					<!-- Nav End -->
+				</div>
+				</nav>
 			</div>
 		</div>
 	</div>
-
-	<!-- Nav Area -->
-	<div class="original-nav-area" id="stickyNav">
-		<div class="classy-nav-container breakpoint-off">
-			<div class="container">
-				<!-- Classy Menu -->
-				<nav class="classy-navbar justify-content-between"> <!-- Subscribe btn -->
-				<div id="search-wrapper" style="margin-top: 0px;">
-					<input type="text" id="search" placeholder="Search something...">
-
-				</div>
-				
-
-				<!-- Navbar Toggler -->
-				<div class="classy-navbar-toggler">
-					<span class="navbarToggler"><span></span><span></span><span></span></span>
-				</div>
-
-				<!-- Menu -->
-				<div class="classy-menu" id="originalNav">
-					<!-- close btn -->
-					<div class="classycloseIcon">
-						<div class="cross-wrap">
-							<span class="top"></span><span class="bottom"></span>
-						</div>
-					</div>
-
-					<!-- Nav Start -->
-					  <div class="classynav">
+	</header>
+=======
+                            <!-- Nav Start -->
+                            <div class="classynav">
 		                           		<%if(vo != null) { %>
                             					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
                             					<%System.out.println("로그인 성공");%>										
@@ -198,16 +289,48 @@
 
                                      <li><a href="mypage.jsp">MyPage</a></li>
                                      <li><a href="shop.jsp">Point shop</a></li>
-                   
-					
-					</div>
-					<!-- Nav End -->
-				</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-	</header>
+                                           <!--  <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 2</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 3</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Headline 4</li>
+                                                <li><a href="#">Mega Menu Item 1</a></li>
+                                                <li><a href="#">Mega Menu Item 2</a></li>
+                                                <li><a href="#">Mega Menu Item 3</a></li>
+                                                <li><a href="#">Mega Menu Item 4</a></li>
+                                                <li><a href="#">Mega Menu Item 5</a></li>
+                                            </ul> -->
+
+                                <!-- Search Form  -->
+                                <div id="search-wrapper">
+                                    <form action="#">
+                                        <input type="text" id="search" placeholder="Search something...">
+                                        <div id="close-icon"></div>
+                                        <input class="d-none" type="submit" value="">
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-7/DayForYou.git
 	<!-- ##### Header Area End ##### -->
 
 	<!-- ##### Breadcumb Area Start ##### -->
@@ -239,9 +362,9 @@
 		</p>
 			<img class = "product-img" src="<%=chall_personal.get(0).getChalPic1()%>"
 				alt="img/challenge_sample/none.png"
-				onclick="password(<%=chall_personal.get(0).getChalPw()%>, <%=chall_personal.get(0).getChalSeq()%>);">							
+				onclick="password('<%=chall_personal.get(0).getChalPw()%>', '<%=chall_personal.get(0).getChalSeq()%>');">							
 		</div>
-
+	
 		<!-- Blog Content -->
 		<div class="single-blog-content">
 		<div style="padding-top: 5px; padding-bottom: 5px;">
@@ -251,7 +374,7 @@
                  </div>
                  <br>
                  <div style="display: inline-block;">
-                    <a href="ChallengeSingleService?chal_seq=<%=chall_personal.get(0).getChalSeq() %>" style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=chall_personal.get(0).getChalSubject()%></a>
+                    <a href="ChallengeSingleService?chal_seq=<%=chall_personal.get(0).getChalSeq()%>" style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=chall_personal.get(0).getChalSubject()%></a>
                  </div>
               </div>
               <br>
@@ -269,15 +392,16 @@
 			</div>	
 	<%
 		for (int i = 1; i < chall_personal.size(); i++) {
+			
 		%>					
   
 		<div class="single-blog-thumbnail">
 		<p style="font-size: 16px; color: black; font-weight: bold;">
-		<%=chall_personal.get(i).getChalCat2()%>
+		<%=chall_personal.get(i).getChalCat2()%>		
 		</p>
 			<img class = "product-img" src="<%=chall_personal.get(i).getChalPic1()%>"
 				alt="img/challenge_sample/none.png"
-				onclick="password(<%=chall_personal.get(i).getChalPw()%>, <%=chall_personal.get(i).getChalSeq()%>);">							
+				onclick="password('<%=chall_personal.get(i).getChalPw()%>', '<%=chall_personal.get(i).getChalSeq()%>');">							
 		</div>
 
 		<!-- Blog Content -->
@@ -427,43 +551,26 @@
 	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
-	<script>									
-	function password(pass, seq) {
+	<script>	
+	function password(pass, seq)  {
 		let link = 'ChallengeSingleService?chal_seq=' + seq;
-		if(typeof pass == "undefined" || pass == null || pass == ""){		
+		let password1 = "";
+		if(typeof pass == "undefined" || pass == null || pass == ""){			
 			location.replace(link);	
 		}else{		
-			let password = prompt("비밀번호를 입력하세요.");
+			password1 = prompt("비밀번호를 입력하세요.");
 			if(pass != password){
 				alert("비밀번호가 틀렸습니다.");					
 			}	
-			else{						
+			else{
 				location.replace(link);	
 			}
 		}
 	}
     	
 		
-    $(window).ready(function(){
-    //스크롤 발생 이벤트 처리
-    $('body').scroll(function(){
-        var scrollT = $(this).scrollTop(); //스크롤바의 상단위치
-        var scrollH = $(this).height(); //스크롤바를 갖는 div의 높이
-        var contentH = $('body').height(); //문서 전체 내용을 갖는 div의 높이
-         // 스크롤바가 아래 쪽에 위치할 때
-           
-        
-            if($(window).scrollTop() == ($(document).height() - $(window).height())){
-            	 $('body').append(tag);
-            	console.log('끝');
-            	$('footer').before(div);
-            }
-        }
-    });
+ 
 });
-
-
-
 	</script>
 
 </body>

@@ -67,24 +67,24 @@
 		<div class="container px-4 px-lg-5 mt-5">
 			<div
 				class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-				<div class="col mb-5">
+				<div class="col mb-5"  >
 					<div class="col mb-5">
-						<div class="card h-100">
+						<div class="card h-100" style="width: 270px; height: 500px; position:relative; right: 70px;">
 
-							<div class="card-body p-4">
+							<div class="card-body p-4" >
 								<div class="text-center">
 									<!-- Product name-->
-									<h5 id="myPoint" class="fw-bolder" name="my_Point"><%=vo.getPoint()%></h5>
-								</div>
-								<div class="card-body p-4">
+									<h7 id="myPoint" class="fw-bolder" name="my_Point"> 내 포인트<br><%=vo.getPoint()%></h7>
+							</div>
+							<div class="card-body p-4">
 									<div class="text-center">
 										<!-- Product name-->
-										<h5 class="fw-bolder" id="goodsPoint">
+										<h7 class="fw-bolder" id="goodsPoint">상품 포인트<br>
 											<!-- 아직 해결못함 -->
-											<%=goods_point%></h5>
+											<%=goods_point%></h7>
 
 									</div>
-								</div>
+							</div>
 								<!-- Product actions-->
 								<br>
 								<%
@@ -94,7 +94,7 @@
 									<form action="shopbuyService?goods_point">
 										<input type="hidden" name="goods_point"
 											value="<%=goods_point%>">
-										<button id="btn" class="btn btn-outline-dark mt-auto"
+										<button id="btn" class="btn btn-outline-dark mt-auto" style="border:none; outline:none; position:relative; left: 50px; background-color: green; color: white; border-radius:20px;"
 											onclick="check()">
 											<p>BUY</p>
 										</button>
