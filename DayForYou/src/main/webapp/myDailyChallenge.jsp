@@ -66,7 +66,12 @@ table {
 
 <body>
 	<%
+	HttpSession session1 = request.getSession();
+	MemberVo vo = (MemberVo)session1.getAttribute("vo");	
+	String m_id = vo.getId();
+	
 	DAO dao = new DAO();
+
 	myDailyVO mdvo = (myDailyVO) request.getAttribute("mdvo");
 
 	//챌린지 순번으로 Servlet으로 넘기고
@@ -86,6 +91,9 @@ table {
 	System.out.println("mydailychallenge.jsp에서 조회한 " + msvo.getChal_subject());
 	System.out.println("mydailychallenge.jsp에서 조회한 " + msvo.getChal_period());
 	System.out.println("mydailychallenge.jsp에서 조회한 " + msvo.getChal_public());
+	
+	
+	ArrayList<String> MDCImges = dao.getMyDailyChallengeImg(mdvo.getChal_seq(), m_id);
 	%>
 
 	<!-- Preloader -->
@@ -230,7 +238,7 @@ table {
 	<!-- ##### Breadcumb Area End ##### -->
 	<br>
 	<br>
-	
+
 	<div class="blog-wrapper section-padding-100-0 clearfix">
 		<div class="container">
 			<div class="row align-items-end">
@@ -259,90 +267,112 @@ table {
 
 										<hr style="border: solid 1px gray;">
 
-										
-										<p style="font-size: 16px; color: black; font-weight: bold;"><%=msvo.getChal_cat2()%></p>
-										<a
-											href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>">
-											<div class="product-title">
-												<div class="product-img-div">
-													<img class="product-img" src="<%//사진들 조회하는거 해줘야함%>" alt=>
+										<form action="myDailyChallinsert">
+											<div>
+												<div>
+													<div>
+														<p
+															style="font-size: 16px; color: black; font-weight: bold;"><%=msvo.getChal_cat2()%></p>
+														<a
+															href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>">
+															<div class="product-title">
+															
+																<div class="product-img-div">	
+																<%for(int i = 0 ; i < MDCImges.size(); i++){
+																%>															
+																	<img class="product-img" src="<%=MDCImges.get(i)%>"
+																		alt=>
+																			<%} %>
+																</div>
+														
+															</div>
+														</a>
+														<div style="padding-top: 5px; padding-bottom: 5px;">
+															<div
+																style="display: inline-block; width: 70px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
+																<%=msvo.getChal_public()%>
+															</div>
+															<div style="display: inline-block;">
+																<a
+																	href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>"
+																	style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=msvo.getChal_subject()%></a>
+															</div>
+														</div>
+														<div
+															style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
+															<%=msvo.getChal_period()%>
+														</div>
+														<br>
+														<h4>
+															시간 :
+															<%=mdvo.getChal_time()%>
+															hours
+														</h4>
+														<h4>
+															횟수 :
+															<%=mdvo.getChal_num()%>
+															times
+														</h4>
+														<br> <br> <br>
+														<h4>오늘의 인증샷 올리기!</h4>
+													</div>
+													<input type="file" id="dailyFile" name="mydaily_pic"
+														accept="image/*" onchange="loadFile(this)"> <label
+														for="dailyFile">
+														<div class="product-title">
+															<div class="product-img-div">
+																<img class="product-img" id="dailyimage">
+															</div>
+														</div>
+													</label> <br>
+													<hr style="border: solid 1px gray;">
 												</div>
-											</div>
-										</a>
-										<div style="padding-top: 5px; padding-bottom: 5px;">
-											<div
-												style="display: inline-block; width: 70px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
-												<%=msvo.getChal_public()%>
-											</div>
-											<div style="display: inline-block;">
-												<a
-													href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>"
-													style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=msvo.getChal_subject()%></a>
-											</div>
-										</div>
-										<div
-											style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
-											<%=msvo.getChal_period()%>
-										</div>
-										<br>
-										<h4>
-											시간 :
-											<%=mdvo.getChal_time()%>
-											hours
-										</h4>
-										<h4>
-											횟수 :
-											<%=mdvo.getChal_num()%>
-											times
-										</h4>
-										<br> <br> <br>
-										<h4>오늘의 인증샷 올리기!</h4>
-									</div>
-									<input type="file" id="dailyFile" name="mydaily_pic"
-										accept="image/*" onchange="loadFile(this)"> 
-										<label for="dailyFile">
-										<div class="product-title">
-											<div class="product-img-div">
-											<img class="product-img" id="dailyimage">
-											</div>
-										</div>
-									</label>
-									<br>
-									<hr style="border: solid 1px gray;">
-								</div>
-								<a id="mychalinsert" style="border: solid 1px gray; text-align:center; font-size:20px; color:#535c68;
-								 width:400px;height:40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px ; background-color: #f5f6fa;">오늘의 실천 기입하기
-								</a>
-								
 
+
+												<input type="hidden" name=chal_seq
+													value="<%=mdvo.getChal_seq()%>"> <input
+													type="hidden" name=attend_id
+													value="<%=mdvo.getAttend_id()%>"> <input
+													type="hidden" name=point value="10"> <input
+													type="hidden" name=admit value="Y"> <input
+													type="submit" id="mychalinsert"
+													style="border: solid 1px gray; text-align: center; font-size: 20px; color: #535c68; width: 400px; height: 40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px; background-color: #f5f6fa;">오늘의
+												실천 기입하기
+											</div>
+										</form>
+									</div>
+								</div>
 							</div>
 						</div>
+
+
+
+
 					</div>
 				</div>
 			</div>
+			<!-- Footer Social Area -->
+			<div class="footer-social-area mt-30">
+				<a href="#" data-toggle="tooltip" data-placement="top"
+					title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+				<a href="#" data-toggle="tooltip" data-placement="top"
+					title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#" data-toggle="tooltip" data-placement="top"
+					title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#" data-toggle="tooltip" data-placement="top"
+					title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+				<a href="#" data-toggle="tooltip" data-placement="top"
+					title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
+				<a href="#" data-toggle="tooltip" data-placement="top"
+					title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+			</div>
 		</div>
-		<!-- Footer Social Area -->
-		<div class="footer-social-area mt-30">
-			<a href="#" data-toggle="tooltip" data-placement="top"
-				title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-			<a href="#" data-toggle="tooltip" data-placement="top"
-				title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="#" data-toggle="tooltip" data-placement="top"
-				title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-			<a href="#" data-toggle="tooltip" data-placement="top"
-				title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-			<a href="#" data-toggle="tooltip" data-placement="top"
-				title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
-			<a href="#" data-toggle="tooltip" data-placement="top"
-				title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-		</div>
-	</div>
 	</div>
 	</div>
 	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	<script>
-			document.write(new Date().getFullYear());
-		</script>
+		document.write(new Date().getFullYear());
+	</script>
 	이용약관 | 개인정보처리방침
 	<a href="https://colorlib.com" target="_blank">000-0000-0000</a>
 	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -355,27 +385,28 @@ table {
 	<!-- Bootstrap js -->
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Plugins js -->
-	<script src="js/plugins.js"></script> 
+	<script src="js/plugins.js"></script>
 	<!-- Active js -->
 	<script src="js/active.js"></script>
-	
+
 	<script type="text/javascript">
-	document.getElementById("dailyFile").onchange= function(){
-	    var reader = new FileReader();
+		document.getElementById("dailyFile").onchange = function() {
+			var reader = new FileReader();
 
-	    reader.onload = function (e) {
-	        // get loaded data and render thumbnail.
-	        document.getElementById("dailyimage").src = e.target.result;
-	    };
+			reader.onload = function(e) {
+				// get loaded data and render thumbnail.
+				document.getElementById("dailyimage").src = e.target.result;
+			};
 
-	    // read the image file as a data URL.
-	    reader.readAsDataURL(this.files[0]);
-	};
-	document.getElementById("mychalinsert").onclick = function() {
-<%-- 		<%dao.MyDailyChallengeinsert(mdvo.getChal_seq(),mdvo.getAttend_id(),String daily_pic,10, String daily_chal_done);%> --%>
-		 alert('오늘의 챌린지 실천 입력');
-		location.reload();
-	};
+			// read the image file as a data URL.
+			reader.readAsDataURL(this.files[0]);
+		};
+		//wlrma dlrp dksehlslsRk rkqtdmf qkedkdhsmsrp whgdk durltj dlfeks qhsowk
+		// input tag value sjgrh?? dzdzdz
+		document.getElementById("mychalinsert").onclick = function() {
+			alert('오늘의 챌린지 실천 입력');
+			//location.reload();
+		};
 	</script>
 
 	<!-- Active js -->

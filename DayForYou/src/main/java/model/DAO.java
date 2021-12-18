@@ -776,6 +776,33 @@ public class DAO {
 		}
 		return msvo;
 	}
+	
+	public ArrayList<String> getMyDailyChallengeImg(int chal_seq, String attend_id) {
+		ArrayList<String> images = null;
+		
+		
+		connection();
+		try {
+			
+			images = new ArrayList<>();
+			sql = "select daily_pic from tbl_daily_challenge where chal_seq = ? and attend_id = ?";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, chal_seq);
+			psmt.setString(2, attend_id);
+			rs = psmt.executeQuery();
+
+			while(rs.next()) {
+				images.add(rs.getString(1));
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return images;
+	}
 
 	public int MyChallengeinsert(int chal_seq, String attend_id, String chal_time, String my_chal_memo,
 			int chal_num) {
@@ -983,7 +1010,7 @@ public int MyDailyChallengeinsert(int chal_seq, String attend_id,String daily_pi
 	try {
 
 		// 3.sqlπÆ ¡ÿ∫Ò
-		sql = "insert into tbl_my_challenge values(tbl_daily_challenge_seq.nextval,?,?,?,?,?,sysdate)";
+		sql = "insert into tbl_my_challenge values(tbl_daily_challenge_seq.nextval,?,?,?,?,?,Sysdate)";
 
 		psmt = conn.prepareStatement(sql);
 

@@ -17,6 +17,9 @@ public class MySelectChallVO {
 		this.chal_pic1 = chal_pic1;
 		this.chal_public = chal_public;
 	}
+	public MySelectChallVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getChal_cat1() {
 		return chal_cat1;
 	}

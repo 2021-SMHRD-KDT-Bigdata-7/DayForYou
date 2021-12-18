@@ -12,6 +12,9 @@ public class myDailyVO {
 		this.chal_time = chal_time;
 		this.chal_num = chal_num;
 	}
+	public myDailyVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getChal_seq() {
 		return chal_seq;
 	}
