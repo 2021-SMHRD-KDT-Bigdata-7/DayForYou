@@ -95,19 +95,26 @@
 	<!-- ##### Header Area Start ##### -->
 	<header class="header-area"> <!-- Top Header Area -->
 	<div class="top-header">
+	<!-- 글쓰기 버튼 -->
+				<div class="write-bar">
+					<a href="challenge_make.jsp"><img
+						src="img/challenge-main/write_button.png"
+						style="position: fixed; bottom: 5%; left: 33%; right: 50%"></a>
+						
+				</div>
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<!-- Breaking News Area -->
 				<div class="col-12 col-sm-8">
 					<div class="breaking-news-area">
 						<div id="breakingNewsTicker" class="ticker">
-							<ul>
-								<li><a href="#">Hello World!</a></li>
-								<li><a href="#">Hello Universe!</a></li>
-								<li><a href="#">Hello Original!</a></li>
-								<li><a href="#">Hello Earth!</a></li>
-								<li><a href="#">Hello Colorlib!</a></li>
-							</ul>
+						  <ul>
+                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
+                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+                                </ul>
 						</div>
 					</div>
 				</div>
@@ -138,13 +145,7 @@
 					<input type="text" id="search" placeholder="Search something...">
 
 				</div>
-				<!-- 글쓰기 버튼 -->
-				<div class="write-bar">
-					<a href="challenge_make.jsp"><img
-						src="img/challenge-main/write_button.png"
-						style="position: fixed; bottom: 5%; left: 33%; right: 50%"></a>
-						
-				</div>
+				
 
 				<!-- Navbar Toggler -->
 				<div class="classy-navbar-toggler">
@@ -161,86 +162,44 @@
 					</div>
 
 					<!-- Nav Start -->
-					<div class="classynav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#">Pages</a>
-								<ul class="dropdown">
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about-us.html">About Us</a></li>
-									<li><a href="single-post.html">Single Post</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="coming-soon.html">Coming Soon</a></li>
-								</ul></li>
-							<li><a href="#">Catagory</a>
-								<ul class="dropdown">
-									<li><a href="#">Catagory 1</a></li>
-									<li><a href="#">Catagory 1</a></li>
-									<li><a href="#">Catagory 1</a>
-										<ul class="dropdown">
-											<li><a href="#">Catagory 2</a></li>
-											<li><a href="#">Catagory 2</a></li>
-											<li><a href="#">Catagory 2</a>
-												<ul class="dropdown">
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-													<li><a href="#">Catagory 3</a></li>
-												</ul></li>
-											<li><a href="#">Catagory 2</a></li>
-											<li><a href="#">Catagory 2</a></li>
-										</ul></li>
-									<li><a href="#">Catagory 1</a></li>
-									<li><a href="#">Catagory 1</a></li>
-								</ul></li>
-							<li><a href="about-us.html">About Us</a></li>
-							<li><a href="#">Megamenu</a>
-								<div class="megamenu">
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 1</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 2</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 3</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title">Headline 4</li>
-										<li><a href="#">Mega Menu Item 1</a></li>
-										<li><a href="#">Mega Menu Item 2</a></li>
-										<li><a href="#">Mega Menu Item 3</a></li>
-										<li><a href="#">Mega Menu Item 4</a></li>
-										<li><a href="#">Mega Menu Item 5</a></li>
-									</ul>
-								</div></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
+					  <div class="classynav">
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
+                                <ul>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
+                                        <ul class="dropdown">
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
+                                           <!--  <li><a href="single-post.html">Single Post</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="coming-soon.html">Coming Soon</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
-						<!-- Search Form  -->
-						<div id="search-wrapper">
-							<form action="#">
-								<input type="text" id="search" placeholder="Search something...">
-								<div id="close-icon"></div>
-								<input class="d-none" type="submit" value="">
-							</form>
-						</div>
+                              
+                                     <li><a href="#">Board</a>
+                                        <ul class="dropdown">
+                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a href="2_Notice.jsp">Notice</a></li>
+                                            <li><a href="2_FAQ.jsp">Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                                    
+
+                                     <li><a href="mypage.jsp">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
+                   
+					
 					</div>
 					<!-- Nav End -->
 				</div>
@@ -253,13 +212,12 @@
 
 	<!-- ##### Breadcumb Area Start ##### -->
 	<div class="breadcumb-area bg-img"
-		style="background-image: url(img/bg-img/b1.jpg);">
+		style="background-image: url(img/main-img/star.jpg);">
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2><%=chal_cat1 %>
-							챌린지
+						<h2>Individual Challenge
 						</h2>
 					</div>
 				</div>
@@ -291,19 +249,23 @@
                     style="display: inline-block; width: 80px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
                     <%=chall_personal.get(0).getChalPublic()%>
                  </div>
+                 <br>
                  <div style="display: inline-block;">
                     <a href="ChallengeSingleService?chal_seq=<%=chall_personal.get(0).getChalSeq() %>" style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=chall_personal.get(0).getChalSubject()%></a>
                  </div>
               </div>
+              <br>
               <div
-                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
+                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 25px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
                  <%=chall_personal.get(0).getChalPeriod()%>
-              </div>					
+              </div>	
+              <br>				
 			<div style="margin: 2px; font-size: 16px; color: black; font-weight: bold">
+			<br>
 				<h4>인원 수: <%= chall_personal.get(0).getChalCnt() %>
 				</h4>
 			</div>
-		<hr style="border: solid 1px gray;">
+		<hr>
 			</div>	
 	<%
 		for (int i = 1; i < chall_personal.size(); i++) {
@@ -330,14 +292,15 @@
                  </div>
               </div>
               <div
-                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
+                 style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 25px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
                  <%=chall_personal.get(i).getChalPeriod()%>
               </div>					
 			<div style="margin: 2px; font-size: 16px; color: black; font-weight: bold">
+			<br>
 				<h4>인원 수: <%= chall_personal.get(i).getChalCnt() %>
 				</h4>
 			</div>
-		<hr style="border: solid 1px gray;">
+		<hr>
 			</div>	
     
 		<%
