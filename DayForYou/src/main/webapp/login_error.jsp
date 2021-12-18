@@ -58,17 +58,17 @@ for(Cookie i: co){
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 			<form class="login100-form validate-form" action="loginService"
 				onSubmit="return login()">
-				<span class="login100-form-title p-b-37"> day for you </span>
+				<img src = "img/main-img/logo3.png" style = "align: center; position: relative; right: 90px;">
 
 				<div class="wrap-input100 validate-input m-b-20"
 					data-validate="Enter id">
-					<input class="input100" type="text" name="id" placeholder="<%=error_id%>" id = "userId">
+					<input class="input100" type="text" name="id" placeholder="<%=error_id%>" id = "userId"  style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-25"
 					data-validate="Enter pw">
-					<input class="input100" type="password" name="pw" placeholder="pw" id = "userPw">
+					<input class="input100" type="password" name="pw" placeholder="pw" id = "userPw"  style = "box-shadow: 0px 0px 20px #d1febc; border-radius: 20px;">
 					<span class="focus-input100"></span>
 				</div>
 				<input type="hidden" name="ACCESS" value="true">
@@ -77,7 +77,7 @@ for(Cookie i: co){
 				 <br> 
 
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn" type="submit" id = "submitBtn">login</button>
+					<button class="login100-form-btn" type="submit" id = "submitBtn" style = "background-color: #a9da81; box-shadow: 0px 0px 20px #d1febc;">login</button>
 				</div>
 			</form>
 
@@ -85,7 +85,7 @@ for(Cookie i: co){
 
 			<div class="container-login100-form-btn">
 				<a href="main.html">
-					<button class="login100-form-btn">B_login</button>
+					<button class="login100-form-btn" style = "background-color: #a9da81; box-shadow: 0px 0px 20px #d1febc;">B_login</button>
 				</a>
 			</div>
 
