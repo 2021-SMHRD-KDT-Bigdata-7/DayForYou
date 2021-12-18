@@ -299,17 +299,11 @@
 								<p>DayForYou에 이야기를 남겨주세요 : )</p>
 
 							</div>
-							<form action="writerBoardService" method="post"
+							<form action="writerBoardService?m_id=<%=vo.getId() %>" method="post"
 								style="position: relative; right: 30px;">
 								<table class="#"
 									style="position: relative; left: 15px; width: 100%; height: 300px; align: center; bottom: 50px;">
 
-									<tr class="#" align="center"
-										style="height: 30px; font-size: 13px; border: 0; border-bottom: 1px solid #e7e7e3; padding: 15px;">
-										<td>글쓴이</td>
-										<td><input type="text" name="m_id"
-											style="border: none; text-decoration: underline"></td>
-									</tr>
 									<tr class="#" align="center"
 										style="height: 30px; font-size: 13px; border: 0; border-bottom: 1px solid #e7e7e3; padding: 15px;">
 										<td>비밀번호</td>
