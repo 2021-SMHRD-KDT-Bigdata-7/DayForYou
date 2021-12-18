@@ -255,14 +255,15 @@
 
 							<div>
 								<h1>Diary</h1>							
+								<hr>
 								<button class="button5" onclick="location.href='Diaryform.jsp'" style="position: relative; right:300px;">write</button>
 							</div>
 							<br>
-							<hr>
+							
 
 							<div>
-								<table id="table11" align="center" width="300px" height="200px" style="position:relative; bottom: 170px; right: 15px;">
-									<tr align="center">
+								<table id="table11" align="center" style="position:relative; top:10px; left:5px; width:280px;">
+									<tr align="center" style="height:25px; font-size:12px; border-bottom: 1px solid #e7e7e3;">
 										<td>Number</td>
 										<td>Title</td>
 										<td>Date</td>
