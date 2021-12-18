@@ -145,30 +145,7 @@
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
                                         </ul>
                                     </li>
-                                    <li><a href="#">Challenge</a>
-                                        <ul class="dropdown">
-                                            <li><a href="challenge_main.jsp">All</a></li>
-                                            <li><a href="challenge_main.jsp">Group</a></li>
-                                            <li><a href="challenge_main.jsp">Individual</a>
-                                               <!--  <ul class="dropdown">
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                </ul> -->
-                                            </li>
-                                           <!--  <li><a href="#">Catagory 1</a></li>
-                                            <li><a href="#">Catagory 1</a></li> -->
-                                        </ul>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
                                     <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
                               

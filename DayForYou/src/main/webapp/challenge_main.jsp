@@ -111,7 +111,8 @@
 	//mychallengesSeq: 내 챌린지 순번
 	ArrayList<String> myChallengesSeq = null;
 	//카테고리2 중복없이 부르기.
-	ArrayList<String> myChallengesCat2NoDuple = dao.challengeCategoryNoDuple(m_id);
+	ArrayList<String> myChallengesCat2NoDuple = null;
+	myChallengesCat2NoDuple = dao.challengeCategoryNoDuple(m_id);
 	//칼라 배열
 	String[] arr = {"blue","indigo","purple","pink","red","orange","green","teal","gray"};
 		
@@ -233,129 +234,115 @@
 	</div>
 
 	<!-- ##### Header Area Start ##### -->
-	<header class="header-area"> <!-- Top Header Area -->
-	<div class="top-header">
-		<div class="container h-100">
-			<div class="row h-100 align-items-center">
-				<!-- Breaking News Area -->
-				<div class="col-12 col-sm-8">
-					<div class="breaking-news-area">
-						<div id="breakingNewsTicker" class="ticker">
-						  <ul>
+	 <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-sm-8">
+                        <div class="breaking-news-area">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
                                     <li><a href="#">12월 주요 공지사항 확인하기</a></li>
                                     <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
                                     <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
                                     <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
                                     <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
                                 </ul>
-						</div>
-					</div>
-				</div>
-				<!-- Top Social Area -->
-			</div>
-		</div>
-	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top Social Area -->
+                   <!--  <div class="col-12 col-sm-4">
+                        <div class="top-social-area">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
 
-	<!-- Logo Area -->
-	<div class="logo-area text-center">
-		<div class="container h-100">
-			<div class="row h-100 align-items-center">
-				<div class="col-12">
-					<a href="index.html" class="original-logo"><img
-						src="img/main-img/logo3.png" alt=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
+                        
+        <!-- Logo Area -->
+        <div class="logo-area text-center">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<!-- Nav Area -->
-	<div class="original-nav-area" id="stickyNav">
-		<div class="classy-nav-container breakpoint-off">
-			<div class="container">
-				<!-- Classy Menu -->
-				<nav class="classy-navbar justify-content-between"> <!-- Subscribe btn -->
-				<div id="search-wrapper" style="margin-top: 0px;">
-					<input type="text" id="search" placeholder="Search something...">
+        <!-- Nav Area -->
+        <div class="original-nav-area" id="stickyNav">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between">
 
-				</div>
-				<!-- 글쓰기 버튼 -->
-				<div class="write-bar">
-					<a href="challenge_make.jsp"><img
-						src="img/challenge-main/write_button.png"
-						style="position: fixed; bottom: 5%; left: 33%; right: 50%"></a>
-				</div>
+                        <!-- Subscribe btn -->
+                     <!--    <div class="subscribe-btn tag">
+                            <input type = "text" name = "text" placeholder = "태그 검색"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
+                        </div> -->
 
-				<!-- Navbar Toggler -->
-				<div class="classy-navbar-toggler">
-					<span class="navbarToggler"><span></span><span></span><span></span></span>
-				</div>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
 
-				<!-- Menu -->
-				<div class="classy-menu" id="originalNav">
-					<!-- close btn -->
-					<div class="classycloseIcon">
-						<div class="cross-wrap">
-							<span class="top"></span><span class="bottom"></span>
-						</div>
-					</div>
+                        <!-- Menu -->
+                        <div class="classy-menu" id="originalNav">
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
 
-					<!-- Nav Start -->
-					<div class="classynav">
-						<%if(vo != null) { %>
-						<button class="button4" onclick="location.href = 'LogoutService'">Logout</button>
-						<%System.out.println("로그인 성공");%>
-						<%}else{ %>
-						<a href="login.jsp" class="button4">login</a>
-						<%System.out.println("로그아웃 성공");%>
-						<%} %>
-						<ul>
-							<li><a href="main.jsp">Home</a></li>
-							<li><a href="my.html">Calendar</a>
-								<ul class="dropdown">
-									<li><a href="myCalendar.html">Calendar</a></li>
-									<li><a href="Diarylist.jsp">Diary</a></li>
-									<!--  <li><a href="single-post.html">Single Post</a></li>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+		                           		<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
+                                <ul>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
+                                        <ul class="dropdown">
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
+                                           <!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
-								</ul></li>
-							<li><a href="#">Challenge</a>
-								<ul class="dropdown">
-									<li><a href="challenge_main.jsp">All</a></li>
-									<li><a href="challenge_main.jsp">Group</a></li>
-									<li><a href="challenge_main.jsp">Individual</a> <!--  <ul class="dropdown">
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                </ul> --></li>
-									<!--  <li><a href="#">Catagory 1</a></li>
-                                            <li><a href="#">Catagory 1</a></li> -->
-								</ul>
-							<li><a href="portfolioMain.jsp">Portfolio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
+                              
+                                     <li><a href="#">Board</a>
+                                        <ul class="dropdown">
+                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a>Notice</a></li>
+                                            <li><a>Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
+                                    
 
-							<li><a href="#">Board</a>
-								<ul class="dropdown">
-									<li><a href="1_writeForm.jsp">Community</a></li>
-									<li><a>Notice</a></li>
-									<li><a>Q&A</a></li>
-								</ul></li>
-
-							<!-- <li><a href="about-us.html">Portfolio</a></li> -->
-
-
-							<li><a href="mypage.html">MyPage</a></li>
-							<li><a href="shop.jsp">Point shop</a></li>
-							<!--  <ul class="single-mega cn-col-4">
+                                     <li><a href="mypage.jsp">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
+                                           <!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
                                                 <li><a href="#">Mega Menu Item 1</a></li>
                                                 <li><a href="#">Mega Menu Item 2</a></li>
@@ -380,23 +367,22 @@
                                                 <li><a href="#">Mega Menu Item 5</a></li>
                                             </ul> -->
 
-							<!-- Search Form  -->
-							<div id="search-wrapper">
-								<form action="#">
-									<input type="text" id="search"
-										placeholder="Search something...">
-									<div id="close-icon"></div>
-									<input class="d-none" type="submit" value="">
-								</form>
-							</div>
-					</div>
-					<!-- Nav End -->
-				</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-	</header>
+                                <!-- Search Form  -->
+                                <div id="search-wrapper">
+                                    <form action="#">
+                                        <input type="text" id="search" placeholder="Search something...">
+                                        <div id="close-icon"></div>
+                                        <input class="d-none" type="submit" value="">
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 	<!-- ##### Header Area End ##### -->
 
 	<!-- ##### Breadcumb Area Start ##### -->
@@ -768,7 +754,8 @@
 
 
 	<!-- Preloader -->
-	
+	<%if (myChallengesCat2NoDuple ==null || myChallengesCat2NoDuple.size() == 0){}
+	else{%>
 	<script>
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -823,11 +810,11 @@
 
       calendar.render();
     });
-
+  
 
     
     </script>
-  
+    <%}%>
 
 
 </body>
