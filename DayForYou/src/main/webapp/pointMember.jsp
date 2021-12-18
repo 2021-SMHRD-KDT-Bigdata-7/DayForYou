@@ -215,31 +215,48 @@ table {
 							<br>
 							<div>
 								<table style="border: none;">
-									<tr>
-										<td>
-											<div class="col-12 col-md-6">
-												<div class="group">
-													<h4>포인트   <%=vo.getPoint() %></h4>
-													<span class="highlight"></span> <span class="bar"></span>
+										<tr>
+											<td>
+												<div class="col-12 col-md-6">
+													<div class="group">
+														<h4>
+															포인트
+															<%=vo.getPoint() %></h4>
+														<span class="highlight"></span> <span class="bar"></span>
+													</div>
 												</div>
-											</div>
-										</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>
-											<div class="col-12 col-md-6">
-												<div class="group">
-													<h4>구매목록 </h4>
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>
+												<div class="col-12 col-md-6">
+													<div class="group">
+														<h4>구매목록</h4>
+														<table border="1" bordercolor="black" width="500"
+															height="300" align="center">
+															<th>제품이름</th>
+															<th>상품 포인트</th>
+															<th>구입날짜</th>
+															<th>유효기간</th>
+															
+															
+															<tr>
+																<td>뿌링클</td>
+																<td>P)18000</td>
+																<td>21.12.18</td>
+																<th>22.02.25</th>
 													
-													<span><%=svo.getGoods_name() %><%=svo.getGoods_point() %></span>
-													<span class="highlight"></span> <span class="bar"></span>
+												
+														</table>
+
+														<span class="highlight"></span> <span class="bar"></span>
+													</div>
 												</div>
-											</div>
-										</td>
-										<td></td>
-									</tr>
-									<tr>
+											</td>
+											<td></td>
+										</tr>
+										<tr>
 										<td>
 										</div>
 											<!-- Footer Social Area -->
