@@ -284,10 +284,11 @@
 								<h1>Diary</h1>							
 								<button class="button5" onclick="location.href='Diaryform.jsp'" style="position: relative; right:300px;">write</button>
 							</div>
+							<br>
 							<hr>
 
 							<div>
-								<table id="table11" align="center" width="300px" height="400px">
+								<table id="table11" align="center" width="300px" height="200px" style="position:relative; bottom: 170px; right: 15px;">
 									<tr align="center">
 										<td>Number</td>
 										<td>Title</td>

@@ -280,12 +280,19 @@
 						<!-- Blog Content -->
 						<div class="row align-items-end">
 							<div class="board_title">
-								<div style="position:relative; left: 30px; width: 100%;">
+								<div style="position:relative; left: 13px; width: 100%;">
 								
-								<strong>자유게시판</strong> 
+								
+								
+								<!-- 전체 div -->
+								
+								
+								
+								
+								<h3>자유게시판</h3> 
 								<hr>
 	<br>
-								<p>DayForYou 회원님들과 소통할 수 있는 공간입니다 : )</p>
+								<p style="font-size: 13px;">DayForYou 회원님들과 소통할 수 있는 공간입니다 : )</p>
 								
 <br><br>
 							</div>
@@ -351,8 +358,8 @@
 								
 								%>
 								
-							<table class="#" style="position: relative; left: 15px; width: 100%; height: 300px; align:center;">
-								<tr id="head_tr" class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
+							<table class="#" style="position: relative; left: 8px; width: 100%; height: 300px; align:center;">
+								<tr id="head_tr" class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px; bg-color: smokewhite;">
 									<td class="#">번호</td>
 									<td class="#">제목</td>
 									<td class="#">분류</td>
@@ -396,7 +403,7 @@
 							<tr class="#" align="center" style="height: 25px; border:0 solid; border-bottom: 1px; font-size: 10px;">
 							<td>
 							<div class = "#">
-							<a href = '1_writeForm.jsp'" class= "#" style="position:relative;width: 100%; left:200px; color: #ffffff; background: black; font-size: 1.2em; padding: 0.3em 0.5em; margin-right: 0.1em;">글작성</a>
+							<a href = '1_writeForm.jsp'" class= "#" style="position:relative;width: 100%; left:260px; color: #ffffff; background: black; font-size: 1.2em; padding: 0.3em 0.5em; margin-right: 0.1em;">write</a>
 							</div>	
 							</td>
 							</tr>
