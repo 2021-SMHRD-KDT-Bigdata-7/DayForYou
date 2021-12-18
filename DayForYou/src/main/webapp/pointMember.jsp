@@ -27,7 +27,8 @@
 .centered { display: table; margin-left: auto; margin-right: auto; }
 
 table {
-	width: 400px;
+	align :center;
+	width: 300px;
 	height: 40px;
 	text-size: 100;
 }
@@ -202,26 +203,25 @@ table {
 					<div class="single-blog-area clearfix mb-100">
 						<!-- Blog Content -->
 						<div class="single-blog-content">
-							
-							<div class="centered">
-							<div class="line"></div>
-							<a href="#" class="post-tag"> my point</a>
-							<div>
-								<h1>포인트</h1>
-							</div>
-							<hr>
 
-							<br>
-							<br>
-							<div>
-								<table style="border: none;">
+							<div class="centered">
+								<div class="line"></div>
+								<a href="#" class="post-tag"> my point</a>
+								<div>
+									<h1>포인트</h1>
+								</div>
+								<hr>
+
+								<br> <br>
+								<div>
+									<table style="border: none;">
 										<tr>
 											<td>
 												<div class="col-12 col-md-6">
 													<div class="group">
 														<h4>
 															포인트
-															<%=vo.getPoint() %></h4>
+															<%=vo.getPoint()%></h4>
 														<span class="highlight"></span> <span class="bar"></span>
 													</div>
 												</div>
@@ -233,62 +233,64 @@ table {
 												<div class="col-12 col-md-6">
 													<div class="group">
 														<h4>구매목록</h4>
-														<table border="1" bordercolor="black" width="500"
-															height="300" align="center">
+														<table border="1" align="center">
 															<th>제품이름</th>
 															<th>상품 포인트</th>
-															<th>구입날짜</th>
+
 															<th>유효기간</th>
-															
-															
+
+
 															<tr>
 																<td>뿌링클</td>
 																<td>P)18000</td>
-																<td>21.12.18</td>
-																<th>22.02.25</th>
-													
-												
-														</table>
 
-														<span class="highlight"></span> <span class="bar"></span>
+																<th>22.02.25</th>
+														</table>
 													</div>
+												</div>
+
+												</div>
+												</div>
+
+												</div>
 												</div>
 											</td>
 											<td></td>
 										</tr>
 										<tr>
-										<td>
-										</div>
-											<!-- Footer Social Area -->
-											<div class="footer-social-area mt-30">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-													title="Pinterest"><i class="fa fa-pinterest"
-													aria-hidden="true"></i></a> <a href="#" data-toggle="tooltip"
-													data-placement="top" title="Facebook"><i
-													class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"
-													data-toggle="tooltip" data-placement="top" title="Twitter"><i
-													class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-													data-toggle="tooltip" data-placement="top" title="Dribbble"><i
-													class="fa fa-dribbble" aria-hidden="true"></i></a> <a href="#"
-													data-toggle="tooltip" data-placement="top" title="Behance"><i
-													class="fa fa-behance" aria-hidden="true"></i></a> <a href="#"
-													data-toggle="tooltip" data-placement="top" title="Linkedin"><i
-													class="fa fa-linkedin" aria-hidden="true"></i></a>
-											</div>
-											</div>
-											</div>
-											</div> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-											<script>
+											<td>
+												</div> <!-- Footer Social Area -->
+												<div class="footer-social-area mt-30">
+													<a href="#" data-toggle="tooltip" data-placement="top"
+														title="Pinterest"><i class="fa fa-pinterest"
+														aria-hidden="true"></i></a> <a href="#" data-toggle="tooltip"
+														data-placement="top" title="Facebook"><i
+														class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"
+														data-toggle="tooltip" data-placement="top" title="Twitter"><i
+														class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
+														data-toggle="tooltip" data-placement="top"
+														title="Dribbble"><i class="fa fa-dribbble"
+														aria-hidden="true"></i></a> <a href="#" data-toggle="tooltip"
+														data-placement="top" title="Behance"><i
+														class="fa fa-behance" aria-hidden="true"></i></a> <a href="#"
+														data-toggle="tooltip" data-placement="top"
+														title="Linkedin"><i class="fa fa-linkedin"
+														aria-hidden="true"></i></a>
+												</div>
+												</div>
+												</div>
+												</div> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+												<script>
 	document.write(new Date().getFullYear());
 </script> 이용약관 | 개인정보처리방침 <a href="https://colorlib.com" target="_blank">000-0000-0000</a>
-											<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+												<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
-											</footer> <!-- ##### Footer Area End ##### --> <!-- jQuery (Necessary for All JavaScript Plugins) -->
-											<script src="js/jquery/jquery-2.2.4.min.js"></script> <!-- Popper js -->
-											<script src="js/popper.min.js"></script> <!-- Bootstrap js -->
-											<script src="js/bootstrap.min.js"></script> <!-- Plugins js -->
-											<script src="js/plugins.js"></script> <!-- Active js --> <script
-												src="js/active.js"></script>
+												</footer> <!-- ##### Footer Area End ##### --> <!-- jQuery (Necessary for All JavaScript Plugins) -->
+												<script src="js/jquery/jquery-2.2.4.min.js"></script> <!-- Popper js -->
+												<script src="js/popper.min.js"></script> <!-- Bootstrap js -->
+												<script src="js/bootstrap.min.js"></script> <!-- Plugins js -->
+												<script src="js/plugins.js"></script> <!-- Active js --> <script
+													src="js/active.js"></script>
 </body>
 
 </html>

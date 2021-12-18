@@ -247,7 +247,7 @@
                             </div>
                             <hr>
                             <br><br>
-                            <a href="mychart.html" class="post-tag">dayforyou에서 제공하는 포트폴리오 샘플입니다. 더욱 완성도 높은 포트폴리오를 제작하기 위해 메뉴 - MyPage에서 통계 자료를 활용할 수 있습니다. (클릭 시 개인통계 페이지로 이동합니다.)</a>
+                            <a href="myChart.jsp" class="post-tag">dayforyou에서 제공하는 포트폴리오 샘플입니다. 더욱 완성도 높은 포트폴리오를 제작하기 위해 메뉴 - MyPage에서 통계 자료를 활용할 수 있습니다. (클릭 시 개인통계 페이지로 이동합니다.)</a>
 	
 							<br><br><br>
 							
