@@ -27,7 +27,7 @@
 	<%
 	String goods_point = request.getParameter("goods_point");
 	MemberVo vo = (MemberVo) session.getAttribute("vo");
-	out.print(vo);
+	
 
 	DAO dao = new DAO();
 	ArrayList<shopVO> goods = dao.selectAllGoods();
@@ -47,17 +47,18 @@
 	%>
 
 
-	<div align="left" withd="10px";margin"10px">
-		<a class="btn btn-outline-dark mt-auto" href="shop.jsp"> <img
-			src="./img/shop/icon1.png">
+	<div align="left" margin"10px">
+		<a href="shop.jsp">
+		 <img src="./img/shop/back.PNG" style="width:45px;height:45px; position:relative; left:10px; top:15px;">
 		</a>
 	</div>
 	<!-- Header-->
-	<header class="bg-light py-5">
+	<header class="py-5">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-black">
-				<h1 class="display-4 fw-bolder">day for you</h1>
-				<p class="text-center">point shop</p>
+				<h1 class="display-4 fw-bolder"></p>
+				
+				<img src="img/logo-img/shop.PNG" style="position: relative; right:42px;">
 			</div>
 		</div>
 	</header>
@@ -94,7 +95,7 @@
 									<form action="shopbuyService?goods_point">
 										<input type="hidden" name="goods_point"
 											value="<%=goods_point%>">
-										<button id="btn" class="btn btn-outline-dark mt-auto" style="border:none; outline:none; position:relative; left: 50px; background-color: green; color: white; border-radius:20px;"
+										<button id="btn" class="btn btn-outline-dark mt-auto" style="border:none; outline:none; position:relative; left: 50px; background-color: #A9F5A9; color: white; border-radius:20px; height: 30px; width: 80px; align:center;"
 											onclick="check()">
 											<p>BUY</p>
 										</button>
