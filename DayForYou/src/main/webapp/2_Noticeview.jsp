@@ -63,69 +63,80 @@
 		</div>
 	</div>
 
-	<!-- ##### Header Area Start ##### -->
-	<header class="header-area">
+ <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
 
-		<!-- Top Header Area -->
-		<div class="top-header">
-			<div class="container h-100">
-				<div class="row h-100 align-items-center">
-					<!-- Breaking News Area -->
-					<div class="col-12 col-sm-8">
-						<div class="breaking-news-area">
-							<div id="breakingNewsTicker" class="ticker">
-								 <ul>
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-sm-8">
+                        <div class="breaking-news-area">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
                                     <li><a href="#">12월 주요 공지사항 확인하기</a></li>
                                     <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
                                     <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
                                     <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
                                     <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
                                 </ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top Social Area -->
+                   <!--  <div class="col-12 col-sm-4">
+                        <div class="top-social-area">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
 
-		<!-- Logo Area -->
-		<div class="logo-area text-center">
-			<div class="container h-100">
-				<div class="row h-100 align-items-center">
-					<div class="col-12">
-						<a href="index.html" class="original-logo"><img
-							src="img/main-img/logo3.png" alt=""></a>
-					</div>
-				</div>
-			</div>
-		</div>
+                        
+        <!-- Logo Area -->
+        <div class="logo-area text-center">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<!-- Nav Area -->
-		<div class="original-nav-area" id="stickyNav">
-			<div class="classy-nav-container breakpoint-off">
-				<div class="container">
-					<!-- Classy Menu -->
-					<nav class="classy-navbar justify-content-between">
+        <!-- Nav Area -->
+        <div class="original-nav-area" id="stickyNav">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between">
 
-						
+                        <!-- Subscribe btn -->
+                     <!--    <div class="subscribe-btn tag">
+                            <input type = "text" name = "text" placeholder = "태그 검색"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
+                        </div> -->
 
-						<!-- Navbar Toggler -->
-						<div class="classy-navbar-toggler">
-							<span class="navbarToggler"><span></span><span></span><span></span></span>
-						</div>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
 
-						<!-- Menu -->
-						<div class="classy-menu" id="originalNav">
+                        <!-- Menu -->
+                        <div class="classy-menu" id="originalNav">
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
 
-							<!-- close btn -->
-							<div class="classycloseIcon">
-								<div class="cross-wrap">
-									<span class="top"></span><span class="bottom"></span>
-								</div>
-							</div>
-
-							<!-- Nav Start -->
-							 <div class="classynav">
+                            <!-- Nav Start -->
+                            <div class="classynav">
 		                           		<%if(vo != null) { %>
                             					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
                             					<%System.out.println("로그인 성공");%>										
@@ -144,38 +155,15 @@
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
                                         </ul>
                                     </li>
-                                    <li><a href="#">Challenge</a>
-                                        <ul class="dropdown">
-                                            <li><a href="challenge_main.jsp">All</a></li>
-                                            <li><a href="challenge_main.jsp">Group</a></li>
-                                            <li><a href="challenge_main.jsp">Individual</a>
-                                               <!--  <ul class="dropdown">
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                </ul> -->
-                                            </li>
-                                           <!--  <li><a href="#">Catagory 1</a></li>
-                                            <li><a href="#">Catagory 1</a></li> -->
-                                        </ul>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
                                     <li><a href="portfolioMain.jsp">Portfolio</a></li>
 
                               
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
                                             <li><a href="1_list.jsp">Community</a></li>
-                                            <li><a>Notice</a></li>
-                                            <li><a>Q&A</a></li>
+                                            <li><a href="2_Notice.jsp">Notice</a></li>
+                                            <li><a href="2_FAQ.jsp">Q&A</a></li>
                                         </ul>
                                     </li>
                                     
@@ -208,14 +196,24 @@
                                                 <li><a href="#">Mega Menu Item 4</a></li>
                                                 <li><a href="#">Mega Menu Item 5</a></li>
                                             </ul> -->
-							<!-- Nav End -->
-						</div>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- ##### Header Area End ##### -->
+
+                                <!-- Search Form  -->
+                                <div id="search-wrapper">
+                                    <form action="#">
+                                        <input type="text" id="search" placeholder="Search something...">
+                                        <div id="close-icon"></div>
+                                        <input class="d-none" type="submit" value="">
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
 
 	<!-- ##### Hero Area Start ##### -->
 	<div class="hero-area">
