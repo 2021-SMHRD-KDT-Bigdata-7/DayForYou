@@ -270,7 +270,7 @@
 				<div class="col-12 col-lg-4">
 					<div class="single-blog-area clearfix mb-100">
 						<!-- Blog Content -->
-						<div class="board_wrap">
+						<div class="board_wrap" style="position: relative; right: 10px;">
 							<div class="board_title">
 								<strong style="position:relative; bottom:100px;">자유게시판</strong>
 								<hr>
@@ -303,68 +303,67 @@
 								//}
 								
 								%>
+								 <a href = '1_list.jsp' " style="color:black;  position:relative; left:20px; height: 20px;">글목록</a>
+								 <a href = 'updateBoardService?article_seq=<%=bvo.getArticle_seq()%>'" style="color:black;  position:relative; left:310px; height: 20px;">수정</a>
+								 <a href = '1_deleteForm.jsp?article_seq=<%=bvo.getArticle_seq()%>'" style="color:black;  position:relative; left:330px; height: 20px;">삭제</a>
 
-							<form action="1_list.jsp" method="post">
-								<table border="1">
-									<tr>
+								<table class="#" style="position: relative; left: 15px; width: 430px; height: 300px; align:center;">
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; border-top:1px solid #a0a0a0; padding:15px;">
 										<td>글번호</td>
 										<td><%=bvo.getArticle_seq()%></td>
 										<td>조회수</td>
 										<td><%=bvo.getArticle_count()%></td>
 									</tr>				
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>글쓴이</td>
 										<td><%=bvo.getM_id()%></td>
 										<td>카테고리</td>
 										<td><%=bvo.getArticle_kind()%></td>
 										<td colspan = "4"></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>작성일</td>
 										<td colspan = "3"><%=bvo.getReg_date()%></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>글제목</td>
 										<td colspan = "3"><%=bvo.getArticle_subject()%></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:30px;">
 										<td>글내용</td>
-										<td colspan = "3"><%=bvo.getArticle_content()%></td>
+										<td colspan = "3" style="height: 20px; font-size: 13px; padding:15px;"><%=bvo.getArticle_content()%></td>
 									</tr>
-									<tr>
-										<td colspan="4"><input type="submit" value="글목록"></td>
-									</tr>
+									
 
-
+								<div> </div>
 								</table>
-							</form>
-							<table border="1" class="#">
-								<tr id="head_tr" class="#">
+							<table class="#" style="position: relative; left: 15px; width: 430px; height: 300px; align:center;">
+								<tr id="head_tr" class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 									<td class="#">댓글 번호</td>
 									<td class="#">댓글 작성자</td>
-									<td class="#">댓글 작성일</td>
 									<td class="#">댓글 내용</td>
+									<td class="#">댓글 작성일</td>
 								</tr>
 								<%for(int i=0; i<comments.size(); i++){ %>
-								<tr class="#">
+								<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 									
 									<td class="#"><%=comments.get(i).getComment_num()%></td>
 									<td class="#"><%=comments.get(i).getM_id()%></td>
-									<td class="#"><%=comments.get(i).getComment_date()%></td>
 									<td class="#"><%=comments.get(i).getComment_content()%></td>
+									<td class="#"><%=comments.get(i).getComment_date()%></td>
 									
 								</tr>
 								<%} %>
 								</table>
-					<form action="writerCommentService?article_seq=<%=bvo.getArticle_seq()%>" method="post">
-								<table border="1">
+										<form action="writerCommentService?article_seq=<%=bvo.getArticle_seq()%>" method="post">
+								<table class="#" style="position: relative; left: 15px; width: 430px; height: 300px; align:center;">
 
 		
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>댓글 내용</td>
-										<td><textarea rows="10" cols="20" name="comment_content"></textarea></td>
+										<td><textarea rows="10" cols="40" name="comment_content"></textarea></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td colspan="2"><input type="submit" value="댓글쓰기"></td>
 									</tr>
 									<input type="hidden" name="m_id"
@@ -373,8 +372,7 @@
 								</table>
 							</form>
 					
-							<button onclick="location.href = 'updateBoardService?article_seq=<%=bvo.getArticle_seq()%>'">수정</button>
-							<button onclick="location.href = '1_deleteForm.jsp?article_seq=<%=bvo.getArticle_seq()%>'">삭제</button>
+							
 							<!--<button href="1_deleteForm.jsp?article_seq=<%//<%=rs.getInt("article_seq")%>">삭제</button>-->
 							<!-- <button onclick = "location.href = '1_deleteForm.jsp'">삭제</button> -->
 

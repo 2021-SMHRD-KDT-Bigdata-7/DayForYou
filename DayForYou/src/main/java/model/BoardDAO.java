@@ -198,6 +198,13 @@ public class BoardDAO {
 		psmt.setInt(1, article_seq);
 		cnt = psmt.executeUpdate();
 		
+		if(rs.next()) {
+			String sql2 = "delete from tbl_comment where article_seq=?";
+	        psmt = conn.prepareStatement(sql2); 
+	        psmt.setInt(1, article_seq);
+	        int tt = psmt.executeUpdate();
+	       
+		}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

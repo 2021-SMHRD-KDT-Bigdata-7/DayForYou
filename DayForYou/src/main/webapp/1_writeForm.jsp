@@ -300,40 +300,46 @@
 						<!-- Blog Content -->
 						<div class="board_wrap">
 							<div class="board_title">
-								<strong>공지사항</strong>
-								<p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+								<strong>글쓰기</strong>
+								<p>쓰고 싶은 글을 쓰세용:)</p>
 
 							</div>
 							<form action="writerBoardService" method="post">
-								<table border="1">
+								<table class="#" style="position: relative; left: 15px; width: 100%; height: 300px; align:center;">
 
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px ;">
 										<td>글쓴이</td>
 										<td><input type="text" name="m_id"></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>비밀번호</td>
 										<td><input type="text" name="article_pwd"></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>제목</td>
 										<td><input type="text" name="article_subject"></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>카테고리</td>
 										<td><input type="text" name="article_kind"></td>
 									</tr>
-									<tr>
+									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
 										<td>내용</td>
-										<td><textarea rows="10" cols="20" name="article_content"></textarea></td>
+										<td><textarea rows="8" cols="20" name="article_content"></textarea></td>
 									</tr>
-									<tr>
+									<tr class="#" align="right" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px ;">
 										<td colspan="2"><input type="submit" value="글쓰기"></td>
 									</tr>
 								</table>
 							</form>
+							
 						</div>
 					</div>
+			</div>
+		</div>
+	</div>
+ </div>
+					
 
 
 					<!-- ##### Instagram Feed Area End ##### -->
