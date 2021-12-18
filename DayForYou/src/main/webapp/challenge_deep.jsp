@@ -140,9 +140,10 @@
 				</div>
 				<!-- 글쓰기 버튼 -->
 				<div class="write-bar">
-					<a href="chall.jsp"><img
+					<a href="challenge_make.jsp"><img
 						src="img/challenge-main/write_button.png"
 						style="position: fixed; bottom: 5%; left: 33%; right: 50%"></a>
+						
 				</div>
 
 				<!-- Navbar Toggler -->
