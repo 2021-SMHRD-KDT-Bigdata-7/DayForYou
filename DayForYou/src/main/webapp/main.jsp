@@ -152,8 +152,8 @@
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
                                             <li><a href="1_list.jsp">Community</a></li>
-                                            <li><a>Notice</a></li>
-                                            <li><a>Q&A</a></li>
+                                            <li><a href="2_Notice.jsp">Notice</a></li>
+                                            <li><a href="2_FAQ.jsp">Q&A</a></li>
                                         </ul>
                                     </li>
                                     
