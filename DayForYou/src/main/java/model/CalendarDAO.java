@@ -180,19 +180,20 @@ public class CalendarDAO {
 
 	// 일정 삭제
 
-	public int Todo_delete(int todo_seq) {
+	public int Todo_delete(int todo_seq, String m_id) {
 		
 		try {
 
 			connection();
 
 			// 3. sql문 준비
-			String sql = "delete from tbl_todo where todo_seq = ?";
+			String sql = "delete from tbl_todo where todo_seq = ? and m_id = ?";
 
 			psmt = conn.prepareStatement(sql);
 
 			// 4. 바인드 변수 채우기
 			psmt.setInt(1, todo_seq);
+			psmt.setString(2, m_id);
 
 			// 5. 실행
 			cnt = psmt.executeUpdate();
