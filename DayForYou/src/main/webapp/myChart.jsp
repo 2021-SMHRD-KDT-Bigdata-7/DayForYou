@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -265,7 +266,7 @@
     </div>
 
     <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+     <header class="header-area">
 
         <!-- Top Header Area -->
         <div class="top-header">
@@ -306,7 +307,7 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
-                        <a href="index.html" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -338,71 +339,49 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                            	<button class="button4">Logout</button>
+		                           		<%
+		                           		HttpSession session1 = request.getSession();
+		        						MemberVo vo = (MemberVo)session1.getAttribute("vo");
+		                           		if(vo != null) { %>
+						<button class="button4" onclick="location.href = 'LogoutService'">Logout</button>
+						<%System.out.println("로그인 성공");%>
+						<%}else{ %>
+						<a href="login.jsp" class="button4">login</a>
+						
+						
+						<script> alert("로그인이 필요합니다")
+						location.href ="login.jsp";
+					</script>
+												<%System.out.println("로그아웃 성공");%>		
+										<%} %>
                                 <ul>
-                                    <li><a href="main.html">Home</a></li>
-                                    <li><a href="index.html">Calendar</a>
+                                    <li><a href="main.jsp">Home</a></li>
+                                    <li><a href="my.html">Calendar</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Calendar</a></li>
-                                            <li><a href="Diarylist.html">Diary</a></li>
+                                            <li><a href="myCalendar.jsp">Calendar</a></li>
+                                            <li><a href="Diarylist.jsp">Diary</a></li>
                                            <!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
                                         </ul>
                                     </li>
-                                    <li><a href="#">Challenge</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">All</a></li>
-                                            <li><a href="#">Group</a></li>
-                                            <li><a href="#">Individual</a>
-                                               <!--  <ul class="dropdown">
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                            <li><a href="#">Catagory 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                    <li><a href="#">Catagory 2</a></li>
-                                                </ul> -->
-                                            </li>
-                                           <!--  <li><a href="#">Catagory 1</a></li>
-                                            <li><a href="#">Catagory 1</a></li> -->
-                                        </ul>
-                                    </li>
-                                     <li><a href="#">Portfolio</a>
-                                        <ul class="dropdown">
-                                            <li><a>Statics</a></li>
-                                            <li><a>Sample</a></li>
-                                            <li><a>Create</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
+                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
+
+                              
                                      <li><a href="#">Board</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Community</a></li>
-                                            <li><a>Notice</a></li>
-                                            <li><a>Q&A</a></li>
+                                            <li><a href="1_list.jsp">Community</a></li>
+                                            <li><a href="2_Notice.jsp">Notice</a></li>
+                                            <li><a href="2_FAQ.jsp">Q&A</a></li>
                                         </ul>
                                     </li>
                                     
                                     <!-- <li><a href="about-us.html">Portfolio</a></li> -->
                                     
-                                   <!--  
-                                    <li><a href="#">Board</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li class="title">Headline 1</li>
-                                                <li><a href="#">Community</a></li>
-                                                <li><a href="#">Notice</a></li>
-                                                <li><a href="#">Q&A</a></li>
-                                                <li><a href="#">Mega Menu Item 4</a></li>
-                                                <li><a href="#">Mega Menu Item 5</a></li>
-                                            </ul> -->
+
+                                     <li><a href="mypage.jsp">MyPage</a></li>
+                                     <li><a href="shop.jsp">Point shop</a></li>
                                            <!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
                                                 <li><a href="#">Mega Menu Item 1</a></li>
@@ -427,10 +406,6 @@
                                                 <li><a href="#">Mega Menu Item 4</a></li>
                                                 <li><a href="#">Mega Menu Item 5</a></li>
                                             </ul> -->
-                                 <!--        </div>
-                                    </li> -->
-                                    <li><a href="contact.html">About Us</a></li>
-                                </ul>
 
                                 <!-- Search Form  -->
                                 <div id="search-wrapper">
@@ -509,7 +484,7 @@
             <!-- 차트 -->
             <script> data = { datasets: [{ backgroundColor: ['rgb(255, 178, 102)', 'rgb(102, 178, 255)', 'rgb(255, 255, 102)', 'rgb(178, 255, 102)'], data: [30
             , 20, 30, 40] }], // 라벨의 이름이 툴팁처럼 마우스가 근처에 오면 나타남 
-            labels: ['공부','운동','취미','기타'] }; 
+            labels: ['공부','건강','취미','기타'] }; 
             
             // 도넛형 차트 
             var ctx2 = document.getElementById("DnChart"); 
