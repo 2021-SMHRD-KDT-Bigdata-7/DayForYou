@@ -281,9 +281,7 @@
 	     		<div class="col-12 col-md-6">
 	                  <div class="group">
 	                     <a>¾ÆÀÌµð</a>
-	                        <input type="text" value = <%=vo.getId()%> name="m_id" id="name" required>
-	                        <span class="highlight"></span>
-	                         <span class="bar"></span>
+	                        <p style="position:relative; top:5px; left:5px; "> <%=vo.getId()%> </p>
 	            	 </div>
 	              </div>
 	         </td>
