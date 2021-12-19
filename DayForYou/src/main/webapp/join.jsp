@@ -128,8 +128,6 @@
 					<button class="login100-form-btn" type="submit" style = "background-color: #a9da81; box-shadow: 0px 0px 20px #d1febc;">submit</button>
 				</div>
 
-
-
 			</form>
 	
 

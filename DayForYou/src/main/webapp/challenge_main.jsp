@@ -329,24 +329,23 @@
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
 								</ul></li>
-							<li><a href="challenge_main.jsp">Challenge</a> <li><a href="portfolioMain.jsp">Portfolio</a></li>
+							<li><a href="challenge_main.jsp">Challenge</a>
+							<li><a href="portfolioMain.jsp">Portfolio</a></li>
 
-                              
-                                     <li><a href="#">Board</a>
-                                        <ul class="dropdown">
-                                            <li><a
-										href="1_list.jsp">Community</a></li>
-                                            <li><a>Notice</a></li>
-                                            <li><a>Q&A</a></li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
-                                    
 
-                                     <li><a href="mypage.jsp">MyPage</a></li>
-                                     <li><a href="shop.jsp">Point shop</a></li>
-                                           <!--  <ul class="single-mega cn-col-4">
+							<li><a href="#">Board</a>
+								<ul class="dropdown">
+									<li><a href="1_list.jsp">Community</a></li>
+									<li><a>Notice</a></li>
+									<li><a>Q&A</a></li>
+								</ul></li>
+
+							<!-- <li><a href="about-us.html">Portfolio</a></li> -->
+
+
+							<li><a href="mypage.jsp">MyPage</a></li>
+							<li><a href="shop.jsp">Point shop</a></li>
+							<!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
                                                 <li><a href="#">Mega Menu Item 1</a></li>
                                                 <li><a href="#">Mega Menu Item 2</a></li>
@@ -371,30 +370,28 @@
                                                 <li><a href="#">Mega Menu Item 5</a></li>
                                             </ul> -->
 
-                                <!-- Search Form  -->
-                                <div id="search-wrapper">
-                                    <form action="#">
-                                        <input type="text" id="search"
+							<!-- Search Form  -->
+							<div id="search-wrapper">
+								<form action="#">
+									<input type="text" id="search"
 										placeholder="Search something...">
-                                        <div id="close-icon"></div>
-                                        <input class="d-none"
-										type="submit" value="">
-                                    </form>
-                                </div>
-                            
+									<div id="close-icon"></div>
+									<input class="d-none" type="submit" value="">
+								</form>
+							</div>
 					</div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-<!-- ##### Header Area End ##### -->
+					<!-- Nav End -->
+				</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	</header>
+	<!-- ##### Header Area End ##### -->
 
-								<!-- ##### Breadcumb Area Start ##### -->
+	<!-- ##### Breadcumb Area Start ##### -->
 	<div class="breadcumb-area bg-img"
-									style="background-image: url(img/main-img/chal.jpg);">
+		style="background-image: url(img/main-img/chal.jpg);">
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
@@ -409,8 +406,8 @@
 
 	<!-- ##### Cool Facts Area Start ##### -->
 	<div
-									class="cool-facts-area section-padding-100-0 bg-img background-overlay"
-									style="background-image: url(img/main-img/fuck.jpg);">
+		class="cool-facts-area section-padding-100-0 bg-img background-overlay"
+		style="background-image: url(img/main-img/fuck.jpg);">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -420,9 +417,8 @@
 							<div class="line"></div>
 							<a href="#" class="post-tag">W E L C O M E !</a>
 							<h4>
-								<a href="#" class="post-headline">챌린지에 오신 것을</a>
-								<a href="#" class="post-headline"
-																style="position:relative; bottom:15px;">환영합니다.</a>
+								<a href="#" class="post-headline">챌린지에 오신 것을</a> <a href="#"
+									class="post-headline" style="position: relative; bottom: 15px;">환영합니다.</a>
 							</h4>
 							<p>DayForYou에서 다양한 챌린지에 도전하세요!</p>
 						</div>
@@ -477,13 +473,15 @@
 		</div>
 	</div>
 
-	<br><br><br>
+	<br>
+	<br>
+	<br>
 	<!-- ##### Calendar Area Start #####-->
 	<div align="center">
-		<img src="img/main-img/chacal.PNG"
-										style="width: 170px; height: 30px; ">
+		<img src="img/main-img/chacal.PNG" style="width: 170px; height: 30px;">
 	</div>
-	<br><br>
+	<br>
+	<br>
 	<div id='calendar'></div>
 
 	<!-- ##### Blog Wrapper Start ##### -->
@@ -504,134 +502,113 @@
 						<div class="single-blog-thumbnail">
 
 							<a
-															href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
-															 src="<%= chall_personal.get(0).getChalPic1()%>" 
-															alt="img/logo.png" class="product-img"> </a>						
+								href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
+								src="img/challenge_sample/3. study.jpg"
+								alt="img/challenge_sample/3. study.jpg" class="product-img"> </a>
 						</div>
-						<br><br><br>
+						<br> 
 						<!-- Blog Content -->
-						<div class="single-blog-content" style="margin: 10 0 0 0">
 
-							<a href="#" class="post-tag"><%=chall_personal.get(0).getChalCat2() %></a>
-							<h4>
-								<a href="#" class="post-headline"><%=chall_personal.get(0).getChalSubject()%></a>
-							</h4>
-						</div>
 					</div>
 					<div align="right">
 						<a
-														href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
+							href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>">더보기</a>
 					</div>
 				</div>
 			</div>
-			<br><br>
+			<br> <br>
 			<!-- 추천 챌린지 영역  -->
 			<div class="col-12 col-md-6 col-lg-4">
-				<div style="position:relative; right:12px;">
-					<h2 style="color:#7F7171;">추천 챌린지</h2>
+				<div style="position: relative; right: 12px;">
+					<h2 style="color: #7F7171;">추천 챌린지</h2>
 					<hr>
 					<br>
 				</div>
 				<div class="single-blog-area blog-style-2">
-					<div style="position:relative; right:10px;">
-					<div class="single-blog-thumbnail">
-						<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
-						<a
-															href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>"><img
-															class="product-img"
-															src="<%=chall_suggestion.get(0).getChalPic1() %>"
-															alt="img/logo.png"> </a>
-						
-					</div>
-					<br><br><br>
-					<!-- Blog Content -->
-					<div class="single-blog-content">
-						<a href="#" class="post-tag"><%=chall_suggestion.get(0).getChalCat2() %></a>
-						<h4>
-							<a href="#" class="post-headline"><%=chall_suggestion.get(0).getChalSubject()%></a>
-						</h4>
-					</div>
+					<div style="position: relative; right: 10px;">
+						<div class="single-blog-thumbnail">
+							<%-- 						<a href="ChallengeSingleService?chal_seq=<%=dvo.getDiary_seq()%>""><img --%>
+							<a
+								href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>"><img
+								class="product-img"
+								src="img/challenge_sample/1. water.jpg"
+								alt="img/logo.png"> </a>
 
-				</div>
+						</div>
+						<br> 
+						<!-- Blog Content -->
+
+
+					</div>
 				</div>
 				<div align="right">
 					<a
-													href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
-						
+						href="challenge_deep.jsp?chal_cat1=<%=chall_suggestion.get(0).getChalCat1()%>">더보기</a>
+
 				</div>
 			</div>
-			
+
 		</div>
-		<br><br><br>
+		<br> <br> <br>
 		<!-- 인기 챌린지 영역  -->
 		<div class="col-12 col-md-6 col-lg-4">
 			<div>
-				<h2 style="color:#7F7171;">인기 챌린지</h2>
+				<h2 style="color: #7F7171;">인기 챌린지</h2>
 				<hr>
 				<br>
 			</div>
 			<div class="single-blog-area blog-style-2">
-
 				<div class="single-blog-thumbnail">
 					<a
-													href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>"><img
-													class="product-img"
-													src="<%=chall_popularity.get(0).getChalPic1() %>"
-													alt="img/logo.png"> </a>
-					
+						href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>"><img
+						class="product-img"
+						src="img/challenge_sample/4. computer.jpg"
+						alt="img/logo.png"> </a>
 				</div>
-				<br><br><br>
+					<br> 
 				<!-- Blog Content -->
-				<div class="single-blog-content">
-					<a href="#" class="post-tag"><%=chall_popularity.get(0).getChalCat2() %></a>
-					<h4>
-						<a href="#" class="post-headline"><%=chall_popularity.get(0).getChalSubject()%></a>
-					</h4>
-				</div>
+
 			</div>
 			<div align="right">
 				<a
-												href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
-					<br><br>
+					href="challenge_deep.jsp?chal_cat1=<%=chall_popularity.get(0).getChalCat1()%>">더보기</a>
+				<br>
 			</div>
-			
 		</div>
 	</div>
-	<br><br><br>
+	<br>
+	<br>
+	<br>
 	<!-- 그룹 챌린지 영역  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
-			<h2 style="color:#7F7171;">그룹 챌린지</h2>
+			<h2 style="color: #7F7171;">그룹 챌린지</h2>
 			<hr>
 		</div>
 		<div class="single-blog-area blog-style-2">
 
 			<div class="single-blog-thumbnail">
 				<a
-												href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>"><img
-												class="product-img"
-												src="<%=chall_group.get(0).getChalPic1() %>"
-												alt="img/logo.png">
-				</a>
+					href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>"><img
+					class="product-img" src="img/challenge_sample/1. water.jpg"
+					alt="img/logo.png"> </a>
 			</div>
+				<br> 
 			<!-- Blog Content -->
-			<div class="single-blog-content">
-				<a href="#" class="post-tag"><%=chall_group.get(0).getChalCat2() %></a>
-				
-			</div>
+
 			<div align="right">
 				<a
-												href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
-				<br><br>
+					href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>">더보기</a>
+				<br> <br>
 			</div>
 		</div>
-		<br><br>
+		<br> <br>
 	</div>
 	<br>
 	<!-- 전체 챌린지 영역  -->
 	<div class="col-12 col-md-6 col-lg-4">
 		<div>
-			<h2 style="color:#736C6B;">전체 챌린지</h2>
+			<h2 style="color: #736C6B;">전체 챌린지</h2>
 			<hr>
 			<br>
 		</div>
@@ -639,25 +616,19 @@
 
 			<div class="single-blog-thumbnail">
 				<a
-												href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>"><img
-												class="product-img"
-												src="<%=chall_all.get(0).getChalPic1() %>"
-												alt="img/logo.png"></a>
-				
+					href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>"><img
+					class="product-img" src="img/challenge_sample/2. wakeup.jpg"
+					alt="img/logo.png"></a>
+
 			</div>
+				<br> 
 			<!-- Blog Content -->
-			<div class="single-blog-content">
-				<br><br>
-				<a href="#" class="post-tag"><%=chall_all.get(0).getChalCat2() %></a>
-				<h4>
-					<a href="#" class="post-headline"><%=chall_all.get(0).getChalSubject()%></a>
-				</h4>
-			</div>
+
 		</div>
 		<div align="right">
 			<a
-											href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
-			<br><br>
+				href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>">더보기</a>
+			<br> <br>
 		</div>
 	</div>
 
@@ -682,8 +653,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-													class="d-flex align-items-center justify-content-center"><i
-													class="fa fa-instagram"></i></a>
+						class="d-flex align-items-center justify-content-center"><i
+						class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -692,8 +663,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-													class="d-flex align-items-center justify-content-center"><i
-													class="fa fa-instagram"></i></a>
+						class="d-flex align-items-center justify-content-center"><i
+						class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -702,8 +673,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-													class="d-flex align-items-center justify-content-center"><i
-													class="fa fa-instagram"></i></a>
+						class="d-flex align-items-center justify-content-center"><i
+						class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -712,8 +683,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-													class="d-flex align-items-center justify-content-center"><i
-													class="fa fa-instagram"></i></a>
+						class="d-flex align-items-center justify-content-center"><i
+						class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -722,8 +693,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-													class="d-flex align-items-center justify-content-center"><i
-													class="fa fa-instagram"></i></a>
+						class="d-flex align-items-center justify-content-center"><i
+						class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -732,8 +703,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-													class="d-flex align-items-center justify-content-center"><i
-													class="fa fa-instagram"></i></a>
+						class="d-flex align-items-center justify-content-center"><i
+						class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- Single Insta Feed -->
@@ -742,8 +713,8 @@
 				<!-- Hover Effects -->
 				<div class="hover-effects">
 					<a href="#"
-													class="d-flex align-items-center justify-content-center"><i
-													class="fa fa-instagram"></i></a>
+						class="d-flex align-items-center justify-content-center"><i
+						class="fa fa-instagram"></i></a>
 				</div>
 			</div>
 		</div>
@@ -758,8 +729,8 @@
 	Copyright &copy;<script>
 		document.write(new Date().getFullYear());
 	</script> All rights reserved | This template is made with <i
-									class="fa fa-heart-o" aria-hidden="true"></i> by <a
-									href="https://colorlib.com" target="_blank">Colorlib</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		class="fa fa-heart-o" aria-hidden="true"></i> by <a
+		href="https://colorlib.com" target="_blank">Colorlib</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 	</footer>
 	<!-- ##### Footer Area End ##### -->
@@ -837,10 +808,10 @@
 
     
     </script>
-    <%}%>
+	<%}%>
 
 
 
-							</body>
+</body>
 
 </html>

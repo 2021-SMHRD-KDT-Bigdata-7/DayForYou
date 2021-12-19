@@ -218,7 +218,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">Check Event</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2021 연말 챌린지 도전하고 특별 혜택받기!</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="">2021 연말 챌린지 도전하고 특별 혜택받기!</a></h2>
                             </div>
                         </div>
                     </div>
@@ -233,7 +233,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">Hot Challenge</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Check variable challenge</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="">Check variable challenge</a></h2>
                             </div>
                         </div>
                     </div>
@@ -248,7 +248,7 @@
                                 <div class="post-tag">
                                     <a href="#" data-animation="fadeInUp">2022 Diary</a>
                                 </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2022 다이어리도 데이포유와 함께</a></h2>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="">2022 다이어리도 데이포유와 함께</a></h2>
                             </div>
                         </div>
                     </div>
