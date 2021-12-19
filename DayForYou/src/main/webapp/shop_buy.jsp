@@ -12,7 +12,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>point shope</title>
+<title>point shop</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Bootstrap icons-->
@@ -25,7 +25,7 @@
 
 <body>
 	<%
-	String goods_point = request.getParameter("goods_point");
+	int goods_point = Integer.parseInt(request.getParameter("goods_point"));;
 	MemberVo vo = (MemberVo) session.getAttribute("vo");
 	
 
@@ -34,6 +34,7 @@
 	shopVO svo = new shopVO();
 	int my_point = vo.getPoint();
 	int good_point = svo.getGoods_point();
+	
 	%>
 
 	<%
@@ -75,22 +76,19 @@
 							<div class="card-body p-4" >
 								<div class="text-center">
 									<!-- Product name-->
-									<h7 id="myPoint" class="fw-bolder" name="my_Point"> 내 포인트<br><%=vo.getPoint()%></h7>
+									<h7>내 포인트</h7><br>
+									<h7 id="myPoint" class="fw-bolder" name="my_Point" ><%=vo.getPoint()%></h7>
 							</div>
 							<div class="card-body p-4">
 									<div class="text-center">
 										<!-- Product name-->
-										<h7 class="fw-bolder" id="goodsPoint">상품 포인트<br>
-											<!-- 아직 해결못함 -->
-											<%=goods_point%></h7>
-
+										<h7>상품 포인트</h7><br>
+										<h7 class="fw-bolder" id="goodsPoint"><%=goods_point%></h7>
 									</div>
 							</div>
 								<!-- Product actions-->
 								<br>
-								<%
-								System.out.println(goods_point);
-								%>
+								
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 									<form action="shopbuyService?goods_point">
 										<input type="hidden" name="goods_point"
@@ -124,18 +122,23 @@
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript"></script>
-	// 1. 필요한 데이터 가져오기 // h5태그(id가 주어진) 값 --> $('선택자').html() : 닫는태그가 있는
-	태그인 경우에만 내부 html 코드 가져옴
+	<!--1. 필요한 데이터 가져오기 // h5태그(id가 주어진) 값 $('선택자').html() : 닫는태그가 있는
+	태그인 경우에만 내부 html 코드 가져옴  --> 
 
 	<script>
-		$("#btn").click(function() {
-			var num = $("#myPoint").html();
-			var num2 = $("#goodsPoint").html();
+		
+		
+		let num = Number($("#myPoint").html());
+		let num2 = Number($("#goodsPoint").html());
+		$("#btn").click(function(){
+				
 			// 2. 어느게 더큰지 판단
 			if (num < num2) {
 				alert("잔액이 부족합니다.");
+			}else{
+				alert("구입성공");
 			}
-			console.log(num);
+			document.getElementById("myPoint").innerHTML = num-num2;
 		});
 
 		// 3. 성공했는지 실패 했는지 // 4. 성공하면 ~~ 로 이동 실패하면 ~~ 이동 // window.location =

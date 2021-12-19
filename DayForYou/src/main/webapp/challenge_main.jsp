@@ -505,7 +505,7 @@
 
 							<a
 															href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
-															src="<%= chall_personal.get(0).getChalPic1()%>"
+															 src="<%= chall_personal.get(0).getChalPic1()%>" 
 															alt="img/logo.png" class="product-img"> </a>						
 						</div>
 						<br><br><br>
