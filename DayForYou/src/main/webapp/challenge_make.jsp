@@ -237,9 +237,6 @@
 					<select name="chall_cat1" style="width:50px; height:20px; font-size:12px;">
 							<option value="개인">개인</option>
 							<option value="그룹">그룹</option>
-							<option value="전체">전체</option>
-							<option value="인기">인기</option>
-							<option value="추천">추천</option>
 					</select></td>
 				</tr>
 			

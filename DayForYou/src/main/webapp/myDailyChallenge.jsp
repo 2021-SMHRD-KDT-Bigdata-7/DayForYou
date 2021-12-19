@@ -28,6 +28,16 @@
 	max-height: 250px;
 }
 
+.product-img-div2 {
+	display: table-cell;
+	vertical-align: middle; 
+}
+
+.product-img2 {
+	max-width: 90px;
+	max-height: 90px;
+}
+
 #dailyFile {
 	display: none;
 }
@@ -82,16 +92,12 @@ table {
 	System.out.println("mydailychallenge servlet에서 보낸거 jsp에서 받은 " + mdvo.getChal_seq());
 	System.out.println("mydailychallenge servlet에서 보낸거 jsp에서 받은 " + mdvo.getChal_time());
 	System.out.println("mydailychallenge servlet에서 보낸거 jsp에서 받은 " + mdvo.getChal_num());
-	mdvo.getAttend_id();
-	mdvo.getChal_seq();
-	mdvo.getChal_time();
-	mdvo.getChal_num();
+	
 	MySelectChallVO msvo = dao.MySelectChall(mdvo.getChal_seq());
 	System.out.println("mydailychallenge.jsp에서 조회한 " + msvo.getChal_cat2());
 	System.out.println("mydailychallenge.jsp에서 조회한 " + msvo.getChal_subject());
 	System.out.println("mydailychallenge.jsp에서 조회한 " + msvo.getChal_period());
 	System.out.println("mydailychallenge.jsp에서 조회한 " + msvo.getChal_public());
-	
 	
 	ArrayList<String> MDCImges = dao.getMyDailyChallengeImg(mdvo.getChal_seq(), m_id);
 	%>
@@ -125,28 +131,28 @@ table {
 		</div>
 	</div>
 	<!-- ##### Header Area Start ##### -->
-	 <header class="header-area">
+	<header class="header-area">
 
-        <!-- Top Header Area -->
-        <div class="top-header">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <!-- Breaking News Area -->
-                    <div class="col-12 col-sm-8">
-                        <div class="breaking-news-area">
-                            <div id="breakingNewsTicker" class="ticker">
-                                <ul>
-                                    <li><a href="#">12월 주요 공지사항 확인하기</a></li>
-                                    <li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
-                                    <li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
-                                    <li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
-                                    <li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Top Social Area -->
-                   <!--  <div class="col-12 col-sm-4">
+		<!-- Top Header Area -->
+		<div class="top-header">
+			<div class="container h-100">
+				<div class="row h-100 align-items-center">
+					<!-- Breaking News Area -->
+					<div class="col-12 col-sm-8">
+						<div class="breaking-news-area">
+							<div id="breakingNewsTicker" class="ticker">
+								<ul>
+									<li><a href="#">12월 주요 공지사항 확인하기</a></li>
+									<li><a href="#">지금 가장 인기있는 챌린지 둘러보기</a></li>
+									<li><a href="#">홈 화면에서 이 달의 이벤트를 확인하세요!</a></li>
+									<li><a href="#">데이포유로 간단하게 일정관리를 해보세요</a></li>
+									<li><a href="#">추천 탭에서 나에게 맞는 챌린지 알아보기!</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- Top Social Area -->
+					<!--  <div class="col-12 col-sm-4">
                         <div class="top-social-area">
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -156,84 +162,86 @@ table {
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div> -->
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 
-                        
-        <!-- Logo Area -->
-        <div class="logo-area text-center">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Nav Area -->
-        <div class="original-nav-area" id="stickyNav">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Classy Menu -->
-                    <nav class="classy-navbar justify-content-between">
+		<!-- Logo Area -->
+		<div class="logo-area text-center">
+			<div class="container h-100">
+				<div class="row h-100 align-items-center">
+					<div class="col-12">
+						<a href="main.jsp" class="original-logo"><img
+							src="img/main-img/logo3.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                        <!-- Subscribe btn -->
-                     <!--    <div class="subscribe-btn tag">
+		<!-- Nav Area -->
+		<div class="original-nav-area" id="stickyNav">
+			<div class="classy-nav-container breakpoint-off">
+				<div class="container">
+					<!-- Classy Menu -->
+					<nav class="classy-navbar justify-content-between">
+
+						<!-- Subscribe btn -->
+						<!--    <div class="subscribe-btn tag">
                             <input type = "text" name = "text" placeholder = "태그 검색"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
                         </div> -->
 
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
+						<!-- Navbar Toggler -->
+						<div class="classy-navbar-toggler">
+							<span class="navbarToggler"><span></span><span></span><span></span></span>
+						</div>
 
-                        <!-- Menu -->
-                        <div class="classy-menu" id="originalNav">
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
+						<!-- Menu -->
+						<div class="classy-menu" id="originalNav">
+							<!-- close btn -->
+							<div class="classycloseIcon">
+								<div class="cross-wrap">
+									<span class="top"></span><span class="bottom"></span>
+								</div>
+							</div>
 
-                            <!-- Nav Start -->
-                            <div class="classynav">
-		                           		<%if(vo != null) { %>
-                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
-                            					<%System.out.println("로그인 성공");%>										
-                            			<%}else{ %>
-												<a href = "login.jsp" class="button4">login</a>
-												<%System.out.println("로그아웃 성공");%>		
-										<%} %>
-                                <ul>
-                                    <li><a href="main.jsp">Home</a></li>
-                                    <li><a href="my.html">Calendar</a>
-                                        <ul class="dropdown">
-                                            <li><a href="myCalendar.jsp">Calendar</a></li>
-                                            <li><a href="Diarylist.jsp">Diary</a></li>
-                                           <!--  <li><a href="single-post.html">Single Post</a></li>
+							<!-- Nav Start -->
+							<div class="classynav">
+								<%if(vo != null) { %>
+								<button class="button4"
+									onclick="location.href = 'LogoutService'">Logout</button>
+								<%System.out.println("로그인 성공");%>
+								<%}else{ %>
+								<a href="login.jsp" class="button4">login</a>
+								<%System.out.println("로그아웃 성공");%>
+								<%} %>
+								<ul>
+									<li><a href="main.jsp">Home</a></li>
+									<li><a href="my.html">Calendar</a>
+										<ul class="dropdown">
+											<li><a href="myCalendar.jsp">Calendar</a></li>
+											<li><a href="Diarylist.jsp">Diary</a></li>
+											<!--  <li><a href="single-post.html">Single Post</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li> -->
-                                        </ul>
-                                    </li>
-                                    <li><a href="challenge_main.jsp">Challenge</a>                                        
-                                    <li><a href="portfolioMain.jsp">Portfolio</a></li>
+										</ul></li>
+									<li><a href="challenge_main.jsp">Challenge</a>
+									<li><a href="portfolioMain.jsp">Portfolio</a></li>
 
-                              
-                                     <li><a href="#">Board</a>
-                                        <ul class="dropdown">
-                                            <li><a href="1_list.jsp">Community</a></li>
-                                            <li><a href="2_Notice.jsp">Notice</a></li>
-                                            <li><a href="2_FAQ.jsp">Q&A</a></li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <!-- <li><a href="about-us.html">Portfolio</a></li> -->
-                                    
 
-                                     <li><a href="mypage.jsp">MyPage</a></li>
-                                     <li><a href="shop.jsp">Point shop</a></li>
-                                           <!--  <ul class="single-mega cn-col-4">
+									<li><a href="#">Board</a>
+										<ul class="dropdown">
+											<li><a href="1_list.jsp">Community</a></li>
+											<li><a href="2_Notice.jsp">Notice</a></li>
+											<li><a href="2_FAQ.jsp">Q&A</a></li>
+										</ul></li>
+
+									<!-- <li><a href="about-us.html">Portfolio</a></li> -->
+
+
+									<li><a href="mypage.jsp">MyPage</a></li>
+									<li><a href="shop.jsp">Point shop</a></li>
+									<!--  <ul class="single-mega cn-col-4">
                                                 <li class="title">Headline 2</li>
                                                 <li><a href="#">Mega Menu Item 1</a></li>
                                                 <li><a href="#">Mega Menu Item 2</a></li>
@@ -258,22 +266,23 @@ table {
                                                 <li><a href="#">Mega Menu Item 5</a></li>
                                             </ul> -->
 
-                                <!-- Search Form  -->
-                                <div id="search-wrapper">
-                                    <form action="#">
-                                        <input type="text" id="search" placeholder="Search something...">
-                                        <div id="close-icon"></div>
-                                        <input class="d-none" type="submit" value="">
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+									<!-- Search Form  -->
+									<div id="search-wrapper">
+										<form action="#">
+											<input type="text" id="search"
+												placeholder="Search something...">
+											<div id="close-icon"></div>
+											<input class="d-none" type="submit" value="">
+										</form>
+									</div>
+							</div>
+							<!-- Nav End -->
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
 	<!-- ##### Header Area End ##### -->
 	<!-- ##### Breadcumb Area Start ##### -->
 	<div class="breadcumb-area bg-img"
@@ -321,105 +330,104 @@ table {
 										<hr style="border: solid 1px gray;">
 
 										<form action="myDailyChallinsert">
-											<div>
-												<div>
-													<div>
-														<p
-															style="font-size: 16px; color: black; font-weight: bold;"><%=msvo.getChal_cat2()%></p>
-														<a
-															href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>">
-															<div class="product-title">
-															
-																<div class="product-img-div">	
-																<%for(int i = 0 ; i < MDCImges.size(); i++){
-																%>															
-																	<img class="product-img" src="<%=MDCImges.get(i)%>"
-																		alt=>
-																			<%} %>
-																</div>
-														
-															</div>
-														</a>
-														<div style="padding-top: 5px; padding-bottom: 5px;">
-															<div
-																style="display: inline-block; width: 70px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
-																<%=msvo.getChal_public()%>
-															</div>
-															<div style="display: inline-block;">
-																<a
-																	href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>"
-																	style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=msvo.getChal_subject()%></a>
-															</div>
-														</div>
-														<div
-															style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
-															<%=msvo.getChal_period()%>
-														</div>
-														<br>
-														<h4>
-															시간 :
-															<%=mdvo.getChal_time()%>
-															hours
-														</h4>
-														<h4>
-															횟수 :
-															<%=mdvo.getChal_num()%>
-															times
-														</h4>
-														<br> <br> <br>
-														<h4>오늘의 인증샷 올리기!</h4>
+											<p style="font-size: 16px; color: black; font-weight: bold;"><%=msvo.getChal_cat2()%></p>
+											<a
+												href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>">
+												<div class="product-title">
+													<%for(int i = 0 ; i < MDCImges.size(); i++){
+																%>
+													<div class="product-img-div2">
+														<img class="product-img2" src="<%=MDCImges.get(i)%>" alt=>
+
 													</div>
-													<input type="file" id="dailyFile" name="mydaily_pic"
-														accept="image/*" onchange="loadFile(this)"> <label
-														for="dailyFile">
-														<div class="product-title">
-															<div class="product-img-div">
-																<img class="product-img" id="dailyimage">
-															</div>
-														</div>
-													</label> <br>
-													<hr style="border: solid 1px gray;">
+														<%if((i+1)%5==0){%>
+														<div style="display: table-row;"></div>
+														<%} %>
+													<%} %>
+
 												</div>
-
-
-												<input type="hidden" name=chal_seq
-													value="<%=mdvo.getChal_seq()%>"> <input
-													type="hidden" name=attend_id
-													value="<%=mdvo.getAttend_id()%>"> <input
-													type="hidden" name=point value="10"> <input
-													type="hidden" name=admit value="Y"> <input
-													type="submit" id="mychalinsert"
-													style="border: solid 1px gray; text-align: center; font-size: 20px; color: #535c68; width: 400px; height: 40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px; background-color: #f5f6fa;">오늘의
-												실천 기입하기
+											</a>
+											<div style="padding-top: 5px; padding-bottom: 5px;">
+												<div
+													style="display: inline-block; width: 70px; font-size: 12px; color: rgb(64, 64, 64); text-align: center; line-height: 2em; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(224, 224, 224);">
+													<%=msvo.getChal_public()%>
+												</div>
+												<div style="display: inline-block;">
+													<a
+														href="ChallengeSingleService?chal_seq=<%=mdvo.getChal_seq()%>"
+														style="text-align: center; font-size: 16px; color: black; font-weight: bold"><%=msvo.getChal_subject()%></a>
+												</div>
 											</div>
-										</form>
+											<div
+												style="border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px; text-align: center; line-height: 20px; color: rgb(255, 255, 255); font-size: 16px; box-shadow: none; background-color: rgb(26, 188, 156);">
+												<%=msvo.getChal_period()%>
+											</div>
+											<br>
+											<h4>
+												시간 :
+												<%=mdvo.getChal_time()%>
+												hours
+											</h4>
+											<h4>
+												횟수 :
+												<%=mdvo.getChal_num()%>
+												times
+											</h4>
+											<br> <br> <br>
+											<h4>오늘의 인증샷 올리기!</h4>
 									</div>
+									<div></div>
+									<div>
+										<input type="file" id="dailyFile" name="mydaily_pic"
+											accept="image/*" onchange="loadFile(this)"> <label
+											for="dailyFile">
+											<div class="product-title">
+												<div class="product-img-div">
+													<img class="product-img" id="dailyimage">
+												</div>
+											</div>
+										</label>
+									</div>
+									<br>
+									<hr style="border: solid 1px gray;">
 								</div>
+
+
+								<input type="hidden" name=chal_seq
+									value="<%=mdvo.getChal_seq()%>"> <input type="hidden"
+									name=attend_id value="<%=mdvo.getAttend_id()%>"> <input
+									type="hidden" name=point value="10"> <input
+									type="hidden" name=admit value="Y"> <input
+									type="submit" value="오늘의 실천 기입하기" id="mychalinsert"
+									style="border: solid 1px gray; text-align: center; font-size: 20px; color: #535c68; width: 400px; height: 40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px; background-color: #f5f6fa;">
+								</form>
 							</div>
 						</div>
-
-
-
-
 					</div>
 				</div>
-			</div>
-			<!-- Footer Social Area -->
-			<div class="footer-social-area mt-30">
-				<a href="#" data-toggle="tooltip" data-placement="top"
-					title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-				<a href="#" data-toggle="tooltip" data-placement="top"
-					title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				<a href="#" data-toggle="tooltip" data-placement="top"
-					title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-				<a href="#" data-toggle="tooltip" data-placement="top"
-					title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-				<a href="#" data-toggle="tooltip" data-placement="top"
-					title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
-				<a href="#" data-toggle="tooltip" data-placement="top"
-					title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+
+
+
 			</div>
 		</div>
+	</div>
+	<!-- Footer Social Area -->
+	<div class="footer-social-area mt-30">
+		<a href="#" data-toggle="tooltip" data-placement="top"
+			title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+		<a href="#" data-toggle="tooltip" data-placement="top"
+			title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+		<a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i
+			class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
+			data-toggle="tooltip" data-placement="top" title="Dribbble"><i
+			class="fa fa-dribbble" aria-hidden="true"></i></a> <a href="#"
+			data-toggle="tooltip" data-placement="top" title="Behance"><i
+			class="fa fa-behance" aria-hidden="true"></i></a> <a href="#"
+			data-toggle="tooltip" data-placement="top" title="Linkedin"><i
+			class="fa fa-linkedin" aria-hidden="true"></i></a>
+	</div>
+	</div>
 	</div>
 	</div>
 	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -458,7 +466,6 @@ table {
 		// input tag value sjgrh?? dzdzdz
 		document.getElementById("mychalinsert").onclick = function() {
 			alert('오늘의 챌린지 실천 입력');
-			//location.reload();
 		};
 	</script>
 

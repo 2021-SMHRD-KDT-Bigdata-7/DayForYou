@@ -1010,7 +1010,7 @@ public int MyDailyChallengeinsert(int chal_seq, String attend_id,String daily_pi
 	try {
 
 		// 3.sqlπÆ ¡ÿ∫Ò
-		sql = "insert into tbl_my_challenge values(tbl_daily_challenge_seq.nextval,?,?,?,?,?,Sysdate)";
+		sql = "insert into tbl_daily_challenge values(tbl_daily_challenge_seq.nextval,?,?,?,?,?,SYSDATE)";
 
 		psmt = conn.prepareStatement(sql);
 

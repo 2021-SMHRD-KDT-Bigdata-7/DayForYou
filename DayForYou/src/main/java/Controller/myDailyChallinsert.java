@@ -18,7 +18,7 @@ public class myDailyChallinsert extends HttpServlet {
 		DAO dao = new DAO();
 		int chal_seq= Integer.parseInt(request.getParameter("chal_seq"));
 		String attend_id=request.getParameter("attend_id");
-		String mydaily_pic=request.getParameter("mydaily_pic");
+		String mydaily_pic="img/challenge_sample/"+request.getParameter("mydaily_pic");
 		int point= Integer.parseInt(request.getParameter("point"));
 		String admit=request.getParameter("admit");
 		System.out.println("last chal_seq"+chal_seq);
@@ -29,8 +29,10 @@ public class myDailyChallinsert extends HttpServlet {
 		int cnt=dao.MyDailyChallengeinsert(chal_seq,attend_id,mydaily_pic,point,admit);
 		if(cnt>0) {
 			System.out.println("mydailychallenge db insert success");
+			response.sendRedirect("myDailyChallenge?chal_seq="+chal_seq);
 		}else {
 			System.out.println("mydailychallenge db insert fail");
+			response.sendRedirect("myDailyChallenge?chal_seq="+chal_seq);
 		}
 	}
 
