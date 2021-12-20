@@ -407,18 +407,11 @@ public class DAO {
 	public int ChallInsert(String chall_cat1, String chall_subject, String chall_cat2, String chall_Introduce,
 			String chall_pic1, String chall_start, String chall_period, String chall_Private, String chall_pic12,
 			String chall_pic2, String chall_pic3, String chall_pw) {
+		connection();
 		try {
 
 			// JDBD
 			// 1.동적로딩 (클래스를 사용하겠따!!)
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			// 2.연결 객체 생성
-			String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
-			String dbid = "hr";
-			String dbpw = "hr";
-
-			conn = DriverManager.getConnection(url, dbid, dbpw);
 
 			// 3.sql문 준비
 			String sql = "insert into tbl_challenge(chal_cat1,chal_cat2,chal_subject,chal_content,chal_start,chal_period,chal_pic1,chal_pic2,chal_pic3,reg_date,m_id,chal_cnt,chal_public,chal_pw) values(?,?,?,?,?,?,?,?,?,sysdate,?,0,?,?)";
@@ -450,7 +443,7 @@ public class DAO {
 			psmt.setString(7, chall_pic1);
 			psmt.setString(8, chall_pic2);
 			psmt.setString(9, chall_pic3);
-			psmt.setString(10, "a");
+			psmt.setString(10, "dayfor12");
 			psmt.setString(11, chall_Private);
 			psmt.setString(12, chall_pw);
 
