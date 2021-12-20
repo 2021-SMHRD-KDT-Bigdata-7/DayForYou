@@ -105,7 +105,7 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
-                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                        <a href="main.jsp" class="original-logo"><img src="img/logo4.PNG" alt="" style="width: 300px; height: 95px;"></a>
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@
 										<td>34</td>
 									</tr>				
 									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #e7e7e3; padding:15px;">
-										<td>글쓴이</td>
+										<td style="width: 40px;">글쓴이</td>
 										<td>관리자</td>
 										<td colspan = "4"></td>
 									</tr>
