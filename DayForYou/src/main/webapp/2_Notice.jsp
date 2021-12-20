@@ -304,8 +304,8 @@
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#">관리자</td>
-									<td class="#"><a  href="2_Noticeview.jsp">윤상운</a></td>
-									<td class="#">2021-12-18 12:11:10</td>
+									<td class="#"><a href="2_Noticeview.jsp" style="font-size: 10px;">12/20 업데이트</a></td>
+									<td class="#">2021-12-20 08:34</td>
 									<td class="#">34</td>
 									
 								</tr>
@@ -313,8 +313,8 @@
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#">관리자</td>
-									<td class="#"><a href="#">윤상운 바보</a></td>
-									<td class="#">2021-12-18 12:11:10</td>
+									<td class="#">12/2 업데이트</td>
+									<td class="#">2021-12-02 12:11</td>
 									<td class="#">64</td>
 									
 								</tr>
@@ -322,8 +322,8 @@
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#">관리자</td>
-									<td class="#"><a href="#">윤상운 멍청이</a></td>
-									<td class="#">2021-12-18 12:11:10</td>
+									<td class="#">가입 오류 수정</td>
+									<td class="#">2021-09-18 02:54</td>
 									<td class="#">12</td>
 									
 								</tr>
@@ -331,8 +331,8 @@
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#">관리자</td>
-									<td class="#">윤상운 발바닥</td>
-									<td class="#">2021-12-18 12:11:10</td>
+									<td class="#" style="font-size: 10px;">포인트샵 공지</td>
+									<td class="#">2021-07-03 18:11</td>
 									<td class="#">22</td>
 									
 								</tr>
@@ -340,8 +340,8 @@
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#">관리자</td>
-									<td class="#">윤상운 손가락</td>
-									<td class="#">2021-12-18 12:11:10</td>
+									<td class="#">5/14 업데이트</td>
+									<td class="#">2021-05-14 12:11</td>
 									<td class="#">40</td>
 									
 								</tr>

@@ -315,28 +315,28 @@
 								<tr class="#" align="center" style="height: 25px;  border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#" style="background-color:#e7e7e3;"><a>Q</a></td>
-									<td class="#" style="font-weight:bold; font-size: 13px;"style="bgcolor:#e7e7e3;" >윤상운은 그럼 공상??이에요?</td>
+									<td class="#" style="font-weight:bold; font-size: 13px;"style="bgcolor:#e7e7e3;" >닉네임을 변경하고 싶어요.</td>
 									
 								</tr>
 								
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#" style="background-color:#8e8e8e;"><a>A</a></td>
-									<td class="#">네.</td>
+									<td class="#">메뉴 - 마이페이지 - 회원정보수정을 이용하세요.</td>
 									
 								</tr>
 								
 								<tr class="#" align="center" style="height: 25px;  border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#" style="background-color:#e7e7e3;" ><a>Q</a></td>
-									<td class="#" style="font-weight:bold; font-size: 13px;">윤상운?</td>
+									<td class="#" style="font-weight:bold; font-size: 13px;">포인트 샵 상품 업데이트는 언제인가요?</td>
 									
 								</tr>
 	
 								<tr class="#" align="center" style="height: 25px; font-size: 10px; border:0; border-bottom:1px solid #e8e8e7;">
 									
 									<td class="#" style="background-color:#8e8e8e;"><a>A</a></td>
-									<td class="#">?</td>
+									<td class="#">매월 2일 업데이트 됩니다 : )</td>
 									
 								</tr>
 	

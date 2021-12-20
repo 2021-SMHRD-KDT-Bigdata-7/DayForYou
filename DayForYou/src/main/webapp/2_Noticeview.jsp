@@ -278,7 +278,7 @@
 						<!-- Blog Content -->
 						<div class="row align-items-end">
 							<div class="board_title">
-								<div style="position:relative; left: 30px; width: 100%;">
+								<div style="position:relative; left: 15px; width: 280px;">
 								
 								<strong>공지사항</strong> 
 								<hr>
@@ -290,7 +290,7 @@
 							
 			
 								
-							<table class="#" style="position: relative; right:10px; width: 280px; height: 300px; align:center;">
+							<table class="#" style="position: relative; left: 15px; width: 280px; height: 300px; align:center;">
 									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #e7e7e3; border-top:1px solid #a0a0a0; padding:15px;">
 										<td>조회수</td>
 										<td>34</td>
@@ -301,16 +301,16 @@
 										<td colspan = "4"></td>
 									</tr>
 									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px;">
-										<td>작성일</td>
-										<td colspan = "3">2021-12-18-12:11:10</td>
+										<td>날짜</td>
+										<td colspan = "3">2021-12-20-08:34</td>
 									</tr>
 									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #e7e7e3; padding:15px;">
 										<td>제목</td>
-										<td colspan = "3">윤상운</td>
+										<td colspan = "3">12/20 업데이트</td>
 									</tr>
 									<tr class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:30px;">
 										<td>내용</td>
-										<td colspan = "3" style="height: 20px; font-size: 13px; padding:15px;"></td>
+										<td colspan = "3" style="height: 20px; font-size: 13px; padding:15px;">12/20 업데이트 내용입니다: ) 챌린지 생성 시 비공개 챌린지 선택에서 일어나는 오류가 수정되었습니다. 불편을 드려 죄송합니다.</td>
 									</tr>
 									
 
