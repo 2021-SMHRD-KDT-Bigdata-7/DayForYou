@@ -28,9 +28,9 @@ public class DAO {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
-			String dbid = "hr";
-			String dbpw = "hr";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String dbid = "cgi_2_2_1215";
+			String dbpw = "smhrd2";
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -656,7 +656,7 @@ public class DAO {
 		connection();
 
 		try {
-			sql = "select * from tbl_shop order by goods_seq desc";
+			sql = "select * from tbl_shop order by shop_seq desc";
 
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -775,33 +775,6 @@ public class DAO {
 			// TODO: handle exception
 		}
 		return msvo;
-	}
-	
-	public ArrayList<String> getMyDailyChallengeImg(int chal_seq, String attend_id) {
-		ArrayList<String> images = null;
-		
-		
-		connection();
-		try {
-			
-			images = new ArrayList<>();
-			sql = "select daily_pic from tbl_daily_challenge where chal_seq = ? and attend_id = ?";
-			
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, chal_seq);
-			psmt.setString(2, attend_id);
-			rs = psmt.executeQuery();
-
-			while(rs.next()) {
-				images.add(rs.getString(1));
-			}
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		return images;
 	}
 
 	public int MyChallengeinsert(int chal_seq, String attend_id, String chal_time, String my_chal_memo,
@@ -1010,7 +983,7 @@ public int MyDailyChallengeinsert(int chal_seq, String attend_id,String daily_pi
 	try {
 
 		// 3.sqlπÆ ¡ÿ∫Ò
-		sql = "insert into tbl_daily_challenge values(tbl_daily_challenge_seq.nextval,?,?,?,?,?,SYSDATE)";
+		sql = "insert into tbl_my_challenge values(tbl_daily_challenge_seq.nextval,?,?,?,?,?,sysdate)";
 
 		psmt = conn.prepareStatement(sql);
 
