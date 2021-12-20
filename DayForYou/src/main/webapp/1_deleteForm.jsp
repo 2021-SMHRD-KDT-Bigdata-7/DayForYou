@@ -59,9 +59,8 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- ##### Header Area Start ##### -->
-	 <header class="header-area">
+ <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
 
         <!-- Top Header Area -->
         <div class="top-header">
@@ -134,19 +133,12 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
-		                           		<%
-		                           		HttpSession session1 = request.getSession();
-		        						MemberVo vo = (MemberVo)session1.getAttribute("vo");
-		                           		if(vo != null) { %>
-						<button class="button4" onclick="location.href = 'LogoutService'">Logout</button>
-						<%System.out.println("로그인 성공");%>
-						<%}else{ %>
-						<a href="login.jsp" class="button4">login</a>
-						
-						
-						<script> alert("로그인이 필요합니다")
-						location.href ="login.jsp";
-					</script>
+		                           	<%MemberVo vo = (MemberVo)session.getAttribute("vo");%>
+								<%if(vo != null) { %>
+                            					<button class="button4" onclick = "location.href = 'LogoutService'">Logout</button>
+                            					<%System.out.println("로그인 성공");%>										
+                            			<%}else{ %>
+												<a href = "login.jsp" class="button4">login</a>
 												<%System.out.println("로그아웃 성공");%>		
 										<%} %>
                                 <ul>
@@ -218,63 +210,13 @@
             </div>
         </div>
     </header>
-	<!-- ##### Header Area End ##### -->
+    <!-- ##### Header Area End ##### -->
 
-	<!-- ##### Hero Area Start ##### -->
-	<div class="hero-area">
-		<!-- Hero Slides Area -->
-		<div class="hero-slides owl-carousel">
-			<!-- Single Slide -->
-			 <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/mainbanner1.png);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="slide-content text-center">
-                                <div class="post-tag">
-                                    <a href="#" data-animation="fadeInUp">Check Event</a>
-                                </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2021 연말 챌린지 도전하고 특별 혜택받기!</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/banner2.png);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="slide-content text-center">
-                                <div class="post-tag">
-                                    <a href="#" data-animation="fadeInUp">Hot Challenge</a>
-                                </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Check variable challenge</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/diaryimg.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="slide-content text-center">
-                                <div class="post-tag">
-                                    <a href="#" data-animation="fadeInUp">2022 Diary</a>
-                                </div>
-                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">2022 다이어리도 데이포유와 함께</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<!-- ##### Hero Area End ##### -->
 
+
+	
 	<!-- ##### Blog Wrapper Start ##### -->
-	<div class="blog-wrapper section-padding-100 clearfix">
+	<div class="blog-wrapper  clearfix">
 		<div class="container">
 			<div class="row align-items-end">
 				<!-- Single Blog Area -->
@@ -289,6 +231,7 @@
 
 							<h3>게시글 삭제</h3>
 							</div>
+							
 							<%
 							int article_seq = Integer.parseInt(request.getParameter("article_seq"));
 							%>
@@ -306,7 +249,59 @@
 							</form>
 						</div>
 					</div>
-
+      
+    <!-- ##### Hero Area Start ##### -->
+    <div class="hero-area">
+        <!-- Hero Slides Area -->
+        <div class="hero-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/mainbanner1.png);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">Check Event</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="">2021 연말 챌린지 도전하고 특별 혜택받기!</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/banner2.png);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">Hot Challenge</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="">Check variable challenge</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/main-img/diaryimg.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">2022 Diary</a>
+                                </div>
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="">2022 다이어리도 데이포유와 함께</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Hero Area End ##### -->
 
 					<!-- ##### Instagram Feed Area End ##### -->
 
