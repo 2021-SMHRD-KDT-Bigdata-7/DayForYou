@@ -6,19 +6,19 @@ public class CommentVO {
 	private int article_seq;
 	private String m_id;
 	private String comment_date;
-	private int comment_parent;
+	
 	private String comment_content;
 	
 	public CommentVO() {}
 	
-	public CommentVO(int comment_num, int article_seq, String m_id, String comment_date, int comment_parent,
+	public CommentVO(int comment_num, int article_seq, String m_id, String comment_date, 
 			String comment_content) {
 		super();
 		this.comment_num = comment_num;
 		this.article_seq = article_seq;
 		this.m_id = m_id;
 		this.comment_date = comment_date;
-		this.comment_parent = comment_parent;
+		
 		this.comment_content = comment_content;
 	}
 	
@@ -47,12 +47,7 @@ public class CommentVO {
 	public void setComment_date(String comment_date) {
 		this.comment_date = comment_date;
 	}
-	public int getComment_parent() {
-		return comment_parent;
-	}
-	public void setComment_parent(int comment_parent) {
-		this.comment_parent = comment_parent;
-	}
+
 	public String getComment_content() {
 		return comment_content;
 	}

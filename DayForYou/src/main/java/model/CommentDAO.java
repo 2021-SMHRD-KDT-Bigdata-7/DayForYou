@@ -45,11 +45,11 @@ public class CommentDAO {
 		}
 	}
 
-	public int Commentwrite(int comment_num, int article_seq, String m_id, String comment_date, String comment_parent, String comment_content) {
+	public int Commentwrite(int comment_num, int article_seq, String m_id, String comment_date, String comment_content) {
 		connection();
 		try {
 
-			sql = "insert into tbl_comment values(TBL_COMMENT_SEQ.nextval,?,?,sysdate,null,?)";
+			sql = "insert into tbl_comment values(TBL_COMMENT_SEQ.nextval,?,?,sysdate,?)";
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setInt(1, article_seq);
@@ -84,7 +84,7 @@ public class CommentDAO {
 		rs = psmt.executeQuery();
 		if(rs.next()) {
 			cvo = new CommentVO(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4),
-					rs.getInt(5), rs.getString(6));
+					 rs.getString(6));
 	        String sql2 = "update tbl_comment set article_count = article_count +1  where article_seq=?";
 	        psmt = conn.prepareStatement(sql2); 
 	        psmt.setInt(1, article_seq);
@@ -122,7 +122,7 @@ public class CommentDAO {
 					rs.getInt("article_seq"), 
 					rs.getString("m_id"), 
 					rs.getString("comment_date"),
-					rs.getInt("comment_parent"), 
+					
 					rs.getString("comment_content"));
 						comments.add(cvo);
 			} 

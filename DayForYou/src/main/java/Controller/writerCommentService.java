@@ -30,12 +30,12 @@ public class writerCommentService extends HttpServlet {
 		
 		String m_id = request.getParameter("m_id");
 		String comment_date = null;
-		String comment_parent = null;
+		
 		String comment_content = request.getParameter("comment_content");
 		
 		CommentDAO cdao = new CommentDAO();
 
-		int cnt = cdao.Commentwrite(comment_num, article_seq, m_id, comment_date, comment_parent, comment_content);
+		int cnt = cdao.Commentwrite(comment_num, article_seq, m_id, comment_date,  comment_content);
 
 		if (cnt > 0) {
 			System.out.println("댓글 작성 성공");
