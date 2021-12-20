@@ -882,7 +882,7 @@ public class DAO {
 	public int shop_insert(String goods_name, String goods_category, int goods_point, String m_id) {
 		connection();
 		try {
-		sql="insert into tbl_shop values(TBL_SHOP_SEQ.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
+		sql="insert into tbl_shop values(TBL_shop_SEQ.NEXTVAL,?,?,null,null,?,sysdate,'2022-02-25',?)";	
 		
 		psmt = conn.prepareStatement(sql);		
 		psmt.setString(1, goods_name);
@@ -912,7 +912,7 @@ public int shop_update(int shop_seq,String goods_name, String goods_category, St
 	connection();
 
 	try {
-		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where TBL_SHOP_SEQ=?";
+		sql = "UPDATE tbl_shop SET goods_name=?,goods_category=?,goods_point=? where TBL_shop_SEQ=?";
 
 		psmt = conn.prepareStatement(sql);
 		
@@ -938,7 +938,7 @@ public int shop_delete(int shop_seq) {
 		sql = "DELETE FROM tbl_shop WHERE shop_seq=?";
 
 		psmt = conn.prepareStatement(sql);
-		psmt.setInt(1, shop_seq);
+		psmt.setInt(1,shop_seq);
 	
 		cnt = psmt.executeUpdate();
 

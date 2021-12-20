@@ -2,7 +2,7 @@ package model;
 
 public class shopVO {
 
-	private int shop_seq;
+	private int goods_seq;
 	private String goods_name;
 	private String goods_category;
 	private String goods_pic1;
@@ -13,10 +13,10 @@ public class shopVO {
 	private String m_id;
 	
 	public shopVO() {}
-	public shopVO(int shop_seq, String goods_name, String goods_category, String goods_pic1, String goods_pic2,
+	public shopVO(int goods_seq, String goods_name, String goods_category, String goods_pic1, String goods_pic2,
 			int goods_point, String buy_day, String exp_day, String m_id) {
 		super();
-		this.shop_seq = shop_seq;
+		this.goods_seq = goods_seq;
 		this.goods_name = goods_name;
 		this.goods_category = goods_category;
 		this.goods_pic1 = goods_pic1;
@@ -33,10 +33,10 @@ public class shopVO {
 		
 	}
 	public int getShop_seq() {
-		return shop_seq;
+		return goods_seq;
 	}
 	public void setShop_seq(int shop_seq) {
-		this.shop_seq = shop_seq;
+		this.goods_seq = shop_seq;
 	}
 	public String getGoods_name() {
 		return goods_name;
