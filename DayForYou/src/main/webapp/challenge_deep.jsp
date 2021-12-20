@@ -221,7 +221,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="breadcumb-content text-center">
-						<h2>Individual Challenge
+						<h2><%=chal_cat1%>
 						</h2>
 					</div>
 				</div>
