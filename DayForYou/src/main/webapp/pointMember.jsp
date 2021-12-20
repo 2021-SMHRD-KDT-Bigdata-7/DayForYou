@@ -38,7 +38,7 @@ table {
 <body>
 	<%
 	MemberVo vo = (MemberVo)session.getAttribute("vo");
-	out.print(vo);
+
 
 	DAO dao = new DAO();
 	
@@ -119,7 +119,7 @@ table {
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
-                        <a href="main.jsp" class="original-logo"><img src="img/main-img/logo3.png" alt=""></a>
+                        <a href="main.jsp" class="original-logo"><img src="img/logo4.PNG" alt="" style="width: 300px; height: 95px;"></a>
                     </div>
                 </div>
             </div>
