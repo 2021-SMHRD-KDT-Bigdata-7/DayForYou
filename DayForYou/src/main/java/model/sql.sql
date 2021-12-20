@@ -1,7 +1,10 @@
 select * from tbl_member;
 
 select * from tbl_challenge;
-select * from tbl_my_challenge;
+select * from tbl_daily_challenge;
+
+
+
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id) VALUES (327, sysdate, sysdate, 'chal_time 1', 'my_chal_memo 1', 'b');
 select * from tbl_challenge where chal_seq = 298;
 update tbl_challenge set chal_pic1 = "asd" where chal_seq=326;

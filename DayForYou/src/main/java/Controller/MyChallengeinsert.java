@@ -20,9 +20,9 @@ public class MyChallengeinsert extends HttpServlet {
 		HttpSession session = request.getSession();
 		MemberVo vo = (MemberVo) session.getAttribute("vo");
 		int chal_seq = Integer.parseInt(request.getParameter("chal_seq"));
-		String chal_time="fuck";
-		String my_chal_memo="fuck";
-		int chal_num=999;//Ã§¸°Áö È½¼ö ³ÖÀ»°÷
+		String chal_time="";
+		String my_chal_memo="";
+		int chal_num=0;//Ã§¸°Áö È½¼ö ³ÖÀ»°÷
 		// 2. DAO °´Ã¼ »ý¼º
 		DAO dao = new DAO();
 //		MyChallengeVO mvo = dao.MyVOChallengeinsert(chal_seq);
