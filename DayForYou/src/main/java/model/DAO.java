@@ -976,6 +976,33 @@ public myDailyVO myDailyChallengeCheck(String attend_id, int chal_seq) {
 	}
 	return mdvo;
 }
+public ArrayList<String> getMyDailyChallengeImg(int chal_seq, String attend_id) {
+    ArrayList<String> images = null;
+    
+    
+    connection();
+    try {
+       
+       images = new ArrayList<>();
+       sql = "select daily_pic from tbl_daily_challenge where chal_seq = ? and attend_id = ?";
+       
+       psmt = conn.prepareStatement(sql);
+       psmt.setInt(1, chal_seq);
+       psmt.setString(2, attend_id);
+       rs = psmt.executeQuery();
+
+       while(rs.next()) {
+          images.add(rs.getString(1));
+       }
+       
+    }catch(Exception e) {
+       e.printStackTrace();
+    }finally {
+       close();
+    }
+    return images;
+ }
+
 public int MyDailyChallengeinsert(int chal_seq, String attend_id,String daily_pic,int point, String daily_chal_done) 
 {
 	connection();
