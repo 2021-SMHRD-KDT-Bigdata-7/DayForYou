@@ -269,7 +269,7 @@
 										<td>Date</td>
 									</tr>
 									<%for(diaryVO dvo : diarys) {%>
-									<tr align="center">
+									<tr align="center" style="height: 40px;">
 										<td><%=dvo.getDiary_seq()%></td>
 										<td><a
 											href="DiarySingleService?diary_seq=<%=dvo.getDiary_seq()%>"><%=dvo.getDiary_subject()%></a></td>
