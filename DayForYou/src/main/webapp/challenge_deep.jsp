@@ -241,9 +241,9 @@
 		<p style="font-size: 16px; color: black; font-weight: bold;">
 		<%=chall_personal.get(0).getChalCat2()%>
 		</p>
-			<img class = "product-img" src="<%=chall_personal.get(0).getChalPic1()%>"
+			<a href = "ChallengeSingleService?chal_seq=<%=chall_personal.get(0).getChalSeq()%>" ><img class = "product-img" src="<%=chall_personal.get(0).getChalPic1()%>"
 				alt="img/challenge_sample/none.png"
-				onclick="password('<%=chall_personal.get(0).getChalPw()%>', '<%=chall_personal.get(0).getChalSeq()%>');">							
+				onclick="password('<%=chall_personal.get(0).getChalPw()%>', '<%=chall_personal.get(0).getChalSeq()%>');"></a>							
 		</div>
 	
 		<!-- Blog Content -->
