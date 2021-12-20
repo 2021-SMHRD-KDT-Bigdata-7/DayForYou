@@ -34,8 +34,8 @@
 }
 
 .product-img2 {
-	max-width: 90px;
-	max-height: 90px;
+	max-width: 70px;
+	max-height: 70px;
 }
 
 #dailyFile {
