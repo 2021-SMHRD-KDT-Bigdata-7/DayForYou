@@ -505,6 +505,8 @@
 								href="challenge_deep.jsp?chal_cat1=<%=chall_personal.get(0).getChalCat1()%>"><img
 								src="img/challenge_sample/3. study.jpg"
 								alt="img/challenge_sample/3. study.jpg" class="product-img"> </a>
+								<br><br>
+							<h3 style="color: #424242">VOCA 하루 100 단어 씩 외우기!</h3>
 						</div>
 						<br> 
 						<!-- Blog Content -->
@@ -533,6 +535,8 @@
 								class="product-img"
 								src="img/challenge_sample/1. water.jpg"
 								alt="img/logo.png"> </a>
+								<br><br>
+								<h4 style="color: #424242">오늘부터 일어나서 미지근한 물 한잔 : )</h4>
 
 						</div>
 						<br> 
@@ -564,6 +568,8 @@
 						class="product-img"
 						src="img/challenge_sample/4. computer.jpg"
 						alt="img/logo.png"> </a>
+						<br><br>
+						<h4 style="color: #424242">(인기) 업무 중 스트레칭, 함께해요 ^_^</h4>
 				</div>
 					<br> 
 				<!-- Blog Content -->
@@ -592,6 +598,8 @@
 					href="challenge_deep.jsp?chal_cat1=<%=chall_group.get(0).getChalCat1()%>"><img
 					class="product-img" src="img/challenge_sample/1. water.jpg"
 					alt="img/logo.png"> </a>
+					<br><br>
+					<h3 style="color: #424242">하루에 물 1리터로 건강해져요!</h3>
 			</div>
 				<br> 
 			<!-- Blog Content -->
@@ -619,6 +627,8 @@
 					href="challenge_deep.jsp?chal_cat1=<%=chall_all.get(0).getChalCat1()%>"><img
 					class="product-img" src="img/challenge_sample/2. wakeup.jpg"
 					alt="img/logo.png"></a>
+					<br><br>
+					<h3 style="color: #424242">매일 7시 기상출첵해요 ~</h3>
 
 			</div>
 				<br> 
