@@ -28,9 +28,9 @@ public class DAO {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
-			String dbid = "hr";
-			String dbpw = "hr";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String dbid = "cgi_2_2_1215";
+			String dbpw = "smhrd2";
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 		} catch (Exception e) {
 			e.printStackTrace();
