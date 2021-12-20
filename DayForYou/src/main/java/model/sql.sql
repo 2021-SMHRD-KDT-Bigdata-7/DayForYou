@@ -1,6 +1,8 @@
 select * from tbl_member;
 
 select * from tbl_challenge;
+
+
 select * from tbl_daily_challenge;
 
 select * from TBL_NEA;

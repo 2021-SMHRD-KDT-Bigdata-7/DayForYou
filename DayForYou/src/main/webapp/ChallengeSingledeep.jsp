@@ -155,6 +155,7 @@
 		<div class="classy-nav-container breakpoint-off">
 			<div class="container">
 				<!-- Classy Menu -->
+				<a id="challcheck" href="#" style="border: solid 1px gray; text-align:center; font-size:20px; color:#535c68; width:400px;height:40px; position: fixed; bottom: 1px; left: 0.1px; right: 0.1px ; background-color: #f5f6fa;">오늘부터 챌린지 시작하기</a>
 				<nav class="classy-navbar justify-content-between"> <!-- Subscribe btn -->
 				<!--    <div class="subscribe-btn tag">
                             <input type = "text" name = "text" placeholder = "태그 검색"  class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">
