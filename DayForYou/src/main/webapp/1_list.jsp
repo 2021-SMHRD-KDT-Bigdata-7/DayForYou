@@ -303,14 +303,14 @@
 								
 								%>
 								
-							<table class="#" style="position: relative; left: 8px; width: 100%; height: 300px; align:center;">
+							<table class="#" style="position: relative; left: 8px; width: 290px; height: 300px; align:center;">
 								<tr id="head_tr" class="#" align="center" style="height: 20px; font-size: 13px; border:0; border-bottom:1px solid #a0a0a0; padding:15px; bg-color: smokewhite;">
 									<td class="#">번호</td>
 									<td class="#">제목</td>
-									<td class="#">분류</td>
+									<td class="#" style="width:30px;">분류</td>
 									<td class="#">작성자</td>
 									<td class="#">시간</td>
-									<td class="#">조회수</td>
+									<td class="#" style="font-size:10px; width:30px;">조회수</td>
 								</tr>
 
 								<%if(boards.size()>(pageno)*5){%>
@@ -348,6 +348,7 @@
 							<tr class="#" align="center" style="height: 25px; border:0 solid; border-bottom: 1px; font-size: 10px;">
 							<td>
 							<div class = "#">
+							<br><br>
 							<a href = '1_writeForm.jsp'" class= "#" style="position:relative;width: 100%; left:260px; color: #ffffff; background: black; font-size: 1.2em; padding: 0.3em 0.5em; margin-right: 0.1em;">write</a>
 							</div>	
 							</td>
