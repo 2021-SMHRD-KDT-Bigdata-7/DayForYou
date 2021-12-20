@@ -23,9 +23,9 @@ public class CalendarDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			// 2. 연결 객체 생성
-			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-			String dbid = "cgi_2_2_1215";
-			String dbpw = "smhrd2";
+			String url = "jdbc:oracle:thin:@172.30.1.49:1521:xe";
+			String dbid = "hr";
+			String dbpw = "hr";
 
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 

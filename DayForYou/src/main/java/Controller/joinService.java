@@ -43,7 +43,7 @@ public class joinService extends HttpServlet {
 	         request.setAttribute("vo",new MemberVo(id, pw,name,nick, phone, email, birthday, gender, job, address));
 	         RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 	         rd.forward(request, response);
-	         response.sendRedirect("loginService");
+	         //response.sendRedirect("loginService");
 	      }
 	      
 	      if(cnt > 0) {
