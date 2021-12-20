@@ -3,6 +3,7 @@ select * from tbl_member;
 select * from tbl_challenge;
 select * from tbl_daily_challenge;
 
+select * from TBL_NEA;
 
 
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id) VALUES (327, sysdate, sysdate, 'chal_time 1', 'my_chal_memo 1', 'b');

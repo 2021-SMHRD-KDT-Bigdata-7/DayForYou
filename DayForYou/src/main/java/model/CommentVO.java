@@ -2,7 +2,7 @@ package model;
 
 public class CommentVO {
 
-	private int comment_num;
+	private int comment_seq;
 	private int article_seq;
 	private String m_id;
 	private String comment_date;
@@ -11,10 +11,10 @@ public class CommentVO {
 	
 	public CommentVO() {}
 	
-	public CommentVO(int comment_num, int article_seq, String m_id, String comment_date, 
+	public CommentVO(int comment_seq, int article_seq, String m_id, String comment_date, 
 			String comment_content) {
 		super();
-		this.comment_num = comment_num;
+		this.comment_seq = comment_seq;
 		this.article_seq = article_seq;
 		this.m_id = m_id;
 		this.comment_date = comment_date;
@@ -23,11 +23,11 @@ public class CommentVO {
 	}
 	
 	 
-	public int getComment_num() {
-		return comment_num;
+	public int getComment_seq() {
+		return comment_seq;
 	}
-	public void setComment_num(int comment_num) {
-		this.comment_num = comment_num;
+	public void setComment_seq(int comment_seq) {
+		this.comment_seq = comment_seq;
 	}
 	public int getArticle_seq() {
 		return article_seq;

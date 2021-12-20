@@ -45,7 +45,7 @@ public class CommentDAO {
 		}
 	}
 
-	public int Commentwrite(int comment_num, int article_seq, String m_id, String comment_date, String comment_content) {
+	public int Commentwrite(int comment_seq, int article_seq, String m_id, String comment_date, String comment_content) {
 		connection();
 		try {
 
@@ -118,7 +118,7 @@ public class CommentDAO {
 								
 			while(rs.next()){		
 	
-			cvo = new CommentVO(rs.getInt("comment_num"),
+			cvo = new CommentVO(rs.getInt("comment_seq"),
 					rs.getInt("article_seq"), 
 					rs.getString("m_id"), 
 					rs.getString("comment_date"),
