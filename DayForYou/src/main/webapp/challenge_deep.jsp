@@ -440,18 +440,18 @@
 			location.replace(link);	
 		}else{		
 			password1 = prompt("비밀번호를 입력하세요.");
-			if(pass != password){
+			if(pass != password1){
 				alert("비밀번호가 틀렸습니다.");					
 			}	
 			else{
 				location.replace(link);	
 			}
 		}
-	}
+	};
     	
 		
  
-});
+
 	</script>
 
 </body>
