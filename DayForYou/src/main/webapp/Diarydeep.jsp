@@ -153,7 +153,7 @@
 
 											<img src="./img/<%=images[i]%>">
 
-											<img src="img/diary/<%=images[i]%>">
+											<%-- <img src="img/diary/<%=images[i]%>"> --%>
 
 											<%} %>
 											<%} %>
