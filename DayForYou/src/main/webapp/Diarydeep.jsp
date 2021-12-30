@@ -150,7 +150,11 @@
 											<%for(int i = 0; i < images.length; i++) {
                                         		if(i > 0){
                                         	%>
-											<img src="./boardImg/<%=images[i]%>">
+
+											<img src="./img/<%=images[i]%>">
+
+											<img src="img/diary/<%=images[i]%>">
+
 											<%} %>
 											<%} %>
 											<span class="highlight"></span> <span class="bar"></span>

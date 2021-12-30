@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -26,6 +27,8 @@ public class ChallService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession();
+		MemberVo vo = (MemberVo) session.getAttribute("vo");
 		String savePath= request.getServletContext().getRealPath("img");
 		//최대 파일크기(단위 : byte) : 5MB
 		int maxSize = 5*1024*1024;
@@ -57,6 +60,7 @@ public class ChallService extends HttpServlet {
 		String chall_pic3 ="img/challenge_sample/"+  multi.getFilesystemName("chall_pic3");
 //      chall_pw//챌린지 모집 비밀번호
 		String chall_pw = multi.getParameter("chall_pw");
+		String m_id=vo.getId();
 		Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -103,6 +107,7 @@ public class ChallService extends HttpServlet {
 		System.out.println(chall_pic2); 
 		System.out.println(chall_pic3);
 		System.out.println(chall_pw);
+		System.out.println(m_id);
 
 		
 		DAO dao = new DAO();
@@ -113,7 +118,7 @@ public class ChallService extends HttpServlet {
 		
 		
 		int cnt = dao.ChallInsert(chall_cat1,chall_subject,chall_cat2,chall_Introduce,chall_pic1,chall_start,chall_period, chall_Private,
-				chall_pic1,chall_pic2, chall_pic3,chall_pw);
+				chall_pic1,chall_pic2, chall_pic3,chall_pw,m_id);
 
 		if (cnt > 0) {
 			System.out.println("챌린지 생성 성공");

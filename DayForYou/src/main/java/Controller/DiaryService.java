@@ -35,7 +35,6 @@ public class DiaryService extends HttpServlet {
 				
 				// 인코딩 타입
 				String encoding = "utf-8";
-				
 				// request를 대신해서 받아온 데이터를 정제해 줄 MultipartRequest 객체
 				MultipartRequest multi = new MultipartRequest(request,
 																savePath, 

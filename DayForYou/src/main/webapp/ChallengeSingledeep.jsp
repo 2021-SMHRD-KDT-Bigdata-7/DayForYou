@@ -297,7 +297,7 @@
 				<p align="center">좋은 인증샷 예시</p>
 				<div class="product-title23">
 					<div class="product-img-div23">
-						<img class="product-img23" src="<%=zvo.getChalPic1()%>"
+						<img class="product-img23" src="<%=zvo.getChalPic2()%>"
 							alt="img/logo.jpg">
 					</div>
 				</div>
@@ -306,7 +306,7 @@
 				<p align="center">나쁜 인증샷 예시</p>
 				<div class="product-title23">
 					<div class="product-img-div23">
-						<img class="product-img23" src="<%=zvo.getChalPic1()%>"
+						<img class="product-img23" src="<%=zvo.getChalPic3()%>"
 							alt="img/logo.jpg">
 					</div>
 				</div>

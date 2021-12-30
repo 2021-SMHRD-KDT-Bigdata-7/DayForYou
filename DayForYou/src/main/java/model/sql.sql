@@ -1,16 +1,17 @@
 select * from tbl_member;
 
 select * from tbl_challenge;
-
-
+select * from tbl_my_challenge;
+select * from tbl_diary;
+select * from TBL_SHOP;
 select * from tbl_daily_challenge;
-
+ALTER TABLE tbl_member MODIFY (chal_period VARCHAR2(150));
 select * from TBL_NEA;
-
+delete from TBL_MY_CHALLENGE where chal_seq=11;
+update tbl_member set m_point = 50000 where m_id='dayfor12';
 
 INSERT INTO tbl_my_challenge (chal_seq, chal_s_date, chal_e_date, chal_time, my_chal_memo, m_id) VALUES (327, sysdate, sysdate, 'chal_time 1', 'my_chal_memo 1', 'b');
 select * from tbl_challenge where chal_seq = 298;
-update tbl_challenge set chal_pic1 = "asd" where chal_seq=326;
 update tbl_challenge set chal_period="2021/12/14~2021/12/21" where chal_seq=331;
 UPDATE [테이블] SET [열] = '변경할값' WHERE [조건]
 delete from TBL_MY_CHALLENGE where chal_seq=294;
