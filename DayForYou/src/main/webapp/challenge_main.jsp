@@ -93,6 +93,7 @@
 	int last_chall_suggestion = chall_suggestion.size()-1;
 	
 	
+	
 		
 	
 	//누적 챌린지 수
@@ -167,7 +168,7 @@
 		ChallengesSeq.add(myChallenges.get(i).getChal_seq());	
 		myChallengesSeq.add(Integer.toString(myChallenges.get(i).getMy_chal_seq()));
 	}	
-	
+	System.out.println("myChallenges사이즈"+myChallenges.size());
 	//myChallengesInfo: 내가 참가하고있는 챌린지 정보를 담아주는 arraylist
 	ArrayList<challengeBoardVO> myChallengesInfo = new ArrayList<>();
 	
@@ -196,14 +197,14 @@
 		challengeStartDate.add(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),0));
 	
 	}
-
+	System.out.println("challengeInfo" + myChallengesInfo.size());
 	//내가 참가하고있는 챌린지에서 마지막날짜 담아주는 arraylist
 	challengeEndDate = new ArrayList<>();	
 	for(int i = 0; i < myChallengesInfo.size(); i++){
 		challengeEndDate.add(dao.dividePeriodWave(myChallengesInfo.get(i).getChalPeriod(),1));
 		
 	}
-	
+	System.out.println("challengeEndDate 사이즈" + challengeEndDate.size());
 		
 	%>
 
@@ -416,8 +417,7 @@
 							<div class="line"></div>
 							<a href="#" class="post-tag">W E L C O M E !</a>
 							<h4>
-								<a href="#" class="post-headline">챌린지에 오신 것을</a> <a href="#"
-									class="post-headline" style="position: relative; bottom: 15px;">환영합니다.</a>
+								<a href="#" class="post-headline">챌린지에 오신 것을 환영합니다.</a>
 							</h4>
 							<p>DayForYou에서 다양한 챌린지에 도전하세요!</p>
 						</div>
