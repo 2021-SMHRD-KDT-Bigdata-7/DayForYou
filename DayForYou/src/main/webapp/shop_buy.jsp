@@ -33,6 +33,8 @@
 	shopVO svo = new shopVO();
 	int my_point = vo.getPoint();
 	int good_point = svo.getGoods_point();
+	System.out.println(my_point);
+	System.out.println(good_point);
 	%>
 
 	<%

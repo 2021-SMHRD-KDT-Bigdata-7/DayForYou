@@ -1,3 +1,4 @@
+<%@page import="model.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,6 +18,7 @@
     </head>
    
     <body>
+    <%	MemberVo vo = (MemberVo) session.getAttribute("vo"); %>
        <div align ="left" margin"10px">
         <a href ="shop.jsp">
          <img src="./img/shop/back.PNG" style="width:45px;height:45px; position:relative; left:10px; top:15px;">

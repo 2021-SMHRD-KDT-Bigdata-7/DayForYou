@@ -35,7 +35,8 @@ public class shopbuyService extends HttpServlet {
 	      int cnt = 0;
 	      int user_point = vo.getPoint();
 	      int goods_point = Integer.parseInt(request.getParameter("goods_point"));
-	      
+	      System.out.println(user_point);
+	      System.out.println(goods_point);
 	      if(user_point >= goods_point) {
 	    	  user_point -= goods_point;
 	    	  cnt = dao.shopbuy(id, user_point);	
