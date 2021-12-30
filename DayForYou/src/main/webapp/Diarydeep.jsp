@@ -119,7 +119,6 @@
 										<p>작성일시</p>
 										<p><%=dvo.getReg_date()%></p>
 										<span class="highlight"></span> <span class="bar"></span>
-
 									</div>
 								</div>
 								<div class="row">
@@ -130,8 +129,6 @@
 
 										</div>
 									</div>
-
-
 									<div class="col-12">
 										<div class="group">
 											<p><%=dvo.getDiary_content()%></p>
@@ -139,8 +136,6 @@
 
 										</div>
 									</div>
-
-
 									<div class="col-12 col-md-6">
 										<div class="group">
 											<%

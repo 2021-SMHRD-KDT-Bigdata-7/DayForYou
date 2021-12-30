@@ -102,11 +102,10 @@ m_id = vo.getId();
 
                                     <div class="col-12 col-md-6">
                                         <div class="group">
-                                        	<input type="text" style="display : none;" name="m_id" value="<%=m_id %>">
+                                        	<input type="text" style="display : none;" name="m_id" value="<%=m_id%>">
                                             <input type="date" name="diary_date" id="date" required>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                           
                                         </div>
                                     </div>
                                     
@@ -130,11 +129,11 @@ m_id = vo.getId();
 														console.log(image); 
 														reader.readAsDataURL(image); 
 														
-														// inputì ì´ë¯¸ë¤ ì´ë¦ ì´ì´ë¶ì¬ì¤ / ë¡ êµ¬ë¶íëë¡
+														
 														img_names +=("/"+ image.name);
 													} 
 													
-													// ë¶ì¬ì§ ì´ë¦ì inputíê·¸ ìì ê°ì¼ë¡ ë£ì´ì¤
+													
 													document.querySelector("#image_arr").setAttribute("value", img_names);											
 													console.log(document.querySelector("#image_arr").value);
 												} 
